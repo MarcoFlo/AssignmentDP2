@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<accountList
+        xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance"
+        xsd:noNamespaceSchemaLocation="accounts.xsd">
+    <account number="123456">
+        <holder name="Elia" fiscalCode="ABCdefghi1011121" address="Via dei Pioppi, 20"/>
+        <yearOperations year="2019">
+            <operation date="2019-01-01" amount="12.1"></operation>
+        </yearOperations>
+    </account>
+    <account number="1234567">
+        <holder name="Sandro" fiscalCode="ABCdefghi1011122" address="Via dei Rospi, 40"/>
+        <yearOperations year="2019">
+            <operation date="2019-01-01" amount="12.1"></operation>
+        </yearOperations>
+        <yearOperations year="2020">
+            <operation date="2020-01-01" amount="12.1"></operation>
+        </yearOperations>
+    </account>
+
+    <account number="12345678">
+        <holder name="Elia" fiscalCode="ABCdefghi1011121" address="Via dei Pioppi, 20"/>
+        <holder name="Elia" fiscalCode="ABCdefgh55011121" address="Via dei Pioppi, 20"/>
+
+        <yearOperations year="2019">
+            <operation date="2019-05-01" amount="15.55"></operation>
+        </yearOperations>
+    </account>
+
+</accountList>
