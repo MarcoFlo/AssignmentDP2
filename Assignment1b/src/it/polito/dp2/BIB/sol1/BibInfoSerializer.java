@@ -25,7 +25,7 @@ public class BibInfoSerializer {
     private BibReader monitor;
     private Integer counterBA;
     private Integer counterI;
-    private XMLGregorianCalendar calendar;
+
 
 
     Map<String, BigInteger> mapKnownId = new HashMap<>();
@@ -41,7 +41,6 @@ public class BibInfoSerializer {
         monitor = factory.newBibReader();
         counterBA = 0;
         counterI = 0;
-        calendar = DatatypeFactory.newInstance().newXMLGregorianCalendar();
     }
 
     public BibInfoSerializer(BibReader monitor) {
@@ -53,12 +52,11 @@ public class BibInfoSerializer {
      * @param args
      */
     public static void main(String[] args) {
-
         BibInfoSerializer wf;
         try {
             wf = new BibInfoSerializer();
             BiblioType biblioResult = wf.generateBiblioTypeResult();
-            wf.writeXml(biblioResult);
+            wf.writeXml(biblioResult, args);
         } catch (BibReaderException e) {
             System.err.println("Could not instantiate data generator.");
             e.printStackTrace();
@@ -72,7 +70,7 @@ public class BibInfoSerializer {
         }
     }
 
-    private BiblioType generateBiblioTypeResult() {
+    private BiblioType generateBiblioTypeResult() throws DatatypeConfigurationException {
         BiblioType biblioResult = new BiblioType();
         handleJournals(biblioResult);
         handleItems(biblioResult);
@@ -84,16 +82,17 @@ public class BibInfoSerializer {
     }
 
 
-    public void writeXml(BiblioType biblioResult) throws FileNotFoundException {
+    public void writeXml(BiblioType biblioResult, String[] args) throws FileNotFoundException {
         String outputFileName = System.getProperty("it.polito.dp2.BIB.Random.output", "xsd/biblio_e.xml");
-        System.out.println(outputFileName);
+        if (args[0] != null)
+            outputFileName = args[0];
+        else
+            outputFileName = "xsd/biblio_e.xml";
         ObjectFactory objectFactory = new ObjectFactory();
         JAXBElement<BiblioType> biblio = objectFactory.createBiblio(biblioResult);
 
-//        FileOutputStream fileOutputStream = new FileOutputStream(new File(outputFileName));
-
         try {
-            JAXBContext context = JAXBContext.newInstance("it.polito.dp2.BIB.sol1.jaxb");
+            JAXBContext context = JAXBContext.newInstance(BiblioType.class);
             Marshaller marshaller = context.createMarshaller();
             marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
             marshaller.setProperty(Marshaller.JAXB_ENCODING, "UTF-8");
@@ -104,8 +103,9 @@ public class BibInfoSerializer {
         }
     }
 
-    private BiblioType handleItems(BiblioType biblioResult) {
+    private BiblioType handleItems(BiblioType biblioResult) throws DatatypeConfigurationException {
         Set<ItemReader> set = monitor.getItems(null, 0, 3000);
+        XMLGregorianCalendar calendar;
 
         BookType bookType;
         ArticleType articleType;
@@ -152,7 +152,8 @@ public class BibInfoSerializer {
                     bookType.setId(BigInteger.valueOf(counterBA++));
 
                 bookType.setISBN(bookSource.getISBN());
-                calendar.clear();
+
+                calendar = DatatypeFactory.newInstance().newXMLGregorianCalendar();
                 calendar.setYear(bookSource.getYear());
                 bookType.setYear(calendar);
 
@@ -180,8 +181,9 @@ public class BibInfoSerializer {
     }
 
 
-    private BiblioType handleJournals(BiblioType biblioType) {
+    private BiblioType handleJournals(BiblioType biblioType) throws DatatypeConfigurationException {
         Set<JournalReader> set = monitor.getJournals(null);
+        XMLGregorianCalendar calendar;
         JournalType journalType;
         for (JournalReader journalSource : set) {
             journalType = new JournalType();
@@ -197,10 +199,9 @@ public class BibInfoSerializer {
             for (IssueReader issueSource : journalSource.getIssues(0, 3000)) {
                 issueType = new JournalType.Issue();
 
-                calendar.clear();
+                calendar = DatatypeFactory.newInstance().newXMLGregorianCalendar();
                 calendar.setYear(issueSource.getYear());
                 issueType.setYear(calendar);
-                System.out.println(calendar + "   " + issueSource.getYear());
 
                 issueType.setNumber(BigInteger.valueOf(issueSource.getNumber()));
                 issueType.setId(BigInteger.valueOf(counterI++));
