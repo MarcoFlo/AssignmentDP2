@@ -1,7 +1,6 @@
 <?xml version="1.0"?>
-<bank
-        xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance"
-        xsd:noNamespaceSchemaLocation="accounts.xsd">
+<bank xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance"
+      xsd:noNamespaceSchemaLocation="accounts.xsd">
     <accounts>
         <account number="123456">
             <holder>abcdefghijklmno1</holder>

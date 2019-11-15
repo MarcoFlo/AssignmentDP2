@@ -64,10 +64,6 @@
         <xsd:attribute name="address" type="xsd:string" use="required"/>
     </xsd:complexType>
 
-    <xsd:complexType name="HolderCFType">
-        <xsd:attribute name="fiscalCode" type="FiscalCodeType" use="required"/>
-    </xsd:complexType>
-
     <xsd:complexType name="YearOperationsType">
         <xsd:sequence>
             <xsd:element name="operation" type="OperationType" minOccurs="1" maxOccurs="unbounded"/>
