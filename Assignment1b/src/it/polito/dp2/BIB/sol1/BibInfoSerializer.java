@@ -121,7 +121,7 @@ public class BibInfoSerializer {
             journalType.setPublisher(journalSource.getPublisher());
 
             JournalType.Issue issueType;
-            List<IssueReader> issueReaderSet = journalSource.getIssues(0, 3000).stream().sorted(Comparator.comparingInt(i -> (i.getYear() + i.getNumber()))).collect(Collectors.toList());
+            List<IssueReader> issueReaderSet = journalSource.getIssues(0, 3000).stream().sorted(Comparator.comparingInt(IssueReader::getYear).thenComparing(IssueReader::getNumber)).collect(Collectors.toList());
 
             for (IssueReader issueSource : issueReaderSet) {
                 issueType = new JournalType.Issue();
