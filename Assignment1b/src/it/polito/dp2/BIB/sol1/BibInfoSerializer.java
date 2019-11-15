@@ -1,9 +1,9 @@
 package it.polito.dp2.BIB.sol1;
 
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.math.BigInteger;
 import java.util.*;
+import java.util.stream.Collectors;
 
 import it.polito.dp2.BIB.ArticleReader;
 import it.polito.dp2.BIB.BibReader;
@@ -23,11 +23,6 @@ import javax.xml.datatype.XMLGregorianCalendar;
 
 public class BibInfoSerializer {
     private BibReader monitor;
-    private Integer counterBA;
-    private Integer counterI;
-
-
-    private Map<String, BigInteger> mapKnownId;
 
 
     /**
@@ -35,12 +30,9 @@ public class BibInfoSerializer {
      *
      * @throws BibReaderException
      */
-    public BibInfoSerializer() throws BibReaderException, DatatypeConfigurationException {
+    public BibInfoSerializer() throws BibReaderException {
         BibReaderFactory factory = BibReaderFactory.newInstance();
         monitor = factory.newBibReader();
-        mapKnownId = new HashMap<>();
-        counterBA = 0;
-        counterI = 0;
     }
 
     public BibInfoSerializer(BibReader monitor) {
@@ -56,38 +48,38 @@ public class BibInfoSerializer {
         try {
             wf = new BibInfoSerializer();
             BiblioType biblioResult = wf.generateBiblioTypeResult();
-            wf.writeXml(biblioResult, args);
+            wf.writeXml(biblioResult, args[0]);
         } catch (BibReaderException e) {
             System.err.println("Could not instantiate data generator.");
             e.printStackTrace();
             System.exit(1);
-        } catch (FileNotFoundException e) {
-            System.err.println("Could not find output file.");
-            e.printStackTrace();
         } catch (DatatypeConfigurationException e) {
-            System.err.println("Could not instantiate GregorianCalendar");
+            System.err.println("Could not instantiate XMLGregorianCalendar");
             e.printStackTrace();
+            System.exit(1);
         }
     }
 
+    /**
+     * Handles the generation of the BiblioType object, starting from the journal to retrieve the issueId necessary to the article
+     *
+     * @return
+     * @throws DatatypeConfigurationException
+     */
     private BiblioType generateBiblioTypeResult() throws DatatypeConfigurationException {
         BiblioType biblioResult = new BiblioType();
         handleJournals(biblioResult);
-        handleItems(biblioResult);
 
-//        biblioResult.getBook().forEach(bookType -> System.out.println(bookType.getTitle()));
-//        biblioResult.getArticle().forEach(articleType -> System.out.println(articleType.getTitle()));
-//        biblioResult.getJournal().forEach(journalType -> System.out.println(journalType.getTitle()));
         return biblioResult;
     }
 
-
-    private void writeXml(BiblioType biblioResult, String[] args) throws FileNotFoundException {
-        String outputFileName = System.getProperty("it.polito.dp2.BIB.Random.output", "xsd/biblio_e.xml");
-        if (args[0] != null)
-            outputFileName = args[0];
-        else
-            outputFileName = "xsd/biblio_e.xml";
+    /**
+     * Handles the marshaling operation, writing the xml output to the given file
+     *
+     * @param biblioResult
+     * @param outputFileName
+     */
+    private void writeXml(BiblioType biblioResult, String outputFileName) {
         ObjectFactory objectFactory = new ObjectFactory();
         JAXBElement<BiblioType> biblio = objectFactory.createBiblio(biblioResult);
 
@@ -95,48 +87,113 @@ public class BibInfoSerializer {
             JAXBContext context = JAXBContext.newInstance(BiblioType.class);
             Marshaller marshaller = context.createMarshaller();
             marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
-            marshaller.setProperty(Marshaller.JAXB_ENCODING, "UTF-8");
             marshaller.marshal(biblio, new File(outputFileName));
         } catch (JAXBException e) {
             System.err.println("JAXB marshal error.");
             e.printStackTrace();
+            System.exit(1);
         }
     }
 
-    private void handleItems(BiblioType biblioResult) throws DatatypeConfigurationException {
+
+    /**
+     * Handles the generation of journal
+     * Uses counterI to produce an unique id for the issues and mapIssueID to store them for the article
+     *
+     * @param biblioType
+     * @throws DatatypeConfigurationException
+     */
+    private void handleJournals(BiblioType biblioType) throws DatatypeConfigurationException {
+        Set<JournalReader> set = monitor.getJournals(null);
+        int counterI = 0;
+        XMLGregorianCalendar calendar;
+        JournalType journalType;
+        Map<String, Integer> mapIssueID = new HashMap<>(); // key = ISSN + issue number
+
+        for (JournalReader journalSource : set) {
+            journalType = new JournalType();
+
+            //journal attribute
+            journalType.setISSN(journalSource.getISSN());
+
+            //journal element
+            journalType.setTitle(journalSource.getTitle());
+            journalType.setPublisher(journalSource.getPublisher());
+
+            JournalType.Issue issueType;
+            List<IssueReader> issueReaderSet = journalSource.getIssues(0, 3000).stream().sorted(Comparator.comparingInt(i -> (i.getYear() + i.getNumber()))).collect(Collectors.toList());
+
+            for (IssueReader issueSource : issueReaderSet) {
+                issueType = new JournalType.Issue();
+
+                calendar = DatatypeFactory.newInstance().newXMLGregorianCalendar();
+                calendar.setYear(issueSource.getYear());
+                issueType.setYear(calendar);
+
+                issueType.setNumber(BigInteger.valueOf(issueSource.getNumber()));
+                issueType.setId(BigInteger.valueOf(counterI));
+
+                mapIssueID.put(journalType.getISSN() + issueType.getNumber(), counterI++);
+                journalType.getIssue().add(issueType);
+            }
+
+            biblioType.getJournal().add(journalType);
+        }
+
+        handleItems(biblioType, mapIssueID);
+    }
+
+
+    /**
+     * Handles the generation of book and article starting from an item
+     * Uses counterBA to produce an unique id and mapItemId to store the id already produced for an item citedBy
+     *
+     * @param biblioResult
+     * @param mapIssueID
+     * @throws DatatypeConfigurationException
+     */
+    private void handleItems(BiblioType biblioResult, Map<String, Integer> mapIssueID) throws DatatypeConfigurationException {
         Set<ItemReader> set = monitor.getItems(null, 0, 3000);
         XMLGregorianCalendar calendar;
-
+        int counterBA = 0;
+        Map<String, BigInteger> mapItemID = new HashMap<>();
         BookType bookType;
         ArticleType articleType;
+
         for (ItemReader item : set) {
             bookType = new BookType();
             articleType = new ArticleType();
-
 
             if (item instanceof ArticleReader) {
                 ArticleReader articleSource = (ArticleReader) item;
 
                 //article attribute
-                if (mapKnownId.containsKey(articleSource.getTitle()))
-                    articleType.setId(mapKnownId.get(articleSource.getTitle()));
-                else
-                    articleType.setId(BigInteger.valueOf(counterBA++));
-
+                mapItemID.keySet().forEach(System.out::println);
+                if (mapItemID.containsKey(articleSource.getTitle())) {
+                    articleType.setId(mapItemID.get(articleSource.getTitle()));
+                } else {
+                    articleType.setId(BigInteger.valueOf(counterBA));
+                    mapItemID.put(articleSource.getTitle(), BigInteger.valueOf(counterBA));
+                    counterBA++;
+                }
                 articleType.setJournal(articleSource.getJournal().getISSN());
-                articleType.setIssue(BigInteger.valueOf(articleSource.getIssue().getNumber()));
+                articleType.setIssue(BigInteger.valueOf(mapIssueID.get(articleType.getJournal() + articleSource.getIssue().getNumber())));
 
                 //article element
                 articleType.getAuthor().addAll(Arrays.asList(articleSource.getAuthors()));
                 articleType.setTitle(articleSource.getTitle());
                 articleType.setSubtitle(articleSource.getSubtitle());
 
+                mapItemID.keySet().forEach(System.out::println);
+
                 for (ItemReader citing : articleSource.getCitingItems()) {
-                    if (mapKnownId.containsKey(citing.getTitle())) {
-                        articleType.getCitedBy().add(mapKnownId.get(citing.getTitle()));
+                    if (mapItemID.containsKey(citing.getTitle())) {
+                        articleType.getCitedBy().add(mapItemID.get(citing.getTitle()));
                     } else {
-                        mapKnownId.put(citing.getTitle(), BigInteger.valueOf(counterBA));
-                        articleType.getCitedBy().add(BigInteger.valueOf(counterBA++));
+                        mapItemID.put(citing.getTitle(), BigInteger.valueOf(counterBA));
+                        articleType.getCitedBy().add(BigInteger.valueOf(counterBA));
+                        counterBA++;
+
                     }
                 }
 
@@ -146,11 +203,13 @@ public class BibInfoSerializer {
                 BookReader bookSource = (BookReader) item;
 
                 //book attribute
-                if (mapKnownId.containsKey(bookSource.getTitle()))
-                    bookType.setId(mapKnownId.get(bookSource.getTitle()));
-                else
-                    bookType.setId(BigInteger.valueOf(counterBA++));
-
+                if (mapItemID.containsKey(bookSource.getTitle())) {
+                    bookType.setId(mapItemID.get(bookSource.getTitle()));
+                } else {
+                    bookType.setId(BigInteger.valueOf(counterBA));
+                    mapItemID.put(bookSource.getTitle(), BigInteger.valueOf(counterBA));
+                    counterBA++;
+                }
                 bookType.setISBN(bookSource.getISBN());
 
                 calendar = DatatypeFactory.newInstance().newXMLGregorianCalendar();
@@ -163,51 +222,18 @@ public class BibInfoSerializer {
                 bookType.setSubtitle(bookSource.getSubtitle());
 
                 for (ItemReader citing : bookSource.getCitingItems()) {
-                    if (mapKnownId.containsKey(citing.getTitle())) {
-                        bookType.getCitedBy().add(mapKnownId.get(citing.getTitle()));
+                    if (mapItemID.containsKey(citing.getTitle())) {
+                        bookType.getCitedBy().add(mapItemID.get(citing.getTitle()));
                     } else {
-                        mapKnownId.put(citing.getTitle(), BigInteger.valueOf(counterBA));
-                        bookType.getCitedBy().add(BigInteger.valueOf(counterBA++));
+                        mapItemID.put(citing.getTitle(), BigInteger.valueOf(counterBA));
+                        bookType.getCitedBy().add(BigInteger.valueOf(counterBA));
+                        counterBA++;
                     }
                 }
-
                 bookType.setPublisher(bookSource.getPublisher());
 
                 biblioResult.getBook().add(bookType);
             }
-        }
-    }
-
-
-    private void handleJournals(BiblioType biblioType) throws DatatypeConfigurationException {
-        Set<JournalReader> set = monitor.getJournals(null);
-        XMLGregorianCalendar calendar;
-        JournalType journalType;
-        for (JournalReader journalSource : set) {
-            journalType = new JournalType();
-
-            //journal attribute
-            journalType.setISSN(journalSource.getISSN());
-
-            //journal element
-            journalType.setTitle(journalSource.getTitle());
-            journalType.setPublisher(journalSource.getPublisher());
-
-            JournalType.Issue issueType;
-            for (IssueReader issueSource : journalSource.getIssues(0, 3000)) {
-                issueType = new JournalType.Issue();
-
-                calendar = DatatypeFactory.newInstance().newXMLGregorianCalendar();
-                calendar.setYear(issueSource.getYear());
-                issueType.setYear(calendar);
-
-                issueType.setNumber(BigInteger.valueOf(issueSource.getNumber()));
-                issueType.setId(BigInteger.valueOf(counterI++));
-
-                journalType.getIssue().add(issueType);
-            }
-
-            biblioType.getJournal().add(journalType);
         }
     }
 }
