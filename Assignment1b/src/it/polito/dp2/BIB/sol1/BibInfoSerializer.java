@@ -27,8 +27,7 @@ public class BibInfoSerializer {
     private Integer counterI;
 
 
-
-    Map<String, BigInteger> mapKnownId = new HashMap<>();
+    private Map<String, BigInteger> mapKnownId;
 
 
     /**
@@ -39,6 +38,7 @@ public class BibInfoSerializer {
     public BibInfoSerializer() throws BibReaderException, DatatypeConfigurationException {
         BibReaderFactory factory = BibReaderFactory.newInstance();
         monitor = factory.newBibReader();
+        mapKnownId = new HashMap<>();
         counterBA = 0;
         counterI = 0;
     }
@@ -75,14 +75,14 @@ public class BibInfoSerializer {
         handleJournals(biblioResult);
         handleItems(biblioResult);
 
-        biblioResult.getBook().forEach(bookType -> System.out.println(bookType.getTitle()));
-        biblioResult.getArticle().forEach(articleType -> System.out.println(articleType.getTitle()));
-        biblioResult.getJournal().forEach(journalType -> System.out.println(journalType.getTitle()));
+//        biblioResult.getBook().forEach(bookType -> System.out.println(bookType.getTitle()));
+//        biblioResult.getArticle().forEach(articleType -> System.out.println(articleType.getTitle()));
+//        biblioResult.getJournal().forEach(journalType -> System.out.println(journalType.getTitle()));
         return biblioResult;
     }
 
 
-    public void writeXml(BiblioType biblioResult, String[] args) throws FileNotFoundException {
+    private void writeXml(BiblioType biblioResult, String[] args) throws FileNotFoundException {
         String outputFileName = System.getProperty("it.polito.dp2.BIB.Random.output", "xsd/biblio_e.xml");
         if (args[0] != null)
             outputFileName = args[0];
@@ -103,7 +103,7 @@ public class BibInfoSerializer {
         }
     }
 
-    private BiblioType handleItems(BiblioType biblioResult) throws DatatypeConfigurationException {
+    private void handleItems(BiblioType biblioResult) throws DatatypeConfigurationException {
         Set<ItemReader> set = monitor.getItems(null, 0, 3000);
         XMLGregorianCalendar calendar;
 
@@ -135,8 +135,8 @@ public class BibInfoSerializer {
                     if (mapKnownId.containsKey(citing.getTitle())) {
                         articleType.getCitedBy().add(mapKnownId.get(citing.getTitle()));
                     } else {
-                        mapKnownId.put(citing.getTitle(), BigInteger.valueOf(counterBA++));
-                        articleType.getCitedBy().add(BigInteger.valueOf(counterBA));
+                        mapKnownId.put(citing.getTitle(), BigInteger.valueOf(counterBA));
+                        articleType.getCitedBy().add(BigInteger.valueOf(counterBA++));
                     }
                 }
 
@@ -166,8 +166,8 @@ public class BibInfoSerializer {
                     if (mapKnownId.containsKey(citing.getTitle())) {
                         bookType.getCitedBy().add(mapKnownId.get(citing.getTitle()));
                     } else {
-                        mapKnownId.put(citing.getTitle(), BigInteger.valueOf(counterBA++));
-                        bookType.getCitedBy().add(BigInteger.valueOf(counterBA));
+                        mapKnownId.put(citing.getTitle(), BigInteger.valueOf(counterBA));
+                        bookType.getCitedBy().add(BigInteger.valueOf(counterBA++));
                     }
                 }
 
@@ -176,12 +176,10 @@ public class BibInfoSerializer {
                 biblioResult.getBook().add(bookType);
             }
         }
-
-        return biblioResult;
     }
 
 
-    private BiblioType handleJournals(BiblioType biblioType) throws DatatypeConfigurationException {
+    private void handleJournals(BiblioType biblioType) throws DatatypeConfigurationException {
         Set<JournalReader> set = monitor.getJournals(null);
         XMLGregorianCalendar calendar;
         JournalType journalType;
@@ -211,8 +209,5 @@ public class BibInfoSerializer {
 
             biblioType.getJournal().add(journalType);
         }
-
-        return biblioType;
     }
-
 }
