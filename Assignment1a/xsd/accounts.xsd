@@ -1,32 +1,58 @@
 <?xml version="1.0"?>
 <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
 
-    <xsd:element name="accountList">
+    <xsd:element name="bank">
         <xsd:complexType>
             <xsd:sequence>
-                <xsd:element name="account" type="account" minOccurs="1" maxOccurs="unbounded">
-                    <xsd:unique name="yearOperationsKey">
-                        <xsd:selector xpath="yearOperations"/>
-                        <xsd:field xpath="@year"/>
-                    </xsd:unique>
-                    <xsd:unique name="accountHolderIdKey">
-                        <xsd:selector xpath="holder"/>
-                        <xsd:field xpath="@fiscalCode"/>
-                    </xsd:unique>
-                </xsd:element>
+                <xsd:element name="accounts" type="AccountListType"/>
+                <xsd:element name="holders" type="HolderListType"/>
             </xsd:sequence>
         </xsd:complexType>
 
+<!--    guarantee the account number uniqueness-->
         <xsd:unique name="accountNumKey">
-            <xsd:selector xpath="account"/>
+            <xsd:selector xpath="accounts/account"/>
             <xsd:field xpath="@number"/>
         </xsd:unique>
 
+<!--    guarantee the fiscalCode uniqueness into the bank system-->
+        <xsd:key name="cfKey">
+            <xsd:selector xpath="holders/holder"/>
+            <xsd:field xpath="@fiscalCode"/>
+        </xsd:key>
+
+<!--    guarantee that no holder with the same name have the same cf through out the document-->
+        <xsd:keyref name="cfRef" refer="cfKey">
+            <xsd:selector xpath="accounts/account/holder"/>
+            <xsd:field xpath="."/>
+        </xsd:keyref>
     </xsd:element>
 
-    <xsd:complexType name="account">
+
+    <xsd:complexType name="AccountListType">
+        <xsd:sequence>
+            <xsd:element name="account" type="AccountType" minOccurs="1" maxOccurs="unbounded">
+                <xsd:unique name="cfHolderUnique">
+                    <xsd:selector xpath="holder"/>
+                    <xsd:field xpath="."/>
+                </xsd:unique>
+                <xsd:unique name="yearOperationsKey">
+                    <xsd:selector xpath="yearOperations"/>
+                    <xsd:field xpath="@year"/>
+                </xsd:unique>
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:complexType name="HolderListType">
         <xsd:sequence>
             <xsd:element name="holder" type="HolderType" minOccurs="1" maxOccurs="unbounded"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:complexType name="AccountType">
+        <xsd:sequence>
+            <xsd:element name="holder" type="xsd:string" minOccurs="1" maxOccurs="unbounded"/>
             <xsd:element name="yearOperations" type="YearOperationsType" minOccurs="0" maxOccurs="unbounded"/>
         </xsd:sequence>
         <xsd:attribute name="number" type="xsd:positiveInteger" use="required"/>
@@ -34,8 +60,12 @@
 
     <xsd:complexType name="HolderType">
         <xsd:attribute name="name" type="xsd:string" use="required"/>
-        <xsd:attribute name="fiscalCode" type="fiscalCodeType" use="required"/>
+        <xsd:attribute name="fiscalCode" type="FiscalCodeType" use="required"/>
         <xsd:attribute name="address" type="xsd:string" use="required"/>
+    </xsd:complexType>
+
+    <xsd:complexType name="HolderCFType">
+        <xsd:attribute name="fiscalCode" type="FiscalCodeType" use="required"/>
     </xsd:complexType>
 
     <xsd:complexType name="YearOperationsType">
@@ -59,7 +89,7 @@
         <xsd:attribute name="amount" type="Currency" use="required"/>
     </xsd:complexType>
 
-    <xsd:simpleType name="fiscalCodeType">
+    <xsd:simpleType name="FiscalCodeType">
         <xsd:restriction base="xsd:string">
             <xsd:pattern value="[a-zA-Z0-9]{16}"/>
         </xsd:restriction>
