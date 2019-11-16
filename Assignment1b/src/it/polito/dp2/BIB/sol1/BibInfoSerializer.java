@@ -88,7 +88,7 @@ public class BibInfoSerializer {
         JAXBElement<BiblioType> biblio = objectFactory.createBiblio(biblioResult);
 
         try {
-            JAXBContext context = JAXBContext.newInstance(BiblioType.class);
+            JAXBContext context = JAXBContext.newInstance(ObjectFactory.class);
             Marshaller marshaller = context.createMarshaller();
             marshaller.setSchema(schemaFactory.newSchema(new File("xsd/biblio_e.xsd")));
             marshaller.setProperty(Marshaller.JAXB_SCHEMA_LOCATION,

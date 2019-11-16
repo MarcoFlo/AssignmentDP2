@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<ns3:biblio xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ns3="http://pad.polito.it/dp2/biblio_e" xsi:schemaLocation="http://pad.polito.it/dp2/biblio_e biblio_e.xsd">
+<ns2:biblio xmlns:ns2="http://pad.polito.it/dp2/biblio_e" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://pad.polito.it/dp2/biblio_e biblio_e.xsd">
     <article journal="1551-3203" issue="7" id="0">
         <author>M. Cheminod</author>
         <author>A. Pironti</author>
@@ -45,4 +45,4 @@
         <issue id="14" year="2022" number="5"/>
         <issue id="15" year="2025" number="5"/>
     </journal>
-</ns3:biblio>
+</ns2:biblio>

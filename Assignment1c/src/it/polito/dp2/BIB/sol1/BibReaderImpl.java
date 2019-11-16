@@ -5,6 +5,7 @@ import it.polito.dp2.BIB.BookReader;
 import it.polito.dp2.BIB.ItemReader;
 import it.polito.dp2.BIB.JournalReader;
 import it.polito.dp2.BIB.sol1.jaxb.BiblioType;
+import it.polito.dp2.BIB.sol1.jaxb.JournalType;
 import it.polito.dp2.BIB.sol1.jaxb.ObjectFactory;
 import org.xml.sax.SAXException;
 
@@ -17,12 +18,15 @@ import javax.xml.validation.SchemaFactory;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.util.HashSet;
 import java.util.Set;
 
-public class BibReader implements it.polito.dp2.BIB.BibReader {
+public class BibReaderImpl implements it.polito.dp2.BIB.BibReader {
     private String schemaFilename = "xsd/biblio_e.xsd";
+    private BiblioType biblioType;
 
-    public BibReader() throws Exception {
+    public BibReaderImpl() throws Exception {
+        System.out.println("My BibreaderImpl");
         String inputFileName = System.getProperty("it.polito.dp2.BIB.sol1.BibInfo.file", "xsd/biblio_e.xml");
         SchemaFactory sf = SchemaFactory.newInstance(XMLConstants.W3C_XML_SCHEMA_NS_URI);
         JAXBContext jaxbContext = JAXBContext.newInstance(ObjectFactory.class);
@@ -30,10 +34,9 @@ public class BibReader implements it.polito.dp2.BIB.BibReader {
 
         try {
             unmarshaller.setSchema(sf.newSchema(new File(schemaFilename)));
-            BiblioType biblioType = (BiblioType) ((JAXBElement<BiblioType>) unmarshaller.unmarshal(new FileInputStream(inputFileName))).getValue();
+            biblioType = ((JAXBElement<BiblioType>) unmarshaller.unmarshal(new FileInputStream(inputFileName))).getValue();
 
             biblioType.getBook().forEach(bookType -> System.out.println(bookType.getTitle()));
-
         } catch (FileNotFoundException e) {
             System.err.println("Schema file: " + schemaFilename + " not available");
         } catch (SAXException e) {
@@ -53,7 +56,15 @@ public class BibReader implements it.polito.dp2.BIB.BibReader {
 
     @Override
     public Set<JournalReader> getJournals(String s) {
-        return null;
+        Set<JournalReader> result = new HashSet();
+        JournalReaderImpl journalReaderImpl;
+        for (JournalType journalType : biblioType.getJournal()) {
+
+            journalReaderImpl = new JournalReaderImpl(journalType);
+
+            result.add(journalReaderImpl);
+        }
+        return result;
     }
 
     @Override

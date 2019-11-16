@@ -5,9 +5,9 @@ import it.polito.dp2.BIB.BibReaderException;
 public class BibReaderFactory extends it.polito.dp2.BIB.BibReaderFactory {
 
     @Override
-    public BibReader newBibReader() throws BibReaderException {
+    public BibReaderImpl newBibReader() throws BibReaderException {
         try {
-            return new BibReader();
+            return new BibReaderImpl();
         } catch (Exception e) {
             throw new BibReaderException(e);
         }
