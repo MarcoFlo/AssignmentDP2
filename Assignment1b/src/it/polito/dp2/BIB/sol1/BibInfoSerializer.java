@@ -14,11 +14,13 @@ import it.polito.dp2.BIB.IssueReader;
 import it.polito.dp2.BIB.ItemReader;
 import it.polito.dp2.BIB.JournalReader;
 import it.polito.dp2.BIB.sol1.jaxb.*;
+import org.xml.sax.SAXException;
 
 import javax.xml.bind.*;
 import javax.xml.datatype.DatatypeConfigurationException;
 import javax.xml.datatype.DatatypeFactory;
 import javax.xml.datatype.XMLGregorianCalendar;
+import javax.xml.validation.SchemaFactory;
 
 
 public class BibInfoSerializer {
@@ -81,15 +83,26 @@ public class BibInfoSerializer {
      */
     private void writeXml(BiblioType biblioResult, String outputFileName) {
         ObjectFactory objectFactory = new ObjectFactory();
+        SchemaFactory schemaFactory = SchemaFactory.newInstance("http://www.w3.org/2001/XMLSchema");
         JAXBElement<BiblioType> biblio = objectFactory.createBiblio(biblioResult);
 
         try {
             JAXBContext context = JAXBContext.newInstance(BiblioType.class);
             Marshaller marshaller = context.createMarshaller();
+            marshaller.setSchema(schemaFactory.newSchema(new File("xsd/biblio_e.xsd")));
+            marshaller.setProperty(Marshaller.JAXB_SCHEMA_LOCATION,
+                    "http://pad.polito.it/dp2/biblio_e biblio_e.xsd");
             marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
+
+
             marshaller.marshal(biblio, new File(outputFileName));
         } catch (JAXBException e) {
             System.err.println("JAXB marshal error.");
+            e.printStackTrace();
+            System.exit(1);
+        }
+        catch (SAXException e) {
+            System.err.println("Schema loading error.");
             e.printStackTrace();
             System.exit(1);
         }
