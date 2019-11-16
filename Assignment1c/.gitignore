@@ -1,0 +1,16 @@
+/.idea/
+/.idea/libraries/
+/.idea/libraries/ass1.xml
+/.idea/libraries/BIB.xml
+/.idea/libraries/BIBRandom.xml
+/.idea/libraries/hamcrest_core_1_3.xml
+/.idea/libraries/junit_4_12.xml
+/.idea/$PRODUCT_WORKSPACE_FILE$
+/.idea/.gitignore
+/.idea/ant.xml
+/.idea/Assignment1c.iml
+/.idea/misc.xml
+/.idea/modules.xml
+/.idea/vcs.xml
+/.idea/workspace.xml
+/build/
