@@ -4,37 +4,57 @@ import it.polito.dp2.BIB.ArticleReader;
 import it.polito.dp2.BIB.IssueReader;
 import it.polito.dp2.BIB.ItemReader;
 import it.polito.dp2.BIB.JournalReader;
+import it.polito.dp2.BIB.sol1.jaxb.ArticleType;
 
+import java.util.HashSet;
 import java.util.Set;
 
 public class ArticleReaderImpl implements ArticleReader {
+    private ArticleType articleType;
+    private JournalReaderImpl journalReader;
+    private IssueReaderImpl issueReader;
+    private Set<ItemReader> citingItems;
+
+    public ArticleReaderImpl(ArticleType articleType, JournalReaderImpl journalReader, IssueReaderImpl issueReader) {
+        this.articleType = articleType;
+        this.journalReader = journalReader;
+        this.issueReader = issueReader;
+        citingItems = new HashSet<>();
+    }
+
     @Override
     public JournalReader getJournal() {
-        return null;
+        return journalReader;
     }
 
     @Override
     public IssueReader getIssue() {
-        return null;
+        return issueReader;
     }
 
     @Override
     public String[] getAuthors() {
-        return new String[0];
+        return articleType.getAuthor().toArray(new String[0]);
     }
 
     @Override
     public String getTitle() {
-        return null;
+        return articleType.getTitle();
     }
 
     @Override
     public String getSubtitle() {
-        return null;
+        return articleType.getSubtitle();
     }
 
     @Override
     public Set<ItemReader> getCitingItems() {
-        return null;
+        return citingItems;
     }
+
+    public void addCitingItem(ItemReader itemReader)
+    {
+        citingItems.add(itemReader);
+    }
+
 }

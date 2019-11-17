@@ -1,19 +1,27 @@
 package it.polito.dp2.BIB.sol1;
 
 import it.polito.dp2.BIB.IssueReader;
+import it.polito.dp2.BIB.JournalReader;
 import it.polito.dp2.BIB.sol1.jaxb.JournalType;
 
+import java.math.BigInteger;
 import java.util.*;
 import java.util.stream.Collectors;
 
-public class JournalReaderImpl implements it.polito.dp2.BIB.JournalReader {
+import static java.util.stream.Collectors.mapping;
+import static java.util.stream.Collectors.toList;
+
+public class JournalReaderImpl implements JournalReader {
 
     private JournalType journalType;
-    private TreeMap<Integer, List<IssueReaderImpl>> issueYear;
+    private TreeMap<Integer, List<BigInteger>> issueByYear;
+    private HashMap<BigInteger, IssueReaderImpl> issueById;
 
     public JournalReaderImpl(JournalType journalType) {
         this.journalType = journalType;
-        issueYear = (TreeMap<Integer, List<IssueReaderImpl>>) journalType.getIssue().stream().map(issue -> new IssueReaderImpl(issue, this)).collect(Collectors.groupingBy(IssueReaderImpl::getYear));
+        //.map(issue -> new IssueReaderImpl(issue, this))
+        issueByYear = journalType.getIssue().stream().collect(Collectors.groupingBy(issue -> issue.getYear().getYear(), TreeMap::new, mapping(JournalType.Issue::getId, toList())));
+        issueById = journalType.getIssue().stream().collect(Collectors.toMap(JournalType.Issue::getId, issue -> new IssueReaderImpl(issue, this), (prev, post) -> post, HashMap::new));
     }
 
     @Override
@@ -34,16 +42,23 @@ public class JournalReaderImpl implements it.polito.dp2.BIB.JournalReader {
     @Override
     public Set<IssueReader> getIssues(int since, int to) {
         if (since <= to)
-            return issueYear.subMap(since, to + 1).values().stream().flatMap(List::stream).collect(Collectors.toSet());
+            return issueByYear.subMap(since, to + 1).values().stream().flatMap(List::stream).map(issueId -> issueById.get(issueId)).collect(Collectors.toSet());
         else
             return Collections.emptySet();
     }
 
     @Override
     public IssueReader getIssue(int year, int number) {
-        if (issueYear.containsKey(year))
-            return issueYear.get(year).get(number);
-        else
-            return null;
+        if (issueByYear.containsKey(year)) {
+            Optional<IssueReaderImpl> numberExist = issueByYear.get(year).stream().map(issueId -> issueById.get(issueId)).filter(issueReader -> issueReader.getNumber() == number).findFirst();
+            if (numberExist.isPresent())
+                return numberExist.get();
+        }
+
+        return null;
+    }
+
+    public IssueReaderImpl getIssueReaderById(BigInteger bigInteger) {
+        return issueById.get(bigInteger);
     }
 }
