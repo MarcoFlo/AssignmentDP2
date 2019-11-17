@@ -52,7 +52,7 @@ public class ArticleReaderImpl implements ArticleReader {
         return citingItems;
     }
 
-    public void addCitingItem(ItemReader itemReader)
+    void addCitingItem(ItemReader itemReader)
     {
         citingItems.add(itemReader);
     }

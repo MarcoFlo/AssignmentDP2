@@ -182,7 +182,6 @@ public class BibInfoSerializer {
                 ArticleReader articleSource = (ArticleReader) item;
 
                 //article attribute
-                mapItemID.keySet().forEach(System.out::println);
                 if (mapItemID.containsKey(articleSource.getTitle())) {
                     articleType.setId(mapItemID.get(articleSource.getTitle()));
                 } else {
@@ -198,7 +197,6 @@ public class BibInfoSerializer {
                 articleType.setTitle(articleSource.getTitle());
                 articleType.setSubtitle(articleSource.getSubtitle());
 
-                mapItemID.keySet().forEach(System.out::println);
 
                 for (ItemReader citing : articleSource.getCitingItems()) {
                     if (mapItemID.containsKey(citing.getTitle())) {

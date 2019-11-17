@@ -8,9 +8,9 @@ import java.util.HashSet;
 import java.util.Set;
 
 public class IssueReaderImpl implements it.polito.dp2.BIB.IssueReader {
-    JournalType.Issue issue;
-    JournalReaderImpl journalReader;
-    Set<ArticleReader> articleReaderSet;
+    private JournalType.Issue issue;
+    private JournalReaderImpl journalReader;
+    private Set<ArticleReader> articleReaderSet;
 
     public IssueReaderImpl(JournalType.Issue issue, JournalReaderImpl journalReader) {
         this.issue = issue;
@@ -39,7 +39,7 @@ public class IssueReaderImpl implements it.polito.dp2.BIB.IssueReader {
     }
 
 
-    public void addArticle(ArticleReaderImpl articleReader) {
+    void addArticle(ArticleReaderImpl articleReader) {
         articleReaderSet.add(articleReader);
     }
 }

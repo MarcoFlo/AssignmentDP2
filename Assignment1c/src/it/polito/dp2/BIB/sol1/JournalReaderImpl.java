@@ -19,7 +19,6 @@ public class JournalReaderImpl implements JournalReader {
 
     public JournalReaderImpl(JournalType journalType) {
         this.journalType = journalType;
-        //.map(issue -> new IssueReaderImpl(issue, this))
         issueByYear = journalType.getIssue().stream().collect(Collectors.groupingBy(issue -> issue.getYear().getYear(), TreeMap::new, mapping(JournalType.Issue::getId, toList())));
         issueById = journalType.getIssue().stream().collect(Collectors.toMap(JournalType.Issue::getId, issue -> new IssueReaderImpl(issue, this), (prev, post) -> post, HashMap::new));
     }
@@ -58,7 +57,7 @@ public class JournalReaderImpl implements JournalReader {
         return null;
     }
 
-    public IssueReaderImpl getIssueReaderById(BigInteger bigInteger) {
+    IssueReaderImpl getIssueReaderById(BigInteger bigInteger) {
         return issueById.get(bigInteger);
     }
 }

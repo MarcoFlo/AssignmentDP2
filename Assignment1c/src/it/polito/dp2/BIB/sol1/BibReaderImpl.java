@@ -20,13 +20,13 @@ import java.util.stream.Collectors;
 
 public class BibReaderImpl implements it.polito.dp2.BIB.BibReader {
     private String schemaFilename = "xsd/biblio_e.xsd";
-    private BiblioType biblioType;
-    private TreeMap<Integer, ItemReaderImpl> mapItemByYear;
+    private TreeMap<Integer, List<ItemReader>> mapItemByYear;
     private TreeMap<String, BookReaderImpl> mapBookByIsbn;
     private HashMap<String, JournalReaderImpl> journalByIssn;
 
     public BibReaderImpl() throws Exception {
-        System.out.println("My BibreaderImpl");
+        mapItemByYear = new TreeMap<>();
+        mapBookByIsbn = new TreeMap<>();
         String inputFileName = System.getProperty("it.polito.dp2.BIB.sol1.BibInfo.file", "xsd/biblio_e.xml");
         SchemaFactory sf = SchemaFactory.newInstance(XMLConstants.W3C_XML_SCHEMA_NS_URI);
         JAXBContext jaxbContext = JAXBContext.newInstance(ObjectFactory.class);
@@ -34,9 +34,9 @@ public class BibReaderImpl implements it.polito.dp2.BIB.BibReader {
 
         try {
             unmarshaller.setSchema(sf.newSchema(new File(schemaFilename)));
-            biblioType = ((JAXBElement<BiblioType>) unmarshaller.unmarshal(new FileInputStream(inputFileName))).getValue();
+            BiblioType biblioType = ((JAXBElement<BiblioType>) unmarshaller.unmarshal(new FileInputStream(inputFileName))).getValue();
             fillDataStructure(biblioType);
-            biblioType.getBook().forEach(bookType -> System.out.println(bookType.getTitle()));
+
         } catch (FileNotFoundException e) {
             System.err.println("Schema file: " + schemaFilename + " not available");
         } catch (SAXException e) {
@@ -47,15 +47,14 @@ public class BibReaderImpl implements it.polito.dp2.BIB.BibReader {
     private void fillDataStructure(BiblioType biblioType) {
         //journal
         journalByIssn = biblioType.getJournal().stream().map(JournalReaderImpl::new).collect(Collectors.toMap(JournalReaderImpl::getISSN, journalReader -> journalReader, (prev, next) -> next, HashMap::new));
-        journalByIssn.values().forEach(journalReader -> System.out.println(journalReader.getTitle()));
 
         //article
         HashMap<BigInteger, ItemReader> mapItemById = biblioType.getArticle().stream().collect(Collectors.toMap(ArticleType::getId, articleType -> {
             JournalReaderImpl journalReader = journalByIssn.get(articleType.getJournal());
             IssueReaderImpl issueReader = journalReader.getIssueReaderById(articleType.getIssue());
-            ArticleReaderImpl result = new ArticleReaderImpl(articleType, journalReader, issueReader);
-            issueReader.addArticle(result);
-            return result;
+            ArticleReaderImpl articleReader = new ArticleReaderImpl(articleType, journalReader, issueReader);
+            issueReader.addArticle(articleReader);
+            return articleReader;
         }, (prev, post) -> post, HashMap::new));
 
         //book
@@ -73,53 +72,72 @@ public class BibReaderImpl implements it.polito.dp2.BIB.BibReader {
         });
 
 
-
-
-
-
-
+        //map construction
+        List<ItemReader> list;
+        for (ItemReader itemReader : mapItemById.values()) {
+            if (itemReader instanceof ArticleReaderImpl) {
+                ArticleReaderImpl articleReader = (ArticleReaderImpl) itemReader;
+                list = mapItemByYear.getOrDefault(articleReader.getIssue().getYear(), new LinkedList<>());
+                list.add(itemReader);
+                mapItemByYear.put(articleReader.getIssue().getYear(), list);
+            }
+            if (itemReader instanceof BookReaderImpl) {
+                BookReaderImpl bookReader = (BookReaderImpl) itemReader;
+                list = mapItemByYear.getOrDefault(bookReader.getYear(), new LinkedList<>());
+                list.add(itemReader);
+                mapItemByYear.put(bookReader.getYear(), list);
+                mapBookByIsbn.put(bookReader.getISBN(), bookReader);
+            }
+        }
     }
 
     /**
      * Gets readers for all the items available in the BIB system whose title contains the specified keyword and whose publication year is between the specified values (between the given "since" and "to" years inclusive; if "to" is lower than "since", an empty set is returned).
      *
-     * @param keyword
-     * @param since
-     * @param to
-     * @return
+     * @param keyword the title keyword for selecting items or null to get all items.
+     * @param since   the publication year since which (inclusive) items have to be selected, or null to get items published since any year.
+     * @param to      the publication date to which (inclusive) items have to be selected, or null to get items published to any year.
+     * @return a set of interfaces for reading the selected items.
      */
     @Override
     public Set<ItemReader> getItems(String keyword, int since, int to) {
-        return null;
+        boolean isNotNull = keyword != null;
+        if (to < since)
+            return Collections.emptySet();
+
+        return mapItemByYear.subMap(since, to + 1).values().stream().flatMap(Collection::parallelStream).filter(itemReader -> itemReader.getTitle().equals(keyword) == isNotNull).collect(Collectors.toSet());
     }
 
     /**
      * Gets a reader for a single book, available in the BIB system, given its ISBN.
      *
-     * @param isbn
-     * @return
+     * @param isbn the ISBN of the book to get.
+     * @return an interface for reading the book with the given ISBN or null if a book with the given ISBN is not available in the system.
      */
     @Override
     public BookReader getBook(String isbn) {
-        return null;
+        return mapBookByIsbn.get(isbn);
     }
 
     /**
      * Gets readers for all the journals available in the BIB system whose title or publisher contains the specified keyword
      *
-     * @param keyword
-     * @return
+     * @param keyword the title/publisher keyword or null to get readers for all journals
+     * @return a set of interfaces for reading the selected journals
      */
     @Override
     public Set<JournalReader> getJournals(String keyword) {
+        if (keyword == null)
+            return new HashSet<>(journalByIssn.values());
+
         return journalByIssn.values().stream().filter(journalReader -> journalReader.getTitle().contains(keyword) || journalReader.getPublisher().contains(keyword)).collect(Collectors.toSet());
     }
 
     /**
      * Gets a reader for a single journal, available in the BIB system, given its ISSN.
      *
-     * @param issn
-     * @return
+     * @param issn the title/publisher keyword or null to get readers for all journals
+     * @return an interface for reading the journal with the given ISSN or null if a journal with the given ISSN is not available in the system.
      */
     @Override
     public JournalReader getJournal(String issn) {
