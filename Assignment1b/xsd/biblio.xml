@@ -23,12 +23,12 @@
     <title>Unix network programming</title>
     <subtitle>Volume 1: The sockets networking API</subtitle>
     <book ISBN="0131411551" year="2004">
-    <publisher>Addison Wesley</publisher>
+      <publisher>Addison Wesley</publisher>
     </book>
   </item>
   <journal ISSN="0141-9331">
-  	<title>Microprocessors and Microsystems</title>
-  	<publisher>Elsevier</publisher>
+    <title>Microprocessors and Microsystems</title>
+    <publisher>Elsevier</publisher>
     <issue id="0" number="7" year="2002"/>
   </journal>
   <journal ISSN="1551-3203">
