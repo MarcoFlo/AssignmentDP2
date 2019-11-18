@@ -21,13 +21,6 @@
         <title>Unix network programming</title>
         <subtitle>Volume 1: The sockets networking API</subtitle>
         <publisher>Addison Wesley</publisher>
-    </book>
-    <book ISBN="0131411951" year="2004" id="3">
-        <author>Bill</author>
-        <author>Andrew</author>
-        <title>Unix network</title>
-        <subtitle>Volume 1</subtitle>
-        <publisher>Addison</publisher>
         <chapter number="0" id="4">
             <author>AAAA</author>
             <title>AAAA</title>
@@ -36,6 +29,23 @@
         <chapter number="1" id="7">
             <author>BBBB</author>
             <title>BBBB</title>
+        </chapter>
+    </book>
+    <book ISBN="0131411951" year="2004" id="3">
+        <author>Bill</author>
+        <author>Andrew</author>
+        <title>Unix network</title>
+        <subtitle>Volume 1</subtitle>
+        <publisher>Addison</publisher>
+        <chapter number="0" id="8">
+            <author>AAAA</author>
+            <title>AAAA</title>
+            <citedBy>14</citedBy>
+        </chapter>
+        <chapter number="1" id="14">
+            <author>BBBB</author>
+            <title>BBBB</title>
+            <citedBy>7</citedBy>
         </chapter>
     </book>
     <journal ISSN="0141-9331">

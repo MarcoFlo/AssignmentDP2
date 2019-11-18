@@ -5,18 +5,7 @@
 
     <element name="biblio" type="tns:BiblioType">
 
-        <unique name="bookIsbnUnique">
-            <selector xpath="book"/>
-            <field xpath="@ISBN"/>
-        </unique>
-        <unique name="numberChapterUnique">
-            <selector xpath="book/chapter"/>
-            <field xpath="@number"/>
-        </unique>
-        <unique name="titleChapterUnique">
-            <selector xpath="book/chapter"/>
-            <field xpath="title"/>
-        </unique>
+
         <unique name="journalTitleUnique">
             <selector xpath="journal"/>
             <field xpath="title"/>
@@ -54,12 +43,25 @@
             <selector xpath="article/citedBy"/>
             <field xpath="."/>
         </keyref>
+        <unique name="bookIsbnUnique">
+            <selector xpath="book"/>
+            <field xpath="@ISBN"/>
+        </unique>
     </element>
 
     <complexType name="BiblioType">
         <sequence>
             <element name="article" type="tns:ArticleType" maxOccurs="unbounded" minOccurs="0"/>
-            <element name="book" type="tns:BookType" maxOccurs="unbounded" minOccurs="0"/>
+            <element name="book" type="tns:BookType" maxOccurs="unbounded" minOccurs="0">
+                <unique name="numberChapterUnique">
+                    <selector xpath="book/chapter"/>
+                    <field xpath="@number"/>
+                </unique>
+                <unique name="titleChapterUnique">
+                    <selector xpath="book/chapter"/>
+                    <field xpath="title"/>
+                </unique>
+            </element>
             <element name="journal" type="tns:JournalType" maxOccurs="unbounded" minOccurs="0">
                 <unique name="issueUniqueness">
                     <selector xpath="issue"/>
