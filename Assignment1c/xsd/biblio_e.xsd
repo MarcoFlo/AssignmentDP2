@@ -22,7 +22,7 @@
             <field xpath="@issue"/>
         </keyref>
         <key name="itemKey">
-            <selector xpath="book | article"/>
+            <selector xpath="./article | ./book"/>
             <field xpath="@id"/>
         </key>
         <keyref name="bookReference" refer="tns:itemKey">
