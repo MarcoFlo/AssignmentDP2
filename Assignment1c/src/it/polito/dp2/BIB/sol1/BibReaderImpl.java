@@ -27,7 +27,10 @@ public class BibReaderImpl implements it.polito.dp2.BIB.BibReader {
     public BibReaderImpl() throws Exception {
         mapItemByYear = new TreeMap<>();
         mapBookByIsbn = new TreeMap<>();
-        String inputFileName = System.getProperty("it.polito.dp2.BIB.sol1.BibInfo.sourceFileName", "xsd/biblio_e.xml");
+        String inputFileName = System.getProperty("it.polito.dp2.BIB.sol1.BibInfo.file");
+        if (inputFileName == null)
+            throw new FileNotFoundException("inputFileName is null");
+
         SchemaFactory sf = SchemaFactory.newInstance(XMLConstants.W3C_XML_SCHEMA_NS_URI);
         JAXBContext jaxbContext = JAXBContext.newInstance(ObjectFactory.class);
         Unmarshaller unmarshaller = jaxbContext.createUnmarshaller();

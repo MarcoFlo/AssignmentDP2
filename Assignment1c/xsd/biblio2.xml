@@ -27,7 +27,8 @@
         <book ISBN="0131411551" year="2004">
             <publisher>Addison Wesley</publisher>
         </book>
-        <citedBy>0</citedBy>
+        <citedBy>2</citedBy>
+        <citedBy>2</citedBy>
     </item>
     <journal ISSN="0141-9331">
         <title>Microprocessors and Microsystems</title>
