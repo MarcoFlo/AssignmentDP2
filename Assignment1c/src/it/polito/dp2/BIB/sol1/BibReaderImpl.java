@@ -39,8 +39,10 @@ public class BibReaderImpl implements it.polito.dp2.BIB.BibReader {
 
         } catch (FileNotFoundException e) {
             System.err.println("Schema file: " + schemaFilename + " not available");
+            throw e;
         } catch (SAXException e) {
             System.err.println("Problems with the schema: " + schemaFilename);
+            throw e;
         }
     }
 
