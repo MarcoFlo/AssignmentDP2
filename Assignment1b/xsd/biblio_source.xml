@@ -7,7 +7,7 @@
     <author>C. Schwaiger</author>
     <title>Achievement of secure Internet access to fieldbus systems</title>
     <article journal="0141-9331" issue="0"/>
-    <citedBy>1</citedBy>
+    <citedBy>0</citedBy>
   </item>
   <item id="1">
     <author>M. Cheminod</author>
@@ -25,6 +25,7 @@
     <book ISBN="0131411551" year="2004">
     <publisher>Addison Wesley</publisher>
     </book>
+    <citedBy>1</citedBy>
   </item>
   <journal ISSN="0141-9331">
   	<title>Microprocessors and Microsystems</title>
@@ -34,17 +35,20 @@
   <journal ISSN="1551-3203">
     <title>IEEE Transactions on Industrial Informatics</title>
     <publisher>IEEE</publisher>
-    <issue id="1" number="1" year="2011"/>
-    <issue id="2" number="2" year="2011"/>
-    <issue id="3" number="3" year="2011"/>
-    <issue id="4" number="4" year="2011"/>
-    <issue id="5" number="5" year="2011"/>
-    <issue id="6" number="6" year="2011"/>
-    <issue id="7" number="7" year="2011"/>
-    <issue id="8" number="8" year="2011"/>
-    <issue id="9" number="9" year="2011"/>
-    <issue id="10" number="10" year="2011"/>
-    <issue id="11" number="11" year="2011"/>
-    <issue id="12" number="12" year="2011"/>
+    <issue id="1" year="2011" number="1"/>
+    <issue id="2" year="2011" number="2"/>
+    <issue id="3" year="2011" number="3"/>
+    <issue id="4" year="2011" number="4"/>
+    <issue id="5" year="2011" number="5"/>
+    <issue id="6" year="2011" number="6"/>
+    <issue id="7" year="2011" number="7"/>
+    <issue id="13" year="2012" number="11"/>
+    <issue id="14" year="2032" number="11"/>
+    <issue id="15" year="2001" number="11"/>
+    <issue id="8" year="2011" number="8"/>
+    <issue id="9" year="2011" number="9"/>
+    <issue id="10" year="2011" number="10"/>
+    <issue id="11" year="2011" number="11"/>
+    <issue id="12" year="2011" number="12"/>
   </journal>
 </tns:biblio>
