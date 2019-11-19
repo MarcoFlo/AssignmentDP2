@@ -20,6 +20,7 @@
         <author>Andrew M. Rudoff</author>
         <title>Unix network programming</title>
         <subtitle>Volume 1: The sockets networking API</subtitle>
+        <citedBy>14</citedBy>
         <publisher>Addison Wesley</publisher>
         <chapter number="0" id="4">
             <author>AAAA</author>
@@ -45,7 +46,7 @@
         <chapter number="1" id="14">
             <author>BBBB</author>
             <title>BBBB</title>
-            <citedBy>7</citedBy>
+            <citedBy>1</citedBy>
         </chapter>
     </book>
     <journal ISSN="0141-9331">
@@ -74,6 +75,6 @@
         <publisher>IEEE</publisher>
         <issue id="13" year="2011" number="1"/>
         <issue id="14" year="2011" number="2"/>
-        <issue id="15" year="2011" number="3"/>
+        <issue id="15" year="2013" number="1"/>
     </journal>
 </ns2:biblio>

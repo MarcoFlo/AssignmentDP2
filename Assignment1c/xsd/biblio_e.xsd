@@ -24,11 +24,11 @@
             <selector xpath="article | book"/>
             <field xpath="@id"/>
         </key>
-        <keyref name="articleBookKeyRef" refer="tns:itemKey">
+        <keyref name="citedByRef" refer="tns:itemKey">
             <selector xpath="article/citedBy | book/citedBy"/>
             <field xpath="."/>
         </keyref>
-        <unique name="bookUnique">
+        <unique name="bookIsbnUnique">
             <selector xpath="book"/>
             <field xpath="@ISBN"/>
         </unique>
