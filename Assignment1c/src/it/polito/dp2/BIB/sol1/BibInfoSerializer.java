@@ -69,7 +69,7 @@ public class BibInfoSerializer {
      * @return
      * @throws DatatypeConfigurationException
      */
-    private BiblioType generateBiblioTypeResult() throws DatatypeConfigurationException {
+    private BiblioType generateBiblioTypeResult() throws DatatypeConfigurationException, BibReaderException {
         BiblioType biblioResult = new BiblioType();
         handleJournals(biblioResult);
 
@@ -101,8 +101,7 @@ public class BibInfoSerializer {
             System.err.println("JAXB marshal error.");
             e.printStackTrace();
             System.exit(1);
-        }
-        catch (SAXException e) {
+        } catch (SAXException e) {
             System.err.println("Schema loading error.");
             e.printStackTrace();
             System.exit(1);
@@ -113,16 +112,17 @@ public class BibInfoSerializer {
     /**
      * Handles the generation of journal
      * Uses counterI to produce an unique id for the issues and mapIssueID to store them for the article
+     * Starts the handleItems function
      *
      * @param biblioType
      * @throws DatatypeConfigurationException
      */
-    private void handleJournals(BiblioType biblioType) throws DatatypeConfigurationException {
+    private void handleJournals(BiblioType biblioType) throws DatatypeConfigurationException, BibReaderException {
         Set<JournalReader> set = monitor.getJournals(null);
         int counterI = 0;
         XMLGregorianCalendar calendar;
         JournalType journalType;
-        Map<String, Integer> mapIssueID = new HashMap<>(); // key = ISSN + issue number
+        Map<String, Integer> mapIssueID = new HashMap<>(); // key = ISSN + issue year + issue number
 
         for (JournalReader journalSource : set) {
             journalType = new JournalType();
@@ -147,7 +147,7 @@ public class BibInfoSerializer {
                 issueType.setNumber(BigInteger.valueOf(issueSource.getNumber()));
                 issueType.setId(BigInteger.valueOf(counterI));
 
-                mapIssueID.put(journalType.getISSN() + issueType.getNumber(), counterI++);
+                mapIssueID.put(journalType.getISSN() + issueType.getYear() + issueType.getNumber(), counterI++);
                 journalType.getIssue().add(issueType);
             }
 
@@ -166,7 +166,7 @@ public class BibInfoSerializer {
      * @param mapIssueID
      * @throws DatatypeConfigurationException
      */
-    private void handleItems(BiblioType biblioResult, Map<String, Integer> mapIssueID) throws DatatypeConfigurationException {
+    private void handleItems(BiblioType biblioResult, Map<String, Integer> mapIssueID) throws DatatypeConfigurationException, BibReaderException {
         Set<ItemReader> set = monitor.getItems(null, 0, 3000);
         XMLGregorianCalendar calendar;
         int counterBA = 0;
@@ -190,8 +190,14 @@ public class BibInfoSerializer {
                     counterBA++;
                 }
                 articleType.setJournal(articleSource.getJournal().getISSN());
-                articleType.setIssue(BigInteger.valueOf(mapIssueID.get(articleType.getJournal() + articleSource.getIssue().getNumber())));
 
+                String issueKey = articleType.getJournal() + articleSource.getIssue().getYear() + articleSource.getIssue().getNumber();
+                if (mapIssueID.containsKey(issueKey))
+                    articleType.setIssue(BigInteger.valueOf(mapIssueID.get(issueKey)));
+                else {
+                    System.err.println("Article issue ref not valid");
+                    throw new BibReaderException();
+                }
                 //article element
                 articleType.getAuthor().addAll(Arrays.asList(articleSource.getAuthors()));
                 articleType.setTitle(articleSource.getTitle());

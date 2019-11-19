@@ -34,6 +34,9 @@
         <title>Microprocessors and Microsystems</title>
         <publisher>Elsevier</publisher>
         <issue id="0" number="7" year="2002"/>
+        <issue id="100" number="7" year="2001"/>
+        <issue id="101" number="7" year="2003"/>
+        <issue id="102" number="7" year="2010"/>
     </journal>
     <journal ISSN="1551-3203">
         <title>IEEE Transactions on Industrial Informatics</title>
@@ -50,5 +53,8 @@
         <issue id="10" number="10" year="2011"/>
         <issue id="11" number="11" year="2011"/>
         <issue id="12" number="12" year="2011"/>
+        <issue id="13" number="12" year="2012"/>
+        <issue id="14" number="12" year="2015"/>
+        <issue id="15" number="12" year="2019"/>
     </journal>
 </tns:biblio>

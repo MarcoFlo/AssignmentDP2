@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <schema xmlns="http://www.w3.org/2001/XMLSchema"
-	    targetNamespace="http://pad.polito.it/dp2/biblio"
-	    xmlns:tns="http://pad.polito.it/dp2/biblio"
+		targetNamespace="http://pad.polito.it/dp2/biblio"
+		xmlns:tns="http://pad.polito.it/dp2/biblio"
 >
-    
-    <element name="biblio">
+
+	<element name="biblio">
 		<complexType>
 			<sequence>
 				<element name="item" type="tns:BiblioItemType" maxOccurs="unbounded" minOccurs="0"/>
@@ -13,7 +13,7 @@
 						<selector xpath="issue" />
 						<field xpath="@year" />
 						<field xpath="@number" />
-					</unique>	
+					</unique>
 				</element>
 			</sequence>
 		</complexType>
@@ -60,12 +60,12 @@
 		</sequence>
 		<attribute name="id" type="integer"/>
 	</complexType>
-	
+
 	<complexType name="ArticleType">
 		<attribute name="journal" type="tns:ISSNCode" use="required"/>
 		<attribute name="issue" type="integer" use="required"/>
 	</complexType>
-	
+
 	<complexType name="BookType">
 		<sequence>
 			<element name="publisher" type="string"></element>
@@ -73,7 +73,7 @@
 		<attribute name="ISBN" type="tns:ISBNCode" use="required"/>
 		<attribute name="year" type="gYear" use="required"/>
 	</complexType>
-	
+
 	<complexType name="JournalType">
 		<sequence>
 			<element name="title" type="string"></element>
@@ -82,26 +82,26 @@
 				<complexType>
 					<attribute name="id" type="integer" use="required"/>
 					<attribute name="year" type="gYear" use="required"/>
-					<attribute name="number" type="positiveInteger" use="required"/>					
+					<attribute name="number" type="positiveInteger" use="required"/>
 				</complexType>
 			</element>
 		</sequence>
 		<attribute name="ISSN" type="tns:ISSNCode" use="required"/>
 	</complexType>
-		
-	<!-- ISBN code is a 10 or 13 digit code. If it is 10 digits long the last digit may be a X -->  
-	<simpleType name="ISBNCode"> 
-	  <restriction base="string"> 
-	   <pattern value="[0-9]{13}"/>
-	   <pattern value="[0-9]{9}([0-9]|X)"/>
-	  </restriction> 
+
+	<!-- ISBN code is a 10 or 13 digit code. If it is 10 digits long the last digit may be a X -->
+	<simpleType name="ISBNCode">
+		<restriction base="string">
+			<pattern value="[0-9]{13}"/>
+			<pattern value="[0-9]{9}([0-9]|X)"/>
+		</restriction>
 	</simpleType>
-	
+
 	<!-- ISSN code is a 8 digit code with a dash dividing the two groups
-	     of 4 digits and the last digit may be a X -->  
-	<simpleType name="ISSNCode"> 
-	  <restriction base="string"> 
-	   <pattern value="[0-9]{4}-[0-9]{3}([0-9]|X)"/>
-	  </restriction> 
+	     of 4 digits and the last digit may be a X -->
+	<simpleType name="ISSNCode">
+		<restriction base="string">
+			<pattern value="[0-9]{4}-[0-9]{3}([0-9]|X)"/>
+		</restriction>
 	</simpleType>
 </schema>
