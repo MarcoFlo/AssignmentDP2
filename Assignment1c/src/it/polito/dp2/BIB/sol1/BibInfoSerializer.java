@@ -94,8 +94,6 @@ public class BibInfoSerializer {
             marshaller.setProperty(Marshaller.JAXB_SCHEMA_LOCATION,
                     "http://pad.polito.it/dp2/biblio_e biblio_e.xsd");
             marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
-
-
             marshaller.marshal(biblio, new File(outputFileName));
         } catch (JAXBException e) {
             System.err.println("JAXB marshal error.");
@@ -153,7 +151,7 @@ public class BibInfoSerializer {
 
             biblioType.getJournal().add(journalType);
         }
-
+//        biblioType.getJournal().sort(Comparator.comparing(JournalType::getTitle));
         handleItems(biblioType, mapIssueID);
     }
 
@@ -253,5 +251,7 @@ public class BibInfoSerializer {
                 biblioResult.getBook().add(bookType);
             }
         }
+//        biblioResult.getArticle().sort(Comparator.comparing(ArticleType::getTitle));
+//        biblioResult.getBook().sort(Comparator.comparing(BookType::getTitle));
     }
 }
