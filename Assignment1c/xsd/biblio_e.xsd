@@ -4,12 +4,11 @@
         xmlns:tns="http://pad.polito.it/dp2/biblio_e">
 
     <element name="biblio" type="tns:BiblioType">
-
         <key name="journalKey">
             <selector xpath="journal"/>
             <field xpath="@ISSN"/>
         </key>
-        <keyref name="journalReference" refer="tns:journalKey">
+        <keyref name="journalKeyRef" refer="tns:journalKey">
             <selector xpath="article"/>
             <field xpath="@journal"/>
         </keyref>
@@ -17,23 +16,19 @@
             <selector xpath="journal/issue"/>
             <field xpath="@id"/>
         </key>
-        <keyref name="issueReference" refer="tns:issueKey">
+        <keyref name="issueKeyRef" refer="tns:issueKey">
             <selector xpath="article"/>
             <field xpath="@issue"/>
         </keyref>
         <key name="itemKey">
-            <selector xpath="./article | ./book"/>
+            <selector xpath="article | book"/>
             <field xpath="@id"/>
         </key>
-        <keyref name="bookReference" refer="tns:itemKey">
-            <selector xpath="book/citedBy"/>
+        <keyref name="articleBookKeyRef" refer="tns:itemKey">
+            <selector xpath="article/citedBy | book/citedBy"/>
             <field xpath="."/>
         </keyref>
-        <keyref name="articleReference" refer="tns:itemKey">
-            <selector xpath="article/citedBy"/>
-            <field xpath="."/>
-        </keyref>
-        <unique name="bookUniqueness">
+        <unique name="bookUnique">
             <selector xpath="book"/>
             <field xpath="@ISBN"/>
         </unique>
@@ -44,7 +39,7 @@
             <element name="article" type="tns:ArticleType" maxOccurs="unbounded" minOccurs="0"/>
             <element name="book" type="tns:BookType" maxOccurs="unbounded" minOccurs="0"/>
             <element name="journal" type="tns:JournalType" maxOccurs="unbounded" minOccurs="0">
-                <unique name="issueUniqueness">
+                <unique name="issueUnique">
                     <selector xpath="issue"/>
                     <field xpath="@year"/>
                     <field xpath="@number"/>
@@ -76,7 +71,7 @@
         <complexContent>
             <extension base="tns:BiblioItemType">
                 <sequence>
-                    <element name="publisher" type="string"></element>
+                    <element name="publisher" type="string"/>
                 </sequence>
                 <attribute name="ISBN" type="tns:ISBNCode" use="required"/>
                 <attribute name="year" type="gYear" use="required"/>
@@ -86,8 +81,8 @@
 
     <complexType name="JournalType">
         <sequence>
-            <element name="title" type="string"></element>
-            <element name="publisher" type="string"></element>
+            <element name="title" type="string"/>
+            <element name="publisher" type="string"/>
             <element name="issue" maxOccurs="unbounded" minOccurs="0">
                 <complexType>
                     <attribute name="id" type="integer" use="required"/>
