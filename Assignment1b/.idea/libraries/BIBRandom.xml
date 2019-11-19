@@ -1,9 +1,0 @@
-<component name="libraryTable">
-  <library name="BIBRandom">
-    <CLASSES>
-      <root url="jar://$PROJECT_DIR$/lib/BIBRandom.jar!/" />
-    </CLASSES>
-    <JAVADOC />
-    <SOURCES />
-  </library>
-</component>
