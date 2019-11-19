@@ -1,6 +1,5 @@
 <?xml version="1.0"?>
 <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-
     <xsd:element name="bank">
         <xsd:complexType>
             <xsd:sequence>
@@ -9,25 +8,25 @@
             </xsd:sequence>
         </xsd:complexType>
 
-<!--    guarantee the account number uniqueness-->
-        <xsd:unique name="accountNumKey">
+        <!--    guarantee the account number uniqueness-->
+        <xsd:unique name="accountNumUnique">
             <xsd:selector xpath="accounts/account"/>
             <xsd:field xpath="@number"/>
         </xsd:unique>
 
-<!--    guarantee the fiscalCode uniqueness into the bank system-->
+        <!--    guarantee the fiscalCode uniqueness into the bank system-->
         <xsd:key name="cfKey">
             <xsd:selector xpath="holders/holder"/>
             <xsd:field xpath="@fiscalCode"/>
         </xsd:key>
 
-<!--    guarantee that no holder with the same name have the same cf through out the document-->
-        <xsd:keyref name="cfRef" refer="cfKey">
+        <!--    Together with cfKey guarantee that no holder with the same name have the same cf through out the document,
+                but at the same time allows the same holder to have different account -->
+        <xsd:keyref name="cfKeyRef" refer="cfKey">
             <xsd:selector xpath="accounts/account/holder"/>
             <xsd:field xpath="."/>
         </xsd:keyref>
     </xsd:element>
-
 
     <xsd:complexType name="AccountListType">
         <xsd:sequence>
@@ -36,7 +35,7 @@
                     <xsd:selector xpath="holder"/>
                     <xsd:field xpath="."/>
                 </xsd:unique>
-                <xsd:unique name="yearOperationsKey">
+                <xsd:unique name="yearOperationsUnique">
                     <xsd:selector xpath="yearOperations"/>
                     <xsd:field xpath="@year"/>
                 </xsd:unique>
@@ -52,7 +51,7 @@
 
     <xsd:complexType name="AccountType">
         <xsd:sequence>
-            <xsd:element name="holder" type="xsd:string" minOccurs="1" maxOccurs="unbounded"/>
+            <xsd:element name="holder" type="FiscalCodeType" minOccurs="1" maxOccurs="unbounded"/>
             <xsd:element name="yearOperations" type="YearOperationsType" minOccurs="0" maxOccurs="unbounded"/>
         </xsd:sequence>
         <xsd:attribute name="number" type="xsd:positiveInteger" use="required"/>
