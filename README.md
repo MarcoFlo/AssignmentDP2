@@ -8,3 +8,9 @@
 - gen-src -> Right click -> Mark Directory as -> Source root  
 - src -> Right click -> Mark Directory as -> Source root  
 - Ant -> add (+ icon) -> select the build.xml
+
+https://www.javahelps.com/2015/03/install-oracle-jdk-in-ubuntu.html  
+https://dzone.com/articles/installing-neo4j-on-ubuntu-1604   
+https://medium.com/@Jessicawlm/installing-neo4j-on-ubuntu-14-04-step-by-step-guide-ed943ec16c56  
+
+
