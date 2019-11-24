@@ -1,9 +1,0 @@
-<component name="libraryTable">
-  <library name="jersey-hk2-2.29.1">
-    <CLASSES>
-      <root url="jar://$PROJECT_DIR$/lib/jersey-hk2-2.29.1.jar!/" />
-    </CLASSES>
-    <JAVADOC />
-    <SOURCES />
-  </library>
-</component>

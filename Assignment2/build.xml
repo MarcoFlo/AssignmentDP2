@@ -29,8 +29,8 @@
 	<property name="gen.dir" location="${ass2.location}/gen-src" />
 	<property name="gen.schema.dir" location="${ass2.location}/gen-schema" />
 	
-<!--	<property name="shared.location" location="/opt/dp2/shared"/>-->
-<!--	<property name="ext.lib.dir" location="${shared.location}/lib" />-->
+	<property name="shared.location" location="/opt/dp2/shared"/>
+	<property name="ext.lib.dir" location="${shared.location}/lib" />
 	
 	<!-- locations of specific files -->
 	<property name="biblio.schema" location="${xsd.dir}/biblio.xsd" />
@@ -60,9 +60,12 @@
 		
 	<!-- The classpath to be used for compilation of the solution -->
 	<path id="sol.classpath">
+		<pathelement location="${lib.dir}/BIB.jar"/>
+		<pathelement location="${lib.dir}/ass2.jar"/>
 		<pathelement location="${build.dir}" />
-		<fileset dir="${lib.dir}">
-			<include name="*.jar" />
+		<fileset dir="${ext.lib.dir}">
+		    <include name="*.jar" />
+			<exclude name="ant-*.jar"/>
 		</fileset>
 	</path>
 
@@ -71,6 +74,10 @@
 		<pathelement location="${build.dir}" />
 		<fileset dir="${lib.dir}">
 		    <include name="*.jar" />
+		</fileset>
+		<fileset dir="${ext.lib.dir}">
+		    <include name="*.jar" />
+			<exclude name="ant-*.jar"/>
 		</fileset>
 	</path>
 	
