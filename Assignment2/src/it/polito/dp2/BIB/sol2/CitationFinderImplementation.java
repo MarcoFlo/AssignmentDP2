@@ -6,15 +6,15 @@ import it.polito.dp2.BIB.ass2.CitationFinderException;
 import it.polito.dp2.BIB.ass2.ServiceException;
 import it.polito.dp2.BIB.ass2.UnknownItemException;
 import it.polito.dp2.BIB.sol2.jaxb.Node;
-import org.omg.PortableInterceptor.SYSTEM_EXCEPTION;
 
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
+import java.util.stream.Collectors;
 
-public class CitationFinderImpl implements CitationFinder {
+public class CitationFinderImplementation implements CitationFinder {
     private BibReader monitor;
     private Map<ItemReader, Node> readerToNode;
     private Map<URL, ItemReader> urlToReader;
@@ -23,10 +23,10 @@ public class CitationFinderImpl implements CitationFinder {
 
     public static void main(String[] args) throws CitationFinderException {
         System.setProperty("it.polito.dp2.BIB.BibReaderFactory", "it.polito.dp2.BIB.Random.BibReaderFactoryImpl");
-        CitationFinderImpl cfi = new CitationFinderImpl();
+        CitationFinderImplementation cfi = new CitationFinderImplementation();
     }
 
-    public CitationFinderImpl() throws CitationFinderException {
+    public CitationFinderImplementation() throws CitationFinderException {
         try {
             BibReaderFactory factory = BibReaderFactory.newInstance();
             monitor = factory.newBibReader();
@@ -47,10 +47,10 @@ public class CitationFinderImpl implements CitationFinder {
                 }
             }
 
-//            Node node = readerToNode.values().iterator().next();
-//            System.out.println(node.getData().getTitle() + " traversal: ");
+            Node node = readerToNode.values().iterator().next();
+//            System.out.println(node.getSelf() + " traversal: ");
 //
-//            client.getListTraversed(node).forEach(node1 -> System.out.println(node1.getData().getTitle()));
+//            client.getListTraversed(node, 3).forEach(node1 -> System.out.println(node1.getSelf()));
 
         } catch (Neo4jClientException | BibReaderException | MalformedURLException e) {
             throw new CitationFinderException(e);
@@ -76,8 +76,27 @@ public class CitationFinderImpl implements CitationFinder {
 
     @Override
     public Set<ItemReader> findAllCitingItems(ItemReader item, int maxDepth) throws UnknownItemException, ServiceException {
-//        readerToNode.get(item).getSelf()
-        return null;
+        if (!readerToNode.containsKey(item))
+            throw new UnknownItemException();
+
+        if (maxDepth <= 0)
+            maxDepth = 1;
+        try {
+            Set<ItemReader> set = client.getListTraversed(readerToNode.get(item), maxDepth).stream().map(node -> {
+                try {
+                    return urlToReader.get(new URL(node.getSelf()));
+                } catch (MalformedURLException e) {
+                    e.printStackTrace();
+                    return null;
+                }
+            }).collect(Collectors.toSet());
+
+            System.out.println(item.getTitle() + " is gonna be found");
+            set.stream().forEach(itemReader -> System.out.println(itemReader.getTitle()));
+            return set;
+        } catch (Exception e) {
+            throw new ServiceException();
+        }
     }
 
     @Override
