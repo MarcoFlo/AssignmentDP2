@@ -21,11 +21,6 @@ public class CitationFinderImplementation implements CitationFinder {
     private Neo4jClient client;
 
 
-    public static void main(String[] args) throws CitationFinderException {
-        System.setProperty("it.polito.dp2.BIB.BibReaderFactory", "it.polito.dp2.BIB.Random.BibReaderFactoryImpl");
-        CitationFinderImplementation cfi = new CitationFinderImplementation();
-    }
-
     public CitationFinderImplementation() throws CitationFinderException {
         try {
             BibReaderFactory factory = BibReaderFactory.newInstance();
@@ -46,12 +41,6 @@ public class CitationFinderImplementation implements CitationFinder {
                     client.createRelationship(from, to);
                 }
             }
-
-            Node node = readerToNode.values().iterator().next();
-//            System.out.println(node.getSelf() + " traversal: ");
-//
-//            client.getListTraversed(node, 3).forEach(node1 -> System.out.println(node1.getSelf()));
-
         } catch (Neo4jClientException | BibReaderException | MalformedURLException e) {
             throw new CitationFinderException(e);
         }
@@ -82,7 +71,7 @@ public class CitationFinderImplementation implements CitationFinder {
         if (maxDepth <= 0)
             maxDepth = 1;
         try {
-            Set<ItemReader> set = client.getListTraversed(readerToNode.get(item), maxDepth).stream().map(node -> {
+            return client.getListTraversed(readerToNode.get(item), maxDepth).stream().map(node -> {
                 try {
                     return urlToReader.get(new URL(node.getSelf()));
                 } catch (MalformedURLException e) {
@@ -90,10 +79,6 @@ public class CitationFinderImplementation implements CitationFinder {
                     return null;
                 }
             }).collect(Collectors.toSet());
-
-            System.out.println(item.getTitle() + " is gonna be found");
-            set.stream().forEach(itemReader -> System.out.println(itemReader.getTitle()));
-            return set;
         } catch (Exception e) {
             throw new ServiceException();
         }

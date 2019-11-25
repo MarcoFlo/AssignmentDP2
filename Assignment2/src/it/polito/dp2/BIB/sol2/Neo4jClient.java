@@ -10,8 +10,8 @@ import javax.ws.rs.client.Entity;
 import javax.ws.rs.client.WebTarget;
 import javax.ws.rs.core.GenericType;
 import javax.ws.rs.core.MediaType;
+import java.math.BigInteger;
 import java.util.List;
-import java.util.stream.Collectors;
 
 public class Neo4jClient {
     Client client;
@@ -55,14 +55,9 @@ public class Neo4jClient {
         body.setTo(to.getSelf());
         body.setType("CitedBy");
         try {
-            Relationship relationship = client.target(from.getCreateRelationship())
+            return client.target(from.getCreateRelationship())
                     .request(MediaType.APPLICATION_JSON_TYPE)
                     .post(Entity.json(body), Relationship.class);
-//            System.out.println(from.getSelf() + " cited by "+ to.getSelf());
-//            System.out.println(relationship.getStart());
-//            System.out.println(relationship.getEnd());
-
-            return relationship;
         } catch (WebApplicationException | ProcessingException e) {
             throw new Neo4jClientException(e);
         }
@@ -70,25 +65,14 @@ public class Neo4jClient {
 
     public List<Node> getListTraversed(Node node, int maxDepth) {
         BodyTraversal body = of.createBodyTraversal();
-        BodyTraversal.ReturnFilter returnFilter = new BodyTraversal.ReturnFilter();
-        BodyTraversal.PruneEvaluator pruneEvaluator = new BodyTraversal.PruneEvaluator();
+        BodyTraversal.Relationships relationships = new BodyTraversal.Relationships();
+        relationships.setDirection("out");
+        relationships.setType("CitedBy");
+        body.setRelationships(relationships);
+        body.setMaxDepth(BigInteger.valueOf(maxDepth));
 
-        returnFilter.setBody("position.length()<"+maxDepth+1);
-        returnFilter.setLanguage("javascript");
-        pruneEvaluator.setName("none");
-        pruneEvaluator.setLanguage("builtin");
-
-        body.setReturnFilter(returnFilter);
-        body.setPruneEvaluator(pruneEvaluator);
-
-        List<Node> nodeList = client.target(node.getTraverse()).resolveTemplate("returnType", "node").request(MediaType.APPLICATION_JSON_TYPE)
+        return client.target(node.getTraverse()).resolveTemplate("returnType", "node").request(MediaType.APPLICATION_JSON_TYPE)
                 .post(Entity.json(body), new GenericType<List<Node>>() {
                 });
-System.out.println(nodeList.size() +" size of nodelist");
-
-        List<Node> result = nodeList.stream().filter(node1 -> !node1.getSelf().equals(node.getSelf())).collect(Collectors.toList());
-
-        result.stream().forEach(node1 -> System.out.println(node1.getData().getTitle()));
-        return  result;
     }
 }
