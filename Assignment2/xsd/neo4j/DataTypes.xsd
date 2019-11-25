@@ -6,6 +6,7 @@
                 <xsd:element name="labels" type="xsd:anyURI"/>
                 <xsd:element name="self" type="xsd:anyURI"/>
                 <xsd:element name="create_relationship" type="xsd:anyURI"/>
+                <xsd:element name="traverse" type="xsd:anyURI"/>
                 <xsd:element ref="data"/>
             </xsd:sequence>
         </xsd:complexType>
@@ -27,11 +28,34 @@
             </xsd:sequence>
         </xsd:complexType>
     </xsd:element>
-    <xsd:element name="dataRelationship">
+    <xsd:element name="bodyRelationship">
         <xsd:complexType>
             <xsd:sequence>
 				<xsd:element name="to" type="xsd:anyURI"/>
 				<xsd:element name="type" type="xsd:string"/>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+
+    <xsd:element name="bodyTraversal">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="return_filter">
+                    <xsd:complexType>
+                        <xsd:sequence>
+                            <xsd:element name="body" type="xsd:string" default="position.length()&lt;"/>
+                            <xsd:element name="language" type="xsd:string" fixed="javascript"/>
+                        </xsd:sequence>
+                    </xsd:complexType>
+                </xsd:element>
+                <xsd:element name="prune_evaluator">
+                    <xsd:complexType>
+                        <xsd:sequence>
+                            <xsd:element name="name" type="xsd:string" fixed="none"/>
+                            <xsd:element name="language" type="xsd:string" fixed="builtin"/>
+                        </xsd:sequence>
+                    </xsd:complexType>
+                </xsd:element>
             </xsd:sequence>
         </xsd:complexType>
     </xsd:element>

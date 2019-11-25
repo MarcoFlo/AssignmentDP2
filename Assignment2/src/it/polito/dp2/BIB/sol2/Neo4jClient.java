@@ -1,10 +1,6 @@
 package it.polito.dp2.BIB.sol2;
 
-import it.polito.dp2.BIB.sol2.jaxb.DataRelationship;
-import it.polito.dp2.BIB.sol2.jaxb.Relationship;
-import it.polito.dp2.BIB.sol2.jaxb.Data;
-import it.polito.dp2.BIB.sol2.jaxb.Node;
-import it.polito.dp2.BIB.sol2.jaxb.ObjectFactory;
+import it.polito.dp2.BIB.sol2.jaxb.*;
 
 import javax.ws.rs.ProcessingException;
 import javax.ws.rs.WebApplicationException;
@@ -12,7 +8,9 @@ import javax.ws.rs.client.Client;
 import javax.ws.rs.client.ClientBuilder;
 import javax.ws.rs.client.Entity;
 import javax.ws.rs.client.WebTarget;
+import javax.ws.rs.core.GenericType;
 import javax.ws.rs.core.MediaType;
+import java.util.List;
 
 public class Neo4jClient {
     Client client;
@@ -52,16 +50,35 @@ public class Neo4jClient {
 
 
     public Relationship createRelationship(Node from, Node to) throws Neo4jClientException {
-        DataRelationship data = of.createDataRelationship();
-        data.setTo(to.getSelf());
-        data.setType("CitedBy");
+        BodyRelationship body = of.createBodyRelationship();
+        body.setTo(to.getSelf());
+        body.setType("CitedBy");
         try {
             Relationship relationship = client.target(from.getCreateRelationship())
                     .request(MediaType.APPLICATION_JSON_TYPE)
-                    .post(Entity.json(data), Relationship.class);
+                    .post(Entity.json(body), Relationship.class);
             return relationship;
         } catch (WebApplicationException | ProcessingException e) {
             throw new Neo4jClientException(e);
         }
+    }
+
+    public List<Node> getListTraversed(Node node) {
+        BodyTraversal body = of.createBodyTraversal();
+        BodyTraversal.ReturnFilter returnFilter = new BodyTraversal.ReturnFilter();
+        BodyTraversal.PruneEvaluator pruneEvaluator = new BodyTraversal.PruneEvaluator();
+
+        returnFilter.setBody("position.length()<3");
+        returnFilter.setLanguage("javascript");
+        pruneEvaluator.setName("none");
+        pruneEvaluator.setLanguage("builtin");
+
+        body.setReturnFilter(returnFilter);
+        body.setPruneEvaluator(pruneEvaluator);
+
+        return client.target(node.getTraverse()).resolveTemplate("returnType", "node").request(MediaType.APPLICATION_JSON_TYPE)
+                .post(Entity.json(body), new GenericType<List<Node>>() {
+                });
+
     }
 }

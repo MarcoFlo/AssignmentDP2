@@ -26,11 +26,10 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="labels" type="{http://www.w3.org/2001/XMLSchema}anyURI"/>
  *         &lt;element name="self" type="{http://www.w3.org/2001/XMLSchema}anyURI"/>
- *         &lt;element name="create_relationship" type="{http://www.w3.org/2001/XMLSchema}anyURI"/>
- *         &lt;element name="traverse" type="{http://www.w3.org/2001/XMLSchema}anyURI"/>
- *         &lt;element ref="{}data"/>
+ *         &lt;element name="type" type="{http://www.w3.org/2001/XMLSchema}string"/>
+ *         &lt;element name="start" type="{http://www.w3.org/2001/XMLSchema}anyURI"/>
+ *         &lt;element name="end" type="{http://www.w3.org/2001/XMLSchema}anyURI"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -41,53 +40,25 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-    "labels",
     "self",
-    "createRelationship",
-    "traverse",
-    "data"
+    "type",
+    "start",
+    "end"
 })
-@XmlRootElement(name = "node")
-public class Node {
+@XmlRootElement(name = "relationship")
+public class Relationship {
 
-    @XmlElement(required = true)
-    @XmlSchemaType(name = "anyURI")
-    protected String labels;
     @XmlElement(required = true)
     @XmlSchemaType(name = "anyURI")
     protected String self;
-    @XmlElement(name = "create_relationship", required = true)
-    @XmlSchemaType(name = "anyURI")
-    protected String createRelationship;
+    @XmlElement(required = true)
+    protected String type;
     @XmlElement(required = true)
     @XmlSchemaType(name = "anyURI")
-    protected String traverse;
+    protected String start;
     @XmlElement(required = true)
-    protected Data data;
-
-    /**
-     * Gets the value of the labels property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getLabels() {
-        return labels;
-    }
-
-    /**
-     * Sets the value of the labels property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setLabels(String value) {
-        this.labels = value;
-    }
+    @XmlSchemaType(name = "anyURI")
+    protected String end;
 
     /**
      * Gets the value of the self property.
@@ -114,75 +85,75 @@ public class Node {
     }
 
     /**
-     * Gets the value of the createRelationship property.
+     * Gets the value of the type property.
      * 
      * @return
      *     possible object is
      *     {@link String }
      *     
      */
-    public String getCreateRelationship() {
-        return createRelationship;
+    public String getType() {
+        return type;
     }
 
     /**
-     * Sets the value of the createRelationship property.
+     * Sets the value of the type property.
      * 
      * @param value
      *     allowed object is
      *     {@link String }
      *     
      */
-    public void setCreateRelationship(String value) {
-        this.createRelationship = value;
+    public void setType(String value) {
+        this.type = value;
     }
 
     /**
-     * Gets the value of the traverse property.
+     * Gets the value of the start property.
      * 
      * @return
      *     possible object is
      *     {@link String }
      *     
      */
-    public String getTraverse() {
-        return traverse;
+    public String getStart() {
+        return start;
     }
 
     /**
-     * Sets the value of the traverse property.
+     * Sets the value of the start property.
      * 
      * @param value
      *     allowed object is
      *     {@link String }
      *     
      */
-    public void setTraverse(String value) {
-        this.traverse = value;
+    public void setStart(String value) {
+        this.start = value;
     }
 
     /**
-     * Gets the value of the data property.
+     * Gets the value of the end property.
      * 
      * @return
      *     possible object is
-     *     {@link Data }
+     *     {@link String }
      *     
      */
-    public Data getData() {
-        return data;
+    public String getEnd() {
+        return end;
     }
 
     /**
-     * Sets the value of the data property.
+     * Sets the value of the end property.
      * 
      * @param value
      *     allowed object is
-     *     {@link Data }
+     *     {@link String }
      *     
      */
-    public void setData(Data value) {
-        this.data = value;
+    public void setEnd(String value) {
+        this.end = value;
     }
 
 }
