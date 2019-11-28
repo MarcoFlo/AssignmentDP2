@@ -27,7 +27,6 @@ public class Neo4jClient {
         String customUri = System.getProperty(urlProperty);
         String customPort = System.getProperty(portProperty);
         if (customUri != null)
-//            uri = customUri;
             uri = manageCustomInput(customUri, customPort).toString();
     }
 
@@ -44,7 +43,6 @@ public class Neo4jClient {
 
     }
 
-    //todo call close
     public void close() {
         client.close();
     }
@@ -53,10 +51,9 @@ public class Neo4jClient {
         Data data = of.createData();
         data.setTitle(title);
         try {
-            Node node = client.target(uri).path("data").path("node")
+            return client.target(uri).path("data").path("node")
                     .request(MediaType.APPLICATION_JSON_TYPE)
                     .post(Entity.json(data), Node.class);
-            return node;
         } catch (WebApplicationException | ProcessingException e) {
             throw new Neo4jClientException("Node creation exception", e);
         }
@@ -76,7 +73,7 @@ public class Neo4jClient {
         }
     }
 
-    public List<Node> getListTraversed(Node node, int maxDepth) {
+    public List<Node> getListTraversed(Node node, int maxDepth) throws Neo4jClientException {
         BodyTraversal body = of.createBodyTraversal();
         BodyTraversal.Relationships relationships = new BodyTraversal.Relationships();
         relationships.setDirection("out");
@@ -84,8 +81,12 @@ public class Neo4jClient {
         body.setRelationships(relationships);
         body.setMaxDepth(BigInteger.valueOf(maxDepth));
 
-        return client.target(node.getTraverse()).resolveTemplate("returnType", "node").request(MediaType.APPLICATION_JSON_TYPE)
-                .post(Entity.json(body), new GenericType<List<Node>>() {
-                });
+        try {
+            return client.target(node.getTraverse()).resolveTemplate("returnType", "node").request(MediaType.APPLICATION_JSON_TYPE)
+                    .post(Entity.json(body), new GenericType<List<Node>>() {
+                    });
+        } catch (WebApplicationException | ProcessingException e) {
+            throw new Neo4jClientException("Get Traversed exception", e);
+        }
     }
 }
