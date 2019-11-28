@@ -11,11 +11,12 @@ import javax.ws.rs.client.WebTarget;
 import javax.ws.rs.core.GenericType;
 import javax.ws.rs.core.MediaType;
 import java.math.BigInteger;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.List;
 
 public class Neo4jClient {
     Client client;
-    WebTarget target;
     String uri = "http://localhost:7474/db";
     String urlProperty = "it.polito.dp2.BIB.ass2.URL";
     String portProperty = "it.polito.dp2.BIB.ass2.PORT";
@@ -28,8 +29,12 @@ public class Neo4jClient {
         String customPort = System.getProperty(portProperty);
         if (customUri != null)
             uri = customUri;
-
-        target = client.target(uri).path("data");
+        try {
+            URL url = new URL(uri);
+//todo
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        }
     }
 
     public void close() {
@@ -40,12 +45,12 @@ public class Neo4jClient {
         Data data = of.createData();
         data.setTitle(title);
         try {
-            Node node = target.path("node")
+            Node node = client.target(uri).path("data").path("node")
                     .request(MediaType.APPLICATION_JSON_TYPE)
                     .post(Entity.json(data), Node.class);
             return node;
         } catch (WebApplicationException | ProcessingException e) {
-            throw new Neo4jClientException(e);
+            throw new Neo4jClientException("Node creation exception", e);
         }
     }
 
@@ -59,7 +64,7 @@ public class Neo4jClient {
                     .request(MediaType.APPLICATION_JSON_TYPE)
                     .post(Entity.json(body), Relationship.class);
         } catch (WebApplicationException | ProcessingException e) {
-            throw new Neo4jClientException(e);
+            throw new Neo4jClientException("Relationship creation exception", e);
         }
     }
 

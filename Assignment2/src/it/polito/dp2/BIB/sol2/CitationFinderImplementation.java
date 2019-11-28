@@ -7,8 +7,6 @@ import it.polito.dp2.BIB.ass2.ServiceException;
 import it.polito.dp2.BIB.ass2.UnknownItemException;
 import it.polito.dp2.BIB.sol2.jaxb.Node;
 
-import java.net.MalformedURLException;
-import java.net.URL;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
@@ -17,7 +15,7 @@ import java.util.stream.Collectors;
 public class CitationFinderImplementation implements CitationFinder {
     private BibReader monitor;
     private Map<ItemReader, Node> readerToNode;
-    private Map<URL, ItemReader> urlToReader;
+    private Map<String, ItemReader> urlToReader;
     private Neo4jClient client;
 
 
@@ -25,10 +23,9 @@ public class CitationFinderImplementation implements CitationFinder {
         try {
             BibReaderFactory factory = BibReaderFactory.newInstance();
             monitor = factory.newBibReader();
-            readerToNode = new HashMap<ItemReader, Node>();
-            urlToReader = new HashMap<URL, ItemReader>();
+            readerToNode = new HashMap<>();
+            urlToReader = new HashMap<>();
             client = new Neo4jClient();
-            // create nodes
             Set<ItemReader> items = monitor.getItems(null, 0, 3000);
             Node from;
             Node to;
@@ -41,26 +38,21 @@ public class CitationFinderImplementation implements CitationFinder {
                     client.createRelationship(from, to);
                 }
             }
-        } catch (Neo4jClientException | BibReaderException | MalformedURLException e) {
+        } catch (Neo4jClientException | BibReaderException e) {
             throw new CitationFinderException(e);
         }
     }
 
-    private Node manageNode(ItemReader item) throws Neo4jClientException, MalformedURLException {
+    private Node manageNode(ItemReader item) throws Neo4jClientException {
         Node node;
-
         if (readerToNode.containsKey(item)) {
             node = readerToNode.get(item);
         } else {
             node = client.createNode(item.getTitle());
             readerToNode.put(item, node);
-            URL url = new URL(node.getSelf());
-            urlToReader.put(url, item);
-
-
+            urlToReader.put(node.getSelf(), item);
         }
         return node;
-
     }
 
     @Override
@@ -70,15 +62,9 @@ public class CitationFinderImplementation implements CitationFinder {
 
         if (maxDepth <= 0)
             maxDepth = 1;
+
         try {
-            return client.getListTraversed(readerToNode.get(item), maxDepth).stream().map(node -> {
-                try {
-                    return urlToReader.get(new URL(node.getSelf()));
-                } catch (MalformedURLException e) {
-                    e.printStackTrace();
-                    return null;
-                }
-            }).collect(Collectors.toSet());
+            return client.getListTraversed(readerToNode.get(item), maxDepth).stream().map(node -> urlToReader.get(node.getSelf())).collect(Collectors.toSet());
         } catch (Exception e) {
             throw new ServiceException();
         }
