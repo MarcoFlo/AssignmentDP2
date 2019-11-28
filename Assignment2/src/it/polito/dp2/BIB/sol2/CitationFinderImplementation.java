@@ -40,6 +40,9 @@ public class CitationFinderImplementation implements CitationFinder {
             }
         } catch (Neo4jClientException | BibReaderException e) {
             throw new CitationFinderException(e);
+        } finally {
+            if (client != null)
+                client.close();
         }
     }
 
@@ -64,9 +67,13 @@ public class CitationFinderImplementation implements CitationFinder {
             maxDepth = 1;
 
         try {
+            client = new Neo4jClient();
             return client.getListTraversed(readerToNode.get(item), maxDepth).stream().map(node -> urlToReader.get(node.getSelf())).collect(Collectors.toSet());
         } catch (Exception e) {
             throw new ServiceException();
+        } finally {
+            if (client != null)
+                client.close();
         }
     }
 

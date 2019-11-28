@@ -7,7 +7,6 @@ import javax.ws.rs.WebApplicationException;
 import javax.ws.rs.client.Client;
 import javax.ws.rs.client.ClientBuilder;
 import javax.ws.rs.client.Entity;
-import javax.ws.rs.client.WebTarget;
 import javax.ws.rs.core.GenericType;
 import javax.ws.rs.core.MediaType;
 import java.math.BigInteger;
@@ -16,27 +15,36 @@ import java.net.URL;
 import java.util.List;
 
 public class Neo4jClient {
-    Client client;
-    String uri = "http://localhost:7474/db";
-    String urlProperty = "it.polito.dp2.BIB.ass2.URL";
-    String portProperty = "it.polito.dp2.BIB.ass2.PORT";
+    private Client client;
+    private String uri = "http://localhost:7474/db";
+    private String urlProperty = "it.polito.dp2.BIB.ass2.URL";
+    private String portProperty = "it.polito.dp2.BIB.ass2.PORT";
     private ObjectFactory of = new ObjectFactory();
 
-    public Neo4jClient() {
+    public Neo4jClient() throws Neo4jClientException {
         client = ClientBuilder.newClient();
 
         String customUri = System.getProperty(urlProperty);
         String customPort = System.getProperty(portProperty);
         if (customUri != null)
-            uri = customUri;
-        try {
-            URL url = new URL(uri);
-//todo
-        } catch (MalformedURLException e) {
-            e.printStackTrace();
-        }
+//            uri = customUri;
+            uri = manageCustomInput(customUri, customPort).toString();
     }
 
+    private URL manageCustomInput(String customUri, String customPort) throws Neo4jClientException {
+        try {
+            URL customUrl = new URL(customUri);
+            if (customUrl.getPort() == -1)
+                return new URL(customUrl.getProtocol(), customUrl.getHost(), Integer.parseInt(customPort), customUrl.getFile());
+            else
+                return customUrl;
+        } catch (MalformedURLException | NumberFormatException e) {
+            throw new Neo4jClientException("Input parameter not valid", e);
+        }
+
+    }
+
+    //todo call close
     public void close() {
         client.close();
     }
