@@ -1,0 +1,149 @@
+//http://api.crossref.org/types/book/works?rows=5&offset=5&select=title,subtitle,ISBN,author,published-print,publisher&query.bibliographic=ab
+//http://api.crossref.org/types/book/works?rows=5&query.bibliographic=ab
+{
+  "status": "ok",
+  "message-type": "work-list",
+  "message-version": "1.0.0",
+  "message": {
+    "facets": {},
+    "total-results": 122,
+    "items": [
+      {
+        "title": [
+          "<i>Ungeteiltheit</i> – oder Mystik als Ab-Grund der Erfahrung"
+        ],
+        "ISBN": [
+          "9789004234574"
+        ],
+        "author": [
+          {
+            "given": "Rolf",
+            "family": "Kühn",
+            "sequence": "first",
+            "affiliation": []
+          }
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              2012,
+              8,
+              28
+            ]
+          ]
+        },
+        "publisher": "Brill"
+      },
+      {
+        "title": [
+          "Eisenbahn-Verkehrsordnung. (EVO.) Gültig vom 1. April 1909 ab."
+        ],
+        "ISBN": [
+          "9783662336229",
+          "9783662340202"
+        ],
+        "author": [
+          {
+            "name": "Reichs-Eisenbahn-Amt",
+            "sequence": "first",
+            "affiliation": []
+          }
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              1911
+            ]
+          ]
+        },
+        "publisher": "Springer Berlin Heidelberg"
+      },
+      {
+        "title": [
+          "OECD360: Schweiz 2015"
+        ],
+        "subtitle": [
+          "Wie schneidet die Schweiz ab?"
+        ],
+        "ISBN": [
+          "9789264236202"
+        ],
+        "author": [
+          {
+            "name": "OECD",
+            "sequence": "first",
+            "affiliation": []
+          }
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              2015,
+              3,
+              31
+            ]
+          ]
+        },
+        "publisher": "OECD"
+      },
+      {
+        "title": [
+          "Highly Accurate Spectroscopic Parameters from Ab Initio Calculations"
+        ],
+        "ISBN": [
+          "9783658148294",
+          "9783658148300"
+        ],
+        "author": [
+          {
+            "given": "Christopher J.",
+            "family": "Stein",
+            "sequence": "first",
+            "affiliation": []
+          }
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              2016
+            ]
+          ]
+        },
+        "publisher": "Springer Fachmedien Wiesbaden"
+      },
+      {
+        "title": [
+          "OECD360 : Luxemburg 2015"
+        ],
+        "subtitle": [
+          "Wie schneidet Luxemburg ab?"
+        ],
+        "ISBN": [
+          "9789264236578"
+        ],
+        "author": [
+          {
+            "name": "OECD",
+            "sequence": "first",
+            "affiliation": []
+          }
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              2015,
+              3,
+              31
+            ]
+          ]
+        },
+        "publisher": "OECD"
+      }
+    ],
+    "items-per-page": 5,
+    "query": {
+      "start-index": 5,
+      "search-terms": null
+    }
+  }
+}
