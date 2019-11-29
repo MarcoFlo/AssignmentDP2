@@ -17,6 +17,7 @@ import javax.ws.rs.core.UriBuilder;
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.util.JAXBSource;
+import javax.xml.datatype.DatatypeConfigurationException;
 import javax.xml.validation.Schema;
 import javax.xml.validation.SchemaFactory;
 import java.io.File;
@@ -207,6 +208,8 @@ public class BookClient_e {
                         System.out.println("Unexpected I/O Exception");
                     } catch (JAXBException e) {
                         System.out.println("Unexpected JAXB Exception");
+                    } catch (DatatypeConfigurationException e) {
+                        System.out.println("Unexpected calendar exception");
                     }
                 }
             }
