@@ -1,6 +1,5 @@
 package it.polito.dp2.BIB.sol2;
 
-import it.polito.dp2.BIB.sol2.jaxb.crossref.CrossrefItem;
 import it.polito.dp2.BIB.sol2.jaxb.crossref.CrossrefMessage;
 import it.polito.dp2.BIB.sol2.jaxb.crossref.CrossrefResult;
 import it.polito.dp2.rest.gbooks.client.Factory;
@@ -35,7 +34,9 @@ public class BookClient_e {
     JAXBContext jaxbGoogleContext;
     JAXBContext jaxbCrossrefContext;
 
-    javax.xml.validation.Validator validator;
+    javax.xml.validation.Validator validatorGoogle;
+    javax.xml.validation.Validator validatorCrossref;
+
 
     public static void main(String[] args) {
         if (args.length == 0) {
@@ -61,12 +62,16 @@ public class BookClient_e {
         // create validator that uses the DataTypes schema
         SchemaFactory sf = SchemaFactory.newInstance(W3C_XML_SCHEMA_NS_URI);
         Schema schema = sf.newSchema(new File("xsd/gbooks/DataTypes.xsd"));
-        validator = schema.newValidator();
-        validator.setErrorHandler(new MyErrorHandler());
+        validatorGoogle = schema.newValidator();
+        validatorGoogle.setErrorHandler(new MyErrorHandler());
+
+        Schema schemaCrossref = sf.newSchema(new File("xsd/CrossrefDataTypes.xsd"));
+        validatorCrossref = schemaCrossref.newValidator();
+        validatorCrossref.setErrorHandler(new MyErrorHandler());
 
         // create JAXB context related to the classed generated from the DataTypes schema
         jaxbGoogleContext = JAXBContext.newInstance("it.polito.dp2.rest.gbooks.client.jaxb");
-        jaxbCrossrefContext = JAXBContext.newInstance("it.polito.dp2.BIB.sol2.jaxb");
+        jaxbCrossrefContext = JAXBContext.newInstance("it.polito.dp2.BIB.sol2.jaxb.crossref");
     }
 
     public void PerformGoogleSearch(String[] kw) {
@@ -109,7 +114,7 @@ public class BookClient_e {
                 // validate item
                 JAXBSource source = new JAXBSource(jaxbGoogleContext, item);
                 System.out.println("Validating " + item.getSelfLink());
-                validator.validate(source);
+                validatorGoogle.validate(source);
                 System.out.println("Validation OK");
                 // add item to list
                 System.out.println("Adding item to list");
@@ -143,18 +148,19 @@ public class BookClient_e {
         // build the web target
         WebTarget target = client.target(getCrossrefBooksUri());
 
-        int availableItem = -1;
+        int availableItem = 1;
         int requestedItem = 0;
-        int offset = 0;
+        int id = 0;
+
         List<PrintableItem> printableItems = new ArrayList<>();
         Response response;
-        CrossrefResult result;
         CrossrefMessage message;
-        System.out.println("Searching " + queryParameter.getCrossrefKeyword() + " on Google Books:");
+        System.out.println("Searching " + queryParameter.getCrossrefKeyword() + " on Crossref:");
 
-        while (printableItems.size() != queryParameter.getItemNumber() && availableItem != requestedItem) {
+        while (printableItems.size() != queryParameter.getItemNumber() && availableItem > requestedItem) {
+            System.out.println(printableItems.size() + "   " + requestedItem);
             response = target
-                    .queryParam("rows", (queryParameter.getItemNumber() - printableItems.size()))
+                    .queryParam("rows", queryParameter.getItemNumber())
                     .queryParam("offset", requestedItem)
                     .queryParam("select", "publisher,ISBN,published-print,title,subtitle,author") // to avoid large number of unnecessary fields
                     .queryParam("query.bibliographic", queryParameter.getCrossrefKeyword())
@@ -166,7 +172,7 @@ public class BookClient_e {
                 return;
             }
 
-            requestedItem += (queryParameter.getItemNumber() - printableItems.size());
+            requestedItem += queryParameter.getItemNumber();
             response.bufferEntity();
             System.out.println("Response as string: " + response.readEntity(String.class));
             message = response.readEntity(CrossrefResult.class).getMessage();
@@ -177,30 +183,31 @@ public class BookClient_e {
             availableItem = message.getTotalResults().intValue();
             System.out.println("Validating items and converting validated items to xml.");
             // create empty list
-            int i = 0;
-            for (CrossrefItem item : message.getItems()) {
-                try {
-                    // validate item
-                    JAXBSource source = new JAXBSource(jaxbCrossrefContext, item);
-                    validator.validate(source);
-                    System.out.println("Validation OK");
-                    // add item to list
-                    System.out.println("Adding item to list");
-                    printableItems.add(CrossrefFactory.createPrintableItem(BigInteger.valueOf(i++), item));
-                } catch (org.xml.sax.SAXException se) {
-                    System.out.println("Validation Failed");
-                    // print error messages
-                    Throwable t = se;
-                    while (t != null) {
-                        String msg = t.getMessage();
-                        if (msg != null)
-                            System.out.println(msg);
-                        t = t.getCause();
+            for (it.polito.dp2.BIB.sol2.jaxb.crossref.Items item : message.getItems()) {
+                if (printableItems.size() != queryParameter.getItemNumber()) {
+                    try {
+                        // validate item
+                        JAXBSource source = new JAXBSource(jaxbCrossrefContext, item);
+                        validatorCrossref.validate(source);
+                        System.out.println("Validation OK");
+                        // add item to list
+                        System.out.println("Adding item to list");
+                        printableItems.add(CrossrefFactory.createPrintableItem(BigInteger.valueOf(id++), item));
+                    } catch (org.xml.sax.SAXException se) {
+                        System.out.println("Validation Failed");
+                        // print error messages
+                        Throwable t = se;
+                        while (t != null) {
+                            String msg = t.getMessage();
+                            if (msg != null)
+                                System.out.println(msg);
+                            t = t.getCause();
+                        }
+                    } catch (IOException e) {
+                        System.out.println("Unexpected I/O Exception");
+                    } catch (JAXBException e) {
+                        System.out.println("Unexpected JAXB Exception");
                     }
-                } catch (IOException e) {
-                    System.out.println("Unexpected I/O Exception");
-                } catch (JAXBException e) {
-                    System.out.println("Unexpected JAXB Exception");
                 }
             }
 

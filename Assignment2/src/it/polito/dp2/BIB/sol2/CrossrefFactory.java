@@ -1,6 +1,6 @@
 package it.polito.dp2.BIB.sol2;
 
-import it.polito.dp2.BIB.sol2.jaxb.crossref.CrossrefItem;
+import it.polito.dp2.BIB.sol2.jaxb.crossref.Items;
 import it.polito.dp2.xml.biblio.PrintableItem;
 import it.polito.pad.dp2.biblio.BiblioItemType;
 import it.polito.pad.dp2.biblio.BookType;
@@ -11,7 +11,7 @@ import java.util.stream.Collectors;
 
 public class CrossrefFactory extends it.polito.dp2.xml.biblio.Factory {
 
-    public static PrintableItem createPrintableItem(BigInteger id, CrossrefItem crossrefItem) {
+    public static PrintableItem createPrintableItem(BigInteger id, Items crossrefItem) {
         BiblioItemType item = new BiblioItemType();
         item.setId(id);
         item.setTitle(crossrefItem.getTitle());
@@ -25,7 +25,8 @@ public class CrossrefFactory extends it.polito.dp2.xml.biblio.Factory {
 
         BookType book = new BookType();
         book.setPublisher(crossrefItem.getPublisher());
-        book.setYear(crossrefItem.getPublishedPrint());
+//        book.setYear();
+        System.out.println(crossrefItem.getPublishedPrint().getDateParts());
         List<String> list = crossrefItem.getISBN(); // is a list containing possibily multiple ISBN, the type of each ISBN is explained in an other field "isbn-type" and could be "print" or "electronic"
         book.setISBN(list.get(0));
 
