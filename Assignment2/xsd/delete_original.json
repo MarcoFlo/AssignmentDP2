@@ -82,7 +82,7 @@
           "date-time": "2018-09-10T02:22:55Z",
           "timestamp": 1536546175000
         },
-        "score": 10.383725,
+        "score": 10.383964,
         "issued": {
           "date-parts": [
             [
@@ -166,7 +166,7 @@
           "date-time": "2016-10-16T02:05:32Z",
           "timestamp": 1476583532000
         },
-        "score": 10.383725,
+        "score": 10.383964,
         "editor": [
           {
             "given": "John",
@@ -268,7 +268,7 @@
           "date-time": "2017-05-12T16:28:13Z",
           "timestamp": 1494606493000
         },
-        "score": 10.383725,
+        "score": 10.383964,
         "subtitle": [
           ""
         ],
@@ -374,7 +374,7 @@
           "date-time": "2019-10-28T09:13:23Z",
           "timestamp": 1572254003000
         },
-        "score": 10.383725,
+        "score": 10.383964,
         "editor": [
           {
             "given": "Marianne",
@@ -505,7 +505,7 @@
           "date-time": "2019-04-06T03:57:16Z",
           "timestamp": 1554523036000
         },
-        "score": 9.430566,
+        "score": 9.430865,
         "issued": {
           "date-parts": [
             [
@@ -519,9 +519,3877 @@
         ],
         "references-count": 0,
         "URL": "http://dx.doi.org/10.1007/978-3-642-41171-7"
+      },
+      {
+        "indexed": {
+          "date-parts": [
+            [
+              2019,
+              11,
+              23
+            ]
+          ],
+          "date-time": "2019-11-23T09:21:21Z",
+          "timestamp": 1574500881069
+        },
+        "reference-count": 0,
+        "publisher": "Brill",
+        "isbn-type": [
+          {
+            "value": "9789004234574",
+            "type": "electronic"
+          }
+        ],
+        "content-domain": {
+          "domain": [],
+          "crossmark-restriction": false
+        },
+        "published-print": {
+          "date-parts": [
+            [
+              2012,
+              8,
+              28
+            ]
+          ]
+        },
+        "DOI": "10.1163/9789004234574",
+        "type": "book",
+        "created": {
+          "date-parts": [
+            [
+              2013,
+              3,
+              21
+            ]
+          ],
+          "date-time": "2013-03-21T13:41:57Z",
+          "timestamp": 1363873317000
+        },
+        "source": "Crossref",
+        "is-referenced-by-count": 2,
+        "title": [
+          "<i>Ungeteiltheit</i>  oder Mystik als Ab-Grund der Erfahrung"
+        ],
+        "prefix": "10.1163",
+        "author": [
+          {
+            "given": "Rolf",
+            "family": "K�hn",
+            "sequence": "first",
+            "affiliation": []
+          }
+        ],
+        "member": "50",
+        "deposited": {
+          "date-parts": [
+            [
+              2018,
+              12,
+              4
+            ]
+          ],
+          "date-time": "2018-12-04T15:35:32Z",
+          "timestamp": 1543937732000
+        },
+        "score": 9.430865,
+        "issued": {
+          "date-parts": [
+            [
+              2012,
+              8,
+              28
+            ]
+          ]
+        },
+        "ISBN": [
+          "9789004234574"
+        ],
+        "references-count": 0,
+        "URL": "http://dx.doi.org/10.1163/9789004234574"
+      },
+      {
+        "indexed": {
+          "date-parts": [
+            [
+              2019,
+              11,
+              24
+            ]
+          ],
+          "date-time": "2019-11-24T07:05:13Z",
+          "timestamp": 1574579113085
+        },
+        "publisher-location": "Berlin, Heidelberg",
+        "reference-count": 0,
+        "publisher": "Springer Berlin Heidelberg",
+        "isbn-type": [
+          {
+            "value": "9783662336229",
+            "type": "print"
+          },
+          {
+            "value": "9783662340202",
+            "type": "electronic"
+          }
+        ],
+        "license": [
+          {
+            "URL": "http://www.springer.com/tdm",
+            "start": {
+              "date-parts": [
+                [
+                  1911,
+                  1,
+                  1
+                ]
+              ],
+              "date-time": "1911-01-01T00:00:00Z",
+              "timestamp": -1861920000000
+            },
+            "delay-in-days": 0,
+            "content-version": "tdm"
+          }
+        ],
+        "content-domain": {
+          "domain": [],
+          "crossmark-restriction": false
+        },
+        "published-print": {
+          "date-parts": [
+            [
+              1911
+            ]
+          ]
+        },
+        "DOI": "10.1007/978-3-662-34020-2",
+        "type": "book",
+        "created": {
+          "date-parts": [
+            [
+              2013,
+              12,
+              17
+            ]
+          ],
+          "date-time": "2013-12-17T02:08:22Z",
+          "timestamp": 1387246102000
+        },
+        "source": "Crossref",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Eisenbahn-Verkehrsordnung. (EVO.) G�ltig vom 1. April 1909 ab."
+        ],
+        "prefix": "10.1007",
+        "author": [
+          {
+            "name": "Reichs-Eisenbahn-Amt",
+            "sequence": "first",
+            "affiliation": []
+          }
+        ],
+        "member": "297",
+        "link": [
+          {
+            "URL": "http://link.springer.com/content/pdf/10.1007/978-3-662-34020-2.pdf",
+            "content-type": "application/pdf",
+            "content-version": "vor",
+            "intended-application": "text-mining"
+          },
+          {
+            "URL": "http://link.springer.com/content/pdf/10.1007/978-3-662-34020-2",
+            "content-type": "unspecified",
+            "content-version": "vor",
+            "intended-application": "similarity-checking"
+          }
+        ],
+        "deposited": {
+          "date-parts": [
+            [
+              2019,
+              4,
+              7
+            ]
+          ],
+          "date-time": "2019-04-07T00:01:59Z",
+          "timestamp": 1554595319000
+        },
+        "score": 9.430865,
+        "issued": {
+          "date-parts": [
+            [
+              1911
+            ]
+          ]
+        },
+        "ISBN": [
+          "9783662336229",
+          "9783662340202"
+        ],
+        "references-count": 0,
+        "URL": "http://dx.doi.org/10.1007/978-3-662-34020-2"
+      },
+      {
+        "indexed": {
+          "date-parts": [
+            [
+              2019,
+              2,
+              22
+            ]
+          ],
+          "date-time": "2019-02-22T13:41:15Z",
+          "timestamp": 1550842875419
+        },
+        "reference-count": 0,
+        "publisher": "OECD",
+        "isbn-type": [
+          {
+            "value": "9789264236202",
+            "type": "electronic"
+          }
+        ],
+        "content-domain": {
+          "domain": [],
+          "crossmark-restriction": false
+        },
+        "published-print": {
+          "date-parts": [
+            [
+              2015,
+              3,
+              31
+            ]
+          ]
+        },
+        "DOI": "10.1787/9789264236202-de",
+        "type": "book",
+        "created": {
+          "date-parts": [
+            [
+              2015,
+              6,
+              2
+            ]
+          ],
+          "date-time": "2015-06-02T15:25:03Z",
+          "timestamp": 1433258703000
+        },
+        "source": "Crossref",
+        "is-referenced-by-count": 0,
+        "title": [
+          "OECD360: Schweiz 2015"
+        ],
+        "prefix": "10.1787",
+        "author": [
+          {
+            "name": "OECD",
+            "sequence": "first",
+            "affiliation": []
+          }
+        ],
+        "member": "1963",
+        "container-title": [
+          "OECD360"
+        ],
+        "deposited": {
+          "date-parts": [
+            [
+              2019,
+              2,
+              22
+            ]
+          ],
+          "date-time": "2019-02-22T13:20:57Z",
+          "timestamp": 1550841657000
+        },
+        "score": 9.430865,
+        "subtitle": [
+          "Wie schneidet die Schweiz ab?"
+        ],
+        "issued": {
+          "date-parts": [
+            [
+              2015,
+              3,
+              31
+            ]
+          ]
+        },
+        "ISBN": [
+          "9789264236202"
+        ],
+        "references-count": 0,
+        "URL": "http://dx.doi.org/10.1787/9789264236202-de",
+        "ISSN": [
+          "2411-0701"
+        ],
+        "issn-type": [
+          {
+            "value": "2411-0701",
+            "type": "electronic"
+          }
+        ]
+      },
+      {
+        "indexed": {
+          "date-parts": [
+            [
+              2019,
+              2,
+              16
+            ]
+          ],
+          "date-time": "2019-02-16T08:45:34Z",
+          "timestamp": 1550306734962
+        },
+        "publisher-location": "Wiesbaden",
+        "reference-count": 0,
+        "publisher": "Springer Fachmedien Wiesbaden",
+        "isbn-type": [
+          {
+            "value": "9783658148294",
+            "type": "print"
+          },
+          {
+            "value": "9783658148300",
+            "type": "electronic"
+          }
+        ],
+        "license": [
+          {
+            "URL": "http://www.springer.com/tdm",
+            "start": {
+              "date-parts": [
+                [
+                  2016,
+                  1,
+                  1
+                ]
+              ],
+              "date-time": "2016-01-01T00:00:00Z",
+              "timestamp": 1451606400000
+            },
+            "delay-in-days": 0,
+            "content-version": "unspecified"
+          }
+        ],
+        "content-domain": {
+          "domain": [],
+          "crossmark-restriction": false
+        },
+        "published-print": {
+          "date-parts": [
+            [
+              2016
+            ]
+          ]
+        },
+        "DOI": "10.1007/978-3-658-14830-0",
+        "type": "book",
+        "created": {
+          "date-parts": [
+            [
+              2016,
+              7,
+              22
+            ]
+          ],
+          "date-time": "2016-07-22T09:53:35Z",
+          "timestamp": 1469181215000
+        },
+        "source": "Crossref",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Highly Accurate Spectroscopic Parameters from Ab Initio Calculations"
+        ],
+        "prefix": "10.1007",
+        "author": [
+          {
+            "given": "Christopher J.",
+            "family": "Stein",
+            "sequence": "first",
+            "affiliation": []
+          }
+        ],
+        "member": "297",
+        "link": [
+          {
+            "URL": "http://link.springer.com/content/pdf/10.1007/978-3-658-14830-0.pdf",
+            "content-type": "application/pdf",
+            "content-version": "vor",
+            "intended-application": "text-mining"
+          },
+          {
+            "URL": "http://link.springer.com/content/pdf/10.1007/978-3-658-14830-0",
+            "content-type": "unspecified",
+            "content-version": "vor",
+            "intended-application": "similarity-checking"
+          }
+        ],
+        "deposited": {
+          "date-parts": [
+            [
+              2016,
+              7,
+              25
+            ]
+          ],
+          "date-time": "2016-07-25T13:02:47Z",
+          "timestamp": 1469451767000
+        },
+        "score": 9.430865,
+        "issued": {
+          "date-parts": [
+            [
+              2016
+            ]
+          ]
+        },
+        "ISBN": [
+          "9783658148294",
+          "9783658148300"
+        ],
+        "references-count": 0,
+        "URL": "http://dx.doi.org/10.1007/978-3-658-14830-0"
+      },
+      {
+        "indexed": {
+          "date-parts": [
+            [
+              2019,
+              2,
+              22
+            ]
+          ],
+          "date-time": "2019-02-22T21:12:44Z",
+          "timestamp": 1550869964111
+        },
+        "reference-count": 0,
+        "publisher": "OECD",
+        "isbn-type": [
+          {
+            "value": "9789264236578",
+            "type": "electronic"
+          }
+        ],
+        "content-domain": {
+          "domain": [],
+          "crossmark-restriction": false
+        },
+        "published-print": {
+          "date-parts": [
+            [
+              2015,
+              3,
+              31
+            ]
+          ]
+        },
+        "DOI": "10.1787/9789264236578-de",
+        "type": "book",
+        "created": {
+          "date-parts": [
+            [
+              2015,
+              6,
+              3
+            ]
+          ],
+          "date-time": "2015-06-03T14:09:21Z",
+          "timestamp": 1433340561000
+        },
+        "source": "Crossref",
+        "is-referenced-by-count": 0,
+        "title": [
+          "OECD360 : Luxemburg 2015"
+        ],
+        "prefix": "10.1787",
+        "author": [
+          {
+            "name": "OECD",
+            "sequence": "first",
+            "affiliation": []
+          }
+        ],
+        "member": "1963",
+        "container-title": [
+          "OECD360"
+        ],
+        "deposited": {
+          "date-parts": [
+            [
+              2019,
+              2,
+              22
+            ]
+          ],
+          "date-time": "2019-02-22T20:31:10Z",
+          "timestamp": 1550867470000
+        },
+        "score": 9.430865,
+        "subtitle": [
+          "Wie schneidet Luxemburg ab?"
+        ],
+        "issued": {
+          "date-parts": [
+            [
+              2015,
+              3,
+              31
+            ]
+          ]
+        },
+        "ISBN": [
+          "9789264236578"
+        ],
+        "references-count": 0,
+        "URL": "http://dx.doi.org/10.1787/9789264236578-de",
+        "ISSN": [
+          "2411-0701"
+        ],
+        "issn-type": [
+          {
+            "value": "2411-0701",
+            "type": "electronic"
+          }
+        ]
+      },
+      {
+        "indexed": {
+          "date-parts": [
+            [
+              2019,
+              2,
+              17
+            ]
+          ],
+          "date-time": "2019-02-17T17:55:39Z",
+          "timestamp": 1550426139279
+        },
+        "publisher-location": "Berlin, Boston",
+        "reference-count": 0,
+        "publisher": "DE GRUYTER",
+        "isbn-type": [
+          {
+            "value": "9783110959529",
+            "type": "electronic"
+          }
+        ],
+        "content-domain": {
+          "domain": [],
+          "crossmark-restriction": false
+        },
+        "published-print": {
+          "date-parts": [
+            [
+              1991,
+              1,
+              31
+            ]
+          ]
+        },
+        "DOI": "10.1515/9783110959529",
+        "type": "book",
+        "created": {
+          "date-parts": [
+            [
+              2012,
+              6,
+              19
+            ]
+          ],
+          "date-time": "2012-06-19T15:38:48Z",
+          "timestamp": 1340120328000
+        },
+        "source": "Crossref",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Titi Livi Ab urbe condita, Tom 2, Libri XXXVI-XL"
+        ],
+        "prefix": "10.1515",
+        "member": "374",
+        "link": [
+          {
+            "URL": "https://www.degruyter.com/view/books/9783110959529/9783110959529/9783110959529.pdf",
+            "content-type": "unspecified",
+            "content-version": "vor",
+            "intended-application": "similarity-checking"
+          }
+        ],
+        "deposited": {
+          "date-parts": [
+            [
+              2017,
+              5,
+              11
+            ]
+          ],
+          "date-time": "2017-05-11T18:38:28Z",
+          "timestamp": 1494527908000
+        },
+        "score": 9.430865,
+        "subtitle": [
+          ""
+        ],
+        "editor": [
+          {
+            "given": "John",
+            "family": "Briscoe",
+            "sequence": "first",
+            "affiliation": []
+          }
+        ],
+        "issued": {
+          "date-parts": [
+            [
+              1991,
+              1,
+              31
+            ]
+          ]
+        },
+        "ISBN": [
+          "9783110959529"
+        ],
+        "references-count": 0,
+        "URL": "http://dx.doi.org/10.1515/9783110959529"
+      },
+      {
+        "indexed": {
+          "date-parts": [
+            [
+              2019,
+              2,
+              17
+            ]
+          ],
+          "date-time": "2019-02-17T17:55:41Z",
+          "timestamp": 1550426141947
+        },
+        "publisher-location": "Berlin, Boston",
+        "reference-count": 0,
+        "publisher": "DE GRUYTER",
+        "isbn-type": [
+          {
+            "value": "9783110959536",
+            "type": "electronic"
+          }
+        ],
+        "content-domain": {
+          "domain": [],
+          "crossmark-restriction": false
+        },
+        "published-print": {
+          "date-parts": [
+            [
+              1991,
+              1,
+              31
+            ]
+          ]
+        },
+        "DOI": "10.1515/9783110959536",
+        "type": "book",
+        "created": {
+          "date-parts": [
+            [
+              2012,
+              6,
+              19
+            ]
+          ],
+          "date-time": "2012-06-19T15:38:48Z",
+          "timestamp": 1340120328000
+        },
+        "source": "Crossref",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Titi Livi Ab urbe condita, Tom 1, Libri XXXI-XXXV"
+        ],
+        "prefix": "10.1515",
+        "member": "374",
+        "link": [
+          {
+            "URL": "https://www.degruyter.com/view/books/9783110959536/9783110959536/9783110959536.pdf",
+            "content-type": "unspecified",
+            "content-version": "vor",
+            "intended-application": "similarity-checking"
+          }
+        ],
+        "deposited": {
+          "date-parts": [
+            [
+              2017,
+              5,
+              12
+            ]
+          ],
+          "date-time": "2017-05-12T16:44:12Z",
+          "timestamp": 1494607452000
+        },
+        "score": 9.430865,
+        "subtitle": [
+          ""
+        ],
+        "editor": [
+          {
+            "given": "John",
+            "family": "Briscoe",
+            "sequence": "first",
+            "affiliation": []
+          }
+        ],
+        "issued": {
+          "date-parts": [
+            [
+              1991,
+              1,
+              31
+            ]
+          ]
+        },
+        "ISBN": [
+          "9783110959536"
+        ],
+        "references-count": 0,
+        "URL": "http://dx.doi.org/10.1515/9783110959536"
+      },
+      {
+        "indexed": {
+          "date-parts": [
+            [
+              2019,
+              2,
+              17
+            ]
+          ],
+          "date-time": "2019-02-17T17:55:42Z",
+          "timestamp": 1550426142128
+        },
+        "publisher-location": "Berlin, Boston",
+        "reference-count": 0,
+        "publisher": "DE GRUYTER",
+        "isbn-type": [
+          {
+            "value": "9783110959543",
+            "type": "electronic"
+          }
+        ],
+        "content-domain": {
+          "domain": [],
+          "crossmark-restriction": false
+        },
+        "published-print": {
+          "date-parts": [
+            [
+              1986,
+              1,
+              31
+            ]
+          ]
+        },
+        "DOI": "10.1515/9783110959543",
+        "type": "book",
+        "created": {
+          "date-parts": [
+            [
+              2012,
+              6,
+              19
+            ]
+          ],
+          "date-time": "2012-06-19T15:38:48Z",
+          "timestamp": 1340120328000
+        },
+        "source": "Crossref",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Titi Livi Ab Urbe Condita, Libri XLI-XLV"
+        ],
+        "prefix": "10.1515",
+        "member": "374",
+        "link": [
+          {
+            "URL": "https://www.degruyter.com/view/books/9783110959543/9783110959543/9783110959543.pdf",
+            "content-type": "unspecified",
+            "content-version": "vor",
+            "intended-application": "similarity-checking"
+          }
+        ],
+        "deposited": {
+          "date-parts": [
+            [
+              2017,
+              5,
+              12
+            ]
+          ],
+          "date-time": "2017-05-12T15:42:33Z",
+          "timestamp": 1494603753000
+        },
+        "score": 9.430865,
+        "subtitle": [
+          ""
+        ],
+        "editor": [
+          {
+            "given": "John",
+            "family": "Briscoe",
+            "sequence": "first",
+            "affiliation": []
+          }
+        ],
+        "issued": {
+          "date-parts": [
+            [
+              1986,
+              1,
+              31
+            ]
+          ]
+        },
+        "ISBN": [
+          "9783110959543"
+        ],
+        "references-count": 0,
+        "URL": "http://dx.doi.org/10.1515/9783110959543"
+      },
+      {
+        "indexed": {
+          "date-parts": [
+            [
+              2019,
+              2,
+              17
+            ]
+          ],
+          "date-time": "2019-02-17T20:42:40Z",
+          "timestamp": 1550436160643
+        },
+        "publisher-location": "Berlin, Boston",
+        "reference-count": 0,
+        "publisher": "DE GRUYTER",
+        "isbn-type": [
+          {
+            "value": "9783110955835",
+            "type": "electronic"
+          }
+        ],
+        "content-domain": {
+          "domain": [],
+          "crossmark-restriction": false
+        },
+        "published-print": {
+          "date-parts": [
+            [
+              1989,
+              1,
+              31
+            ]
+          ]
+        },
+        "DOI": "10.1515/9783110955835",
+        "type": "book",
+        "created": {
+          "date-parts": [
+            [
+              2012,
+              8,
+              1
+            ]
+          ],
+          "date-time": "2012-08-01T00:58:26Z",
+          "timestamp": 1343782706000
+        },
+        "source": "Crossref",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Titi Livi Ab urbe condita, Libri XXVI-XXVII"
+        ],
+        "prefix": "10.1515",
+        "author": [
+          {
+            "given": "Titus",
+            "family": "Livius",
+            "sequence": "first",
+            "affiliation": []
+          }
+        ],
+        "member": "374",
+        "link": [
+          {
+            "URL": "https://www.degruyter.com/view/books/9783110955835/9783110955835/9783110955835.pdf",
+            "content-type": "unspecified",
+            "content-version": "vor",
+            "intended-application": "similarity-checking"
+          }
+        ],
+        "deposited": {
+          "date-parts": [
+            [
+              2017,
+              5,
+              16
+            ]
+          ],
+          "date-time": "2017-05-16T16:04:45Z",
+          "timestamp": 1494950685000
+        },
+        "score": 9.430865,
+        "subtitle": [
+          ""
+        ],
+        "editor": [
+          {
+            "given": "Patrick G.",
+            "family": "Walsh",
+            "sequence": "additional",
+            "affiliation": []
+          }
+        ],
+        "issued": {
+          "date-parts": [
+            [
+              1989,
+              1,
+              31
+            ]
+          ]
+        },
+        "ISBN": [
+          "9783110955835"
+        ],
+        "references-count": 0,
+        "URL": "http://dx.doi.org/10.1515/9783110955835"
+      },
+      {
+        "indexed": {
+          "date-parts": [
+            [
+              2019,
+              2,
+              18
+            ]
+          ],
+          "date-time": "2019-02-18T05:11:13Z",
+          "timestamp": 1550466673483
+        },
+        "publisher-location": "Berlin, Boston",
+        "reference-count": 0,
+        "publisher": "DE GRUYTER",
+        "isbn-type": [
+          {
+            "value": "9783110955828",
+            "type": "electronic"
+          }
+        ],
+        "content-domain": {
+          "domain": [],
+          "crossmark-restriction": false
+        },
+        "published-print": {
+          "date-parts": [
+            [
+              1986,
+              1,
+              31
+            ]
+          ]
+        },
+        "DOI": "10.1515/9783110955828",
+        "type": "book",
+        "created": {
+          "date-parts": [
+            [
+              2012,
+              12,
+              14
+            ]
+          ],
+          "date-time": "2012-12-14T22:03:40Z",
+          "timestamp": 1355522620000
+        },
+        "source": "Crossref",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Titi Livi Ab urbe condita, Libri XXVIII-XXX"
+        ],
+        "prefix": "10.1515",
+        "author": [
+          {
+            "given": "Titus",
+            "family": "Livius",
+            "sequence": "first",
+            "affiliation": []
+          }
+        ],
+        "member": "374",
+        "link": [
+          {
+            "URL": "https://www.degruyter.com/view/books/9783110955828/9783110955828/9783110955828.pdf",
+            "content-type": "unspecified",
+            "content-version": "vor",
+            "intended-application": "similarity-checking"
+          }
+        ],
+        "deposited": {
+          "date-parts": [
+            [
+              2017,
+              5,
+              10
+            ]
+          ],
+          "date-time": "2017-05-10T15:14:54Z",
+          "timestamp": 1494429294000
+        },
+        "score": 9.430865,
+        "subtitle": [
+          ""
+        ],
+        "editor": [
+          {
+            "given": "Patrick G.",
+            "family": "Walsh",
+            "sequence": "additional",
+            "affiliation": []
+          }
+        ],
+        "issued": {
+          "date-parts": [
+            [
+              1986,
+              1,
+              31
+            ]
+          ]
+        },
+        "ISBN": [
+          "9783110955828"
+        ],
+        "references-count": 0,
+        "URL": "http://dx.doi.org/10.1515/9783110955828"
+      },
+      {
+        "indexed": {
+          "date-parts": [
+            [
+              2019,
+              2,
+              19
+            ]
+          ],
+          "date-time": "2019-02-19T01:27:54Z",
+          "timestamp": 1550539674997
+        },
+        "publisher-location": "Wiesbaden",
+        "reference-count": 0,
+        "publisher": "Springer Fachmedien Wiesbaden",
+        "isbn-type": [
+          {
+            "value": "9783658199784",
+            "type": "print"
+          },
+          {
+            "value": "9783658199791",
+            "type": "electronic"
+          }
+        ],
+        "license": [
+          {
+            "URL": "http://www.springer.com/tdm",
+            "start": {
+              "date-parts": [
+                [
+                  2019,
+                  1,
+                  1
+                ]
+              ],
+              "date-time": "2019-01-01T00:00:00Z",
+              "timestamp": 1546300800000
+            },
+            "delay-in-days": 0,
+            "content-version": "tdm"
+          }
+        ],
+        "content-domain": {
+          "domain": [],
+          "crossmark-restriction": false
+        },
+        "published-print": {
+          "date-parts": [
+            [
+              2019
+            ]
+          ]
+        },
+        "DOI": "10.1007/978-3-658-19979-1",
+        "type": "book",
+        "created": {
+          "date-parts": [
+            [
+              2019,
+              1,
+              9
+            ]
+          ],
+          "date-time": "2019-01-09T03:20:35Z",
+          "timestamp": 1547004035000
+        },
+        "source": "Crossref",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Technische Mechanik 2. Elastostatik"
+        ],
+        "prefix": "10.1007",
+        "author": [
+          {
+            "given": "Christian",
+            "family": "Spura",
+            "sequence": "first",
+            "affiliation": []
+          }
+        ],
+        "member": "297",
+        "link": [
+          {
+            "URL": "http://link.springer.com/content/pdf/10.1007/978-3-658-19979-1.pdf",
+            "content-type": "application/pdf",
+            "content-version": "vor",
+            "intended-application": "text-mining"
+          },
+          {
+            "URL": "http://link.springer.com/content/pdf/10.1007/978-3-658-19979-1",
+            "content-type": "unspecified",
+            "content-version": "vor",
+            "intended-application": "similarity-checking"
+          }
+        ],
+        "deposited": {
+          "date-parts": [
+            [
+              2019,
+              1,
+              9
+            ]
+          ],
+          "date-time": "2019-01-09T03:20:35Z",
+          "timestamp": 1547004035000
+        },
+        "score": 9.430865,
+        "subtitle": [
+          "Nach fest kommt ab"
+        ],
+        "issued": {
+          "date-parts": [
+            [
+              2019
+            ]
+          ]
+        },
+        "ISBN": [
+          "9783658199784",
+          "9783658199791"
+        ],
+        "references-count": 0,
+        "URL": "http://dx.doi.org/10.1007/978-3-658-19979-1"
+      },
+      {
+        "indexed": {
+          "date-parts": [
+            [
+              2019,
+              4,
+              17
+            ]
+          ],
+          "date-time": "2019-04-17T15:41:33Z",
+          "timestamp": 1555515693060
+        },
+        "reference-count": 0,
+        "publisher": "Ferdinand Sch�ningh",
+        "isbn-type": [
+          {
+            "value": "9783506789167",
+            "type": "print"
+          },
+          {
+            "value": "9783657789160",
+            "type": "electronic"
+          }
+        ],
+        "content-domain": {
+          "domain": [],
+          "crossmark-restriction": false
+        },
+        "published-print": {
+          "date-parts": [
+            [
+              2018
+            ]
+          ]
+        },
+        "DOI": "10.30965/9783657789160",
+        "type": "book",
+        "created": {
+          "date-parts": [
+            [
+              2019,
+              4,
+              17
+            ]
+          ],
+          "date-time": "2019-04-17T15:16:43Z",
+          "timestamp": 1555514203000
+        },
+        "source": "Crossref",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Eutropius"
+        ],
+        "prefix": "10.30965",
+        "member": "16089",
+        "deposited": {
+          "date-parts": [
+            [
+              2019,
+              4,
+              17
+            ]
+          ],
+          "date-time": "2019-04-17T15:21:57Z",
+          "timestamp": 1555514517000
+        },
+        "score": 9.430865,
+        "subtitle": [
+          "Breviarium ab urbe Condita"
+        ],
+        "editor": [
+          {
+            "given": "Bruno",
+            "family": "Bleckmann",
+            "sequence": "first",
+            "affiliation": []
+          },
+          {
+            "given": "Jonathan",
+            "family": "Gross",
+            "sequence": "additional",
+            "affiliation": []
+          }
+        ],
+        "issued": {
+          "date-parts": [
+            [
+              2018
+            ]
+          ]
+        },
+        "ISBN": [
+          "9783506789167",
+          "9783657789160"
+        ],
+        "references-count": 0,
+        "URL": "http://dx.doi.org/10.30965/9783657789160"
+      },
+      {
+        "indexed": {
+          "date-parts": [
+            [
+              2019,
+              4,
+              4
+            ]
+          ],
+          "date-time": "2019-04-04T14:42:13Z",
+          "timestamp": 1554388933587
+        },
+        "publisher-location": "Wiesbaden",
+        "reference-count": 0,
+        "publisher": "Gabler Verlag",
+        "isbn-type": [
+          {
+            "value": "9783322845061",
+            "type": "print"
+          },
+          {
+            "value": "9783322845054",
+            "type": "electronic"
+          }
+        ],
+        "license": [
+          {
+            "URL": "http://www.springer.com/tdm",
+            "start": {
+              "date-parts": [
+                [
+                  2003,
+                  1,
+                  1
+                ]
+              ],
+              "date-time": "2003-01-01T00:00:00Z",
+              "timestamp": 1041379200000
+            },
+            "delay-in-days": 0,
+            "content-version": "tdm"
+          }
+        ],
+        "content-domain": {
+          "domain": [],
+          "crossmark-restriction": false
+        },
+        "published-print": {
+          "date-parts": [
+            [
+              2003
+            ]
+          ]
+        },
+        "DOI": "10.1007/978-3-322-84505-4",
+        "type": "book",
+        "created": {
+          "date-parts": [
+            [
+              2012,
+              2,
+              11
+            ]
+          ],
+          "date-time": "2012-02-11T03:57:46Z",
+          "timestamp": 1328932666000
+        },
+        "source": "Crossref",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Karriere ab 45"
+        ],
+        "prefix": "10.1007",
+        "author": [
+          {
+            "given": "Gisela",
+            "family": "Osterhold",
+            "sequence": "first",
+            "affiliation": []
+          },
+          {
+            "given": "Susanne T.",
+            "family": "Hansen",
+            "sequence": "additional",
+            "affiliation": []
+          }
+        ],
+        "member": "297",
+        "link": [
+          {
+            "URL": "http://link.springer.com/content/pdf/10.1007/978-3-322-84505-4.pdf",
+            "content-type": "application/pdf",
+            "content-version": "vor",
+            "intended-application": "text-mining"
+          },
+          {
+            "URL": "http://link.springer.com/content/pdf/10.1007/978-3-322-84505-4",
+            "content-type": "unspecified",
+            "content-version": "vor",
+            "intended-application": "similarity-checking"
+          }
+        ],
+        "deposited": {
+          "date-parts": [
+            [
+              2019,
+              4,
+              4
+            ]
+          ],
+          "date-time": "2019-04-04T14:24:34Z",
+          "timestamp": 1554387874000
+        },
+        "score": 9.430865,
+        "issued": {
+          "date-parts": [
+            [
+              2003
+            ]
+          ]
+        },
+        "ISBN": [
+          "9783322845061",
+          "9783322845054"
+        ],
+        "references-count": 0,
+        "URL": "http://dx.doi.org/10.1007/978-3-322-84505-4"
+      },
+      {
+        "indexed": {
+          "date-parts": [
+            [
+              2019,
+              4,
+              6
+            ]
+          ],
+          "date-time": "2019-04-06T21:40:48Z",
+          "timestamp": 1554586848098
+        },
+        "publisher-location": "Berlin, Heidelberg",
+        "reference-count": 0,
+        "publisher": "Springer Berlin Heidelberg",
+        "isbn-type": [
+          {
+            "value": "9783642218040",
+            "type": "print"
+          },
+          {
+            "value": "9783642218057",
+            "type": "electronic"
+          }
+        ],
+        "license": [
+          {
+            "URL": "http://www.springer.com/tdm",
+            "start": {
+              "date-parts": [
+                [
+                  2012,
+                  1,
+                  1
+                ]
+              ],
+              "date-time": "2012-01-01T00:00:00Z",
+              "timestamp": 1325376000000
+            },
+            "delay-in-days": 0,
+            "content-version": "tdm"
+          }
+        ],
+        "content-domain": {
+          "domain": [],
+          "crossmark-restriction": false
+        },
+        "published-print": {
+          "date-parts": [
+            [
+              2012
+            ]
+          ]
+        },
+        "DOI": "10.1007/978-3-642-21805-7",
+        "type": "book",
+        "created": {
+          "date-parts": [
+            [
+              2012,
+              1,
+              16
+            ]
+          ],
+          "date-time": "2012-01-16T09:52:25Z",
+          "timestamp": 1326707545000
+        },
+        "source": "Crossref",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Ab 40 bewirbt man sich anders"
+        ],
+        "prefix": "10.1007",
+        "author": [
+          {
+            "given": "Anita",
+            "family": "Eggert",
+            "sequence": "first",
+            "affiliation": []
+          }
+        ],
+        "member": "297",
+        "link": [
+          {
+            "URL": "http://link.springer.com/content/pdf/10.1007/978-3-642-21805-7.pdf",
+            "content-type": "application/pdf",
+            "content-version": "vor",
+            "intended-application": "text-mining"
+          },
+          {
+            "URL": "http://link.springer.com/content/pdf/10.1007/978-3-642-21805-7",
+            "content-type": "unspecified",
+            "content-version": "vor",
+            "intended-application": "similarity-checking"
+          }
+        ],
+        "deposited": {
+          "date-parts": [
+            [
+              2019,
+              4,
+              6
+            ]
+          ],
+          "date-time": "2019-04-06T21:22:28Z",
+          "timestamp": 1554585748000
+        },
+        "score": 9.430865,
+        "issued": {
+          "date-parts": [
+            [
+              2012
+            ]
+          ]
+        },
+        "ISBN": [
+          "9783642218040",
+          "9783642218057"
+        ],
+        "references-count": 0,
+        "URL": "http://dx.doi.org/10.1007/978-3-642-21805-7"
+      },
+      {
+        "indexed": {
+          "date-parts": [
+            [
+              2019,
+              5,
+              2
+            ]
+          ],
+          "date-time": "2019-05-02T01:24:14Z",
+          "timestamp": 1556760254794
+        },
+        "reference-count": 0,
+        "publisher": "OECD",
+        "isbn-type": [
+          {
+            "value": "9789264236066",
+            "type": "electronic"
+          }
+        ],
+        "content-domain": {
+          "domain": [],
+          "crossmark-restriction": false
+        },
+        "published-print": {
+          "date-parts": [
+            [
+              2015,
+              3,
+              31
+            ]
+          ]
+        },
+        "DOI": "10.1787/9789264236066-de",
+        "type": "book",
+        "created": {
+          "date-parts": [
+            [
+              2015,
+              6,
+              2
+            ]
+          ],
+          "date-time": "2015-06-02T15:25:03Z",
+          "timestamp": 1433258703000
+        },
+        "source": "Crossref",
+        "is-referenced-by-count": 1,
+        "title": [
+          "OECD360 : Deutschland 2015"
+        ],
+        "prefix": "10.1787",
+        "author": [
+          {
+            "name": "OECD",
+            "sequence": "first",
+            "affiliation": []
+          }
+        ],
+        "member": "1963",
+        "container-title": [
+          "OECD360"
+        ],
+        "deposited": {
+          "date-parts": [
+            [
+              2019,
+              2,
+              22
+            ]
+          ],
+          "date-time": "2019-02-22T17:19:01Z",
+          "timestamp": 1550855941000
+        },
+        "score": 9.430865,
+        "subtitle": [
+          "Wie schneidet Deutschland ab?"
+        ],
+        "issued": {
+          "date-parts": [
+            [
+              2015,
+              3,
+              31
+            ]
+          ]
+        },
+        "ISBN": [
+          "9789264236066"
+        ],
+        "references-count": 0,
+        "URL": "http://dx.doi.org/10.1787/9789264236066-de",
+        "ISSN": [
+          "2411-0701"
+        ],
+        "issn-type": [
+          {
+            "value": "2411-0701",
+            "type": "electronic"
+          }
+        ]
+      },
+      {
+        "indexed": {
+          "date-parts": [
+            [
+              2019,
+              11,
+              21
+            ]
+          ],
+          "date-time": "2019-11-21T22:35:20Z",
+          "timestamp": 1574375720739
+        },
+        "publisher-location": "Berlin, New York",
+        "reference-count": 0,
+        "publisher": "DE GRUYTER",
+        "isbn-type": [
+          {
+            "value": "9783110255935",
+            "type": "electronic"
+          }
+        ],
+        "content-domain": {
+          "domain": [],
+          "crossmark-restriction": false
+        },
+        "published-print": {
+          "date-parts": [
+            [
+              1976,
+              1,
+              31
+            ]
+          ]
+        },
+        "DOI": "10.1515/9783110255935",
+        "type": "book",
+        "created": {
+          "date-parts": [
+            [
+              2011,
+              2,
+              2
+            ]
+          ],
+          "date-time": "2011-02-02T17:20:05Z",
+          "timestamp": 1296667205000
+        },
+        "source": "Crossref",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Titi Livi Ab urbe condita"
+        ],
+        "prefix": "10.1515",
+        "author": [
+          {
+            "given": "Titus",
+            "family": "Livius",
+            "sequence": "first",
+            "affiliation": []
+          }
+        ],
+        "member": "374",
+        "link": [
+          {
+            "URL": "http://www.degruyter.com/view/books/9783110255935/9783110255935/9783110255935.xml",
+            "content-type": "text/html",
+            "content-version": "vor",
+            "intended-application": "text-mining"
+          },
+          {
+            "URL": "http://www.degruyter.com/view/books/9783110255935/9783110255935/9783110255935.pdf",
+            "content-type": "unspecified",
+            "content-version": "vor",
+            "intended-application": "similarity-checking"
+          }
+        ],
+        "deposited": {
+          "date-parts": [
+            [
+              2017,
+              5,
+              12
+            ]
+          ],
+          "date-time": "2017-05-12T15:49:43Z",
+          "timestamp": 1494604183000
+        },
+        "score": 9.430865,
+        "subtitle": [
+          "Libri XXIII-XXV"
+        ],
+        "editor": [
+          {
+            "given": "Thomas Alan",
+            "family": "Dorey",
+            "sequence": "additional",
+            "affiliation": []
+          }
+        ],
+        "issued": {
+          "date-parts": [
+            [
+              1976,
+              1,
+              31
+            ]
+          ]
+        },
+        "ISBN": [
+          "9783110255935"
+        ],
+        "references-count": 0,
+        "URL": "http://dx.doi.org/10.1515/9783110255935"
+      },
+      {
+        "indexed": {
+          "date-parts": [
+            [
+              2019,
+              11,
+              21
+            ]
+          ],
+          "date-time": "2019-11-21T21:55:38Z",
+          "timestamp": 1574373338016
+        },
+        "publisher-location": "Berlin, New York",
+        "reference-count": 0,
+        "publisher": "DE GRUYTER",
+        "isbn-type": [
+          {
+            "value": "9783110959345",
+            "type": "electronic"
+          }
+        ],
+        "content-domain": {
+          "domain": [],
+          "crossmark-restriction": false
+        },
+        "published-print": {
+          "date-parts": [
+            [
+              1971,
+              1,
+              31
+            ]
+          ]
+        },
+        "DOI": "10.1515/9783110959345",
+        "type": "book",
+        "created": {
+          "date-parts": [
+            [
+              2011,
+              1,
+              21
+            ]
+          ],
+          "date-time": "2011-01-21T08:33:28Z",
+          "timestamp": 1295598808000
+        },
+        "source": "Crossref",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Titi Livi Ab urbe condita"
+        ],
+        "prefix": "10.1515",
+        "author": [
+          {
+            "family": "Livius Titus",
+            "sequence": "first",
+            "affiliation": []
+          }
+        ],
+        "member": "374",
+        "link": [
+          {
+            "URL": "http://www.degruyter.com/view/books/9783110959345/9783110959345/9783110959345.xml",
+            "content-type": "text/html",
+            "content-version": "vor",
+            "intended-application": "text-mining"
+          },
+          {
+            "URL": "http://www.degruyter.com/view/books/9783110959345/9783110959345/9783110959345.pdf",
+            "content-type": "unspecified",
+            "content-version": "vor",
+            "intended-application": "similarity-checking"
+          }
+        ],
+        "deposited": {
+          "date-parts": [
+            [
+              2017,
+              5,
+              12
+            ]
+          ],
+          "date-time": "2017-05-12T16:19:58Z",
+          "timestamp": 1494605998000
+        },
+        "score": 9.430865,
+        "subtitle": [
+          "Libri XXI-XXII"
+        ],
+        "editor": [
+          {
+            "given": "Thomas Alan",
+            "family": "Dorey",
+            "sequence": "additional",
+            "affiliation": []
+          }
+        ],
+        "issued": {
+          "date-parts": [
+            [
+              1971,
+              1,
+              31
+            ]
+          ]
+        },
+        "ISBN": [
+          "9783110959345"
+        ],
+        "references-count": 0,
+        "URL": "http://dx.doi.org/10.1515/9783110959345"
+      },
+      {
+        "indexed": {
+          "date-parts": [
+            [
+              2019,
+              11,
+              27
+            ]
+          ],
+          "date-time": "2019-11-27T20:27:08Z",
+          "timestamp": 1574886428569
+        },
+        "publisher-location": "Berlin, Heidelberg",
+        "reference-count": 0,
+        "publisher": "Springer Berlin Heidelberg",
+        "isbn-type": [
+          {
+            "value": "9783662581797",
+            "type": "print"
+          },
+          {
+            "value": "9783662581803",
+            "type": "electronic"
+          }
+        ],
+        "license": [
+          {
+            "URL": "http://www.springer.com/tdm",
+            "start": {
+              "date-parts": [
+                [
+                  2019,
+                  1,
+                  1
+                ]
+              ],
+              "date-time": "2019-01-01T00:00:00Z",
+              "timestamp": 1546300800000
+            },
+            "delay-in-days": 0,
+            "content-version": "tdm"
+          }
+        ],
+        "content-domain": {
+          "domain": [],
+          "crossmark-restriction": false
+        },
+        "published-print": {
+          "date-parts": [
+            [
+              2019
+            ]
+          ]
+        },
+        "DOI": "10.1007/978-3-662-58180-3",
+        "type": "book",
+        "created": {
+          "date-parts": [
+            [
+              2019,
+              3,
+              2
+            ]
+          ],
+          "date-time": "2019-03-02T08:02:44Z",
+          "timestamp": 1551513764000
+        },
+        "source": "Crossref",
+        "is-referenced-by-count": 1,
+        "title": [
+          "M�dchen fragen M�dchenfragen"
+        ],
+        "prefix": "10.1007",
+        "author": [
+          {
+            "given": "Gisela",
+            "family": "Gille",
+            "sequence": "first",
+            "affiliation": []
+          }
+        ],
+        "member": "297",
+        "link": [
+          {
+            "URL": "http://link.springer.com/content/pdf/10.1007/978-3-662-58180-3.pdf",
+            "content-type": "application/pdf",
+            "content-version": "vor",
+            "intended-application": "text-mining"
+          },
+          {
+            "URL": "http://link.springer.com/content/pdf/10.1007/978-3-662-58180-3",
+            "content-type": "unspecified",
+            "content-version": "vor",
+            "intended-application": "similarity-checking"
+          }
+        ],
+        "deposited": {
+          "date-parts": [
+            [
+              2019,
+              3,
+              2
+            ]
+          ],
+          "date-time": "2019-03-02T08:02:44Z",
+          "timestamp": 1551513764000
+        },
+        "score": 9.430865,
+        "subtitle": [
+          "Das Buch f�r M�dchen ab 11 Jahren"
+        ],
+        "issued": {
+          "date-parts": [
+            [
+              2019
+            ]
+          ]
+        },
+        "ISBN": [
+          "9783662581797",
+          "9783662581803"
+        ],
+        "references-count": 0,
+        "URL": "http://dx.doi.org/10.1007/978-3-662-58180-3"
+      },
+      {
+        "indexed": {
+          "date-parts": [
+            [
+              2019,
+              11,
+              23
+            ]
+          ],
+          "date-time": "2019-11-23T15:16:10Z",
+          "timestamp": 1574522170834
+        },
+        "publisher-location": "Berlin, Boston",
+        "reference-count": 0,
+        "publisher": "DE GRUYTER",
+        "isbn-type": [
+          {
+            "value": "9783110971538",
+            "type": "electronic"
+          }
+        ],
+        "content-domain": {
+          "domain": [],
+          "crossmark-restriction": false
+        },
+        "published-print": {
+          "date-parts": [
+            [
+              1994,
+              12,
+              31
+            ]
+          ]
+        },
+        "DOI": "10.1515/9783110971538",
+        "type": "book",
+        "created": {
+          "date-parts": [
+            [
+              2013,
+              6,
+              6
+            ]
+          ],
+          "date-time": "2013-06-06T20:02:25Z",
+          "timestamp": 1370548945000
+        },
+        "source": "Crossref",
+        "is-referenced-by-count": 1,
+        "title": [
+          "Cornelii Taciti libri qui supersunt, Tomus I cplt., Ab excessu divi Augusti (Annales)"
+        ],
+        "prefix": "10.1515",
+        "member": "374",
+        "link": [
+          {
+            "URL": "http://www.degruyter.com/view/books/9783110971538/9783110971538/9783110971538.xml",
+            "content-type": "text/html",
+            "content-version": "vor",
+            "intended-application": "text-mining"
+          },
+          {
+            "URL": "http://www.degruyter.com/view/books/9783110971538/9783110971538/9783110971538.xml",
+            "content-type": "unspecified",
+            "content-version": "vor",
+            "intended-application": "similarity-checking"
+          }
+        ],
+        "deposited": {
+          "date-parts": [
+            [
+              2019,
+              4,
+              1
+            ]
+          ],
+          "date-time": "2019-04-01T17:09:09Z",
+          "timestamp": 1554138549000
+        },
+        "score": 8.748086,
+        "subtitle": [
+          ""
+        ],
+        "editor": [
+          {
+            "given": "Heinrich",
+            "family": "Heubner",
+            "sequence": "first",
+            "affiliation": []
+          }
+        ],
+        "issued": {
+          "date-parts": [
+            [
+              1994,
+              12,
+              31
+            ]
+          ]
+        },
+        "ISBN": [
+          "9783110971538"
+        ],
+        "references-count": 0,
+        "URL": "http://dx.doi.org/10.1515/9783110971538"
+      },
+      {
+        "indexed": {
+          "date-parts": [
+            [
+              2019,
+              2,
+              16
+            ]
+          ],
+          "date-time": "2019-02-16T20:46:58Z",
+          "timestamp": 1550350018893
+        },
+        "reference-count": 0,
+        "publisher": "Oxford University Press",
+        "isbn-type": [
+          {
+            "value": "9780199686162",
+            "type": "electronic"
+          }
+        ],
+        "content-domain": {
+          "domain": [],
+          "crossmark-restriction": false
+        },
+        "published-print": {
+          "date-parts": [
+            [
+              2016,
+              5,
+              19
+            ]
+          ]
+        },
+        "DOI": "10.1093/actrade/9780199686162.book.1",
+        "type": "book",
+        "created": {
+          "date-parts": [
+            [
+              2017,
+              1,
+              26
+            ]
+          ],
+          "date-time": "2017-01-26T23:13:21Z",
+          "timestamp": 1485472401000
+        },
+        "source": "Crossref",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Oxford Classical Texts: Titi Livi: Ab Urbe Condita, Vol. 3: Libri XXI-XXV"
+        ],
+        "prefix": "10.1093",
+        "author": [
+          {
+            "given": "Livy [Titus",
+            "family": "Livius]",
+            "sequence": "first",
+            "affiliation": []
+          }
+        ],
+        "member": "286",
+        "deposited": {
+          "date-parts": [
+            [
+              2017,
+              11,
+              23
+            ]
+          ],
+          "date-time": "2017-11-23T11:09:13Z",
+          "timestamp": 1511435353000
+        },
+        "score": 8.748086,
+        "editor": [
+          {
+            "given": "John",
+            "family": "Briscoe",
+            "sequence": "additional",
+            "affiliation": []
+          }
+        ],
+        "issued": {
+          "date-parts": [
+            [
+              2016,
+              5,
+              19
+            ]
+          ]
+        },
+        "ISBN": [
+          "9780199686162"
+        ],
+        "references-count": 0,
+        "URL": "http://dx.doi.org/10.1093/actrade/9780199686162.book.1"
+      },
+      {
+        "indexed": {
+          "date-parts": [
+            [
+              2019,
+              2,
+              16
+            ]
+          ],
+          "date-time": "2019-02-16T18:54:01Z",
+          "timestamp": 1550343241152
+        },
+        "reference-count": 0,
+        "publisher": "Elsevier",
+        "isbn-type": [
+          {
+            "value": "9780128030608",
+            "type": "print"
+          }
+        ],
+        "content-domain": {
+          "domain": [],
+          "crossmark-restriction": false
+        },
+        "published-print": {
+          "date-parts": [
+            [
+              2016
+            ]
+          ]
+        },
+        "DOI": "10.1016/s0065-3276(16)x0002-0",
+        "type": "book",
+        "created": {
+          "date-parts": [
+            [
+              2016,
+              12,
+              29
+            ]
+          ],
+          "date-time": "2016-12-29T12:32:12Z",
+          "timestamp": 1483014732000
+        },
+        "source": "Crossref",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Electron Correlation in Molecules  ab initio Beyond Gaussian Quantum Chemistry"
+        ],
+        "prefix": "10.1016",
+        "member": "78",
+        "container-title": [
+          "Advances in Quantum Chemistry"
+        ],
+        "link": [
+          {
+            "URL": "https://api.elsevier.com/content/article/PII:S0065327616X00020?httpAccept=text/xml",
+            "content-type": "text/xml",
+            "content-version": "vor",
+            "intended-application": "text-mining"
+          },
+          {
+            "URL": "https://api.elsevier.com/content/article/PII:S0065327616X00020?httpAccept=text/plain",
+            "content-type": "text/plain",
+            "content-version": "vor",
+            "intended-application": "text-mining"
+          }
+        ],
+        "deposited": {
+          "date-parts": [
+            [
+              2018,
+              9,
+              5
+            ]
+          ],
+          "date-time": "2018-09-05T12:53:33Z",
+          "timestamp": 1536152013000
+        },
+        "score": 8.748086,
+        "issued": {
+          "date-parts": [
+            [
+              2016
+            ]
+          ]
+        },
+        "ISBN": [
+          "9780128030608"
+        ],
+        "references-count": 0,
+        "URL": "http://dx.doi.org/10.1016/s0065-3276(16)x0002-0",
+        "ISSN": [
+          "0065-3276"
+        ],
+        "issn-type": [
+          {
+            "value": "0065-3276",
+            "type": "print"
+          }
+        ]
+      },
+      {
+        "indexed": {
+          "date-parts": [
+            [
+              2019,
+              2,
+              17
+            ]
+          ],
+          "date-time": "2019-02-17T21:17:34Z",
+          "timestamp": 1550438254871
+        },
+        "publisher-location": "M�nchen",
+        "reference-count": 0,
+        "publisher": "Carl Hanser Verlag GmbH &amp; Co. KG",
+        "isbn-type": [
+          {
+            "value": "9783446423657",
+            "type": "print"
+          },
+          {
+            "value": "9783446425347",
+            "type": "electronic"
+          }
+        ],
+        "content-domain": {
+          "domain": [],
+          "crossmark-restriction": false
+        },
+        "published-print": {
+          "date-parts": [
+            [
+              2010,
+              9,
+              2
+            ]
+          ]
+        },
+        "DOI": "10.3139/9783446425347",
+        "type": "book",
+        "created": {
+          "date-parts": [
+            [
+              2012,
+              8,
+              13
+            ]
+          ],
+          "date-time": "2012-08-13T11:31:12Z",
+          "timestamp": 1344857472000
+        },
+        "source": "Crossref",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Simulationen mit Inventor"
+        ],
+        "prefix": "10.3139",
+        "author": [
+          {
+            "given": "G�nter",
+            "family": "Scheuermann",
+            "sequence": "first",
+            "affiliation": []
+          }
+        ],
+        "member": "1697",
+        "deposited": {
+          "date-parts": [
+            [
+              2014,
+              5,
+              30
+            ]
+          ],
+          "date-time": "2014-05-30T17:50:00Z",
+          "timestamp": 1401472200000
+        },
+        "score": 8.748086,
+        "subtitle": [
+          "FEM und dynamische Simulation Grundlagen und Beispiele ab Version 2011"
+        ],
+        "issued": {
+          "date-parts": [
+            [
+              2010,
+              9,
+              2
+            ]
+          ]
+        },
+        "ISBN": [
+          "9783446423657",
+          "9783446425347"
+        ],
+        "references-count": 0,
+        "alternative-id": [
+          "10.3139/9783446425347"
+        ],
+        "URL": "http://dx.doi.org/10.3139/9783446425347"
+      },
+      {
+        "indexed": {
+          "date-parts": [
+            [
+              2019,
+              2,
+              17
+            ]
+          ],
+          "date-time": "2019-02-17T23:19:22Z",
+          "timestamp": 1550445562186
+        },
+        "publisher-location": "M�nchen",
+        "reference-count": 0,
+        "publisher": "Carl Hanser Verlag GmbH &amp; Co. KG",
+        "isbn-type": [
+          {
+            "value": "9783446433335",
+            "type": "print"
+          },
+          {
+            "value": "9783446434042",
+            "type": "electronic"
+          }
+        ],
+        "content-domain": {
+          "domain": [],
+          "crossmark-restriction": false
+        },
+        "published-print": {
+          "date-parts": [
+            [
+              2012,
+              9,
+              6
+            ]
+          ]
+        },
+        "DOI": "10.3139/9783446434042",
+        "type": "book",
+        "created": {
+          "date-parts": [
+            [
+              2012,
+              9,
+              17
+            ]
+          ],
+          "date-time": "2012-09-17T15:53:51Z",
+          "timestamp": 1347897231000
+        },
+        "source": "Crossref",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Simulationen mit Inventor"
+        ],
+        "prefix": "10.3139",
+        "author": [
+          {
+            "given": "G�nter",
+            "family": "Scheuermann",
+            "sequence": "first",
+            "affiliation": []
+          }
+        ],
+        "member": "1697",
+        "deposited": {
+          "date-parts": [
+            [
+              2014,
+              5,
+              30
+            ]
+          ],
+          "date-time": "2014-05-30T18:05:38Z",
+          "timestamp": 1401473138000
+        },
+        "score": 8.748086,
+        "subtitle": [
+          "FEM und dynamische Simulation. Grundlagen und Beispiele ab Version 2013"
+        ],
+        "issued": {
+          "date-parts": [
+            [
+              2012,
+              9,
+              6
+            ]
+          ]
+        },
+        "ISBN": [
+          "9783446433335",
+          "9783446434042"
+        ],
+        "references-count": 0,
+        "alternative-id": [
+          "10.3139/9783446434042"
+        ],
+        "URL": "http://dx.doi.org/10.3139/9783446434042"
+      },
+      {
+        "indexed": {
+          "date-parts": [
+            [
+              2019,
+              11,
+              27
+            ]
+          ],
+          "date-time": "2019-11-27T00:52:04Z",
+          "timestamp": 1574815924851
+        },
+        "reference-count": 0,
+        "publisher": "Impressum per magistru[m] Antonium de carchano",
+        "content-domain": {
+          "domain": [],
+          "crossmark-restriction": false
+        },
+        "published-print": {
+          "date-parts": [
+            [
+              1485
+            ]
+          ]
+        },
+        "DOI": "10.24157/arc_13867",
+        "type": "book",
+        "created": {
+          "date-parts": [
+            [
+              2018,
+              3,
+              28
+            ]
+          ],
+          "date-time": "2018-03-28T16:41:35Z",
+          "timestamp": 1522255295000
+        },
+        "source": "Crossref",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Explicit singulare opus de anima Auicene qui sextus naturalium eiusdem dicitur extractum ab optimo exemplari."
+        ],
+        "prefix": "10.24157",
+        "author": [
+          {
+            "family": "Avicenna",
+            "sequence": "first",
+            "affiliation": []
+          }
+        ],
+        "member": "10242",
+        "deposited": {
+          "date-parts": [
+            [
+              2018,
+              9,
+              24
+            ]
+          ],
+          "date-time": "2018-09-24T16:48:47Z",
+          "timestamp": 1537807727000
+        },
+        "score": 8.748086,
+        "issued": {
+          "date-parts": [
+            [
+              1485
+            ]
+          ]
+        },
+        "references-count": 0,
+        "URL": "http://dx.doi.org/10.24157/arc_13867"
+      },
+      {
+        "indexed": {
+          "date-parts": [
+            [
+              2019,
+              5,
+              23
+            ]
+          ],
+          "date-time": "2019-05-23T22:03:05Z",
+          "timestamp": 1558648985387
+        },
+        "publisher-location": "Berlin, Heidelberg",
+        "reference-count": 0,
+        "publisher": "Springer Berlin Heidelberg",
+        "isbn-type": [
+          {
+            "value": "9783540100058",
+            "type": "print"
+          },
+          {
+            "value": "9783642931406",
+            "type": "electronic"
+          }
+        ],
+        "license": [
+          {
+            "URL": "http://www.springer.com/tdm",
+            "start": {
+              "date-parts": [
+                [
+                  1980,
+                  1,
+                  1
+                ]
+              ],
+              "date-time": "1980-01-01T00:00:00Z",
+              "timestamp": 315532800000
+            },
+            "delay-in-days": 0,
+            "content-version": "tdm"
+          }
+        ],
+        "content-domain": {
+          "domain": [],
+          "crossmark-restriction": false
+        },
+        "published-print": {
+          "date-parts": [
+            [
+              1980
+            ]
+          ]
+        },
+        "DOI": "10.1007/978-3-642-93140-6",
+        "type": "book",
+        "created": {
+          "date-parts": [
+            [
+              2012,
+              1,
+              16
+            ]
+          ],
+          "date-time": "2012-01-16T19:02:57Z",
+          "timestamp": 1326740577000
+        },
+        "source": "Crossref",
+        "is-referenced-by-count": 84,
+        "title": [
+          "Ab Initio Calculations"
+        ],
+        "prefix": "10.1007",
+        "author": [
+          {
+            "given": "Petr",
+            "family": "�rsky",
+            "sequence": "first",
+            "affiliation": []
+          },
+          {
+            "given": "Miroslav",
+            "family": "Urban",
+            "sequence": "additional",
+            "affiliation": []
+          }
+        ],
+        "member": "297",
+        "container-title": [
+          "Lecture Notes in Chemistry"
+        ],
+        "link": [
+          {
+            "URL": "http://link.springer.com/content/pdf/10.1007/978-3-642-93140-6.pdf",
+            "content-type": "application/pdf",
+            "content-version": "vor",
+            "intended-application": "text-mining"
+          },
+          {
+            "URL": "http://link.springer.com/content/pdf/10.1007/978-3-642-93140-6",
+            "content-type": "unspecified",
+            "content-version": "vor",
+            "intended-application": "similarity-checking"
+          }
+        ],
+        "deposited": {
+          "date-parts": [
+            [
+              2019,
+              4,
+              6
+            ]
+          ],
+          "date-time": "2019-04-06T19:22:40Z",
+          "timestamp": 1554578560000
+        },
+        "score": 8.748086,
+        "issued": {
+          "date-parts": [
+            [
+              1980
+            ]
+          ]
+        },
+        "ISBN": [
+          "9783540100058",
+          "9783642931406"
+        ],
+        "references-count": 0,
+        "URL": "http://dx.doi.org/10.1007/978-3-642-93140-6",
+        "ISSN": [
+          "0342-4901",
+          "2192-6603"
+        ],
+        "issn-type": [
+          {
+            "value": "0342-4901",
+            "type": "print"
+          },
+          {
+            "value": "2192-6603",
+            "type": "electronic"
+          }
+        ]
+      },
+      {
+        "indexed": {
+          "date-parts": [
+            [
+              2019,
+              4,
+              18
+            ]
+          ],
+          "date-time": "2019-04-18T21:22:56Z",
+          "timestamp": 1555622576983
+        },
+        "publisher-location": "Dordrecht",
+        "reference-count": 0,
+        "publisher": "Springer Netherlands",
+        "isbn-type": [
+          {
+            "value": "9789401089173",
+            "type": "print"
+          },
+          {
+            "value": "9789400954748",
+            "type": "electronic"
+          }
+        ],
+        "license": [
+          {
+            "URL": "http://www.springer.com/tdm",
+            "start": {
+              "date-parts": [
+                [
+                  1985,
+                  1,
+                  1
+                ]
+              ],
+              "date-time": "1985-01-01T00:00:00Z",
+              "timestamp": 473385600000
+            },
+            "delay-in-days": 0,
+            "content-version": "tdm"
+          }
+        ],
+        "content-domain": {
+          "domain": [],
+          "crossmark-restriction": false
+        },
+        "published-print": {
+          "date-parts": [
+            [
+              1985
+            ]
+          ]
+        },
+        "DOI": "10.1007/978-94-009-5474-8",
+        "type": "book",
+        "created": {
+          "date-parts": [
+            [
+              2011,
+              10,
+              19
+            ]
+          ],
+          "date-time": "2011-10-19T00:24:04Z",
+          "timestamp": 1318983844000
+        },
+        "source": "Crossref",
+        "is-referenced-by-count": 4,
+        "title": [
+          "Comparison of Ab Initio Quantum Chemistry with Experiment for Small Molecules"
+        ],
+        "prefix": "10.1007",
+        "member": "297",
+        "link": [
+          {
+            "URL": "http://link.springer.com/content/pdf/10.1007/978-94-009-5474-8.pdf",
+            "content-type": "application/pdf",
+            "content-version": "vor",
+            "intended-application": "text-mining"
+          },
+          {
+            "URL": "http://link.springer.com/content/pdf/10.1007/978-94-009-5474-8",
+            "content-type": "unspecified",
+            "content-version": "vor",
+            "intended-application": "similarity-checking"
+          }
+        ],
+        "deposited": {
+          "date-parts": [
+            [
+              2019,
+              4,
+              6
+            ]
+          ],
+          "date-time": "2019-04-06T18:55:58Z",
+          "timestamp": 1554576958000
+        },
+        "score": 8.748086,
+        "editor": [
+          {
+            "given": "Rodney J.",
+            "family": "Bartlett",
+            "sequence": "first",
+            "affiliation": []
+          }
+        ],
+        "issued": {
+          "date-parts": [
+            [
+              1985
+            ]
+          ]
+        },
+        "ISBN": [
+          "9789401089173",
+          "9789400954748"
+        ],
+        "references-count": 0,
+        "URL": "http://dx.doi.org/10.1007/978-94-009-5474-8"
+      },
+      {
+        "indexed": {
+          "date-parts": [
+            [
+              2019,
+              7,
+              31
+            ]
+          ],
+          "date-time": "2019-07-31T07:23:23Z",
+          "timestamp": 1564557803977
+        },
+        "publisher-location": "Berlin, Heidelberg",
+        "reference-count": 0,
+        "publisher": "Springer Berlin Heidelberg",
+        "isbn-type": [
+          {
+            "value": "9783642232374",
+            "type": "print"
+          },
+          {
+            "value": "9783642232381",
+            "type": "electronic"
+          }
+        ],
+        "license": [
+          {
+            "URL": "http://www.springer.com/tdm",
+            "start": {
+              "date-parts": [
+                [
+                  2012,
+                  1,
+                  1
+                ]
+              ],
+              "date-time": "2012-01-01T00:00:00Z",
+              "timestamp": 1325376000000
+            },
+            "delay-in-days": 0,
+            "content-version": "tdm"
+          }
+        ],
+        "content-domain": {
+          "domain": [],
+          "crossmark-restriction": false
+        },
+        "published-print": {
+          "date-parts": [
+            [
+              2012
+            ]
+          ]
+        },
+        "DOI": "10.1007/978-3-642-23238-1",
+        "type": "book",
+        "created": {
+          "date-parts": [
+            [
+              2011,
+              9,
+              22
+            ]
+          ],
+          "date-time": "2011-09-22T06:17:42Z",
+          "timestamp": 1316672262000
+        },
+        "source": "Crossref",
+        "is-referenced-by-count": 7,
+        "title": [
+          "Optimised Projections for the Ab Initio Simulation of Large and Strongly Correlated Systems"
+        ],
+        "prefix": "10.1007",
+        "author": [
+          {
+            "given": "David D.",
+            "family": "O'Regan",
+            "sequence": "first",
+            "affiliation": []
+          }
+        ],
+        "member": "297",
+        "link": [
+          {
+            "URL": "http://link.springer.com/content/pdf/10.1007/978-3-642-23238-1.pdf",
+            "content-type": "application/pdf",
+            "content-version": "vor",
+            "intended-application": "text-mining"
+          },
+          {
+            "URL": "http://link.springer.com/content/pdf/10.1007/978-3-642-23238-1",
+            "content-type": "unspecified",
+            "content-version": "vor",
+            "intended-application": "similarity-checking"
+          }
+        ],
+        "deposited": {
+          "date-parts": [
+            [
+              2019,
+              5,
+              18
+            ]
+          ],
+          "date-time": "2019-05-18T03:18:18Z",
+          "timestamp": 1558149498000
+        },
+        "score": 8.748086,
+        "issued": {
+          "date-parts": [
+            [
+              2012
+            ]
+          ]
+        },
+        "ISBN": [
+          "9783642232374",
+          "9783642232381"
+        ],
+        "references-count": 0,
+        "URL": "http://dx.doi.org/10.1007/978-3-642-23238-1"
+      },
+      {
+        "indexed": {
+          "date-parts": [
+            [
+              2019,
+              7,
+              2
+            ]
+          ],
+          "date-time": "2019-07-02T06:40:42Z",
+          "timestamp": 1562049642918
+        },
+        "publisher-location": "Wiesbaden",
+        "reference-count": 0,
+        "publisher": "Springer Fachmedien Wiesbaden",
+        "isbn-type": [
+          {
+            "value": "9783658264161",
+            "type": "print"
+          },
+          {
+            "value": "9783658264178",
+            "type": "electronic"
+          }
+        ],
+        "license": [
+          {
+            "URL": "http://www.springer.com/tdm",
+            "start": {
+              "date-parts": [
+                [
+                  2019,
+                  1,
+                  1
+                ]
+              ],
+              "date-time": "2019-01-01T00:00:00Z",
+              "timestamp": 1546300800000
+            },
+            "delay-in-days": 0,
+            "content-version": "tdm"
+          }
+        ],
+        "content-domain": {
+          "domain": [],
+          "crossmark-restriction": false
+        },
+        "published-print": {
+          "date-parts": [
+            [
+              2019
+            ]
+          ]
+        },
+        "DOI": "10.1007/978-3-658-26417-8",
+        "type": "book",
+        "created": {
+          "date-parts": [
+            [
+              2019,
+              7,
+              2
+            ]
+          ],
+          "date-time": "2019-07-02T06:17:35Z",
+          "timestamp": 1562048255000
+        },
+        "source": "Crossref",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Einf�hrung in die Allgemeine Chemie"
+        ],
+        "prefix": "10.1007",
+        "author": [
+          {
+            "given": "Selma",
+            "family": "Sagman",
+            "sequence": "first",
+            "affiliation": []
+          }
+        ],
+        "member": "297",
+        "link": [
+          {
+            "URL": "http://link.springer.com/content/pdf/10.1007/978-3-658-26417-8.pdf",
+            "content-type": "application/pdf",
+            "content-version": "vor",
+            "intended-application": "text-mining"
+          },
+          {
+            "URL": "http://link.springer.com/content/pdf/10.1007/978-3-658-26417-8",
+            "content-type": "unspecified",
+            "content-version": "vor",
+            "intended-application": "similarity-checking"
+          }
+        ],
+        "deposited": {
+          "date-parts": [
+            [
+              2019,
+              7,
+              2
+            ]
+          ],
+          "date-time": "2019-07-02T06:17:35Z",
+          "timestamp": 1562048255000
+        },
+        "score": 8.748086,
+        "subtitle": [
+          "Lehrbuch f�r DaF-Lerner ab A2"
+        ],
+        "issued": {
+          "date-parts": [
+            [
+              2019
+            ]
+          ]
+        },
+        "ISBN": [
+          "9783658264161",
+          "9783658264178"
+        ],
+        "references-count": 0,
+        "URL": "http://dx.doi.org/10.1007/978-3-658-26417-8"
+      },
+      {
+        "indexed": {
+          "date-parts": [
+            [
+              2019,
+              11,
+              24
+            ]
+          ],
+          "date-time": "2019-11-24T08:16:02Z",
+          "timestamp": 1574583362723
+        },
+        "publisher-location": "Wiesbaden",
+        "reference-count": 0,
+        "publisher": "Vieweg+Teubner Verlag",
+        "isbn-type": [
+          {
+            "value": "9783528535315",
+            "type": "print"
+          },
+          {
+            "value": "9783663077190",
+            "type": "electronic"
+          }
+        ],
+        "license": [
+          {
+            "URL": "http://www.springer.com/tdm",
+            "start": {
+              "date-parts": [
+                [
+                  1985,
+                  1,
+                  1
+                ]
+              ],
+              "date-time": "1985-01-01T00:00:00Z",
+              "timestamp": 473385600000
+            },
+            "delay-in-days": 0,
+            "content-version": "tdm"
+          }
+        ],
+        "content-domain": {
+          "domain": [],
+          "crossmark-restriction": false
+        },
+        "published-print": {
+          "date-parts": [
+            [
+              1985
+            ]
+          ]
+        },
+        "DOI": "10.1007/978-3-663-07719-0",
+        "type": "book",
+        "created": {
+          "date-parts": [
+            [
+              2013,
+              12,
+              29
+            ]
+          ],
+          "date-time": "2013-12-29T21:53:15Z",
+          "timestamp": 1388353995000
+        },
+        "source": "Crossref",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Physikalische Chemie. Lehrbuch f�r Chemiker,Verfahrenstechniker Physiker ab 3. Semester"
+        ],
+        "prefix": "10.1007",
+        "author": [
+          {
+            "given": "Gordon M.",
+            "family": "Barrow",
+            "sequence": "first",
+            "affiliation": []
+          }
+        ],
+        "member": "297",
+        "link": [
+          {
+            "URL": "http://link.springer.com/content/pdf/10.1007/978-3-663-07719-0.pdf",
+            "content-type": "application/pdf",
+            "content-version": "vor",
+            "intended-application": "text-mining"
+          },
+          {
+            "URL": "http://link.springer.com/content/pdf/10.1007/978-3-663-07719-0",
+            "content-type": "unspecified",
+            "content-version": "vor",
+            "intended-application": "similarity-checking"
+          }
+        ],
+        "deposited": {
+          "date-parts": [
+            [
+              2019,
+              4,
+              6
+            ]
+          ],
+          "date-time": "2019-04-06T04:19:01Z",
+          "timestamp": 1554524341000
+        },
+        "score": 8.748086,
+        "issued": {
+          "date-parts": [
+            [
+              1985
+            ]
+          ]
+        },
+        "ISBN": [
+          "9783528535315",
+          "9783663077190"
+        ],
+        "references-count": 0,
+        "URL": "http://dx.doi.org/10.1007/978-3-663-07719-0"
+      },
+      {
+        "indexed": {
+          "date-parts": [
+            [
+              2019,
+              7,
+              29
+            ]
+          ],
+          "date-time": "2019-07-29T07:40:45Z",
+          "timestamp": 1564386045578
+        },
+        "publisher-location": "Wiesbaden",
+        "reference-count": 0,
+        "publisher": "Springer Fachmedien Wiesbaden",
+        "isbn-type": [
+          {
+            "value": "9783658252953",
+            "type": "print"
+          },
+          {
+            "value": "9783658252960",
+            "type": "electronic"
+          }
+        ],
+        "license": [
+          {
+            "URL": "http://www.springer.com/tdm",
+            "start": {
+              "date-parts": [
+                [
+                  2019,
+                  1,
+                  1
+                ]
+              ],
+              "date-time": "2019-01-01T00:00:00Z",
+              "timestamp": 1546300800000
+            },
+            "delay-in-days": 0,
+            "content-version": "tdm"
+          }
+        ],
+        "content-domain": {
+          "domain": [],
+          "crossmark-restriction": false
+        },
+        "published-print": {
+          "date-parts": [
+            [
+              2019
+            ]
+          ]
+        },
+        "DOI": "10.1007/978-3-658-25296-0",
+        "type": "book",
+        "created": {
+          "date-parts": [
+            [
+              2019,
+              7,
+              29
+            ]
+          ],
+          "date-time": "2019-07-29T07:03:40Z",
+          "timestamp": 1564383820000
+        },
+        "source": "Crossref",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Crashkurs Service-Exzellenz"
+        ],
+        "prefix": "10.1007",
+        "author": [
+          {
+            "given": "Falk",
+            "family": "Hecker",
+            "sequence": "first",
+            "affiliation": []
+          }
+        ],
+        "member": "297",
+        "link": [
+          {
+            "URL": "http://link.springer.com/content/pdf/10.1007/978-3-658-25296-0.pdf",
+            "content-type": "application/pdf",
+            "content-version": "vor",
+            "intended-application": "text-mining"
+          },
+          {
+            "URL": "http://link.springer.com/content/pdf/10.1007/978-3-658-25296-0",
+            "content-type": "unspecified",
+            "content-version": "vor",
+            "intended-application": "similarity-checking"
+          }
+        ],
+        "deposited": {
+          "date-parts": [
+            [
+              2019,
+              7,
+              29
+            ]
+          ],
+          "date-time": "2019-07-29T07:04:09Z",
+          "timestamp": 1564383849000
+        },
+        "score": 8.748086,
+        "subtitle": [
+          "So heben Sie sich durch herausragenden Service vom Onlinehandel ab"
+        ],
+        "issued": {
+          "date-parts": [
+            [
+              2019
+            ]
+          ]
+        },
+        "ISBN": [
+          "9783658252953",
+          "9783658252960"
+        ],
+        "references-count": 0,
+        "URL": "http://dx.doi.org/10.1007/978-3-658-25296-0"
+      },
+      {
+        "indexed": {
+          "date-parts": [
+            [
+              2019,
+              11,
+              27
+            ]
+          ],
+          "date-time": "2019-11-27T20:27:08Z",
+          "timestamp": 1574886428657
+        },
+        "publisher-location": "Berlin, Heidelberg",
+        "reference-count": 0,
+        "publisher": "Springer Berlin Heidelberg",
+        "isbn-type": [
+          {
+            "value": "9783662584484",
+            "type": "print"
+          },
+          {
+            "value": "9783662584491",
+            "type": "electronic"
+          }
+        ],
+        "license": [
+          {
+            "URL": "http://www.springer.com/tdm",
+            "start": {
+              "date-parts": [
+                [
+                  2019,
+                  1,
+                  1
+                ]
+              ],
+              "date-time": "2019-01-01T00:00:00Z",
+              "timestamp": 1546300800000
+            },
+            "delay-in-days": 0,
+            "content-version": "tdm"
+          }
+        ],
+        "content-domain": {
+          "domain": [],
+          "crossmark-restriction": false
+        },
+        "published-print": {
+          "date-parts": [
+            [
+              2019
+            ]
+          ]
+        },
+        "DOI": "10.1007/978-3-662-58449-1",
+        "type": "book",
+        "created": {
+          "date-parts": [
+            [
+              2019,
+              3,
+              2
+            ]
+          ],
+          "date-time": "2019-03-02T08:02:44Z",
+          "timestamp": 1551513764000
+        },
+        "source": "Crossref",
+        "is-referenced-by-count": 0,
+        "title": [
+          "M�dchen fragen  M�tter wissen"
+        ],
+        "prefix": "10.1007",
+        "author": [
+          {
+            "given": "Gisela",
+            "family": "Gille",
+            "sequence": "first",
+            "affiliation": []
+          }
+        ],
+        "member": "297",
+        "link": [
+          {
+            "URL": "http://link.springer.com/content/pdf/10.1007/978-3-662-58449-1.pdf",
+            "content-type": "application/pdf",
+            "content-version": "vor",
+            "intended-application": "text-mining"
+          },
+          {
+            "URL": "http://link.springer.com/content/pdf/10.1007/978-3-662-58449-1",
+            "content-type": "unspecified",
+            "content-version": "vor",
+            "intended-application": "similarity-checking"
+          }
+        ],
+        "deposited": {
+          "date-parts": [
+            [
+              2019,
+              3,
+              21
+            ]
+          ],
+          "date-time": "2019-03-21T10:03:34Z",
+          "timestamp": 1553162614000
+        },
+        "score": 8.748086,
+        "subtitle": [
+          "Das Infobuch f�r M�tter von M�dchen ab 11 Jahren"
+        ],
+        "issued": {
+          "date-parts": [
+            [
+              2019
+            ]
+          ]
+        },
+        "ISBN": [
+          "9783662584484",
+          "9783662584491"
+        ],
+        "references-count": 0,
+        "URL": "http://dx.doi.org/10.1007/978-3-662-58449-1"
+      },
+      {
+        "indexed": {
+          "date-parts": [
+            [
+              2019,
+              2,
+              18
+            ]
+          ],
+          "date-time": "2019-02-18T17:10:12Z",
+          "timestamp": 1550509812701
+        },
+        "reference-count": 0,
+        "publisher": "Ex officina Rob. Stephani",
+        "content-domain": {
+          "domain": [],
+          "crossmark-restriction": false
+        },
+        "published-print": {
+          "date-parts": [
+            [
+              1537
+            ]
+          ]
+        },
+        "DOI": "10.24157/arc_15780",
+        "type": "book",
+        "created": {
+          "date-parts": [
+            [
+              2018,
+              9,
+              24
+            ]
+          ],
+          "date-time": "2018-09-24T16:47:25Z",
+          "timestamp": 1537807645000
+        },
+        "source": "Crossref",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Exemplaria literarum quibus & christianissimus Galliarum Rex Franciscus : ab adversariorum maledictis defenditur, & controversiari caus�, ex quibus bella hodie inter ipsum & Carolum quinti Imperatorem emersunt, explicantur unde ab utro potius fter ius �qu�mque, lector prudens perfacil� deprehendet, Quarum catalogum, sequens pagella indicabit."
+        ],
+        "prefix": "10.24157",
+        "author": [
+          {
+            "given": "Jean",
+            "family": "Du Bellay",
+            "sequence": "first",
+            "affiliation": []
+          }
+        ],
+        "member": "10242",
+        "deposited": {
+          "date-parts": [
+            [
+              2018,
+              9,
+              24
+            ]
+          ],
+          "date-time": "2018-09-24T16:48:46Z",
+          "timestamp": 1537807726000
+        },
+        "score": 8.067506,
+        "issued": {
+          "date-parts": [
+            [
+              1537
+            ]
+          ]
+        },
+        "references-count": 0,
+        "URL": "http://dx.doi.org/10.24157/arc_15780"
+      },
+      {
+        "indexed": {
+          "date-parts": [
+            [
+              2019,
+              11,
+              24
+            ]
+          ],
+          "date-time": "2019-11-24T02:55:07Z",
+          "timestamp": 1574564107387
+        },
+        "publisher-location": "Cambridge",
+        "reference-count": 0,
+        "publisher": "Cambridge University Press",
+        "isbn-type": [
+          {
+            "value": "9781139226165",
+            "type": "print"
+          }
+        ],
+        "content-domain": {
+          "domain": [],
+          "crossmark-restriction": false
+        },
+        "published-print": {
+          "date-parts": [
+            [
+              2012
+            ]
+          ]
+        },
+        "DOI": "10.1017/cbo9781139226165",
+        "type": "book",
+        "created": {
+          "date-parts": [
+            [
+              2013,
+              11,
+              5
+            ]
+          ],
+          "date-time": "2013-11-05T06:04:21Z",
+          "timestamp": 1383631461000
+        },
+        "source": "Crossref",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Chronicon Angli�, ab Anno Domini 1328 usque ad Annum 1388"
+        ],
+        "prefix": "10.1017",
+        "member": "56",
+        "published-online": {
+          "date-parts": [
+            [
+              2009
+            ]
+          ]
+        },
+        "deposited": {
+          "date-parts": [
+            [
+              2016,
+              10,
+              16
+            ]
+          ],
+          "date-time": "2016-10-16T03:30:24Z",
+          "timestamp": 1476588624000
+        },
+        "score": 7.870189,
+        "subtitle": [
+          "Auctore Monacho quodam Sancti Albani"
+        ],
+        "editor": [
+          {
+            "given": "Edward Maunde",
+            "family": "Thompson",
+            "sequence": "first",
+            "affiliation": []
+          }
+        ],
+        "issued": {
+          "date-parts": [
+            [
+              2009
+            ]
+          ]
+        },
+        "ISBN": [
+          "9781139226165"
+        ],
+        "references-count": 0,
+        "URL": "http://dx.doi.org/10.1017/cbo9781139226165"
+      },
+      {
+        "indexed": {
+          "date-parts": [
+            [
+              2019,
+              11,
+              24
+            ]
+          ],
+          "date-time": "2019-11-24T07:40:26Z",
+          "timestamp": 1574581226730
+        },
+        "publisher-location": "Wiesbaden",
+        "reference-count": 0,
+        "publisher": "Vieweg+Teubner Verlag",
+        "isbn-type": [
+          {
+            "value": "9783528633141",
+            "type": "print"
+          },
+          {
+            "value": "9783663141501",
+            "type": "electronic"
+          }
+        ],
+        "license": [
+          {
+            "URL": "http://www.springer.com/tdm",
+            "start": {
+              "date-parts": [
+                [
+                  1991,
+                  1,
+                  1
+                ]
+              ],
+              "date-time": "1991-01-01T00:00:00Z",
+              "timestamp": 662688000000
+            },
+            "delay-in-days": 0,
+            "content-version": "tdm"
+          }
+        ],
+        "content-domain": {
+          "domain": [],
+          "crossmark-restriction": false
+        },
+        "published-print": {
+          "date-parts": [
+            [
+              1991
+            ]
+          ]
+        },
+        "DOI": "10.1007/978-3-663-14150-1",
+        "type": "book",
+        "created": {
+          "date-parts": [
+            [
+              2013,
+              12,
+              22
+            ]
+          ],
+          "date-time": "2013-12-22T04:17:29Z",
+          "timestamp": 1387685849000
+        },
+        "source": "Crossref",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Einf�hrung in die W�rme�bertragung"
+        ],
+        "prefix": "10.1007",
+        "author": [
+          {
+            "given": "Ernst-Ulrich",
+            "family": "Schl�nder",
+            "sequence": "first",
+            "affiliation": []
+          }
+        ],
+        "member": "297",
+        "link": [
+          {
+            "URL": "http://link.springer.com/content/pdf/10.1007/978-3-663-14150-1.pdf",
+            "content-type": "application/pdf",
+            "content-version": "vor",
+            "intended-application": "text-mining"
+          },
+          {
+            "URL": "http://link.springer.com/content/pdf/10.1007/978-3-663-14150-1",
+            "content-type": "unspecified",
+            "content-version": "vor",
+            "intended-application": "similarity-checking"
+          }
+        ],
+        "deposited": {
+          "date-parts": [
+            [
+              2019,
+              6,
+              12
+            ]
+          ],
+          "date-time": "2019-06-12T15:34:48Z",
+          "timestamp": 1560353688000
+        },
+        "score": 7.870189,
+        "subtitle": [
+          "F�r Maschinenbauer, Verfahrenstechniker, Chemie-Ingenieure, Chemiker, Physiker ab 4. Semester"
+        ],
+        "issued": {
+          "date-parts": [
+            [
+              1991
+            ]
+          ]
+        },
+        "ISBN": [
+          "9783528633141",
+          "9783663141501"
+        ],
+        "references-count": 0,
+        "URL": "http://dx.doi.org/10.1007/978-3-663-14150-1"
+      },
+      {
+        "indexed": {
+          "date-parts": [
+            [
+              2019,
+              11,
+              24
+            ]
+          ],
+          "date-time": "2019-11-24T07:36:49Z",
+          "timestamp": 1574581009201
+        },
+        "publisher-location": "Wiesbaden",
+        "reference-count": 0,
+        "publisher": "Vieweg+Teubner Verlag",
+        "isbn-type": [
+          {
+            "value": "9783528233167",
+            "type": "print"
+          },
+          {
+            "value": "9783663141549",
+            "type": "electronic"
+          }
+        ],
+        "license": [
+          {
+            "URL": "http://www.springer.com/tdm",
+            "start": {
+              "date-parts": [
+                [
+                  1986,
+                  1,
+                  1
+                ]
+              ],
+              "date-time": "1986-01-01T00:00:00Z",
+              "timestamp": 504921600000
+            },
+            "delay-in-days": 0,
+            "content-version": "tdm"
+          }
+        ],
+        "content-domain": {
+          "domain": [],
+          "crossmark-restriction": false
+        },
+        "published-print": {
+          "date-parts": [
+            [
+              1986
+            ]
+          ]
+        },
+        "DOI": "10.1007/978-3-663-14154-9",
+        "type": "book",
+        "created": {
+          "date-parts": [
+            [
+              2013,
+              12,
+              21
+            ]
+          ],
+          "date-time": "2013-12-21T02:39:20Z",
+          "timestamp": 1387593560000
+        },
+        "source": "Crossref",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Einf�hrung in die Programmiersprache PL/I"
+        ],
+        "prefix": "10.1007",
+        "author": [
+          {
+            "given": "Hermann",
+            "family": "Kamp",
+            "sequence": "first",
+            "affiliation": []
+          },
+          {
+            "given": "Hilmar",
+            "family": "Pudlatz",
+            "sequence": "additional",
+            "affiliation": []
+          }
+        ],
+        "member": "297",
+        "link": [
+          {
+            "URL": "http://link.springer.com/content/pdf/10.1007/978-3-663-14154-9.pdf",
+            "content-type": "application/pdf",
+            "content-version": "vor",
+            "intended-application": "text-mining"
+          },
+          {
+            "URL": "http://link.springer.com/content/pdf/10.1007/978-3-663-14154-9",
+            "content-type": "unspecified",
+            "content-version": "vor",
+            "intended-application": "similarity-checking"
+          }
+        ],
+        "deposited": {
+          "date-parts": [
+            [
+              2019,
+              6,
+              12
+            ]
+          ],
+          "date-time": "2019-06-12T03:12:43Z",
+          "timestamp": 1560309163000
+        },
+        "score": 7.870189,
+        "subtitle": [
+          "F�r H�rer aller Fachrichtungen ab 1. Semester"
+        ],
+        "issued": {
+          "date-parts": [
+            [
+              1986
+            ]
+          ]
+        },
+        "ISBN": [
+          "9783528233167",
+          "9783663141549"
+        ],
+        "references-count": 0,
+        "URL": "http://dx.doi.org/10.1007/978-3-663-14154-9"
       }
     ],
-    "items-per-page": 5,
+    "items-per-page": 40,
     "query": {
       "start-index": 0,
       "search-terms": null

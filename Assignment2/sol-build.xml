@@ -39,7 +39,7 @@
 
     <target name="generate-crossref-artifacts">
         <exec executable="xjc" failonerror="true">
-            <arg line="-d ${gen.dir} -p it.polito.dp2.BIB.sol2.jaxb ${crossref.schema}"/>
+            <arg line="-d ${gen.dir} -p it.polito.dp2.BIB.sol2.jaxb.crossref ${crossref.schema}"/>
         </exec>
     </target>
 
