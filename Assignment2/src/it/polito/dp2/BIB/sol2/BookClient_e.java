@@ -43,12 +43,12 @@ public class BookClient_e {
     public static void main(String[] args) {
         if (args.length == 0) {
             System.err.println("Usage: java BookClient_e N keyword1 keyword2 ...");
-//            System.exit(1);
+            System.exit(1);
         }
 
         try {
             BookClient_e bclient = new BookClient_e();
-            QueryParameter queryParameter = new QueryParameter(new String[]{"5", "antoness"});
+            QueryParameter queryParameter = new QueryParameter(args);
             bclient.PerformGoogleSearch(queryParameter);
             bclient.PerformCrossrefSearch(queryParameter);
         } catch (NumberFormatException ne) {

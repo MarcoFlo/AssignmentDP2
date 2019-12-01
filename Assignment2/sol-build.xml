@@ -23,20 +23,6 @@
         </exec>
     </target>
 
-
-	<property name="build.dir" location="${ass2.location}/build" />
-
-	<!-- The classpath to be used for compilation of the solution -->
-	<path id="crossref.classpath">
-		<pathelement location="${lib.dir}/BIB.jar"/>
-		<pathelement location="${lib.dir}/ass2.jar"/>
-		<pathelement location="${build.dir}" />
-		<fileset dir="${ext.lib.dir}">
-			<include name="*.jar" />
-			<exclude name="ant-*.jar"/>
-		</fileset>
-	</path>
-
     <target name="generate-crossref-artifacts">
         <exec executable="xjc" failonerror="true">
             <arg line="-d ${gen.dir} -p it.polito.dp2.BIB.sol2.jaxb.crossref ${crossref.schema}"/>
@@ -44,11 +30,4 @@
     </target>
 
 
-    <!-- Target for running the gBooks example (to be run with -Dkeyword) -->
-    <target name="runGoogle+Crossrefbooks" depends="generate-crossref-artifacts">
-        <java classname="it.polito.dp2.BIB.sol2.BookClient_e" fork="true">
-            <arg line="5 java"/>
-            <classpath refid="crossref.classpath"/>
-        </java>
-    </target>
 </project>
