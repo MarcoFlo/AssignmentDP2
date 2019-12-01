@@ -31,8 +31,8 @@
     <xsd:element name="bodyRelationship">
         <xsd:complexType>
             <xsd:sequence>
-				<xsd:element name="to" type="xsd:anyURI"/>
-				<xsd:element name="type" type="xsd:string"/>
+                <xsd:element name="to" type="xsd:anyURI"/>
+                <xsd:element name="type" type="xsd:string"/>
             </xsd:sequence>
         </xsd:complexType>
     </xsd:element>
@@ -43,8 +43,8 @@
                 <xsd:element name="relationships">
                     <xsd:complexType>
                         <xsd:sequence>
-                            <xsd:element name="direction" type="xsd:string" fixed="out"/>
-                            <xsd:element name="type" type="xsd:string" fixed="CitedBy"/>
+                            <xsd:element name="direction" type="xsd:string"/>
+                            <xsd:element name="type" type="xsd:string"/>
                         </xsd:sequence>
                     </xsd:complexType>
                 </xsd:element>

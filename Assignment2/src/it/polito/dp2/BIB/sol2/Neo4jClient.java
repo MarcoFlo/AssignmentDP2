@@ -40,7 +40,6 @@ public class Neo4jClient {
         } catch (MalformedURLException | NumberFormatException e) {
             throw new Neo4jClientException("Input parameter not valid", e);
         }
-
     }
 
     public void close() {

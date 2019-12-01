@@ -4,7 +4,7 @@
     <!-- These properties are repeated only in case this ant file is executed directly.
     The names of the properties match the names of the properties in the build.xml file,
     so that the caller build.xml can override them -->
-    <property name="PORT" value="8080"/>
+    <property name="PORT" value="7474"/>
     <property name="URL" value="http://localhost:${PORT}/db"/>
     <property name="ass2.location" location="${basedir}"/>
     <property name="gen.dir" location="${ass2.location}/gen-src"/>
@@ -12,22 +12,22 @@
     <property name="custom.dir" location="${ass2.location}/custom"/>
     <property name="xsd.dir" location="${ass2.location}/xsd"/>
     <property name="neo4j.schema" location="${xsd.dir}/neo4j/DataTypes.xsd"/>
-    <property name="myneo4j.schema" location="${xsd.dir}/MyNeo4jDataTypes.xsd"/>
+    <property name="myneo4j.schema" location="${xsd.dir}/Neo4jDataTypes.xsd"/>
     <property name="crossref.schema" location="${xsd.dir}/CrossrefDataTypes.xsd"/>
     <property name="ext.lib.dir" location="/opt/dp2/shared/lib"/>
 
-    <!-- define the client artifacts generation target -->
+    <!-- define the neo4j client artifacts generation target -->
     <target name="generate-artifacts">
         <exec executable="xjc" failonerror="true">
             <arg line="-d ${gen.dir} -p it.polito.dp2.BIB.sol2.jaxb ${myneo4j.schema}"/>
         </exec>
     </target>
 
+    <!-- define the crossref client artifacts generation target -->
     <target name="generate-crossref-artifacts">
         <exec executable="xjc" failonerror="true">
             <arg line="-d ${gen.dir} -p it.polito.dp2.BIB.sol2.jaxb.crossref ${crossref.schema}"/>
         </exec>
     </target>
-
 
 </project>

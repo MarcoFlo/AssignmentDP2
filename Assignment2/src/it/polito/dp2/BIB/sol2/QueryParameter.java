@@ -9,11 +9,11 @@ public class QueryParameter {
     private List<String> keywordList;
 
 
-
-
     public QueryParameter(String[] args) {
 
         itemNumber = Integer.parseInt(args[0]);
+        if (itemNumber < 1)
+            throw new IllegalArgumentException();
         keywordList = new LinkedList<>(Arrays.asList(args));
         keywordList.remove(0);
     }
@@ -22,12 +22,11 @@ public class QueryParameter {
         return itemNumber;
     }
 
-    public String getGoogleKeyword(){
+    public String getGoogleKeyword() {
         return String.join(" ", keywordList);
     }
 
-
-    public String getCrossrefKeyword(){
+    public String getCrossrefKeyword() {
         return String.join("+", keywordList);
     }
 

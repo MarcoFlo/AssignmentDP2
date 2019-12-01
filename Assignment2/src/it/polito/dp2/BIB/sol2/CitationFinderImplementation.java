@@ -15,7 +15,7 @@ import java.util.stream.Collectors;
 public class CitationFinderImplementation implements CitationFinder {
     private BibReader monitor;
     private Map<ItemReader, Node> readerToNode;
-    private Map<String, ItemReader> urlToReader;
+    private Map<String, ItemReader> urlToReader; //switched to string because I assumed as well formatted url the one from getSelf, allowing me a cleaner code
     private Neo4jClient client;
 
 

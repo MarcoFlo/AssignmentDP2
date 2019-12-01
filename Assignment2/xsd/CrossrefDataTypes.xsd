@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-
-
     <xsd:complexType name="CrossrefResult">
         <xsd:sequence>
             <xsd:element name="message" type="CrossrefMessage"/>
@@ -16,31 +14,18 @@
         </xsd:sequence>
     </xsd:complexType>
 
-    <!--    <xsd:complexType name="CrossrefResult">-->
-    <!--        <xsd:sequence>-->
-    <!--            <xsd:element name="message">-->
-    <!--                <xsd:complexType>-->
-    <!--                    <xsd:sequence>-->
-    <!--                        <xsd:element name="total-results" type="xsd:positiveInteger"/>-->
-    <!--                        <xsd:element ref="items" minOccurs="0" maxOccurs="unbounded"/>-->
-    <!--                    </xsd:sequence>-->
-    <!--                </xsd:complexType>-->
-    <!--            </xsd:element>-->
-    <!--        </xsd:sequence>-->
-    <!--    </xsd:complexType>-->
-
     <xsd:element name="items">
         <xsd:complexType>
             <xsd:sequence>
                 <xsd:element name="publisher" type="xsd:string"/>
-                <!--            <xsd:element name="isbn-type" type="ISBN-type" maxOccurs="unbounded"/>-->
+                <!-- <xsd:element name="isbn-type" type="ISBN-type" maxOccurs="unbounded"/> can be used in a more complex solution to understand the type of the isbn "print" or "electronic" -->
                 <xsd:element name="ISBN" type="ISBNCode" maxOccurs="unbounded"/>
                 <xsd:element name="published-print">
-                        <xsd:complexType>
-                            <xsd:sequence>
-                                <xsd:element name="date-parts" type="xsd:string"/>
-                            </xsd:sequence>
-                        </xsd:complexType>
+                    <xsd:complexType>
+                        <xsd:sequence>
+                            <xsd:element name="date-parts" type="xsd:string"/>
+                        </xsd:sequence>
+                    </xsd:complexType>
                 </xsd:element>
                 <xsd:element name="title" type="xsd:string"/>
                 <xsd:element name="subtitle" type="xsd:string" minOccurs="0"/>
@@ -49,13 +34,35 @@
         </xsd:complexType>
     </xsd:element>
 
-    <xsd:complexType name="AuthorType">
-        <xsd:sequence>
-            <xsd:element name="given" type="xsd:string" minOccurs="0"/>
-            <xsd:element name="family" type="xsd:string"/>
-        </xsd:sequence>
-    </xsd:complexType>
+    <!--    the author field can have at least this two structure
 
+    {
+        "name": "Committee for Review of the U.S. Department of Transportation (DOT) Strategic Plan for Research, Development, and Technology",
+        "sequence": "first",
+        "affiliation": []
+    }
+
+    {
+        "given": "Beng Yeong",
+        "family": "Ng",
+        "sequence": "first",
+        "affiliation": [
+            {
+                "name": "Mount Elizabeth Medical CentreSingapore"
+             }
+         ]
+    }
+
+    -->
+    <xsd:complexType name="AuthorType">
+        <xsd:choice>
+            <xsd:element name="name" type="xsd:string"/>
+            <xsd:sequence>
+                <xsd:element name="given" type="xsd:string" minOccurs="0"/>
+                <xsd:element name="family" type="xsd:string"/>
+            </xsd:sequence>
+        </xsd:choice>
+    </xsd:complexType>
 
     <xsd:complexType name="ISBN-type">
         <xsd:sequence>

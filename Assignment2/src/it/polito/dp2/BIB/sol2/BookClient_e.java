@@ -31,7 +31,7 @@ import static javax.xml.XMLConstants.W3C_XML_SCHEMA_NS_URI;
 
 
 public class BookClient_e {
-    private int pageSize = 20; //the first get will always be 20 items also if only 5 is needed, I made this decision due to the large number of invalid items
+    private int pageSize = 20; //the first get will always be 20 items also if only 5 are needed, I made this decision due to the large number of invalid items and the small difference between 5-20 item request
 
     private JAXBContext jaxbGoogleContext;
     private JAXBContext jaxbCrossrefContext;
@@ -51,8 +51,8 @@ public class BookClient_e {
             QueryParameter queryParameter = new QueryParameter(args);
             bclient.PerformGoogleSearch(queryParameter);
             bclient.PerformCrossrefSearch(queryParameter);
-        } catch (NumberFormatException ne) {
-            System.err.println("First parameter should be an integer");
+        } catch (IllegalArgumentException e) {
+            System.err.println("First parameter should be an integer > 0");
             System.exit(1);
         } catch (Exception ex) {
             System.err.println("Error during execution of operation");
@@ -66,6 +66,7 @@ public class BookClient_e {
         validatorGoogle = sf.newSchema(new File("xsd/gbooks/DataTypes.xsd")).newValidator();
         validatorGoogle.setErrorHandler(new MyErrorHandler());
 
+        // create validator that uses the CrossrefDataTypes schema
         validatorCrossref = sf.newSchema(new File("xsd/CrossrefDataTypes.xsd")).newValidator();
         validatorCrossref.setErrorHandler(new MyErrorHandler());
 
@@ -84,13 +85,14 @@ public class BookClient_e {
 
         // build the web target
         WebTarget target = client.target(getGoogleBaseURI()).path("volumes");
+
         List<PrintableItem> printableItems = new ArrayList<>();
         Response response;
         SearchResult result;
-
         int count = 0;
         int availableItems = 1;
         int id = 0;
+
         while (printableItems.size() != queryParameter.getItemNumber() && availableItems > count * pageSize) {
             response = target
                     .queryParam("startIndex", count * pageSize)
@@ -106,14 +108,13 @@ public class BookClient_e {
                 return;
             }
             response.bufferEntity();
-            System.out.println("Response as string: " + response.readEntity(String.class));
+            System.out.println("Google response as string: " + response.readEntity(String.class));
             result = response.readEntity(SearchResult.class);
             count++;
             availableItems = result.getTotalItems().intValue();
 
             System.out.println("OK Response received. Items:" + result.getTotalItems());
             System.out.println("Validating items and converting validated items to xml.");
-
 
             for (Items item : result.getItems()) {
                 if (printableItems.size() != queryParameter.getItemNumber()) {
@@ -153,20 +154,19 @@ public class BookClient_e {
     }
 
     public void PerformCrossrefSearch(QueryParameter queryParameter) {
+        System.out.println("Searching " + queryParameter.getCrossrefKeyword() + " on Crossref:");
+
         // build the JAX-RS client object
         Client client = ClientBuilder.newClient();
 
         // build the web target
-        WebTarget target = client.target(getCrossrefBooksUri());
-
-
-        int id = 0;
-        String cursor = "*";
+        WebTarget target = client.target(getCrossrefBaseUri()).path("types").path("book").path("works");
 
         List<PrintableItem> printableItems = new ArrayList<>();
         Response response;
         CrossrefMessage message;
-        System.out.println("Searching " + queryParameter.getCrossrefKeyword() + " on Crossref:");
+        String cursor = "*";
+        int id = 0;
 
         while (printableItems.size() != queryParameter.getItemNumber()) {
             response = target
@@ -184,7 +184,7 @@ public class BookClient_e {
             }
 
             response.bufferEntity();
-            System.out.println("Response as string: " + response.readEntity(String.class));
+            System.out.println("Crossref response as string: " + response.readEntity(String.class));
             message = response.readEntity(CrossrefResult.class).getMessage();
             cursor = message.getNextCursor();
 
@@ -193,7 +193,6 @@ public class BookClient_e {
                 break;
 
             System.out.println("OK Response received. Items:" + message.getTotalResults());
-
             System.out.println("Validating items and converting validated items to xml.");
 
             for (it.polito.dp2.BIB.sol2.jaxb.crossref.Items item : message.getItems()) {
@@ -235,15 +234,11 @@ public class BookClient_e {
         System.out.println("End of Validated Bibliography items");
     }
 
-
     private static URI getGoogleBaseURI() {
         return UriBuilder.fromUri("https://www.googleapis.com/books/v1").build();
     }
 
-
-    private static URI getCrossrefBooksUri() {
-        return UriBuilder.fromUri("http://api.crossref.org/types/book/works").build();
+    private static URI getCrossrefBaseUri() {
+        return UriBuilder.fromUri("http://api.crossref.org").build();
     }
-
-
 }

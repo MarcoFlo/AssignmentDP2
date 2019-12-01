@@ -16,10 +16,15 @@ public class CrossrefFactory extends it.polito.dp2.xml.biblio.Factory {
 
     public static PrintableItem createPrintableItem(BigInteger id, Items crossrefItem) throws DatatypeConfigurationException {
         BiblioItemType item = new BiblioItemType();
+
         item.setId(id);
         item.setTitle(crossrefItem.getTitle());
         item.setSubtitle(crossrefItem.getSubtitle());
         item.getAuthor().addAll(crossrefItem.getAuthor().stream().map(authorType -> {
+            //the author field can be structured in two wat as explained in the xsd
+            if (authorType.getName() != null)
+                return authorType.getName();
+
             String result = authorType.getFamily();
             if (authorType.getGiven() != null)
                 result += " " + authorType.getGiven();
