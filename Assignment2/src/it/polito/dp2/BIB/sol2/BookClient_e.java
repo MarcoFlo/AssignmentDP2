@@ -18,8 +18,8 @@ import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.util.JAXBSource;
 import javax.xml.datatype.DatatypeConfigurationException;
-import javax.xml.validation.Schema;
 import javax.xml.validation.SchemaFactory;
+import javax.xml.validation.Validator;
 import java.io.File;
 import java.io.IOException;
 import java.math.BigInteger;
@@ -31,21 +31,21 @@ import static javax.xml.XMLConstants.W3C_XML_SCHEMA_NS_URI;
 
 
 public class BookClient_e {
-    private int pageSize = 20;
+    private int pageSize = 20; //the first get will always be 20 items also if only 5 is needed, I made this decision due to the large number of invalid items
 
-    JAXBContext jaxbGoogleContext;
-    JAXBContext jaxbCrossrefContext;
+    private JAXBContext jaxbGoogleContext;
+    private JAXBContext jaxbCrossrefContext;
 
-    javax.xml.validation.Validator validatorGoogle;
-    javax.xml.validation.Validator validatorCrossref;
+    private Validator validatorGoogle;
+    private Validator validatorCrossref;
 
 
     public static void main(String[] args) {
         if (args.length == 0) {
             System.err.println("Usage: java BookClient_e N keyword1 keyword2 ...");
 //            System.exit(1);
-        } else
-            args = new String[]{"5", "ab"};
+        }
+
         try {
             BookClient_e bclient = new BookClient_e();
             QueryParameter queryParameter = new QueryParameter(new String[]{"5", "antoness"});
@@ -63,35 +63,35 @@ public class BookClient_e {
     public BookClient_e() throws Exception {
         // create validator that uses the DataTypes schema
         SchemaFactory sf = SchemaFactory.newInstance(W3C_XML_SCHEMA_NS_URI);
-        Schema schema = sf.newSchema(new File("xsd/gbooks/DataTypes.xsd"));
-        validatorGoogle = schema.newValidator();
+        validatorGoogle = sf.newSchema(new File("xsd/gbooks/DataTypes.xsd")).newValidator();
         validatorGoogle.setErrorHandler(new MyErrorHandler());
 
-        Schema schemaCrossref = sf.newSchema(new File("xsd/CrossrefDataTypes.xsd"));
-        validatorCrossref = schemaCrossref.newValidator();
+        validatorCrossref = sf.newSchema(new File("xsd/CrossrefDataTypes.xsd")).newValidator();
         validatorCrossref.setErrorHandler(new MyErrorHandler());
 
         // create JAXB context related to the classed generated from the DataTypes schema
         jaxbGoogleContext = JAXBContext.newInstance("it.polito.dp2.rest.gbooks.client.jaxb");
+
+        // create JAXB context related to the classed generated from the CrossrefDataTypes schema
         jaxbCrossrefContext = JAXBContext.newInstance("it.polito.dp2.BIB.sol2.jaxb.crossref");
     }
 
     public void PerformGoogleSearch(QueryParameter queryParameter) {
+        System.out.println("Searching " + queryParameter.getGoogleKeyword() + " on Google Books:");
+
         // build the JAX-RS client object
         Client client = ClientBuilder.newClient();
 
         // build the web target
         WebTarget target = client.target(getGoogleBaseURI()).path("volumes");
-        int count = 0;
-        int id = 0;
-
         List<PrintableItem> printableItems = new ArrayList<>();
         Response response;
         SearchResult result;
 
-        System.out.println("Searching " + queryParameter.getGoogleKeyword() + " on Google Books:");
-
-        while (printableItems.size() != queryParameter.getItemNumber()) {
+        int count = 0;
+        int availableItems = 1;
+        int id = 0;
+        while (printableItems.size() != queryParameter.getItemNumber() && availableItems > count * pageSize) {
             response = target
                     .queryParam("startIndex", count * pageSize)
                     .queryParam("maxResults", pageSize) //max 40
@@ -109,13 +109,11 @@ public class BookClient_e {
             System.out.println("Response as string: " + response.readEntity(String.class));
             result = response.readEntity(SearchResult.class);
             count++;
+            availableItems = result.getTotalItems().intValue();
 
             System.out.println("OK Response received. Items:" + result.getTotalItems());
-
             System.out.println("Validating items and converting validated items to xml.");
 
-            if (result.getItems().isEmpty())
-                break;
 
             for (Items item : result.getItems()) {
                 if (printableItems.size() != queryParameter.getItemNumber()) {
@@ -143,8 +141,7 @@ public class BookClient_e {
                     } catch (JAXBException e) {
                         System.out.println("Unexpected JAXB Exception");
                     }
-                }
-                else
+                } else
                     break;
             }
         }

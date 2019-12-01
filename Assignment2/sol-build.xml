@@ -45,8 +45,9 @@
 
 
     <!-- Target for running the gBooks example (to be run with -Dkeyword) -->
-    <target name="runGbooks" depends="generate-crossref-artifacts">
+    <target name="runGoogle+Crossrefbooks" depends="generate-crossref-artifacts">
         <java classname="it.polito.dp2.BIB.sol2.BookClient_e" fork="true">
+            <arg line="5 java"/>
             <classpath refid="crossref.classpath"/>
         </java>
     </target>

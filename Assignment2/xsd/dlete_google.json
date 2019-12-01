@@ -1,34 +1,518 @@
 {
-  "title": [
-    "XVth Risk Factors of Food Chain 2015: Book of Abstracts"
-  ],
-  "ISBN": [
-    "9788055214245"
+  "kind": "books#volumes",
+  "totalItems": 128,
+  "items": [
+    {
+      "kind": "books#volume",
+      "id": "8tfYAAAAMAAJ",
+      "etag": "FaYEJ0M74BE",
+      "selfLink": "https://www.googleapis.com/books/v1/volumes/8tfYAAAAMAAJ",
+      "volumeInfo": {
+        "title": "Miracoli",
+        "subtitle": "dai segni alla storia",
+        "authors": [
+          "Sofia Boesch Gajano",
+          "Marilena Modica"
+        ],
+        "publishedDate": "2000",
+        "industryIdentifiers": [
+          {
+            "type": "OTHER",
+            "identifier": "UOM:39015053508266"
+          }
+        ],
+        "readingModes": {
+          "text": false,
+          "image": false
+        },
+        "pageCount": 252,
+        "printType": "BOOK",
+        "categories": [
+          "Religion"
+        ],
+        "maturityRating": "NOT_MATURE",
+        "allowAnonLogging": false,
+        "contentVersion": "preview-1.0.0",
+        "imageLinks": {
+          "smallThumbnail": "http://books.google.com/books/content?id=8tfYAAAAMAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+          "thumbnail": "http://books.google.com/books/content?id=8tfYAAAAMAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api"
+        },
+        "language": "it",
+        "previewLink": "http://books.google.it/books?id=8tfYAAAAMAAJ&q=antoness&dq=antoness&hl=&as_pt=BOOKS&cd=121&source=gbs_api",
+        "infoLink": "http://books.google.it/books?id=8tfYAAAAMAAJ&dq=antoness&hl=&as_pt=BOOKS&source=gbs_api",
+        "canonicalVolumeLink": "https://books.google.com/books/about/Miracoli.html?hl=&id=8tfYAAAAMAAJ"
+      },
+      "saleInfo": {
+        "country": "IT",
+        "saleability": "NOT_FOR_SALE",
+        "isEbook": false
+      },
+      "accessInfo": {
+        "country": "IT",
+        "viewability": "NO_PAGES",
+        "embeddable": false,
+        "publicDomain": false,
+        "textToSpeechPermission": "ALLOWED",
+        "epub": {
+          "isAvailable": false
+        },
+        "pdf": {
+          "isAvailable": false
+        },
+        "webReaderLink": "http://play.google.com/books/reader?id=8tfYAAAAMAAJ&hl=&as_pt=BOOKS&printsec=frontcover&source=gbs_api",
+        "accessViewStatus": "NONE",
+        "quoteSharingAllowed": false
+      }
+    },
+    {
+      "kind": "books#volume",
+      "id": "hMm6DQAAQBAJ",
+      "etag": "JynwVhrguSE",
+      "selfLink": "https://www.googleapis.com/books/v1/volumes/hMm6DQAAQBAJ",
+      "volumeInfo": {
+        "title": "Introduzione di diritto canonico",
+        "authors": [
+          "Paolo Moneta"
+        ],
+        "publisher": "G Giappichelli Editore",
+        "publishedDate": "2016-11-07",
+        "description": "Il volume si propone di avviare alla conoscenza ed alla comprensione del diritto della Chiesa cattolica tutti coloro che di esso non hanno una precisa nozione, in particolare gli studenti delle Facoltà giuridiche, che saranno messi in grado di affrontare con maggior consapevolezza lo studio delle parti speciali del diritto canonico e, più in generale, aiutati ad affrontare gli altri settori della scienza giuridica. Si tratta quindi di una ‘Introduzione’ nel senso proprio del termine, che offre un quadro sintetico, ma completo, dei più rilevanti aspetti di questo diritto. Vengono così illustrati l’origine, lo sviluppo storico, la peculiare natura di questo diritto; ci si sofferma sui profili istituzionali propri della Chiesa, con particolare attenzione per i componenti di questa comunità e la loro soggezione al suo diritto; si descrive la struttura di governo della Chiesa, mettendone in luce quegli aspetti che più la differenziano dalle forme di governo delle società civili. Pur mantenendo un rigore scientifico, questa “Introduzione al diritto canonico” adotta uno stile chiaro e di immediata accessibilità ed è sempre attenta a sollecitare l’interesse, la curiosità culturale ed anche i sentimenti del lettore attraverso richiami, nessi e collegamenti con fatti e persone conosciute, episodi storici, osservazioni sociologiche, suggestioni artistiche o letterarie.Paolo Moneta ha insegnato per molti anni diritto canonico e diritto ecclesiastico nell’Università di Pisa. E’avvocato della Santa Sede e della Rota Romana. E’ autore di un’ampia produzione scientifica, nell’ambito della quale ha particolarmente approfondito tematiche legate al diritto matrimoniale, al diritto processuale e al diritto amministrativo canonico. Tra le sue più recenti pubblicazioni possiamo ricordare “La giustizia nella Chiesa” (2002); “Communitas vitae et amoris. Scritti di diritto matrimoniale canonico” (2013), “Il matrimonio nel diritto della Chiesa” (2014)].",
+        "industryIdentifiers": [
+          {
+            "type": "ISBN_13",
+            "identifier": "9788892104877"
+          },
+          {
+            "type": "ISBN_10",
+            "identifier": "889210487X"
+          }
+        ],
+        "readingModes": {
+          "text": false,
+          "image": false
+        },
+        "pageCount": 228,
+        "printType": "BOOK",
+        "categories": [
+          "Law"
+        ],
+        "maturityRating": "NOT_MATURE",
+        "allowAnonLogging": false,
+        "contentVersion": "preview-1.0.0",
+        "panelizationSummary": {
+          "containsEpubBubbles": false,
+          "containsImageBubbles": false
+        },
+        "imageLinks": {
+          "smallThumbnail": "http://books.google.com/books/content?id=hMm6DQAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+          "thumbnail": "http://books.google.com/books/content?id=hMm6DQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+        },
+        "language": "it",
+        "previewLink": "http://books.google.it/books?id=hMm6DQAAQBAJ&printsec=frontcover&dq=antoness&hl=&as_pt=BOOKS&cd=122&source=gbs_api",
+        "infoLink": "http://books.google.it/books?id=hMm6DQAAQBAJ&dq=antoness&hl=&as_pt=BOOKS&source=gbs_api",
+        "canonicalVolumeLink": "https://books.google.com/books/about/Introduzione_di_diritto_canonico.html?hl=&id=hMm6DQAAQBAJ"
+      },
+      "saleInfo": {
+        "country": "IT",
+        "saleability": "NOT_FOR_SALE",
+        "isEbook": false
+      },
+      "accessInfo": {
+        "country": "IT",
+        "viewability": "PARTIAL",
+        "embeddable": true,
+        "publicDomain": false,
+        "textToSpeechPermission": "ALLOWED",
+        "epub": {
+          "isAvailable": false
+        },
+        "pdf": {
+          "isAvailable": false
+        },
+        "webReaderLink": "http://play.google.com/books/reader?id=hMm6DQAAQBAJ&hl=&as_pt=BOOKS&printsec=frontcover&source=gbs_api",
+        "accessViewStatus": "SAMPLE",
+        "quoteSharingAllowed": false
+      },
+      "searchInfo": {
+        "textSnippet": "Pur mantenendo un rigore scientifico, questa “Introduzione al diritto canonico” adotta uno stile chiaro e di immediata accessibilità ed è sempre attenta a sollecitare l’interesse, la curiosità culturale ed anche i sentimenti del ..."
+      }
+    },
+    {
+      "kind": "books#volume",
+      "id": "rLssPQAACAAJ",
+      "etag": "/abRsOZD5AY",
+      "selfLink": "https://www.googleapis.com/books/v1/volumes/rLssPQAACAAJ",
+      "volumeInfo": {
+        "title": "L'ospitalità di Abramo. All'origine di ebraismo, cristianesimo e islam",
+        "authors": [
+          "Louis Massignon"
+        ],
+        "publishedDate": "2002",
+        "description": "Partendo dalle 'tre preghiere di Abramo' davanti a Sodoma, presso Mamre, a Bersabea e sul Monte Moria, l'islamista francese Massignon sviluppa una meditazione sul progresso della Rivelazione nella storia delle tre grandi religioni monoteiste.",
+        "industryIdentifiers": [
+          {
+            "type": "ISBN_10",
+            "identifier": "8888130403"
+          },
+          {
+            "type": "ISBN_13",
+            "identifier": "9788888130408"
+          }
+        ],
+        "readingModes": {
+          "text": false,
+          "image": false
+        },
+        "pageCount": 156,
+        "printType": "BOOK",
+        "categories": [
+          "Religion"
+        ],
+        "maturityRating": "NOT_MATURE",
+        "allowAnonLogging": false,
+        "contentVersion": "preview-1.0.0",
+        "language": "it",
+        "previewLink": "http://books.google.it/books?id=rLssPQAACAAJ&dq=antoness&hl=&as_pt=BOOKS&cd=123&source=gbs_api",
+        "infoLink": "http://books.google.it/books?id=rLssPQAACAAJ&dq=antoness&hl=&as_pt=BOOKS&source=gbs_api",
+        "canonicalVolumeLink": "https://books.google.com/books/about/L_ospitalit%C3%A0_di_Abramo_All_origine_di_e.html?hl=&id=rLssPQAACAAJ"
+      },
+      "saleInfo": {
+        "country": "IT",
+        "saleability": "NOT_FOR_SALE",
+        "isEbook": false
+      },
+      "accessInfo": {
+        "country": "IT",
+        "viewability": "NO_PAGES",
+        "embeddable": false,
+        "publicDomain": false,
+        "textToSpeechPermission": "ALLOWED",
+        "epub": {
+          "isAvailable": false
+        },
+        "pdf": {
+          "isAvailable": false
+        },
+        "webReaderLink": "http://play.google.com/books/reader?id=rLssPQAACAAJ&hl=&as_pt=BOOKS&printsec=frontcover&source=gbs_api",
+        "accessViewStatus": "NONE",
+        "quoteSharingAllowed": false
+      },
+      "searchInfo": {
+        "textSnippet": "Partendo dalle &#39;tre preghiere di Abramo&#39; davanti a Sodoma, presso Mamre, a Bersabea e sul Monte Moria, l&#39;islamista francese Massignon sviluppa una meditazione sul progresso della Rivelazione nella storia delle tre grandi religioni ..."
+      }
+    },
+    {
+      "kind": "books#volume",
+      "id": "lUrXAAAAMAAJ",
+      "etag": "aCx6eApKEeQ",
+      "selfLink": "https://www.googleapis.com/books/v1/volumes/lUrXAAAAMAAJ",
+      "volumeInfo": {
+        "title": "L'ordine dei peccati",
+        "subtitle": "la confessione tra Medioevo ed età moderna",
+        "authors": [
+          "Roberto Rusconi"
+        ],
+        "publisher": "Il Mulino",
+        "publishedDate": "2002",
+        "industryIdentifiers": [
+          {
+            "type": "OTHER",
+            "identifier": "UOM:39015051572470"
+          }
+        ],
+        "readingModes": {
+          "text": false,
+          "image": false
+        },
+        "pageCount": 358,
+        "printType": "BOOK",
+        "categories": [
+          "Religion"
+        ],
+        "maturityRating": "NOT_MATURE",
+        "allowAnonLogging": false,
+        "contentVersion": "1.1.0.0.preview.0",
+        "imageLinks": {
+          "smallThumbnail": "http://books.google.com/books/content?id=lUrXAAAAMAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+          "thumbnail": "http://books.google.com/books/content?id=lUrXAAAAMAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api"
+        },
+        "language": "it",
+        "previewLink": "http://books.google.it/books?id=lUrXAAAAMAAJ&q=antoness&dq=antoness&hl=&as_pt=BOOKS&cd=124&source=gbs_api",
+        "infoLink": "http://books.google.it/books?id=lUrXAAAAMAAJ&dq=antoness&hl=&as_pt=BOOKS&source=gbs_api",
+        "canonicalVolumeLink": "https://books.google.com/books/about/L_ordine_dei_peccati.html?hl=&id=lUrXAAAAMAAJ"
+      },
+      "saleInfo": {
+        "country": "IT",
+        "saleability": "NOT_FOR_SALE",
+        "isEbook": false
+      },
+      "accessInfo": {
+        "country": "IT",
+        "viewability": "NO_PAGES",
+        "embeddable": false,
+        "publicDomain": false,
+        "textToSpeechPermission": "ALLOWED",
+        "epub": {
+          "isAvailable": false
+        },
+        "pdf": {
+          "isAvailable": false
+        },
+        "webReaderLink": "http://play.google.com/books/reader?id=lUrXAAAAMAAJ&hl=&as_pt=BOOKS&printsec=frontcover&source=gbs_api",
+        "accessViewStatus": "NONE",
+        "quoteSharingAllowed": false
+      }
+    },
+    {
+      "kind": "books#volume",
+      "id": "veLYAAAAMAAJ",
+      "etag": "JekJRkC7VWs",
+      "selfLink": "https://www.googleapis.com/books/v1/volumes/veLYAAAAMAAJ",
+      "volumeInfo": {
+        "title": "Frammenti di eternità",
+        "subtitle": "corpi e reliquie tra Antichità e Medioevo",
+        "authors": [
+          "Luigi Canetti"
+        ],
+        "publishedDate": "2002",
+        "industryIdentifiers": [
+          {
+            "type": "OTHER",
+            "identifier": "UOM:39015056685038"
+          }
+        ],
+        "readingModes": {
+          "text": false,
+          "image": false
+        },
+        "pageCount": 237,
+        "printType": "BOOK",
+        "categories": [
+          "History"
+        ],
+        "maturityRating": "NOT_MATURE",
+        "allowAnonLogging": false,
+        "contentVersion": "preview-1.0.0",
+        "imageLinks": {
+          "smallThumbnail": "http://books.google.com/books/content?id=veLYAAAAMAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+          "thumbnail": "http://books.google.com/books/content?id=veLYAAAAMAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api"
+        },
+        "language": "it",
+        "previewLink": "http://books.google.it/books?id=veLYAAAAMAAJ&q=antoness&dq=antoness&hl=&as_pt=BOOKS&cd=125&source=gbs_api",
+        "infoLink": "http://books.google.it/books?id=veLYAAAAMAAJ&dq=antoness&hl=&as_pt=BOOKS&source=gbs_api",
+        "canonicalVolumeLink": "https://books.google.com/books/about/Frammenti_di_eternit%C3%A0.html?hl=&id=veLYAAAAMAAJ"
+      },
+      "saleInfo": {
+        "country": "IT",
+        "saleability": "NOT_FOR_SALE",
+        "isEbook": false
+      },
+      "accessInfo": {
+        "country": "IT",
+        "viewability": "NO_PAGES",
+        "embeddable": false,
+        "publicDomain": false,
+        "textToSpeechPermission": "ALLOWED",
+        "epub": {
+          "isAvailable": false
+        },
+        "pdf": {
+          "isAvailable": false
+        },
+        "webReaderLink": "http://play.google.com/books/reader?id=veLYAAAAMAAJ&hl=&as_pt=BOOKS&printsec=frontcover&source=gbs_api",
+        "accessViewStatus": "NONE",
+        "quoteSharingAllowed": false
+      }
+    },
+    {
+      "kind": "books#volume",
+      "id": "cqZMAAAAYAAJ",
+      "etag": "EmQNAXewy7I",
+      "selfLink": "https://www.googleapis.com/books/v1/volumes/cqZMAAAAYAAJ",
+      "volumeInfo": {
+        "title": "Liturgia e arte",
+        "subtitle": "i luoghi della celebrazione",
+        "authors": [
+          "Vincenzo Gatti"
+        ],
+        "publishedDate": "2001",
+        "industryIdentifiers": [
+          {
+            "type": "ISBN_10",
+            "identifier": "8810430026"
+          },
+          {
+            "type": "ISBN_13",
+            "identifier": "9788810430026"
+          }
+        ],
+        "readingModes": {
+          "text": false,
+          "image": false
+        },
+        "pageCount": 236,
+        "printType": "BOOK",
+        "categories": [
+          "Religion"
+        ],
+        "maturityRating": "NOT_MATURE",
+        "allowAnonLogging": false,
+        "contentVersion": "preview-1.0.0",
+        "imageLinks": {
+          "smallThumbnail": "http://books.google.com/books/content?id=cqZMAAAAYAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+          "thumbnail": "http://books.google.com/books/content?id=cqZMAAAAYAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api"
+        },
+        "language": "it",
+        "previewLink": "http://books.google.it/books?id=cqZMAAAAYAAJ&q=antoness&dq=antoness&hl=&as_pt=BOOKS&cd=126&source=gbs_api",
+        "infoLink": "http://books.google.it/books?id=cqZMAAAAYAAJ&dq=antoness&hl=&as_pt=BOOKS&source=gbs_api",
+        "canonicalVolumeLink": "https://books.google.com/books/about/Liturgia_e_arte.html?hl=&id=cqZMAAAAYAAJ"
+      },
+      "saleInfo": {
+        "country": "IT",
+        "saleability": "NOT_FOR_SALE",
+        "isEbook": false
+      },
+      "accessInfo": {
+        "country": "IT",
+        "viewability": "NO_PAGES",
+        "embeddable": false,
+        "publicDomain": false,
+        "textToSpeechPermission": "ALLOWED",
+        "epub": {
+          "isAvailable": false
+        },
+        "pdf": {
+          "isAvailable": false
+        },
+        "webReaderLink": "http://play.google.com/books/reader?id=cqZMAAAAYAAJ&hl=&as_pt=BOOKS&printsec=frontcover&source=gbs_api",
+        "accessViewStatus": "NONE",
+        "quoteSharingAllowed": false
+      }
+    },
+    {
+      "kind": "books#volume",
+      "id": "YgL8PQAACAAJ",
+      "etag": "g/wv4XwveN4",
+      "selfLink": "https://www.googleapis.com/books/v1/volumes/YgL8PQAACAAJ",
+      "volumeInfo": {
+        "title": "Religioni in dialogo",
+        "authors": [
+          "Adolfo Russo"
+        ],
+        "publisher": "Edizioni Scientifiche Italiane",
+        "publishedDate": "2001",
+        "industryIdentifiers": [
+          {
+            "type": "ISBN_10",
+            "identifier": "8849501099"
+          },
+          {
+            "type": "ISBN_13",
+            "identifier": "9788849501094"
+          }
+        ],
+        "readingModes": {
+          "text": false,
+          "image": false
+        },
+        "pageCount": 341,
+        "printType": "BOOK",
+        "categories": [
+          "Religion"
+        ],
+        "maturityRating": "NOT_MATURE",
+        "allowAnonLogging": false,
+        "contentVersion": "preview-1.0.0",
+        "imageLinks": {
+          "smallThumbnail": "http://books.google.com/books/content?id=YgL8PQAACAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+          "thumbnail": "http://books.google.com/books/content?id=YgL8PQAACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api"
+        },
+        "language": "pt",
+        "previewLink": "http://books.google.it/books?id=YgL8PQAACAAJ&dq=antoness&hl=&as_pt=BOOKS&cd=127&source=gbs_api",
+        "infoLink": "http://books.google.it/books?id=YgL8PQAACAAJ&dq=antoness&hl=&as_pt=BOOKS&source=gbs_api",
+        "canonicalVolumeLink": "https://books.google.com/books/about/Religioni_in_dialogo.html?hl=&id=YgL8PQAACAAJ"
+      },
+      "saleInfo": {
+        "country": "IT",
+        "saleability": "NOT_FOR_SALE",
+        "isEbook": false
+      },
+      "accessInfo": {
+        "country": "IT",
+        "viewability": "NO_PAGES",
+        "embeddable": false,
+        "publicDomain": false,
+        "textToSpeechPermission": "ALLOWED",
+        "epub": {
+          "isAvailable": false
+        },
+        "pdf": {
+          "isAvailable": false
+        },
+        "webReaderLink": "http://play.google.com/books/reader?id=YgL8PQAACAAJ&hl=&as_pt=BOOKS&printsec=frontcover&source=gbs_api",
+        "accessViewStatus": "NONE",
+        "quoteSharingAllowed": false
+      }
+    },
+    {
+      "kind": "books#volume",
+      "id": "9A87AAAACAAJ",
+      "etag": "V9dhGQxQkOE",
+      "selfLink": "https://www.googleapis.com/books/v1/volumes/9A87AAAACAAJ",
+      "volumeInfo": {
+        "title": "Il governo della Chiesa",
+        "authors": [
+          "Carlo Cardia"
+        ],
+        "publishedDate": "2002",
+        "industryIdentifiers": [
+          {
+            "type": "ISBN_10",
+            "identifier": "8815090037"
+          },
+          {
+            "type": "ISBN_13",
+            "identifier": "9788815090034"
+          }
+        ],
+        "readingModes": {
+          "text": false,
+          "image": false
+        },
+        "pageCount": 308,
+        "printType": "BOOK",
+        "categories": [
+          "Religion"
+        ],
+        "maturityRating": "NOT_MATURE",
+        "allowAnonLogging": false,
+        "contentVersion": "preview-1.0.0",
+        "language": "en",
+        "previewLink": "http://books.google.it/books?id=9A87AAAACAAJ&dq=antoness&hl=&as_pt=BOOKS&cd=128&source=gbs_api",
+        "infoLink": "http://books.google.it/books?id=9A87AAAACAAJ&dq=antoness&hl=&as_pt=BOOKS&source=gbs_api",
+        "canonicalVolumeLink": "https://books.google.com/books/about/Il_governo_della_Chiesa.html?hl=&id=9A87AAAACAAJ"
+      },
+      "saleInfo": {
+        "country": "IT",
+        "saleability": "NOT_FOR_SALE",
+        "isEbook": false
+      },
+      "accessInfo": {
+        "country": "IT",
+        "viewability": "NO_PAGES",
+        "embeddable": false,
+        "publicDomain": false,
+        "textToSpeechPermission": "ALLOWED",
+        "epub": {
+          "isAvailable": false
+        },
+        "pdf": {
+          "isAvailable": false
+        },
+        "webReaderLink": "http://play.google.com/books/reader?id=9A87AAAACAAJ&hl=&as_pt=BOOKS&printsec=frontcover&source=gbs_api",
+        "accessViewStatus": "NONE",
+        "quoteSharingAllowed": false
+      }
+    }
   ]
-},
-{
-"title": [
-"Geographie der Freizeit und des Tourismus: Bilanz und Ausblick"
-],
-"ISBN": [
-"9783486584349",
-"9783486700015"
-]
-}
-
-{
-"title": [
-"Theory and Practice of Combinatorics - A collection of articles honoring Anton Kotzig on the occasion of his sixtieth birthday"
-],
-"ISBN": [
-"9780444863188"
-]
-},
-{
-"title": [
-"Utopía: 500 años"
-],
-"ISBN": [
-"9789587600544"
-]
 }
