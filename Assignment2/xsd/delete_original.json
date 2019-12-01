@@ -4,91 +4,346 @@
   "message-version": "1.0.0",
   "message": {
     "facets": {},
-    "total-results": 122,
+    "next-cursor": "AoJy1YGD9OkCPwxodHRwOi8vZHguZG9pLm9yZy8xMC4xMDA3Lzk3OC0zLTMyMi04NDc2Ny02",
+    "total-results": 67,
     "items": [
       {
-        "publisher": "Brill",
-        "ISBN": [
-          "9789004234574"
-        ],
-        "published-print": {
-          "date-parts": [
-            [
-              2012,
-              8,
-              28
-            ]
-          ]
-        },
         "title": [
-          "<i>Ungeteiltheit<\/i> \u2013 oder Mystik als Ab-Grund der Erfahrung"
+          "XVth Risk Factors of Food Chain 2015: Book of Abstracts"
+        ],
+        "ISBN": [
+          "9788055214245"
         ],
         "author": [
           {
-            "given": "Rolf",
-            "family": "K\u00fchn",
+            "given": "Kováčik",
+            "family": "Anton",
             "sequence": "first",
             "affiliation": []
+          },
+          {
+            "name": "Faculty of Biotechnology and Food Sciences, SAU in Nitra",
+            "sequence": "first",
+            "affiliation": []
+          },
+          {
+            "given": "Slanina",
+            "family": "Tomáš",
+            "sequence": "additional",
+            "affiliation": []
+          },
+          {
+            "given": "Čupka",
+            "family": "Peter",
+            "sequence": "additional",
+            "affiliation": []
+          },
+          {
+            "name": "Pedagogical University in Kraków, Poland",
+            "sequence": "additional",
+            "affiliation": []
+          },
+          {
+            "name": "Szent István University in Gödöllő, Hungary",
+            "sequence": "additional",
+            "affiliation": []
+          },
+          {
+            "name": "University Rzeszów, Poland",
+            "sequence": "additional",
+            "affiliation": []
           }
-        ]
+        ],
+        "publisher": "Slovak University of Agriculture in Nitra, Slovakia"
       },
       {
-        "publisher": "Springer Berlin Heidelberg",
-        "ISBN": [
-          "9783662336229",
-          "9783662340202"
-        ],
-        "published-print": {
-          "date-parts": [
-            [
-              1911
-            ]
-          ]
-        },
         "title": [
-          "Eisenbahn-Verkehrsordnung. (EVO.) G\u00fcltig vom 1. April 1909 ab."
+          "Geographie der Freizeit und des Tourismus: Bilanz und Ausblick"
+        ],
+        "ISBN": [
+          "9783486584349",
+          "9783486700015"
         ],
         "author": [
           {
-            "name": "Reichs-Eisenbahn-Amt",
-            "sequence": "first",
+            "given": "Claudia",
+            "family": "Anton-Ouack",
+            "sequence": "additional",
             "affiliation": []
           }
-        ]
-      },
-      {
-        "publisher": "OECD",
-        "ISBN": [
-          "9789264236202"
         ],
         "published-print": {
           "date-parts": [
             [
-              2015,
-              3,
-              31
+              2007,
+              1
             ]
           ]
         },
+        "publisher": "Oldenbourg Verlag"
+      },
+      {
         "title": [
-          "OECD360: Schweiz 2015"
+          "Theory and Practice of Combinatorics - A collection of articles honoring Anton Kotzig on the occasion of his sixtieth birthday"
+        ],
+        "ISBN": [
+          "9780444863188"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              1982
+            ]
+          ]
+        },
+        "publisher": "Elsevier"
+      },
+      {
+        "title": [
+          "Utopía: 500 años"
+        ],
+        "ISBN": [
+          "9789587600544"
+        ],
+        "author": [
+          {
+            "given": "Micaela",
+            "family": "Cuesta",
+            "sequence": "additional",
+            "affiliation": []
+          },
+          {
+            "given": "José Luis",
+            "family": "Galimidi",
+            "sequence": "additional",
+            "affiliation": []
+          },
+          {
+            "given": "Demetrio",
+            "family": "Anzaldo González",
+            "sequence": "additional",
+            "affiliation": []
+          },
+          {
+            "given": "Daniel",
+            "family": "Del Percio",
+            "sequence": "additional",
+            "affiliation": []
+          },
+          {
+            "given": "María del Rosario",
+            "family": "Athié",
+            "sequence": "additional",
+            "affiliation": []
+          },
+          {
+            "given": "Citlalic",
+            "family": "López",
+            "sequence": "additional",
+            "affiliation": []
+          },
+          {
+            "given": "Manuel",
+            "family": "Méndez Alonzo",
+            "sequence": "additional",
+            "affiliation": []
+          },
+          {
+            "given": "Rocío",
+            "family": "Hernández Arias",
+            "sequence": "additional",
+            "affiliation": []
+          },
+          {
+            "given": "Barnita",
+            "family": "Bagchi",
+            "sequence": "additional",
+            "affiliation": []
+          },
+          {
+            "given": "Helene",
+            "family": "de Fays",
+            "sequence": "additional",
+            "affiliation": []
+          },
+          {
+            "given": "Vita",
+            "family": "Fortunati",
+            "sequence": "additional",
+            "affiliation": []
+          },
+          {
+            "given": "Thomas",
+            "family": "Anton Reuter",
+            "sequence": "additional",
+            "affiliation": []
+          },
+          {
+            "given": "Nélson",
+            "family": "Villarreal Durán",
+            "sequence": "additional",
+            "affiliation": []
+          },
+          {
+            "given": "Guillermo Andrés",
+            "family": "Duque Silva",
+            "sequence": "additional",
+            "affiliation": []
+          },
+          {
+            "given": "Peter",
+            "family": "Gordon Stillman",
+            "sequence": "additional",
+            "affiliation": []
+          },
+          {
+            "given": "Francisco",
+            "family": "Salgado",
+            "sequence": "additional",
+            "affiliation": []
+          },
+          {
+            "given": "Manuela",
+            "family": "Salau Brasil",
+            "sequence": "additional",
+            "affiliation": []
+          }
+        ],
+        "publisher": "Universidad Cooperativa de Colombia"
+      },
+      {
+        "title": [
+          "Anton Bruckner und die Nachwelt"
+        ],
+        "ISBN": [
+          "9783476451880",
+          "9783476042835"
+        ],
+        "author": [
+          {
+            "given": "Christa",
+            "family": "Brüstle",
+            "sequence": "first",
+            "affiliation": []
+          }
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              1998
+            ]
+          ]
+        },
+        "publisher": "J.B. Metzler"
+      },
+      {
+        "title": [
+          "Coding Properties in Invertebrate Sensory Systems"
+        ],
+        "ISBN": [
+          "9782889451067"
+        ],
+        "publisher": "Frontiers Media SA"
+      },
+      {
+        "title": [
+          "Anton Chekhov Through the Eyes of Russian Thinkers"
         ],
         "subtitle": [
-          "Wie schneidet die Schweiz ab?"
+          "Vasilii Rozanov, Dmitrii Merezhkovskii and Lev Shestov"
+        ],
+        "ISBN": [
+          "9780857289827"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              2012
+            ]
+          ]
+        },
+        "publisher": "Anthem Press"
+      },
+      {
+        "title": [
+          "Expanding Flight Research: Capabilities, Needs, and Management Options for NASA's Aeronautics Research Mission Directorate"
+        ],
+        "ISBN": [
+          "9780833095671"
         ],
         "author": [
           {
-            "name": "OECD",
+            "given": "Jan",
+            "family": "Osburg",
+            "sequence": "first",
+            "affiliation": []
+          },
+          {
+            "given": "Philip",
+            "family": "Anton",
+            "sequence": "first",
+            "affiliation": []
+          },
+          {
+            "given": "Frank",
+            "family": "Camm",
+            "sequence": "first",
+            "affiliation": []
+          },
+          {
+            "given": "Jeremy",
+            "family": "Eckhause",
+            "sequence": "first",
+            "affiliation": []
+          },
+          {
+            "given": "Jaime",
+            "family": "Hastings",
+            "sequence": "first",
+            "affiliation": []
+          },
+          {
+            "given": "Jakub",
+            "family": "Hlavka",
+            "sequence": "first",
+            "affiliation": []
+          },
+          {
+            "given": "James",
+            "family": "Kallimani",
+            "sequence": "first",
+            "affiliation": []
+          },
+          {
+            "given": "Thomas",
+            "family": "Light",
+            "sequence": "first",
+            "affiliation": []
+          },
+          {
+            "given": "Chad",
+            "family": "Ohlandt",
+            "sequence": "first",
+            "affiliation": []
+          },
+          {
+            "given": "Douglas",
+            "family": "Shontz",
+            "sequence": "first",
+            "affiliation": []
+          },
+          {
+            "given": "Abbie",
+            "family": "Tingstad",
+            "sequence": "first",
+            "affiliation": []
+          },
+          {
+            "given": "Jia",
+            "family": "Xu",
             "sequence": "first",
             "affiliation": []
           }
-        ]
-      },
-      {
-        "publisher": "Springer Fachmedien Wiesbaden",
-        "ISBN": [
-          "9783658148294",
-          "9783658148300"
         ],
         "published-print": {
           "date-parts": [
@@ -97,50 +352,1513 @@
             ]
           ]
         },
+        "publisher": "RAND Corporation"
+      },
+      {
         "title": [
-          "Highly Accurate Spectroscopic Parameters from Ab Initio Calculations"
+          "Poetik der Kunstgeschichte"
+        ],
+        "subtitle": [
+          "Anton Springer, Carl Justi und die ästhetische Konzeption der deutschen Kunstwissenschaft"
+        ],
+        "ISBN": [
+          "9783050044514",
+          "9783050062181"
         ],
         "author": [
           {
-            "given": "Christopher J.",
-            "family": "Stein",
+            "given": "Johannes",
+            "family": "Rößler",
             "sequence": "first",
             "affiliation": []
           }
-        ]
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              2009,
+              12,
+              31
+            ]
+          ]
+        },
+        "publisher": "AKADEMIE VERLAG"
       },
       {
-        "publisher": "OECD",
-        "ISBN": [
-          "9789264236578"
+        "title": [
+          "Part I United States, 1 The Rise and Fall of Lehman Brothers"
+        ],
+        "author": [
+          {
+            "given": "Valukas",
+            "family": "Anton R",
+            "sequence": "first",
+            "affiliation": []
+          },
+          {
+            "given": "Byman",
+            "family": "Robert L",
+            "sequence": "additional",
+            "affiliation": []
+          },
+          {
+            "given": "Murray",
+            "family": "Daniel R",
+            "sequence": "additional",
+            "affiliation": []
+          }
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              2017,
+              3,
+              16
+            ]
+          ]
+        },
+        "publisher": "Oxford University Press"
+      },
+      {
+        "title": [
+          "Part V Non-Judicial Responses, 36 Criminal Justice Responses to Terrorism in Africa"
+        ],
+        "author": [
+          {
+            "given": "Ewi",
+            "family": "Martin A",
+            "sequence": "first",
+            "affiliation": []
+          },
+          {
+            "given": "du Plessis",
+            "family": "Anton",
+            "sequence": "additional",
+            "affiliation": []
+          }
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              2012,
+              1,
+              1
+            ]
+          ]
+        },
+        "publisher": "Oxford University Press"
+      },
+      {
+        "title": [
+          "Part I Context, Challenges, and Constraints, 4 The ICC and the AU"
+        ],
+        "author": [
+          {
+            "given": "Maunganidze",
+            "family": "Ottilia Anna",
+            "sequence": "first",
+            "affiliation": []
+          },
+          {
+            "given": "du Plessis",
+            "family": "Anton",
+            "sequence": "additional",
+            "affiliation": []
+          }
         ],
         "published-print": {
           "date-parts": [
             [
               2015,
-              3,
+              5,
+              1
+            ]
+          ]
+        },
+        "publisher": "Oxford University Press"
+      },
+      {
+        "title": [
+          "Oratio ab illustrissimo ad sedem pontificiam legato Cæsareo, Principe de Liechtenstein, Romæ in Consistorio, a. 1691, 12. Febr. proposita."
+        ],
+        "author": [
+          {
+            "family": "Anton Florian, Liechtenstein, Fürst",
+            "sequence": "first",
+            "affiliation": []
+          }
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              1691
+            ]
+          ]
+        },
+        "publisher": "[Publisher not identified]"
+      },
+      {
+        "title": [
+          "Mind and Language – On the Philosophy of Anton Marty"
+        ],
+        "ISBN": [
+          "9783110531480"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              2017,
+              11,
+              7
+            ]
+          ]
+        },
+        "publisher": "De Gruyter"
+      },
+      {
+        "title": [
+          "Josep Anton Baixeras"
+        ],
+        "ISBN": [
+          "9788484244813"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              2016
+            ]
+          ]
+        },
+        "publisher": "Publicacions Universitat Rovira i Virgili"
+      },
+      {
+        "title": [
+          "Optimizing physical activity across the lifespan"
+        ],
+        "author": [
+          {
+            "given": "Stephen D.",
+            "family": "Anton",
+            "sequence": "first",
+            "affiliation": []
+          },
+          {
+            "given": "Duane B.",
+            "family": "Corbett",
+            "sequence": "additional",
+            "affiliation": []
+          },
+          {
+            "given": "Todd M.",
+            "family": "Manini",
+            "sequence": "additional",
+            "affiliation": []
+          }
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              2017,
+              12
+            ]
+          ]
+        },
+        "publisher": "Oxford University Press"
+      },
+      {
+        "title": [
+          "Imágenes humanística para una sociedad educadora"
+        ],
+        "ISBN": [
+          "9788490443309"
+        ],
+        "author": [
+          {
+            "given": "Joaquín Saúl",
+            "family": "García Marchante",
+            "sequence": "first",
+            "affiliation": []
+          },
+          {
+            "name": "Universidad de Castilla-La Mancha",
+            "sequence": "first",
+            "affiliation": []
+          },
+          {
+            "ORCID": "http://orcid.org/0000-0002-2664-6083",
+            "authenticated-orcid": false,
+            "given": "Pedro Miguel",
+            "family": "Ibáñez Martínez",
+            "sequence": "additional",
+            "affiliation": []
+          },
+          {
+            "ORCID": "http://orcid.org/0000-0002-1011-7566",
+            "authenticated-orcid": false,
+            "given": "Ana Eulalia",
+            "family": "Aparicio Guerrero",
+            "sequence": "additional",
+            "affiliation": []
+          },
+          {
+            "given": "Francisco Manuel",
+            "family": "García Clemente",
+            "sequence": "additional",
+            "affiliation": []
+          },
+          {
+            "ORCID": "http://orcid.org/0000-0002-3114-6753",
+            "authenticated-orcid": false,
+            "given": "Carmen",
+            "family": "Hernández López",
+            "sequence": "additional",
+            "affiliation": []
+          },
+          {
+            "ORCID": "http://orcid.org/0000-0003-1480-044X",
+            "authenticated-orcid": false,
+            "given": "José Antonio",
+            "family": "Jara Fuente",
+            "sequence": "additional",
+            "affiliation": []
+          },
+          {
+            "given": "Enrique",
+            "family": "Gozalbes Cravioto",
+            "sequence": "additional",
+            "affiliation": []
+          },
+          {
+            "ORCID": "http://orcid.org/0000-0001-9588-1653",
+            "authenticated-orcid": false,
+            "given": "Angel Luis",
+            "family": "López Villaverde",
+            "sequence": "additional",
+            "affiliation": []
+          },
+          {
+            "ORCID": "http://orcid.org/0000-0003-1908-7145",
+            "authenticated-orcid": false,
+            "given": "Eduardo",
+            "family": "Higueras Castañeda",
+            "sequence": "additional",
+            "affiliation": []
+          },
+          {
+            "ORCID": "http://orcid.org/0000-0002-1833-2228",
+            "authenticated-orcid": false,
+            "given": "Francisco Javier",
+            "family": "Espinosa Antón",
+            "sequence": "additional",
+            "affiliation": []
+          },
+          {
+            "given": "Pedro César",
+            "family": "Cerrillo Torremocha",
+            "sequence": "additional",
+            "affiliation": []
+          },
+          {
+            "ORCID": "http://orcid.org/0000-0002-1534-8822",
+            "authenticated-orcid": false,
+            "given": "César",
+            "family": "Sánchez Ortiz",
+            "sequence": "additional",
+            "affiliation": []
+          },
+          {
+            "ORCID": "http://orcid.org/0000-0002-1306-1094",
+            "authenticated-orcid": false,
+            "given": "Benito",
+            "family": "Del Rincón Igea",
+            "sequence": "additional",
+            "affiliation": []
+          },
+          {
+            "ORCID": "http://orcid.org/0000-0003-1698-0122",
+            "authenticated-orcid": false,
+            "given": "José Luis",
+            "family": "González Geraldo",
+            "sequence": "additional",
+            "affiliation": []
+          },
+          {
+            "ORCID": "http://orcid.org/0000-0003-1936-3920",
+            "authenticated-orcid": false,
+            "given": "Alejandro",
+            "family": "De Haro Honrubia",
+            "sequence": "additional",
+            "affiliation": []
+          },
+          {
+            "ORCID": "http://orcid.org/0000-0002-7157-1826",
+            "authenticated-orcid": false,
+            "given": "Sandra",
+            "family": "Sánchez-García",
+            "sequence": "additional",
+            "affiliation": []
+          },
+          {
+            "ORCID": "http://orcid.org/0000-0002-7148-7958",
+            "authenticated-orcid": false,
+            "given": "Santiago",
+            "family": "Yubero Jiménez",
+            "sequence": "additional",
+            "affiliation": []
+          },
+          {
+            "ORCID": "http://orcid.org/0000-0002-7183-1683",
+            "authenticated-orcid": false,
+            "given": "Elisa",
+            "family": "Larrañaga Rubio",
+            "sequence": "additional",
+            "affiliation": []
+          },
+          {
+            "ORCID": "http://orcid.org/0000-0003-4284-4300",
+            "authenticated-orcid": false,
+            "given": "Raúl",
+            "family": "Navarro Olivas",
+            "sequence": "additional",
+            "affiliation": []
+          },
+          {
+            "ORCID": "http://orcid.org/0000-0001-7110-8789",
+            "authenticated-orcid": false,
+            "given": "Roberto",
+            "family": "Martínez Mateo",
+            "sequence": "additional",
+            "affiliation": []
+          },
+          {
+            "ORCID": "http://orcid.org/0000-0003-4040-8193",
+            "authenticated-orcid": false,
+            "given": "Dioni",
+            "family": "Elche Hortelano",
+            "sequence": "additional",
+            "affiliation": []
+          },
+          {
+            "ORCID": "http://orcid.org/0000-0003-0348-367X",
+            "authenticated-orcid": false,
+            "given": "Ángela",
+            "family": "Martínez Pérez",
+            "sequence": "additional",
+            "affiliation": []
+          },
+          {
+            "ORCID": "http://orcid.org/0000-0003-4923-3705",
+            "authenticated-orcid": false,
+            "given": "Antonio",
+            "family": "Villanueva Cuevas",
+            "sequence": "additional",
+            "affiliation": []
+          }
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              2018,
+              11,
+              26
+            ]
+          ]
+        },
+        "publisher": "Ediciones de la Universidad de Castilla-La Mancha"
+      },
+      {
+        "title": [
+          "Vida de Sor Francisca Josefa de Castillo"
+        ],
+        "ISBN": [
+          "9783964560339"
+        ],
+        "author": [
+          {
+            "given": "Francisca Josefa de",
+            "family": "Castillo",
+            "sequence": "first",
+            "affiliation": []
+          }
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              2009,
+              12,
               31
             ]
           ]
         },
+        "publisher": "Iberoamericana Vervuert"
+      },
+      {
         "title": [
-          "OECD360 : Luxemburg 2015"
+          "Mobilfunknetze"
         ],
-        "subtitle": [
-          "Wie schneidet Luxemburg ab?"
+        "ISBN": [
+          "9783663058038",
+          "9783663058021"
         ],
         "author": [
           {
-            "name": "OECD",
+            "given": "Manuel",
+            "family": "Duque-Antón",
             "sequence": "first",
             "affiliation": []
           }
-        ]
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              2002
+            ]
+          ]
+        },
+        "publisher": "Vieweg+Teubner Verlag"
+      },
+      {
+        "title": [
+          "Mit List und Tücke argumentieren"
+        ],
+        "ISBN": [
+          "9783322847683",
+          "9783322847676"
+        ],
+        "author": [
+          {
+            "given": "Karl-Heinz",
+            "family": "Anton",
+            "sequence": "first",
+            "affiliation": []
+          }
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              2000
+            ]
+          ]
+        },
+        "publisher": "Gabler Verlag"
       }
     ],
-    "items-per-page": 5,
+    "items-per-page": 20,
     "query": {
-      "start-index": 5,
+      "start-index": 0,
+      "search-terms": null
+    }
+  }
+}
+
+
+
+
+
+{
+  "status": "ok",
+  "message-type": "work-list",
+  "message-version": "1.0.0",
+  "message": {
+    "facets": {},
+    "next-cursor": "AoJwqYm06O0CPwBodHRwOi8vZHguZG9pLm9yZy8xMC43MjQ5L3RyMzAz",
+    "total-results": 67,
+    "items": [
+      {
+        "title": [
+          "Anton Tschechov oder Die Entartung der Kunst"
+        ],
+        "ISBN": [
+          "9783663018117",
+          "9783663018100"
+        ],
+        "author": [
+          {
+            "given": "Hans",
+            "family": "Rothe",
+            "sequence": "first",
+            "affiliation": []
+          }
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              1990
+            ]
+          ]
+        },
+        "publisher": "VS Verlag für Sozialwissenschaften"
+      },
+      {
+        "title": [
+          "Emil du Bois-Reymond (1818–1896) Anton Dohrn (1840–1909)"
+        ],
+        "ISBN": [
+          "9783540158127",
+          "9783642707315"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              1985
+            ]
+          ]
+        },
+        "publisher": "Springer Berlin Heidelberg"
+      },
+      {
+        "title": [
+          "stark bewölkt"
+        ],
+        "ISBN": [
+          "9783211891131",
+          "9783211891148"
+        ],
+        "author": [
+          {
+            "given": "Appelt",
+            "family": "Siegrun",
+            "sequence": "first",
+            "affiliation": []
+          },
+          {
+            "given": "B.",
+            "family": "Ona",
+            "sequence": "additional",
+            "affiliation": []
+          },
+          {
+            "given": "Bachler",
+            "family": "Hildegund",
+            "sequence": "additional",
+            "affiliation": []
+          },
+          {
+            "given": "Baldasti",
+            "family": "Gerhard",
+            "sequence": "additional",
+            "affiliation": []
+          },
+          {
+            "given": "Bechtold",
+            "family": "Astrid",
+            "sequence": "additional",
+            "affiliation": []
+          },
+          {
+            "given": "Bergler",
+            "family": "Fritz",
+            "sequence": "additional",
+            "affiliation": []
+          },
+          {
+            "given": "Blaskovic",
+            "family": "Aimée",
+            "sequence": "additional",
+            "affiliation": []
+          },
+          {
+            "given": "Choung-Fux",
+            "family": "Eva",
+            "sequence": "additional",
+            "affiliation": []
+          },
+          {
+            "given": "Cmelka",
+            "family": "Helga",
+            "sequence": "additional",
+            "affiliation": []
+          },
+          {
+            "given": "Dreux",
+            "family": "Béatrice",
+            "sequence": "additional",
+            "affiliation": []
+          },
+          {
+            "given": "Eberl",
+            "family": "Irma",
+            "sequence": "additional",
+            "affiliation": []
+          },
+          {
+            "given": "Ecker",
+            "family": "Gottfried",
+            "sequence": "additional",
+            "affiliation": []
+          },
+          {
+            "given": "Engelhardt",
+            "family": "Khy",
+            "sequence": "additional",
+            "affiliation": []
+          },
+          {
+            "given": "Fodor",
+            "family": "Gyula",
+            "sequence": "additional",
+            "affiliation": []
+          },
+          {
+            "given": "Gappmayr",
+            "family": "Heinz",
+            "sequence": "additional",
+            "affiliation": []
+          },
+          {
+            "given": "Gottfried Markus",
+            "family": "Maria",
+            "sequence": "additional",
+            "affiliation": []
+          },
+          {
+            "given": "Grossmann",
+            "family": "Silvia",
+            "sequence": "additional",
+            "affiliation": []
+          },
+          {
+            "given": "Heindl",
+            "family": "Ursula",
+            "sequence": "additional",
+            "affiliation": []
+          },
+          {
+            "given": "Hikade",
+            "family": "Karl",
+            "sequence": "additional",
+            "affiliation": []
+          },
+          {
+            "given": "Hirschmann Werner",
+            "family": "Paul",
+            "sequence": "additional",
+            "affiliation": []
+          },
+          {
+            "given": "Hollegha",
+            "family": "Wolfgang",
+            "sequence": "additional",
+            "affiliation": []
+          },
+          {
+            "given": "Höllwarth",
+            "family": "Gottfried",
+            "sequence": "additional",
+            "affiliation": []
+          },
+          {
+            "given": "Huber",
+            "family": "Lisa",
+            "sequence": "additional",
+            "affiliation": []
+          },
+          {
+            "given": "Hutar",
+            "family": "Gerhard",
+            "sequence": "additional",
+            "affiliation": []
+          },
+          {
+            "given": "Jaschke",
+            "family": "Gerhard",
+            "sequence": "additional",
+            "affiliation": []
+          },
+          {
+            "given": "Jöchl",
+            "family": "Hans",
+            "sequence": "additional",
+            "affiliation": []
+          },
+          {
+            "given": "Kampfer",
+            "family": "August",
+            "sequence": "additional",
+            "affiliation": []
+          },
+          {
+            "given": "Kempinger",
+            "family": "Herwig",
+            "sequence": "additional",
+            "affiliation": []
+          },
+          {
+            "given": "Klinkan",
+            "family": "Alfred",
+            "sequence": "additional",
+            "affiliation": []
+          },
+          {
+            "given": "Klučarić",
+            "family": "Claudia",
+            "sequence": "additional",
+            "affiliation": []
+          },
+          {
+            "given": "Lang",
+            "family": "Kurt",
+            "sequence": "additional",
+            "affiliation": []
+          },
+          {
+            "given": "Lehmden",
+            "family": "Anton",
+            "sequence": "additional",
+            "affiliation": []
+          },
+          {
+            "given": "Lindinger",
+            "family": "Heinz",
+            "sequence": "additional",
+            "affiliation": []
+          },
+          {
+            "given": "Maier",
+            "family": "Norman",
+            "sequence": "additional",
+            "affiliation": []
+          },
+          {
+            "given": "Meierhofer",
+            "family": "Christine",
+            "sequence": "additional",
+            "affiliation": []
+          },
+          {
+            "given": "Mejchar",
+            "family": "Elfriede",
+            "sequence": "additional",
+            "affiliation": []
+          },
+          {
+            "given": "Menhardt",
+            "family": "Moje",
+            "sequence": "additional",
+            "affiliation": []
+          },
+          {
+            "given": "Monaco",
+            "family": "Julie",
+            "sequence": "additional",
+            "affiliation": []
+          },
+          {
+            "given": "Nitzl",
+            "family": "Iris",
+            "sequence": "additional",
+            "affiliation": []
+          },
+          {
+            "given": "Pfaffenbichler",
+            "family": "Hubert",
+            "sequence": "additional",
+            "affiliation": []
+          },
+          {
+            "given": "Pisk",
+            "family": "Michael",
+            "sequence": "additional",
+            "affiliation": []
+          },
+          {
+            "given": "Prelog Drago",
+            "family": "Julius",
+            "sequence": "additional",
+            "affiliation": []
+          },
+          {
+            "given": "Rataitz",
+            "family": "Peter",
+            "sequence": "additional",
+            "affiliation": []
+          },
+          {
+            "given": "Rind",
+            "family": "Trude",
+            "sequence": "additional",
+            "affiliation": []
+          },
+          {
+            "given": "Roithner",
+            "family": "Hubert",
+            "sequence": "additional",
+            "affiliation": []
+          },
+          {
+            "given": "Schellander",
+            "family": "Meina",
+            "sequence": "additional",
+            "affiliation": []
+          },
+          {
+            "given": "Schlegel",
+            "family": "Eva",
+            "sequence": "additional",
+            "affiliation": []
+          },
+          {
+            "given": "Schwaiger",
+            "family": "Josef",
+            "sequence": "additional",
+            "affiliation": []
+          },
+          {
+            "given": "Sielecki",
+            "family": "Hubert",
+            "sequence": "additional",
+            "affiliation": []
+          },
+          {
+            "given": "Spiegel",
+            "family": "Michaela",
+            "sequence": "additional",
+            "affiliation": []
+          },
+          {
+            "given": "Sturm",
+            "family": "Gabriele",
+            "sequence": "additional",
+            "affiliation": []
+          },
+          {
+            "given": "Swoboda",
+            "family": "Helmut",
+            "sequence": "additional",
+            "affiliation": []
+          },
+          {
+            "given": "Szigethy",
+            "family": "Ida",
+            "sequence": "additional",
+            "affiliation": []
+          },
+          {
+            "given": "Titz",
+            "family": "Lea",
+            "sequence": "additional",
+            "affiliation": []
+          },
+          {
+            "given": "Traar",
+            "family": "Jochen",
+            "sequence": "additional",
+            "affiliation": []
+          },
+          {
+            "given": "Trinkl",
+            "family": "Werner",
+            "sequence": "additional",
+            "affiliation": []
+          },
+          {
+            "given": "Wachsmuth",
+            "family": "Simon",
+            "sequence": "additional",
+            "affiliation": []
+          },
+          {
+            "given": "Wacik",
+            "family": "Franz",
+            "sequence": "additional",
+            "affiliation": []
+          },
+          {
+            "given": "Walde",
+            "family": "Martin",
+            "sequence": "additional",
+            "affiliation": []
+          },
+          {
+            "given": "Weigand",
+            "family": "Hans",
+            "sequence": "additional",
+            "affiliation": []
+          },
+          {
+            "given": "Weissenbacher",
+            "family": "Sebastian",
+            "sequence": "additional",
+            "affiliation": []
+          },
+          {
+            "given": "Wisniewski",
+            "family": "Jana",
+            "sequence": "additional",
+            "affiliation": []
+          },
+          {
+            "given": "Zeppel-Sperl",
+            "family": "Robert",
+            "sequence": "additional",
+            "affiliation": []
+          },
+          {
+            "given": "Ziegelman",
+            "family": "David",
+            "sequence": "additional",
+            "affiliation": []
+          }
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              2009
+            ]
+          ]
+        },
+        "publisher": "Springer Vienna"
+      },
+      {
+        "title": [
+          "Die Krankheiten des Gehörorgans"
+        ],
+        "ISBN": [
+          "9783540010326",
+          "9783642924835"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              1926
+            ]
+          ]
+        },
+        "publisher": "Springer Berlin Heidelberg"
+      },
+      {
+        "title": [
+          "Mit List und Tücke argumentieren"
+        ],
+        "ISBN": [
+          "9783322929976",
+          "9783322929969"
+        ],
+        "author": [
+          {
+            "given": "Karl-Heinz",
+            "family": "Anton",
+            "sequence": "first",
+            "affiliation": []
+          }
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              1995
+            ]
+          ]
+        },
+        "publisher": "Gabler Verlag"
+      },
+      {
+        "title": [
+          "Mit List und Tücke argumentieren"
+        ],
+        "ISBN": [
+          "9783834941541",
+          "9783834941558"
+        ],
+        "author": [
+          {
+            "given": "Karl-Heinz",
+            "family": "Anton",
+            "sequence": "first",
+            "affiliation": []
+          }
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              2012
+            ]
+          ]
+        },
+        "publisher": "Gabler Verlag"
+      },
+      {
+        "title": [
+          "Guía de apoyo y buenas prácticas empresariales para la inclusión laboral de personas en proceso de reintegración en Colombia"
+        ],
+        "ISBN": [
+          "9789587842449"
+        ],
+        "author": [
+          {
+            "given": "Merlin Patricia",
+            "family": "Grueso Hinestroza",
+            "sequence": "first",
+            "affiliation": []
+          },
+          {
+            "given": "Concha",
+            "family": "Antón Rubio",
+            "sequence": "additional",
+            "affiliation": []
+          },
+          {
+            "given": "Mónica",
+            "family": "López Santamaría",
+            "sequence": "additional",
+            "affiliation": []
+          }
+        ],
+        "publisher": "Universidad del Rosario"
+      },
+      {
+        "title": [
+          "Die Ziele der Werbung in Theorie und Praxis"
+        ],
+        "ISBN": [
+          "9783409364317",
+          "9783322837905"
+        ],
+        "author": [
+          {
+            "given": "Manfred",
+            "family": "Anton",
+            "sequence": "first",
+            "affiliation": []
+          }
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              1973
+            ]
+          ]
+        },
+        "publisher": "Gabler Verlag"
+      },
+      {
+        "title": [
+          "The Square Kilometre Array: Paving the way for the new 21st century radio astronomy paradigm"
+        ],
+        "subtitle": [
+          "Proceedings of Symposium 7 of JENAM 2010"
+        ],
+        "ISBN": [
+          "9783642227943",
+          "9783642227950"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              2012
+            ]
+          ]
+        },
+        "publisher": "Springer Berlin Heidelberg"
+      },
+      {
+        "title": [
+          "Transactions on Computational Science IX"
+        ],
+        "subtitle": [
+          "Special Issue on Voronoi Diagrams in Science and Engineering"
+        ],
+        "ISBN": [
+          "9783642160066",
+          "9783642160073"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              2010
+            ]
+          ]
+        },
+        "publisher": "Springer Berlin Heidelberg"
+      },
+      {
+        "title": [
+          "Anton Chekhov"
+        ],
+        "ISBN": [
+          "9780333308820",
+          "9781349179817"
+        ],
+        "author": [
+          {
+            "given": "Laurence",
+            "family": "Senelick",
+            "sequence": "first",
+            "affiliation": []
+          }
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              1985
+            ]
+          ]
+        },
+        "publisher": "Macmillan Education UK"
+      },
+      {
+        "title": [
+          "Administered Politics"
+        ],
+        "ISBN": [
+          "9789400987470",
+          "9789400987456"
+        ],
+        "author": [
+          {
+            "given": "Thomas J.",
+            "family": "Anton",
+            "sequence": "first",
+            "affiliation": []
+          }
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              1980
+            ]
+          ]
+        },
+        "publisher": "Springer Netherlands"
+      },
+      {
+        "title": [
+          "Anton Čexov as a Master of Story-Writing"
+        ],
+        "subtitle": [
+          "Essays in Modern Soviet Literary Criticism"
+        ],
+        "ISBN": [
+          "9783110802566"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              1976,
+              12,
+              31
+            ]
+          ]
+        },
+        "publisher": "De Gruyter"
+      },
+      {
+        "title": [
+          "Assessing Department of Defense Use of Data Analytics and Enabling Data Management to Improve Acquisition Outcomes"
+        ],
+        "ISBN": [
+          "9781977403261"
+        ],
+        "author": [
+          {
+            "given": "Philip",
+            "family": "Anton",
+            "sequence": "first",
+            "affiliation": []
+          },
+          {
+            "given": "Megan",
+            "family": "McKernan",
+            "sequence": "first",
+            "affiliation": []
+          },
+          {
+            "given": "Ken",
+            "family": "Munson",
+            "sequence": "first",
+            "affiliation": []
+          },
+          {
+            "given": "James",
+            "family": "Kallimani",
+            "sequence": "first",
+            "affiliation": []
+          },
+          {
+            "given": "Alexis",
+            "family": "Levedahl",
+            "sequence": "first",
+            "affiliation": []
+          },
+          {
+            "given": "Irv",
+            "family": "Blickstein",
+            "sequence": "first",
+            "affiliation": []
+          },
+          {
+            "given": "Jeffrey",
+            "family": "Drezner",
+            "sequence": "first",
+            "affiliation": []
+          },
+          {
+            "given": "Sydne",
+            "family": "Newberry",
+            "sequence": "first",
+            "affiliation": []
+          }
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              2019
+            ]
+          ]
+        },
+        "publisher": "RAND Corporation"
+      },
+      {
+        "title": [
+          "Beyond Political Correctness"
+        ],
+        "ISBN": [
+          "9789042031982",
+          "9789042031982",
+          "9789042031975",
+          "9789042031975"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              2010,
+              1,
+              1
+            ]
+          ]
+        },
+        "publisher": "Brill | Rodopi"
+      },
+      {
+        "title": [
+          "Guide to Computational Geometry Processing"
+        ],
+        "ISBN": [
+          "9781447140740",
+          "9781447140757"
+        ],
+        "author": [
+          {
+            "given": "Jakob Andreas",
+            "family": "Bærentzen",
+            "sequence": "first",
+            "affiliation": []
+          },
+          {
+            "given": "Jens",
+            "family": "Gravesen",
+            "sequence": "additional",
+            "affiliation": []
+          },
+          {
+            "given": "François",
+            "family": "Anton",
+            "sequence": "additional",
+            "affiliation": []
+          },
+          {
+            "given": "Henrik",
+            "family": "Aanæs",
+            "sequence": "additional",
+            "affiliation": []
+          }
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              2012
+            ]
+          ]
+        },
+        "publisher": "Springer London"
+      },
+      {
+        "title": [
+          "Anton Pannekoek"
+        ],
+        "subtitle": [
+          "Ways of Viewing Science and Society"
+        ],
+        "ISBN": [
+          "9789048535002"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              2019,
+              12,
+              31
+            ]
+          ]
+        },
+        "publisher": "Amsterdam University Press"
+      },
+      {
+        "title": [
+          "Liber chronicarum. Registrum huius operis libri cronicarum cum figuris et ymaginibus ab inicio mundi."
+        ],
+        "author": [
+          {
+            "family": "Hartmann Schedel",
+            "sequence": "first",
+            "affiliation": []
+          },
+          {
+            "family": "Michael Wolgemut",
+            "sequence": "additional",
+            "affiliation": []
+          },
+          {
+            "family": "Wilhelm Pleydenwurff",
+            "sequence": "additional",
+            "affiliation": []
+          },
+          {
+            "family": "Jacobus Philippus Bergomensis",
+            "sequence": "additional",
+            "affiliation": []
+          },
+          {
+            "family": "Anton Koberger (printer)",
+            "sequence": "additional",
+            "affiliation": []
+          },
+          {
+            "family": "Sebald Schreyer (publisher)",
+            "sequence": "additional",
+            "affiliation": []
+          },
+          {
+            "family": "Sebastian Kamermaister (publisher)",
+            "sequence": "additional",
+            "affiliation": []
+          }
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              1493
+            ]
+          ]
+        },
+        "publisher": "[Nuremberg] : Castigatu[m]q[ue] a viris doctissimis vt magis elaboratum in lucem prodiret. Ad in tuitu[m] autem & preces prouidoru[m] ciuiu[m] Sebaldi Schreyer & Sebastiani Kamermaister hunc librum dominus Anthonius Koberger"
+      },
+      {
+        "title": [
+          "Malleus maleficarum"
+        ],
+        "author": [
+          {
+            "family": "Heinrich Institoris (also known as",
+            "sequence": "first",
+            "affiliation": []
+          },
+          {
+            "family": "Jakob Sprenger",
+            "sequence": "additional",
+            "affiliation": []
+          },
+          {
+            "family": "Anton Koberger (printer)",
+            "sequence": "additional",
+            "affiliation": []
+          },
+          {
+            "family": "Pope Innocent VIII",
+            "sequence": "additional",
+            "affiliation": []
+          }
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              1494
+            ]
+          ]
+        },
+        "publisher": "[Nuremberg] : per Antonium koberger Nurbergensis ciue[m] est i[m]pressus ..., [17 March 1494]"
+      },
+      {
+        "title": [
+          "The Global Technology Revolution 2020, In-Depth Analyses: Bio/Nano/Materials/Information Trends, Drivers, Barriers, and Social Implications"
+        ],
+        "ISBN": [
+          "083303975X"
+        ],
+        "author": [
+          {
+            "given": "Richard",
+            "family": "Silberglitt",
+            "sequence": "first",
+            "affiliation": []
+          },
+          {
+            "given": "Philip",
+            "family": "Anton",
+            "sequence": "first",
+            "affiliation": []
+          },
+          {
+            "given": "David",
+            "family": "Howell",
+            "sequence": "first",
+            "affiliation": []
+          },
+          {
+            "given": "Anny",
+            "family": "Wong",
+            "sequence": "first",
+            "affiliation": []
+          },
+          {
+            "given": "Natalie",
+            "family": "Gassman",
+            "sequence": "first",
+            "affiliation": []
+          },
+          {
+            "given": "Brian",
+            "family": "Jackson",
+            "sequence": "first",
+            "affiliation": []
+          },
+          {
+            "given": "Eric",
+            "family": "Landree",
+            "sequence": "first",
+            "affiliation": []
+          },
+          {
+            "given": "Shari",
+            "family": "Pfleeger",
+            "sequence": "first",
+            "affiliation": []
+          },
+          {
+            "given": "Elaine",
+            "family": "Newton",
+            "sequence": "first",
+            "affiliation": []
+          },
+          {
+            "given": "Felicia",
+            "family": "Wu",
+            "sequence": "first",
+            "affiliation": []
+          }
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              2006
+            ]
+          ]
+        },
+        "publisher": "RAND Corporation"
+      }
+    ],
+    "items-per-page": 20,
+    "query": {
+      "start-index": 0,
       "search-terms": null
     }
   }

@@ -47,8 +47,8 @@ public class BookClient_e {
             args = new String[]{"5", "ab"};
         try {
             BookClient_e bclient = new BookClient_e();
-            QueryParameter queryParameter = new QueryParameter(new String[]{"5", "ab"});
-//            bclient.PerformGoogleSearch(args);
+            QueryParameter queryParameter = new QueryParameter(new String[]{"5", "java"});
+//            bclient.PerformGoogleSearch(queryParameter);
             bclient.PerformCrossrefSearch(queryParameter);
         } catch (NumberFormatException ne) {
             System.err.println("First parameter should be an integer");
@@ -75,69 +75,76 @@ public class BookClient_e {
         jaxbCrossrefContext = JAXBContext.newInstance("it.polito.dp2.BIB.sol2.jaxb.crossref");
     }
 
-    public void PerformGoogleSearch(String[] kw) {
+    public void PerformGoogleSearch(QueryParameter queryParameter) {
         // build the JAX-RS client object
         Client client = ClientBuilder.newClient();
 
         // build the web target
         WebTarget target = client.target(getGoogleBaseURI()).path("volumes");
+        int availableItem = 1;
+        int requestedItem = 0;
+        int id = 0;
 
-        // perform a get request using mediaType=APPLICATION_JSON
-        // and convert the response into a SearchResult object
-        StringBuffer queryString = new StringBuffer(kw[0]);
-        for (int i = 1; i < kw.length; i++) {
-            queryString.append(' ');
-            queryString.append(kw[i]);
-        }
-        System.out.println("Searching " + queryString + " on Google Books:");
-        Response response = target
-                .queryParam("q", queryString)
-                .queryParam("printType", "books")
-                .request()
-                .accept(MediaType.APPLICATION_JSON)
-                .get();
-        if (response.getStatus() != 200) {
-            System.out.println("Error in remote operation: " + response.getStatus() + " " + response.getStatusInfo());
-            return;
-        }
-        response.bufferEntity();
-        System.out.println("Response as string: " + response.readEntity(String.class));
-        SearchResult result = response.readEntity(SearchResult.class);
+        List<PrintableItem> printableItems = new ArrayList<>();
+        Response response;
+        SearchResult result;
 
-        System.out.println("OK Response received. Items:" + result.getTotalItems());
+        System.out.println("Searching " + queryParameter.getGoogleKeyword() + " on Google Books:");
 
-        System.out.println("Validating items and converting validated items to xml.");
-        // create empty list
-        List<PrintableItem> pitems = new ArrayList<PrintableItem>();
-        int i = 0;
-        for (Items item : result.getItems()) {
-            try {
-                // validate item
-                JAXBSource source = new JAXBSource(jaxbGoogleContext, item);
-                System.out.println("Validating " + item.getSelfLink());
-                validatorGoogle.validate(source);
-                System.out.println("Validation OK");
-                // add item to list
-                System.out.println("Adding item to list");
-                pitems.add(Factory.createPrintableItem(BigInteger.valueOf(i++), item.getVolumeInfo()));
-            } catch (org.xml.sax.SAXException se) {
-                System.out.println("Validation Failed");
-                // print error messages
-                Throwable t = se;
-                while (t != null) {
-                    String message = t.getMessage();
-                    if (message != null)
-                        System.out.println(message);
-                    t = t.getCause();
+        while (printableItems.size() != queryParameter.getItemNumber() && availableItem > requestedItem) {
+            response = target
+                    .queryParam("startIndex", queryParameter.getGoogleKeyword())
+                    .queryParam("maxResults", queryParameter.getGoogleKeyword())
+                    .queryParam("q", queryParameter.getGoogleKeyword())
+                    .queryParam("printType", "books")
+                    .request()
+                    .accept(MediaType.APPLICATION_JSON)
+                    .get();
+            if (response.getStatus() != 200) {
+                System.out.println("Error in remote operation: " + response.getStatus() + " " + response.getStatusInfo());
+                client.close();
+                return;
+            }
+            response.bufferEntity();
+            System.out.println("Response as string: " + response.readEntity(String.class));
+            result = response.readEntity(SearchResult.class);
+
+            System.out.println("OK Response received. Items:" + result.getTotalItems());
+
+            System.out.println("Validating items and converting validated items to xml.");
+            // create empty list
+            int i = 0;
+            for (Items item : result.getItems()) {
+                try {
+                    // validate item
+                    JAXBSource source = new JAXBSource(jaxbGoogleContext, item);
+                    System.out.println("Validating " + item.getSelfLink());
+                    validatorGoogle.validate(source);
+                    System.out.println("Validation OK");
+                    // add item to list
+                    System.out.println("Adding item to list");
+                    printableItems.add(Factory.createPrintableItem(BigInteger.valueOf(i++), item.getVolumeInfo()));
+                } catch (org.xml.sax.SAXException se) {
+                    System.out.println("Validation Failed");
+                    // print error messages
+                    Throwable t = se;
+                    while (t != null) {
+                        String message = t.getMessage();
+                        if (message != null)
+                            System.out.println(message);
+                        t = t.getCause();
+                    }
+                } catch (IOException e) {
+                    System.out.println("Unexpected I/O Exception");
+                } catch (JAXBException e) {
+                    System.out.println("Unexpected JAXB Exception");
                 }
-            } catch (IOException e) {
-                System.out.println("Unexpected I/O Exception");
-            } catch (JAXBException e) {
-                System.out.println("Unexpected JAXB Exception");
             }
         }
-        System.out.println("Validated Bibliography items: " + pitems.size());
-        for (PrintableItem item : pitems)
+
+        client.close();
+        System.out.println("Validated Bibliography items: " + printableItems.size());
+        for (PrintableItem item : printableItems)
             item.print();
         System.out.println("End of Validated Bibliography items");
     }
@@ -149,41 +156,43 @@ public class BookClient_e {
         // build the web target
         WebTarget target = client.target(getCrossrefBooksUri());
 
-        int availableItem = 1;
-        int requestedItem = 0;
+
         int id = 0;
+        String cursor = "*";
 
         List<PrintableItem> printableItems = new ArrayList<>();
         Response response;
         CrossrefMessage message;
         System.out.println("Searching " + queryParameter.getCrossrefKeyword() + " on Crossref:");
 
-        while (printableItems.size() != queryParameter.getItemNumber() && availableItem > requestedItem) {
-            System.out.println(printableItems.size() + "   " + requestedItem);
+        while (printableItems.size() != queryParameter.getItemNumber()) {
             response = target
                     .queryParam("rows", queryParameter.getItemNumber())
-                    .queryParam("offset", requestedItem)
+                    .queryParam("cursor", cursor)
                     .queryParam("select", "publisher,ISBN,published-print,title,subtitle,author") // to avoid large number of unnecessary fields
-                    .queryParam("query.bibliographic", queryParameter.getCrossrefKeyword())
+                    .queryParam("query.bibliographic", queryParameter.getCrossrefKeyword()) //look up into titles, authors, ISSNs and publication years
                     .request()
                     .accept(MediaType.APPLICATION_JSON)
                     .get();
             if (response.getStatus() != 200) {
                 System.out.println("Crossref error in remote operation: " + response.getStatus() + " " + response.getStatusInfo());
+                client.close();
                 return;
             }
 
-            requestedItem += queryParameter.getItemNumber();
             response.bufferEntity();
             System.out.println("Response as string: " + response.readEntity(String.class));
             message = response.readEntity(CrossrefResult.class).getMessage();
+            cursor = message.getNextCursor();
 
+            // if no more items
+            if (message.getItems().isEmpty())
+                break;
 
             System.out.println("OK Response received. Items:" + message.getTotalResults());
 
-            availableItem = message.getTotalResults().intValue();
             System.out.println("Validating items and converting validated items to xml.");
-            // create empty list
+
             for (it.polito.dp2.BIB.sol2.jaxb.crossref.Items item : message.getItems()) {
                 if (printableItems.size() != queryParameter.getItemNumber()) {
                     try {
@@ -213,9 +222,8 @@ public class BookClient_e {
                     }
                 }
             }
-
         }
-
+        client.close();
 
         System.out.println("Validated Bibliography items: " + printableItems.size());
         for (PrintableItem item : printableItems)

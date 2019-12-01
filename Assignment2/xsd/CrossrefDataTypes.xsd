@@ -10,6 +10,7 @@
 
     <xsd:complexType name="CrossrefMessage">
         <xsd:sequence>
+            <xsd:element name="next-cursor" type="xsd:string"/>
             <xsd:element name="total-results" type="xsd:positiveInteger"/>
             <xsd:element ref="items" minOccurs="0" maxOccurs="unbounded"/>
         </xsd:sequence>
