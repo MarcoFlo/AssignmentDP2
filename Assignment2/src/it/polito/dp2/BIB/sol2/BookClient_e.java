@@ -31,6 +31,7 @@ import static javax.xml.XMLConstants.W3C_XML_SCHEMA_NS_URI;
 
 
 public class BookClient_e {
+    private int pageSize = 20;
 
     JAXBContext jaxbGoogleContext;
     JAXBContext jaxbCrossrefContext;
@@ -47,8 +48,8 @@ public class BookClient_e {
             args = new String[]{"5", "ab"};
         try {
             BookClient_e bclient = new BookClient_e();
-            QueryParameter queryParameter = new QueryParameter(new String[]{"5", "java"});
-//            bclient.PerformGoogleSearch(queryParameter);
+            QueryParameter queryParameter = new QueryParameter(new String[]{"5", "antoness"});
+            bclient.PerformGoogleSearch(queryParameter);
             bclient.PerformCrossrefSearch(queryParameter);
         } catch (NumberFormatException ne) {
             System.err.println("First parameter should be an integer");
@@ -81,8 +82,7 @@ public class BookClient_e {
 
         // build the web target
         WebTarget target = client.target(getGoogleBaseURI()).path("volumes");
-        int availableItem = 1;
-        int requestedItem = 0;
+        int count = 0;
         int id = 0;
 
         List<PrintableItem> printableItems = new ArrayList<>();
@@ -91,10 +91,10 @@ public class BookClient_e {
 
         System.out.println("Searching " + queryParameter.getGoogleKeyword() + " on Google Books:");
 
-        while (printableItems.size() != queryParameter.getItemNumber() && availableItem > requestedItem) {
+        while (printableItems.size() != queryParameter.getItemNumber()) {
             response = target
-                    .queryParam("startIndex", queryParameter.getGoogleKeyword())
-                    .queryParam("maxResults", queryParameter.getGoogleKeyword())
+                    .queryParam("startIndex", count * pageSize)
+                    .queryParam("maxResults", pageSize) //max 40
                     .queryParam("q", queryParameter.getGoogleKeyword())
                     .queryParam("printType", "books")
                     .request()
@@ -108,40 +108,46 @@ public class BookClient_e {
             response.bufferEntity();
             System.out.println("Response as string: " + response.readEntity(String.class));
             result = response.readEntity(SearchResult.class);
+            count++;
 
             System.out.println("OK Response received. Items:" + result.getTotalItems());
 
             System.out.println("Validating items and converting validated items to xml.");
-            // create empty list
-            int i = 0;
+
+            if (result.getItems().isEmpty())
+                break;
+
             for (Items item : result.getItems()) {
-                try {
-                    // validate item
-                    JAXBSource source = new JAXBSource(jaxbGoogleContext, item);
-                    System.out.println("Validating " + item.getSelfLink());
-                    validatorGoogle.validate(source);
-                    System.out.println("Validation OK");
-                    // add item to list
-                    System.out.println("Adding item to list");
-                    printableItems.add(Factory.createPrintableItem(BigInteger.valueOf(i++), item.getVolumeInfo()));
-                } catch (org.xml.sax.SAXException se) {
-                    System.out.println("Validation Failed");
-                    // print error messages
-                    Throwable t = se;
-                    while (t != null) {
-                        String message = t.getMessage();
-                        if (message != null)
-                            System.out.println(message);
-                        t = t.getCause();
+                if (printableItems.size() != queryParameter.getItemNumber()) {
+                    try {
+                        // validate item
+                        JAXBSource source = new JAXBSource(jaxbGoogleContext, item);
+                        System.out.println("Validating " + item.getSelfLink());
+                        validatorGoogle.validate(source);
+                        System.out.println("Validation OK");
+                        // add item to list
+                        System.out.println("Adding item to list");
+                        printableItems.add(Factory.createPrintableItem(BigInteger.valueOf(id++), item.getVolumeInfo()));
+                    } catch (org.xml.sax.SAXException se) {
+                        System.out.println("Validation Failed");
+                        // print error messages
+                        Throwable t = se;
+                        while (t != null) {
+                            String message = t.getMessage();
+                            if (message != null)
+                                System.out.println(message);
+                            t = t.getCause();
+                        }
+                    } catch (IOException e) {
+                        System.out.println("Unexpected I/O Exception");
+                    } catch (JAXBException e) {
+                        System.out.println("Unexpected JAXB Exception");
                     }
-                } catch (IOException e) {
-                    System.out.println("Unexpected I/O Exception");
-                } catch (JAXBException e) {
-                    System.out.println("Unexpected JAXB Exception");
                 }
+                else
+                    break;
             }
         }
-
         client.close();
         System.out.println("Validated Bibliography items: " + printableItems.size());
         for (PrintableItem item : printableItems)
@@ -167,7 +173,7 @@ public class BookClient_e {
 
         while (printableItems.size() != queryParameter.getItemNumber()) {
             response = target
-                    .queryParam("rows", queryParameter.getItemNumber())
+                    .queryParam("rows", pageSize)
                     .queryParam("cursor", cursor)
                     .queryParam("select", "publisher,ISBN,published-print,title,subtitle,author") // to avoid large number of unnecessary fields
                     .queryParam("query.bibliographic", queryParameter.getCrossrefKeyword()) //look up into titles, authors, ISSNs and publication years
@@ -220,7 +226,8 @@ public class BookClient_e {
                     } catch (DatatypeConfigurationException e) {
                         System.out.println("Unexpected calendar exception");
                     }
-                }
+                } else
+                    break;
             }
         }
         client.close();
