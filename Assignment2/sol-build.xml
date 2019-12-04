@@ -11,15 +11,26 @@
     <property name="lib.dir" location="${ass2.location}/lib"/>
     <property name="custom.dir" location="${ass2.location}/custom"/>
     <property name="xsd.dir" location="${ass2.location}/xsd"/>
+    <property name="biblio.schema" location="${xsd.dir}/biblio.xsd"/>
     <property name="neo4j.schema" location="${xsd.dir}/neo4j/DataTypes.xsd"/>
+    <property name="gbooks.schema" location="${xsd.dir}/gbooks/DataTypes.xsd"/>
     <property name="myneo4j.schema" location="${xsd.dir}/Neo4jDataTypes.xsd"/>
     <property name="crossref.schema" location="${xsd.dir}/CrossrefDataTypes.xsd"/>
     <property name="ext.lib.dir" location="/opt/dp2/shared/lib"/>
 
     <!-- define the neo4j client artifacts generation target -->
     <target name="generate-artifacts">
+        <exec executable="xjc">
+            <arg line="-d ${gen.dir} ${biblio.schema}"/>
+        </exec>
         <exec executable="xjc" failonerror="true">
             <arg line="-d ${gen.dir} -p it.polito.dp2.BIB.sol2.jaxb ${myneo4j.schema}"/>
+        </exec>
+        <exec executable="xjc" failonerror="true">
+            <arg line="-d ${gen.dir} -p it.polito.dp2.BIB.sol2.jaxb.crossref ${crossref.schema}"/>
+        </exec>
+        <exec executable="xjc" failonerror="true">
+            <arg line="-d ${gen.dir} -p it.polito.dp2.rest.gbooks.client.jaxb ${gbooks.schema}"/>
         </exec>
     </target>
 
