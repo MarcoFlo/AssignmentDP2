@@ -9,6 +9,7 @@
 - src -> Right click -> Mark Directory as -> Source root  
 - Ant -> add (+ icon) -> select the build.xml
 
+## Java Install
 https://www.javahelps.com/2015/03/install-oracle-jdk-in-ubuntu.html  
 sudo tar -xvzf ~/Downloads/jdk-8u231-linux-x64.tar.gz  
 sudo gedit /etc/environment  
