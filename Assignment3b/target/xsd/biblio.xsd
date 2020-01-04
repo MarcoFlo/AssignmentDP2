@@ -137,14 +137,24 @@
         </xsd:complexType>
     </xsd:element>
 
+    <xsd:element name="bookshelfResource">
+        <xsd:complexType>
+            <xsd:sequence>
+                <!--Each bookshelf can contain max 20 item-->
+                <xsd:element name="self" type="xsd:anyURI" minOccurs="0" maxOccurs="20"/>
+            </xsd:sequence>
+            <xsd:attribute name="name" type="xsd:string" use="required"/>
+        </xsd:complexType>
+    </xsd:element>
+
     <xsd:element name="bookshelf">
         <xsd:complexType>
             <xsd:sequence>
                 <xsd:element name="self" type="xsd:anyURI" minOccurs="0"/>
-                <!--Each bookshelf can contain max 50 item-->
-                <xsd:element ref="item" minOccurs="0" maxOccurs="50"/>
+                <!--Each bookshelf can contain max 20 item-->
+                <xsd:element ref="item" minOccurs="0" maxOccurs="20"/>
             </xsd:sequence>
-            <xsd:attribute name="id" type="xsd:string" use="required"/>
+            <xsd:attribute name="id" type="xsd:positiveInteger" use="required"/>
             <xsd:attribute name="name" type="xsd:string" use="required"/>
             <xsd:attribute name="readCount" type="xsd:positiveInteger" default="1"/>
         </xsd:complexType>

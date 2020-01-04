@@ -13,6 +13,7 @@ import it.polito.dp2.BIB.sol3.service.jaxb.Biblio;
 	    "journals",
 	    "articles",
 	    "books",
+		"bookshelves",
 	    "self"
 	})
 @XmlRootElement(name = "biblio")
@@ -58,10 +59,19 @@ public class EBiblio extends Biblio {
 	}
 
 	@Override
+	@XmlElement(required = true)
+	@XmlSchemaType(name = "anyURI")
+	public String getBookshelves() {
+		return root.clone().path("bookshelves").toTemplate();
+	}
+
+	@Override
     @XmlElement(required = true)
     @XmlSchemaType(name = "anyURI")
 	public String getSelf() {
 		return root.toTemplate();
 	}
+
+
 
 }

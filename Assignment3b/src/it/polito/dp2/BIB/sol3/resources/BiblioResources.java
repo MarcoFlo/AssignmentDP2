@@ -346,4 +346,119 @@ public class BiblioResources {
         return;
     }
 
+
+    @GET
+    @Path("/bookshelves")
+    @ApiOperation(value = "getBookshelves", notes = "search bookshelves"
+    )
+    @ApiResponses(value = {
+            @ApiResponse(code = 200, message = "OK", response = Bookshelves.class),
+    })
+    @Produces({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
+    public Bookshelves getBookshelves(
+            @ApiParam("The keyword to be used for the search") @QueryParam("keyword") @DefaultValue("") String keyword) {
+        try {
+            return service.getBookshelves(keyword);
+        } catch (Exception e) {
+            throw new InternalServerErrorException();
+        }
+    }
+
+    @POST
+    @Path("/bookshelves")
+    @ApiOperation(value = "createBookshelves", notes = "create a new bookshelf", response = Bookshelf.class
+    )
+    @ApiResponses(value = {
+            @ApiResponse(code = 201, message = "OK", response = Bookshelf.class),
+            @ApiResponse(code = 400, message = "Bad Request"),
+    })
+    @Consumes({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
+    @Produces({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
+    public Response createBookshelf(Bookshelf bookshelf) {
+        try {
+            Bookshelf returnBookshelf = service.createBookshelf(bookshelf);
+            return Response.created(new URI(returnBookshelf.getSelf())).entity(returnBookshelf).build();
+        } catch (BadRequestException e) {
+            throw e;
+        } catch (Exception e) {
+            throw new InternalServerErrorException();
+        }
+    }
+
+    @GET
+    @Path("/bookshelves/{bid}")
+    @ApiOperation(value = "getBookshelf", notes = "read a single bookshelf"
+    )
+    @ApiResponses(value = {
+            @ApiResponse(code = 200, message = "OK", response = Bookshelf.class),
+            @ApiResponse(code = 404, message = "Not Found"),
+    })
+    @Produces({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
+    public Bookshelf getBookshelf(
+            @ApiParam("The id of the bookshelf") @PathParam("bid") BigInteger bid) {
+        try {
+            return service.getBookshelf(bid);
+        } catch (NotFoundException e) {
+            throw e;
+        } catch (Exception e) {
+            throw new InternalServerErrorException();
+        }
+    }
+
+    @DELETE
+    @Path("/bookshelves/{bid}")
+    @ApiOperation(value = "deleteBookshelf", notes = "delete a single bookshelf"
+    )
+    @ApiResponses(value = {
+            @ApiResponse(code = 204, message = "No content"),
+            @ApiResponse(code = 404, message = "Not Found"),
+    })
+    public void deleteBookshelf(
+            @ApiParam("The id of the bookshelf") @PathParam("bid") BigInteger bid) {
+        try {
+            service.deleteBookshelf(bid);
+        } catch (NotFoundException e) {
+            throw e;
+        } catch (Exception e) {
+            throw new InternalServerErrorException();
+        }
+    }
+
+    @GET
+    @Path("/bookshelves/{bid}/counter")
+    @ApiOperation(value = "getBookshelfCounter", notes = "read the read counter of a single bookshelf")
+    @ApiResponses(value = {
+            @ApiResponse(code = 200, message = "OK", response = Bookshelf.class),
+            @ApiResponse(code = 404, message = "Not Found"),
+    })
+    @Produces({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
+    public int getBookshelfCounter(
+            @ApiParam("The id of the bookshelf") @PathParam("bid") BigInteger bid) {
+        try {
+            return service.getBookshelfCounter(bid);
+        } catch (NotFoundException e) {
+            throw e;
+        } catch (Exception e) {
+            throw new InternalServerErrorException();
+        }
+    }
+
+
+    @GET
+    @Path("/bookshelves/{bid}/items")
+    @ApiOperation(value = "getBookshelfItems", notes = "read items of the specified bookshelf")
+    @ApiResponses(value = {
+            @ApiResponse(code = 200, message = "OK", response = Items.class),
+            @ApiResponse(code = 404, message = "Not Found"),
+    })
+    @Produces({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
+    public Items getBookshelfItems(@ApiParam("The id of the bookshelf") @PathParam("bid") BigInteger bid) {
+        try {
+            return service.getBookshelfItems(bid);
+        }catch (NotFoundException e) {
+            throw e;
+        } catch (Exception e) {
+            throw new InternalServerErrorException(e);
+        }
+    }
 }
