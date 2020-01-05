@@ -374,13 +374,15 @@ public class BiblioResources {
     })
     @Consumes({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
     @Produces({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
-    public Response createBookshelf(Bookshelf bookshelf) {
+    public Response createBookshelf(BookshelfCreateResource bookshelfCreateResource) {
         try {
-            Bookshelf returnBookshelf = service.createBookshelf(bookshelf);
+            Bookshelf returnBookshelf = service.createBookshelf(bookshelfCreateResource);
             return Response.created(new URI(returnBookshelf.getSelf())).entity(returnBookshelf).build();
         } catch (BadRequestException e) {
+            e.printStackTrace();
             throw e;
         } catch (Exception e) {
+            e.printStackTrace();
             throw new InternalServerErrorException();
         }
     }
@@ -428,16 +430,16 @@ public class BiblioResources {
     @Path("/bookshelves/{bid}/counter")
     @ApiOperation(value = "getBookshelfCounter", notes = "read the read counter of a single bookshelf")
     @ApiResponses(value = {
-            @ApiResponse(code = 200, message = "OK", response = Bookshelf.class),
+            @ApiResponse(code = 200, message = "OK", response = long.class),
             @ApiResponse(code = 404, message = "Not Found"),
     })
-    @Produces({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
-    public int getBookshelfCounter(
+    @Produces({MediaType.TEXT_PLAIN})
+    public long getBookshelfCounter(
             @ApiParam("The id of the bookshelf") @PathParam("bid") BigInteger bid) {
         try {
             return service.getBookshelfCounter(bid);
-        } catch (NotFoundException e) {
-            throw e;
+        } catch (NullPointerException e) {
+            throw new NotFoundException("Bookshelf id not found");
         } catch (Exception e) {
             throw new InternalServerErrorException();
         }

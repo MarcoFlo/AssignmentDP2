@@ -15,7 +15,6 @@ import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 
 
@@ -29,12 +28,11 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="self" type="{http://www.w3.org/2001/XMLSchema}anyURI" minOccurs="0"/>
- *         &lt;element ref="{}item" maxOccurs="20" minOccurs="0"/>
+ *         &lt;element name="item" type="{http://www.w3.org/2001/XMLSchema}integer" maxOccurs="20" minOccurs="0"/>
  *       &lt;/sequence>
  *       &lt;attribute name="id" use="required" type="{http://www.w3.org/2001/XMLSchema}integer" />
  *       &lt;attribute name="name" use="required" type="{http://www.w3.org/2001/XMLSchema}string" />
- *       &lt;attribute name="readCount" type="{http://www.w3.org/2001/XMLSchema}positiveInteger" default="1" />
+ *       &lt;attribute name="readCount" type="{http://www.w3.org/2001/XMLSchema}integer" default="1" />
  *     &lt;/restriction>
  *   &lt;/complexContent>
  * &lt;/complexType>
@@ -44,46 +42,18 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-    "self",
     "item"
 })
-@XmlRootElement(name = "bookshelf")
-public class Bookshelf {
+@XmlRootElement(name = "bookshelfEntity")
+public class BookshelfEntity {
 
-    @XmlSchemaType(name = "anyURI")
-    protected String self;
-    protected List<Item> item;
+    protected List<BigInteger> item;
     @XmlAttribute(name = "id", required = true)
     protected BigInteger id;
     @XmlAttribute(name = "name", required = true)
     protected String name;
     @XmlAttribute(name = "readCount")
-    @XmlSchemaType(name = "positiveInteger")
     protected BigInteger readCount;
-
-    /**
-     * Gets the value of the self property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getSelf() {
-        return self;
-    }
-
-    /**
-     * Sets the value of the self property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setSelf(String value) {
-        this.self = value;
-    }
 
     /**
      * Gets the value of the item property.
@@ -103,13 +73,13 @@ public class Bookshelf {
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
-     * {@link Item }
+     * {@link BigInteger }
      * 
      * 
      */
-    public List<Item> getItem() {
+    public List<BigInteger> getItem() {
         if (item == null) {
-            item = new ArrayList<Item>();
+            item = new ArrayList<BigInteger>();
         }
         return this.item;
     }

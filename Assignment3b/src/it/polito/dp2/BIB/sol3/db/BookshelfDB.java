@@ -1,16 +1,15 @@
 package it.polito.dp2.BIB.sol3.db;
 
-import it.polito.dp2.BIB.sol3.service.jaxb.Bookshelf;
-
 import java.math.BigInteger;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.atomic.AtomicLong;
 
 public class BookshelfDB {
-    private static Map<BigInteger, Bookshelf> map = new ConcurrentHashMap<>();
-    private static long last = 0;
+    private static Map<BigInteger, BookshelfEntity> map = new ConcurrentHashMap<>();
+    private static AtomicLong last = new AtomicLong(0);
 
-    public static Map<BigInteger, Bookshelf> getMap() {
+    public static Map<BigInteger, BookshelfEntity> getMap() {
         return map;
     }
 
@@ -19,6 +18,6 @@ public class BookshelfDB {
 //    }
 
     public static synchronized long getNext() {
-        return ++last;
+        return last.incrementAndGet();
     }
 }

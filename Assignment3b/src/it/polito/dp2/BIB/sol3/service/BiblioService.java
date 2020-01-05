@@ -6,16 +6,18 @@ import java.util.Map.Entry;
 import java.util.stream.Collectors;
 
 import javax.ws.rs.BadRequestException;
+import javax.ws.rs.InternalServerErrorException;
 import javax.ws.rs.NotFoundException;
 import javax.ws.rs.core.UriInfo;
 
 import it.polito.dp2.BIB.sol3.db.*;
+import it.polito.dp2.BIB.sol3.db.BookshelfEntity;
 import it.polito.dp2.BIB.sol3.service.jaxb.*;
 import it.polito.dp2.BIB.sol3.service.util.ResourseUtils;
 
 public class BiblioService {
     private DB n4jDb = Neo4jDB.getNeo4jDB();
-    private Map<BigInteger, Bookshelf> mapBookshelf = BookshelfDB.getMap();
+    private Map<BigInteger, BookshelfEntity> mapBookshelf = BookshelfDB.getMap();
     private int maxBookshelfItems = 20;
 
     ResourseUtils rutil;
@@ -132,42 +134,40 @@ public class BiblioService {
     }
 
     public Bookshelves getBookshelves(String keyword) {
-        boolean isNotNull = !keyword.equals("");
         Bookshelves result = new Bookshelves();
         List<Bookshelf> bookshelfList = result.getBookshelf();
 
-        mapBookshelf.values().stream().filter(bookshelf -> bookshelf.getName().contains(keyword) == isNotNull).forEach(bookshelf -> {
-            rutil.completeBookshelf(bookshelf);
-            bookshelfList.add(bookshelf);
+        mapBookshelf.entrySet().stream().filter(entry -> entry.getValue().getName().contains(keyword)).forEach(entry -> {
+            bookshelfList.add(getBookshelf(entry.getKey()));
         });
         return result;
     }
 
-    public synchronized Bookshelf createBookshelf(Bookshelf bookshelf) {
-        if (bookshelf.getName().equals(""))
+    public Bookshelf createBookshelf(BookshelfCreateResource bookshelfCreateResource) {
+        if (bookshelfCreateResource.getName().equals(""))
             throw new BadRequestException("The bookshelf must have a name");
 
-        if (bookshelf.getItem().size() > maxBookshelfItems)
+        if (bookshelfCreateResource.getItem().size() > maxBookshelfItems)
             throw new BadRequestException("A single bookshelf can contain max " + maxBookshelfItems + " items.");
 
-        if (mapBookshelf.values().stream().noneMatch(b -> b.getName().equals(bookshelf.getName()))) {
-            bookshelf.setId(BigInteger.valueOf(BookshelfDB.getNext()));
-            bookshelf.setReadCount(BigInteger.ONE);
-            return mapBookshelf.put(bookshelf.getId(), bookshelf);
+        if (mapBookshelf.values().stream().noneMatch(b -> b.getName().equals(bookshelfCreateResource.getName()))) {
+            BookshelfEntity bookshelfEntity = new BookshelfEntity(BigInteger.valueOf(BookshelfDB.getNext()), bookshelfCreateResource);
+            mapBookshelf.put(bookshelfEntity.getId(), bookshelfEntity);
+
+            return getBookshelfFromBookshelfEntity(bookshelfEntity);
         } else
             throw new BadRequestException("Duplicate bookshelf name.");
     }
 
-    public Bookshelf getBookshelf(BigInteger bid) {
-        Bookshelf bookshelf = mapBookshelf.get(bid);
+    public synchronized Bookshelf getBookshelf(BigInteger bid) {
+        BookshelfEntity bookshelfEntity = mapBookshelf.get(bid);
 
-        if (bookshelf != null) {
-            BigInteger readCount = bookshelf.getReadCount();
-            readCount.add(BigInteger.ONE);
+        if (bookshelfEntity != null) {
+            bookshelfEntity.incrementReadCount();
 
             //if in the meanwhile the bookshelf related to this id is deleted, the replace operation will simply not happen
-            mapBookshelf.replace(bid, bookshelf);
-            return bookshelf;
+            mapBookshelf.replace(bid, bookshelfEntity);
+            return getBookshelfFromBookshelfEntity(bookshelfEntity);
         } else
             throw new NotFoundException("There is no bookshelf with ID " + bid);
     }
@@ -177,16 +177,44 @@ public class BiblioService {
             throw new NotFoundException("There is no bookshelf with ID " + bid);
     }
 
-    public int getBookshelfCounter(BigInteger bid) {
-        return mapBookshelf.get(bid).getReadCount().intValue();
+    public long getBookshelfCounter(BigInteger bid) {
+        return mapBookshelf.get(bid).getReadCount();
     }
 
     public Items getBookshelfItems(BigInteger bid) {
         Items items = new Items();
         List<Item> list = items.getItem();
-        list.addAll(mapBookshelf.get(bid).getItem());
+        list.addAll(getBookshelf(bid).getItem());
         items.setTotalPages(BigInteger.ONE);
-        items.setPage(BigInteger.ZERO);
+        items.setPage(BigInteger.ONE);
         return items;
     }
+
+
+    private Bookshelf getBookshelfFromBookshelfEntity(BookshelfEntity bookshelfEntity) {
+        Bookshelf bookshelf = new Bookshelf();
+        bookshelf.getItem().addAll(getItemListFromIdList(bookshelfEntity.getItem()));
+
+        bookshelf.setReadCount(BigInteger.valueOf(bookshelfEntity.getReadCount()));
+        bookshelf.setId(bookshelfEntity.getId());
+        bookshelf.setName(bookshelfEntity.getName());
+
+        rutil.completeBookshelf(bookshelf);
+
+        return bookshelf;
+    }
+
+    private List<Item> getItemListFromIdList(List<BigInteger> idList) {
+        return idList.stream().map(id -> {
+            try {
+                Item item = getItem(id);
+                rutil.completeItem(item, id);
+                return item;
+            } catch (Exception e) {
+                //todo
+                throw new InternalServerErrorException("getItemfromid");
+            }
+        }).collect(Collectors.toList());
+    }
+
 }
