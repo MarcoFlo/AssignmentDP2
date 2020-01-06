@@ -437,7 +437,7 @@ public class BiblioResources {
             @ApiParam("The id of the bookshelf") @PathParam("bid") BigInteger bid,
             @ApiParam("The id of the item to be added to the bookshelf") @PathParam("id") BigInteger id) {
         try {
-            service.addItemToBookshelf(bid, id);
+            service.addBookshelfItem(bid, id);
         } catch (NotFoundException | BadRequestException e) {
             throw e;
         } catch (Exception e) {

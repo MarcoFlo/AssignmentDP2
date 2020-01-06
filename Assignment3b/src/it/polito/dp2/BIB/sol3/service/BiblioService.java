@@ -184,10 +184,14 @@ public class BiblioService {
     }
 
     //todo da sync con la delete di una bookshelf, ma anche con quella dell'item
-    public void addItemToBookshelf(BigInteger bid, BigInteger id) throws Exception {
+    public void addBookshelfItem(BigInteger bid, BigInteger id) throws Exception {
         BookshelfEntity bookshelfEntity = getBookshelfEntity(bid);
         getItem(id);
-        bookshelfEntity.getItem().add(id);
+        Set<BigInteger> setItem = bookshelfEntity.getItem();
+        if (setItem.size() < maxBookshelfItems)
+            setItem.add(id);
+        else
+            throw new BadRequestException("A single bookshelf can contain max " + maxBookshelfItems + " items.");
     }
 
     public synchronized Item getBookshelfItem(BigInteger bid, BigInteger id) throws Exception {
