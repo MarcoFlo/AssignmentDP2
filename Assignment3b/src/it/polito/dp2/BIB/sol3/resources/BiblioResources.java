@@ -148,8 +148,7 @@ public class BiblioResources {
 
     @GET
     @Path("/items/{id}")
-    @ApiOperation(value = "getItem", notes = "read a single item"
-    )
+    @ApiOperation(value = "getItem", notes = "read a single item")
     @ApiResponses(value = {
             @ApiResponse(code = 200, message = "OK", response = Item.class),
             @ApiResponse(code = 404, message = "Not Found"),
@@ -170,8 +169,7 @@ public class BiblioResources {
 
     @PUT
     @Path("/items/{id}")
-    @ApiOperation(value = "updateItem", notes = "update a single item"
-    )
+    @ApiOperation(value = "updateItem", notes = "update a single item")
     @ApiResponses(value = {
             @ApiResponse(code = 200, message = "OK", response = Item.class),
             @ApiResponse(code = 400, message = "Bad Request"),
@@ -195,8 +193,7 @@ public class BiblioResources {
 
     @DELETE
     @Path("/items/{id}")
-    @ApiOperation(value = "deleteItem", notes = "delete a single item"
-    )
+    @ApiOperation(value = "deleteItem", notes = "delete a single item")
     @ApiResponses(value = {
             @ApiResponse(code = 204, message = "No content"),
             @ApiResponse(code = 404, message = "Not Found"),
@@ -214,7 +211,6 @@ public class BiblioResources {
         }
         if (ret == null)
             throw new NotFoundException();
-        return;
     }
 
     @GET
@@ -366,8 +362,7 @@ public class BiblioResources {
 
     @POST
     @Path("/bookshelves")
-    @ApiOperation(value = "createBookshelves", notes = "create a new bookshelf", response = Bookshelf.class
-    )
+    @ApiOperation(value = "createBookshelves", notes = "create a new bookshelf", response = Bookshelf.class)
     @ApiResponses(value = {
             @ApiResponse(code = 201, message = "OK", response = Bookshelf.class),
             @ApiResponse(code = 400, message = "Bad Request"),
@@ -379,18 +374,15 @@ public class BiblioResources {
             Bookshelf returnBookshelf = service.createBookshelf(bookshelfCreateResource);
             return Response.created(new URI(returnBookshelf.getSelf())).entity(returnBookshelf).build();
         } catch (BadRequestException e) {
-            e.printStackTrace();
             throw e;
         } catch (Exception e) {
-            e.printStackTrace();
             throw new InternalServerErrorException();
         }
     }
 
     @GET
     @Path("/bookshelves/{bid}")
-    @ApiOperation(value = "getBookshelf", notes = "read a single bookshelf"
-    )
+    @ApiOperation(value = "getBookshelf", notes = "read a single bookshelf")
     @ApiResponses(value = {
             @ApiResponse(code = 200, message = "OK", response = Bookshelf.class),
             @ApiResponse(code = 404, message = "Not Found"),
@@ -409,8 +401,7 @@ public class BiblioResources {
 
     @DELETE
     @Path("/bookshelves/{bid}")
-    @ApiOperation(value = "deleteBookshelf", notes = "delete a single bookshelf"
-    )
+    @ApiOperation(value = "deleteBookshelf", notes = "delete a single bookshelf")
     @ApiResponses(value = {
             @ApiResponse(code = 204, message = "No content"),
             @ApiResponse(code = 404, message = "Not Found"),
@@ -457,10 +448,70 @@ public class BiblioResources {
     public Items getBookshelfItems(@ApiParam("The id of the bookshelf") @PathParam("bid") BigInteger bid) {
         try {
             return service.getBookshelfItems(bid);
-        }catch (NotFoundException e) {
+        } catch (NotFoundException e) {
             throw e;
         } catch (Exception e) {
             throw new InternalServerErrorException(e);
         }
     }
+
+
+    @POST
+    @Path("/bookshelves/{bid}/items/{id}")
+    @ApiOperation(value = "addItemToBookshelf", notes = "add item to the specified bookshelf")
+    @ApiResponses(value = {
+            @ApiResponse(code = 200, message = "OK"),
+            @ApiResponse(code = 404, message = "Not Found"),
+    })
+    @Consumes({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
+    @Produces({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
+    public void addItemToBookshelf(
+            @ApiParam("The id of the bookshelf") @PathParam("bid") BigInteger bid,
+            @ApiParam("The id of the item to be added to the bookshelf") @PathParam("id") BigInteger id) {
+        try {
+            service.addItemToBookshelf(bid, id);
+        } catch (NotFoundException | BadRequestException e) {
+            throw e;
+        } catch (Exception e) {
+            throw new InternalServerErrorException(e);
+        }
+    }
+
+    @GET
+    @Path("/bookshelves/{bid}/items/{id}")
+    @ApiOperation(value = "getBookshelfItem", notes = "read the specified item belonging to the specified bookshelf")
+    @ApiResponses(value = {
+            @ApiResponse(code = 200, message = "OK", response = Item.class),
+            @ApiResponse(code = 404, message = "Not Found"),
+    })
+    @Produces({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
+    public Item getBookshelfItem(@ApiParam("The id of the bookshelf") @PathParam("bid") BigInteger bid,
+                                 @ApiParam("The id of the item to be added to the bookshelf") @PathParam("id") BigInteger id) {
+        try {
+            return service.getBookshelfItem(bid, id);
+        } catch (NotFoundException e) {
+            throw e;
+        } catch (Exception e) {
+            throw new InternalServerErrorException(e);
+        }
+    }
+
+    @DELETE
+    @Path("/bookshelves/{bid}/items/{id}")
+    @ApiOperation(value = "deleteBookshelfItem", notes = "delete a single item from the specified bookshelf")
+    @ApiResponses(value = {
+            @ApiResponse(code = 204, message = "No content"),
+            @ApiResponse(code = 404, message = "Not Found"),
+    })
+    public void deletBookshelfItem(@ApiParam("The id of the bookshelf") @PathParam("bid") BigInteger bid,
+                                   @ApiParam("The id of the item to be added to the bookshelf") @PathParam("id") BigInteger id) {
+        try {
+            service.deleteBookshelfItem(bid, id);
+        } catch (NotFoundException e) {
+            throw e;
+        } catch (Exception e) {
+            throw new InternalServerErrorException();
+        }
+    }
+
 }

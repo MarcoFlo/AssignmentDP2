@@ -160,16 +160,9 @@ public class BiblioService {
     }
 
     public synchronized Bookshelf getBookshelf(BigInteger bid) {
-        BookshelfEntity bookshelfEntity = mapBookshelf.get(bid);
-
-        if (bookshelfEntity != null) {
-            bookshelfEntity.incrementReadCount();
-
-            //if in the meanwhile the bookshelf related to this id is deleted, the replace operation will simply not happen
-            mapBookshelf.replace(bid, bookshelfEntity);
-            return getBookshelfFromBookshelfEntity(bookshelfEntity);
-        } else
-            throw new NotFoundException("There is no bookshelf with ID " + bid);
+        BookshelfEntity bookshelfEntity = getBookshelfEntity(bid);
+        incrementBookshelfReadCounter(bookshelfEntity);
+        return getBookshelfFromBookshelfEntity(bookshelfEntity);
     }
 
     public void deleteBookshelf(BigInteger bid) {
@@ -190,10 +183,37 @@ public class BiblioService {
         return items;
     }
 
+    //todo da sync con la delete di una bookshelf, ma anche con quella dell'item
+    public void addItemToBookshelf(BigInteger bid, BigInteger id) throws Exception {
+        BookshelfEntity bookshelfEntity = getBookshelfEntity(bid);
+        getItem(id);
+        bookshelfEntity.getItem().add(id);
+    }
+
+    public synchronized Item getBookshelfItem(BigInteger bid, BigInteger id) throws Exception {
+        BookshelfEntity bookshelfEntity = getBookshelfEntity(bid);
+        if (bookshelfEntity.getItem().contains(id)) {
+            incrementBookshelfReadCounter(bookshelfEntity);
+            return getItem(id);
+        } else
+            throw new NotFoundException("Bookshelf and item id must exist.");
+    }
+
+    public synchronized void deleteBookshelfItem(BigInteger bid, BigInteger id) throws Exception {
+        BookshelfEntity bookshelfEntity = getBookshelfEntity(bid);
+        getItem(id);
+        Set<BigInteger> itemSet = bookshelfEntity.getItem();
+        if (itemSet.contains(id)) {
+            itemSet.remove(id);
+        } else
+            throw new NotFoundException("Bookshelf and item id must exist.");
+
+    }
+
 
     private Bookshelf getBookshelfFromBookshelfEntity(BookshelfEntity bookshelfEntity) {
         Bookshelf bookshelf = new Bookshelf();
-        bookshelf.getItem().addAll(getItemListFromIdList(bookshelfEntity.getItem()));
+        bookshelf.getItem().addAll(getItemListFromIdSet(bookshelfEntity.getItem()));
 
         bookshelf.setReadCount(BigInteger.valueOf(bookshelfEntity.getReadCount()));
         bookshelf.setId(bookshelfEntity.getId());
@@ -204,7 +224,7 @@ public class BiblioService {
         return bookshelf;
     }
 
-    private List<Item> getItemListFromIdList(List<BigInteger> idList) {
+    private List<Item> getItemListFromIdSet(Set<BigInteger> idList) {
         return idList.stream().map(id -> {
             try {
                 Item item = getItem(id);
@@ -217,4 +237,18 @@ public class BiblioService {
         }).collect(Collectors.toList());
     }
 
+    private BookshelfEntity getBookshelfEntity(BigInteger bid) {
+        BookshelfEntity bookshelfEntity = mapBookshelf.get(bid);
+        if (bookshelfEntity != null) {
+            return bookshelfEntity;
+        } else
+            throw new NotFoundException("There is no bookshelf with ID " + bid);
+    }
+
+    private void incrementBookshelfReadCounter(BookshelfEntity bookshelfEntity) {
+        bookshelfEntity.incrementReadCount();
+
+        //if in the meanwhile the bookshelf related to this id is deleted, the replace operation will simply not happen
+        mapBookshelf.replace(bookshelfEntity.getId(), bookshelfEntity);
+    }
 }

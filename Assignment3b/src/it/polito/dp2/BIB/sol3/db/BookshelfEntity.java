@@ -3,12 +3,12 @@ package it.polito.dp2.BIB.sol3.db;
 import it.polito.dp2.BIB.sol3.service.jaxb.BookshelfCreateResource;
 
 import java.math.BigInteger;
-import java.util.LinkedList;
-import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
 import java.util.concurrent.atomic.AtomicLong;
 
 public class BookshelfEntity {
-    private List<BigInteger> item = new LinkedList<>();
+    private Set<BigInteger> item;
     private BigInteger id;
     private String name;
     private AtomicLong readCount = new AtomicLong(1);
@@ -17,14 +17,14 @@ public class BookshelfEntity {
     public BookshelfEntity(BigInteger id, BookshelfCreateResource bookshelfCreateResource) {
         this.id = id;
         name = bookshelfCreateResource.getName();
-        item = bookshelfCreateResource.getItem();
+        item = new HashSet<>(bookshelfCreateResource.getItem());
     }
 
-    public List<BigInteger> getItem() {
+    public Set<BigInteger> getItem() {
         return item;
     }
 
-    public void setItem(List<BigInteger> item) {
+    public void setItem(Set<BigInteger> item) {
         this.item = item;
     }
 
