@@ -148,18 +148,6 @@
         </xsd:complexType>
     </xsd:element>
 
-    <xsd:element name="bookshelfEntity">
-        <xsd:complexType>
-            <xsd:sequence>
-                <!--Each bookshelf can contain max 20 item-->
-                <xsd:element name="item" type="xsd:integer" minOccurs="0" maxOccurs="20"/>
-            </xsd:sequence>
-            <xsd:attribute name="id" type="xsd:integer" use="required"/>
-            <xsd:attribute name="name" type="xsd:string" use="required"/>
-            <xsd:attribute name="readCount" type="xsd:integer" default="1"/>
-        </xsd:complexType>
-    </xsd:element>
-
     <xsd:element name="bookshelf">
         <xsd:complexType>
             <xsd:sequence>
@@ -175,8 +163,9 @@
 
     <xsd:simpleType name="SearchType">
         <xsd:restriction base="xsd:string">
-            <xsd:pattern value="book"/>
-            <xsd:pattern value="article"/>
+            <xsd:pattern value="ALL"/>
+            <xsd:pattern value="BOOKS"/>
+            <xsd:pattern value="ARTICLES"/>
         </xsd:restriction>
     </xsd:simpleType>
 

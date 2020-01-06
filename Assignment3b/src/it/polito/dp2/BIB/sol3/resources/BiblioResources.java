@@ -49,11 +49,8 @@ public class BiblioResources {
     }
 
     @GET
-    @ApiOperation(value = "getBiblio", notes = "read main resource"
-    )
-    @ApiResponses(value = {
-            @ApiResponse(code = 200, message = "OK", response = Biblio.class),
-    })
+    @ApiOperation(value = "getBiblio", notes = "read main resource")
+    @ApiResponses(value = {@ApiResponse(code = 200, message = "OK", response = Biblio.class)})
     @Produces({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
     public EBiblio getBiblio() {
         return new EBiblio(uriInfo.getAbsolutePathBuilder());
@@ -61,20 +58,17 @@ public class BiblioResources {
 
     @GET
     @Path("/items")
-    @ApiOperation(value = "getItems", notes = "search items"
-    )
-    @ApiResponses(value = {
-            @ApiResponse(code = 200, message = "OK", response = Items.class),
-    })
+    @ApiOperation(value = "getItems", notes = "search items")
+    @ApiResponses(value = {@ApiResponse(code = 200, message = "OK", response = Items.class)})
     @Produces({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
     public Items getItems(
             @ApiParam("The keyword to be used for the search") @QueryParam("keyword") @DefaultValue("") String keyword,
+            @ApiParam("The type to be used for the search") @QueryParam("type") @DefaultValue("ALL") SearchScope type,
             @ApiParam("The year before which items are searched") @QueryParam("beforeInclusive") @DefaultValue("10000") int beforeInclusive,
             @ApiParam("The year after which items are searched") @QueryParam("afterInclusive") @DefaultValue("0") int afterInclusive,
-            @ApiParam("The page of results to be read") @QueryParam("page") @DefaultValue("1") int page
-    ) {
+            @ApiParam("The page of results to be read") @QueryParam("page") @DefaultValue("1") int page) {
         try {
-            return service.getItems(SearchScope.ALL, keyword, beforeInclusive, afterInclusive, BigInteger.valueOf(page));
+            return service.getItems(type, keyword, beforeInclusive, afterInclusive, BigInteger.valueOf(page));
         } catch (Exception e) {
             throw new InternalServerErrorException(e);
         }
@@ -82,18 +76,14 @@ public class BiblioResources {
 
     @GET
     @Path("/items/articles")
-    @ApiOperation(value = "getArticles", notes = "search articles"
-    )
-    @ApiResponses(value = {
-            @ApiResponse(code = 200, message = "OK", response = Items.class),
-    })
+    @ApiOperation(value = "getArticles", notes = "search articles")
+    @ApiResponses(value = {@ApiResponse(code = 200, message = "OK", response = Items.class)})
     @Produces({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
     public Items getArticles(
             @ApiParam("The keyword to be used for the search") @QueryParam("keyword") String keyword,
             @ApiParam("The year before which items are searched") @QueryParam("beforeInclusive") @DefaultValue("10000") int beforeInclusive,
             @ApiParam("The year after which items are searched") @QueryParam("afterInclusive") @DefaultValue("0") int afterInclusive,
-            @ApiParam("The page of results to be read") @QueryParam("page") @DefaultValue("1") int page
-    ) {
+            @ApiParam("The page of results to be read") @QueryParam("page") @DefaultValue("1") int page) {
         if (keyword == null)
             throw new BadRequestException("keyword is required");
         try {
@@ -105,18 +95,14 @@ public class BiblioResources {
 
     @GET
     @Path("/items/books")
-    @ApiOperation(value = "getBooks", notes = "search books"
-    )
-    @ApiResponses(value = {
-            @ApiResponse(code = 200, message = "OK", response = Items.class),
-    })
+    @ApiOperation(value = "getBooks", notes = "search books")
+    @ApiResponses(value = {@ApiResponse(code = 200, message = "OK", response = Items.class)})
     @Produces({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
     public Items getBooks(
             @ApiParam("The keyword to be used for the search") @QueryParam("keyword") String keyword,
             @ApiParam("The year before which items are searched") @QueryParam("beforeInclusive") @DefaultValue("10000") int beforeInclusive,
             @ApiParam("The year after which items are searched") @QueryParam("afterInclusive") @DefaultValue("0") int afterInclusive,
-            @ApiParam("The page of results to be read") @QueryParam("page") @DefaultValue("1") int page
-    ) {
+            @ApiParam("The page of results to be read") @QueryParam("page") @DefaultValue("1") int page) {
         if (keyword == null)
             throw new BadRequestException("keyword is required");
         try {
@@ -124,13 +110,11 @@ public class BiblioResources {
         } catch (Exception e) {
             throw new InternalServerErrorException();
         }
-
     }
 
     @POST
     @Path("/items")
-    @ApiOperation(value = "createItem", notes = "create a new item", response = Item.class
-    )
+    @ApiOperation(value = "createItem", notes = "create a new item", response = Item.class)
     @ApiResponses(value = {
             @ApiResponse(code = 201, message = "OK", response = Item.class),
             @ApiResponse(code = 400, message = "Bad Request"),
@@ -154,8 +138,7 @@ public class BiblioResources {
             @ApiResponse(code = 404, message = "Not Found"),
     })
     @Produces({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
-    public Item getItem(
-            @ApiParam("The id of the item") @PathParam("id") BigInteger id) {
+    public Item getItem(@ApiParam("The id of the item") @PathParam("id") BigInteger id) {
         Item item;
         try {
             item = service.getItem(id);
@@ -177,9 +160,7 @@ public class BiblioResources {
     })
     @Consumes({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
     @Produces({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
-    public Item updateItem(
-            @ApiParam("The id of the item") @PathParam("id") BigInteger id,
-            Item item) {
+    public Item updateItem(@ApiParam("The id of the item") @PathParam("id") BigInteger id, Item item) {
         Item updated;
         try {
             updated = service.updateItem(id, item);
@@ -199,8 +180,7 @@ public class BiblioResources {
             @ApiResponse(code = 404, message = "Not Found"),
             @ApiResponse(code = 409, message = "Conflict (item is cited)"),
     })
-    public void deleteItem(
-            @ApiParam("The id of the item") @PathParam("id") BigInteger id) {
+    public void deleteItem(@ApiParam("The id of the item") @PathParam("id") BigInteger id) {
         BigInteger ret;
         try {
             ret = service.deleteItem(id);
@@ -215,15 +195,13 @@ public class BiblioResources {
 
     @GET
     @Path("/items/{id}/citedBy")
-    @ApiOperation(value = "getItemCitedBy", notes = "read the items citing an item"
-    )
+    @ApiOperation(value = "getItemCitedBy", notes = "read the items citing an item")
     @ApiResponses(value = {
             @ApiResponse(code = 200, message = "OK", response = Items.class),
             @ApiResponse(code = 404, message = "Not Found"),
     })
     @Produces({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
-    public Items getItemCitedBy(
-            @ApiParam("The id of the item for which citing items have to be read") @PathParam("id") BigInteger id) {
+    public Items getItemCitedBy(@ApiParam("The id of the item for which citing items have to be read") @PathParam("id") BigInteger id) {
         Items items;
         try {
             items = service.getItemCitedBy(id);
@@ -237,15 +215,13 @@ public class BiblioResources {
 
     @GET
     @Path("/items/{id}/citations/targets")
-    @ApiOperation(value = "getItemCitations", notes = "read the target items of the citations from an item"
-    )
+    @ApiOperation(value = "getItemCitations", notes = "read the target items of the citations from an item")
     @ApiResponses(value = {
             @ApiResponse(code = 200, message = "OK", response = Items.class),
             @ApiResponse(code = 404, message = "Not Found"),
     })
     @Produces({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
-    public Items getItemCitations(
-            @ApiParam("The id of the item from which citations are considered") @PathParam("id") BigInteger id) {
+    public Items getItemCitations(@ApiParam("The id of the item from which citations are considered") @PathParam("id") BigInteger id) {
         Items items;
         try {
             items = service.getItemCitations(id);
@@ -259,8 +235,7 @@ public class BiblioResources {
 
     @GET
     @Path("/items/{id}/citations/{tid}")
-    @ApiOperation(value = "getItemCitation", notes = "read a citation"
-    )
+    @ApiOperation(value = "getItemCitation", notes = "read a citation")
     @ApiResponses(value = {
             @ApiResponse(code = 200, message = "OK", response = Citation.class),
             @ApiResponse(code = 404, message = "Not Found"),
@@ -268,7 +243,7 @@ public class BiblioResources {
     @Produces({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
     public Citation getItemCitation(
             @ApiParam("The id of the citing item of this citation") @PathParam("id") BigInteger id,
-            @ApiParam("The id of the cited item of this citation") @PathParam("tid") BigInteger tid) throws Exception {
+            @ApiParam("The id of the cited item of this citation") @PathParam("tid") BigInteger tid) {
         Citation citation;
         try {
             citation = service.getItemCitation(id, tid);
@@ -282,8 +257,7 @@ public class BiblioResources {
 
     @PUT
     @Path("/items/{id}/citations/{tid}")
-    @ApiOperation(value = "createItemCitation", notes = "create a citation", response = Citation.class
-    )
+    @ApiOperation(value = "createItemCitation", notes = "create a citation", response = Citation.class)
     @ApiResponses(value = {
             @ApiResponse(code = 201, message = "Created", response = Citation.class),
             @ApiResponse(code = 400, message = "Bad Request"),
@@ -295,7 +269,7 @@ public class BiblioResources {
     public Response createItemCitation(
             @ApiParam("The id of the citing item of this citation") @PathParam("id") BigInteger id,
             @ApiParam("The id of the cited item of this citation") @PathParam("tid") BigInteger tid,
-            Citation citation) throws Exception {
+            Citation citation) {
         UriBuilder builder = uriInfo.getAbsolutePathBuilder();
         System.out.println(uriInfo.getBaseUri());
         URI u = builder.build();
@@ -317,13 +291,11 @@ public class BiblioResources {
         if (newCitation == null)
             throw new NotFoundException();
         return Response.created(u).entity(newCitation).build();
-
     }
 
     @DELETE
     @Path("/items/{id}/citations/{tid}")
-    @ApiOperation(value = "deleteItemCitation", notes = "delete a citation"
-    )
+    @ApiOperation(value = "deleteItemCitation", notes = "delete a citation")
     @ApiResponses(value = {
             @ApiResponse(code = 204, message = "OK", response = Citation.class),
             @ApiResponse(code = 404, message = "Not Found"),
@@ -345,14 +317,10 @@ public class BiblioResources {
 
     @GET
     @Path("/bookshelves")
-    @ApiOperation(value = "getBookshelves", notes = "search bookshelves"
-    )
-    @ApiResponses(value = {
-            @ApiResponse(code = 200, message = "OK", response = Bookshelves.class),
-    })
+    @ApiOperation(value = "getBookshelves", notes = "search bookshelves")
+    @ApiResponses(value = {@ApiResponse(code = 200, message = "OK", response = Bookshelves.class)})
     @Produces({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
-    public Bookshelves getBookshelves(
-            @ApiParam("The keyword to be used for the search") @QueryParam("keyword") @DefaultValue("") String keyword) {
+    public Bookshelves getBookshelves(@ApiParam("The keyword to be used for the search") @QueryParam("keyword") @DefaultValue("") String keyword) {
         try {
             return service.getBookshelves(keyword);
         } catch (Exception e) {

@@ -163,8 +163,9 @@
 
     <xsd:simpleType name="SearchType">
         <xsd:restriction base="xsd:string">
-            <xsd:pattern value="book"/>
-            <xsd:pattern value="article"/>
+            <xsd:pattern value="ALL"/>
+            <xsd:pattern value="BOOKS"/>
+            <xsd:pattern value="ARTICLES"/>
         </xsd:restriction>
     </xsd:simpleType>
 

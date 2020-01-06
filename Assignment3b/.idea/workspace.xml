@@ -3,11 +3,27 @@
   <component name="ChangeListManager">
     <list default="true" id="e7b00b48-08a1-41c8-97c7-e46eb03f81f6" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebContent/WEB-INF/classes/xsd/biblio.xsd" beforeDir="false" afterPath="$PROJECT_DIR$/WebContent/WEB-INF/classes/xsd/biblio.xsd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebContent/xsd/biblio.xsd" beforeDir="false" afterPath="$PROJECT_DIR$/WebContent/xsd/biblio.xsd" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gen-src/it/polito/dp2/BIB/sol3/service/jaxb/ArticleType.java" beforeDir="false" afterPath="$PROJECT_DIR$/gen-src/it/polito/dp2/BIB/sol3/service/jaxb/ArticleType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gen-src/it/polito/dp2/BIB/sol3/service/jaxb/BookshelfEntity.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/it/polito/dp2/BIB/sol3/db/BookshelfEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/it/polito/dp2/BIB/sol3/db/BookshelfEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gen-src/it/polito/dp2/BIB/sol3/service/jaxb/Biblio.java" beforeDir="false" afterPath="$PROJECT_DIR$/gen-src/it/polito/dp2/BIB/sol3/service/jaxb/Biblio.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gen-src/it/polito/dp2/BIB/sol3/service/jaxb/BookType.java" beforeDir="false" afterPath="$PROJECT_DIR$/gen-src/it/polito/dp2/BIB/sol3/service/jaxb/BookType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gen-src/it/polito/dp2/BIB/sol3/service/jaxb/Bookshelf.java" beforeDir="false" afterPath="$PROJECT_DIR$/gen-src/it/polito/dp2/BIB/sol3/service/jaxb/Bookshelf.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gen-src/it/polito/dp2/BIB/sol3/service/jaxb/BookshelfCreateResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/gen-src/it/polito/dp2/BIB/sol3/service/jaxb/BookshelfCreateResource.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gen-src/it/polito/dp2/BIB/sol3/service/jaxb/Bookshelves.java" beforeDir="false" afterPath="$PROJECT_DIR$/gen-src/it/polito/dp2/BIB/sol3/service/jaxb/Bookshelves.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gen-src/it/polito/dp2/BIB/sol3/service/jaxb/Citation.java" beforeDir="false" afterPath="$PROJECT_DIR$/gen-src/it/polito/dp2/BIB/sol3/service/jaxb/Citation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gen-src/it/polito/dp2/BIB/sol3/service/jaxb/Citations.java" beforeDir="false" afterPath="$PROJECT_DIR$/gen-src/it/polito/dp2/BIB/sol3/service/jaxb/Citations.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gen-src/it/polito/dp2/BIB/sol3/service/jaxb/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/gen-src/it/polito/dp2/BIB/sol3/service/jaxb/Item.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gen-src/it/polito/dp2/BIB/sol3/service/jaxb/Items.java" beforeDir="false" afterPath="$PROJECT_DIR$/gen-src/it/polito/dp2/BIB/sol3/service/jaxb/Items.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gen-src/it/polito/dp2/BIB/sol3/service/jaxb/Journal.java" beforeDir="false" afterPath="$PROJECT_DIR$/gen-src/it/polito/dp2/BIB/sol3/service/jaxb/Journal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gen-src/it/polito/dp2/BIB/sol3/service/jaxb/Journals.java" beforeDir="false" afterPath="$PROJECT_DIR$/gen-src/it/polito/dp2/BIB/sol3/service/jaxb/Journals.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gen-src/it/polito/dp2/BIB/sol3/service/jaxb/Number.java" beforeDir="false" afterPath="$PROJECT_DIR$/gen-src/it/polito/dp2/BIB/sol3/service/jaxb/Number.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gen-src/it/polito/dp2/BIB/sol3/service/jaxb/ObjectFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/gen-src/it/polito/dp2/BIB/sol3/service/jaxb/ObjectFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gen-src/it/polito/dp2/BIB/sol3/service/jaxb/PagingType.java" beforeDir="false" afterPath="$PROJECT_DIR$/gen-src/it/polito/dp2/BIB/sol3/service/jaxb/PagingType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gen-src/it/polito/dp2/BIB/sol3/service/jaxb/Volume.java" beforeDir="false" afterPath="$PROJECT_DIR$/gen-src/it/polito/dp2/BIB/sol3/service/jaxb/Volume.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/it/polito/dp2/BIB/sol3/resources/BiblioResources.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/it/polito/dp2/BIB/sol3/resources/BiblioResources.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/it/polito/dp2/BIB/sol3/service/BiblioService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/it/polito/dp2/BIB/sol3/service/BiblioService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/WEB-INF/classes/xsd/biblio.xsd" beforeDir="false" afterPath="$PROJECT_DIR$/target/WEB-INF/classes/xsd/biblio.xsd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/xsd/biblio.xsd" beforeDir="false" afterPath="$PROJECT_DIR$/target/xsd/biblio.xsd" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,7 +98,8 @@
       <workItem from="1578069753919" duration="2969000" />
       <workItem from="1578133058411" duration="16742000" />
       <workItem from="1578219403861" duration="8252000" />
-      <workItem from="1578328364317" duration="4549000" />
+      <workItem from="1578328364317" duration="5310000" />
+      <workItem from="1578333884268" duration="489000" />
     </task>
     <task id="LOCAL-00001" summary="ass 3b initial">
       <created>1577454917373</created>
@@ -112,7 +129,14 @@
       <option name="project" value="LOCAL" />
       <updated>1578227562132</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="[3b] definizione di tutti gli endpoint, tutto da testare">
+      <created>1578332984773</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1578332984774</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -132,7 +156,8 @@
     <MESSAGE value="ass 3b initial" />
     <MESSAGE value="[3b]prima di provare a usare gli id invece della risorsa intera" />
     <MESSAGE value="[3b] un botto di roba + bug" />
-    <option name="LAST_COMMIT_MESSAGE" value="[3b] un botto di roba + bug" />
+    <MESSAGE value="[3b] definizione di tutti gli endpoint, tutto da testare" />
+    <option name="LAST_COMMIT_MESSAGE" value="[3b] definizione di tutti gli endpoint, tutto da testare" />
   </component>
   <component name="WindowStateProjectService">
     <state x="588" y="214" width="800" height="677" key="#Project_Structure" timestamp="1577452080469">
@@ -151,10 +176,10 @@
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state x="821" y="266" width="798" height="572" key="#com.intellij.openapi.roots.ui.configuration.libraryEditor.LibraryEditorDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1577964658191" />
-    <state x="316" y="147" width="1442" height="810" key="CommitChangelistDialog2" timestamp="1578227561151">
+    <state x="316" y="147" width="1442" height="810" key="CommitChangelistDialog2" timestamp="1578334434252">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state x="316" y="147" width="1442" height="810" key="CommitChangelistDialog2/67.27.1853.1053@67.27.1853.1053" timestamp="1578227561151" />
+    <state x="316" y="147" width="1442" height="810" key="CommitChangelistDialog2/67.27.1853.1053@67.27.1853.1053" timestamp="1578334434252" />
     <state x="291" y="116" width="1482" height="872" key="DiffContextDialog" timestamp="1578046500227">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
