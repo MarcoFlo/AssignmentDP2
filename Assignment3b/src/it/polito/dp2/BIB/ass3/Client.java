@@ -24,5 +24,5 @@ public interface Client extends ItemsReader {
 	 * @return a set of interfaces for operating on the selected bookshelves
 	 * @throws ServiceException
 	 */
-	public Set<Bookshelf> getBookshelfs(String name) throws ServiceException;
+	public Set<? extends Bookshelf> getBookshelfs(String name) throws ServiceException;
 }

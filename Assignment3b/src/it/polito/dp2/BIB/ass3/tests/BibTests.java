@@ -27,6 +27,7 @@ import it.polito.dp2.BIB.ass3.ClientFactory;
 import it.polito.dp2.BIB.ass3.DestroyedBookshelfException;
 import it.polito.dp2.BIB.ass3.ItemReader;
 import it.polito.dp2.BIB.ass3.ServiceException;
+import it.polito.dp2.BIB.ass3.TooManyItemsException;
 import it.polito.dp2.BIB.ass3.UnknownItemException;
 import it.polito.dp2.BIB.ass3.admClient.AdminClient;
 import it.polito.dp2.BIB.ass3.admClient.BookType;
@@ -71,7 +72,7 @@ public class BibTests {
 		Bookshelf toRemove = testClient.createBookshelf("Non-Fiction Math");
 		
 		//get bookshelves with the specified string
-		Set<Bookshelf> bookshelves = testClient.getBookshelfs("Non-Fiction");
+		Set<? extends Bookshelf> bookshelves = testClient.getBookshelfs("Non-Fiction");
 		assertNotNull("The client under test returned a null set", bookshelves);
 		assertEquals("Wrong number of bookshelves ",3,bookshelves.size());
 		
@@ -102,7 +103,7 @@ public class BibTests {
 	
 	@Test
 	// Check that removeItem() correctly manages the removal of an item from the bookshelf
-	public final void testBookShelfOperations() throws ServiceException, DestroyedBookshelfException, UnknownItemException  {
+	public final void testBookShelfOperations() throws ServiceException, DestroyedBookshelfException, UnknownItemException, TooManyItemsException  {
 		System.out.println("DEBUG: starting testBookShelfOperations");
 		String testBookShelf="Biography";
 		
@@ -133,7 +134,7 @@ public class BibTests {
 
 	// add all book items to the current bookshelf up to limit and check number of items
 	private int addItemsBookshelf(String testBookShelf, Bookshelf bookshelf)
-			throws ServiceException, DestroyedBookshelfException, UnknownItemException {
+			throws ServiceException, DestroyedBookshelfException, UnknownItemException, TooManyItemsException {
 		Set<ItemReader> items = testClient.getItems("", 0, 3000);
 		
 		
@@ -162,7 +163,7 @@ public class BibTests {
 	
 	@Test 
 	// Check that the removal of an item from the database correctly removes it from all bookshelves
-	public final void testRemoveItemFromBibliography() throws ServiceException, DestroyedBookshelfException, UnknownItemException, DatatypeConfigurationException {
+	public final void testRemoveItemFromBibliography() throws ServiceException, DestroyedBookshelfException, UnknownItemException, DatatypeConfigurationException, TooManyItemsException {
 		System.out.println("DEBUG: starting testRemoveItemFromBibliography");
 		// create three different bookshelves
 		Bookshelf first = testClient.createBookshelf("Non-Fiction Science");
@@ -232,7 +233,7 @@ public class BibTests {
 
 	@Test
 	// Check that the getItems() method of the bookshelf correctly updates the number of reads
-	public final void testNumberOfReads() throws ServiceException, DestroyedBookshelfException, UnknownItemException{
+	public final void testNumberOfReads() throws ServiceException, DestroyedBookshelfException, UnknownItemException, TooManyItemsException{
 		System.out.println("DEBUG: starting testNumberOfReads");
 		String testBookShelf="Phantasy";
 		
@@ -254,7 +255,7 @@ public class BibTests {
 	
 	@Test(expected=DestroyedBookshelfException.class)
 	//Check if adding an item to the destroyed bookshelf correctly managed
-	public final void testNonExistingBookshelf() throws ServiceException, DestroyedBookshelfException, UnknownItemException{
+	public final void testNonExistingBookshelf() throws ServiceException, DestroyedBookshelfException, UnknownItemException, TooManyItemsException{
 		System.out.println("DEBUG: starting testNonExistingBookshelf");
 		// create a new bookshelf and destroy it
 		String testBookShelf = "Memoir";

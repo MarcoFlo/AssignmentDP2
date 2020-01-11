@@ -24,7 +24,7 @@ public interface Bookshelf {
 	 * @throws TooManyItemsException if the item cannot be added because the bookshelf is full (reached its maximum number of items)
 	 * @throws ServiceException if the operation could not be completed because of a problem with the remote service
 	 */
-	public void addItem(ItemReader item) throws DestroyedBookshelfException, UnknownItemException, ServiceException;
+	public void addItem(ItemReader item) throws DestroyedBookshelfException, UnknownItemException, TooManyItemsException, ServiceException;
 	
 	/**
 	 * Removes an item from the bookshelf (if it is present; this operation is done on the remote service)
