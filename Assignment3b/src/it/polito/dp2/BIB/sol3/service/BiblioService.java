@@ -134,13 +134,10 @@ public class BiblioService {
         return items;
     }
 
-    public Bookshelves getBookshelves(String keyword) {
+    public Bookshelves getBookshelves(String name) {
         Bookshelves result = new Bookshelves();
         List<Bookshelf> bookshelfList = result.getBookshelf();
-
-        mapBookshelf.entrySet().stream().filter(entry -> entry.getValue().getName().contains(keyword)).forEach(entry -> {
-            bookshelfList.add(getBookshelf(entry.getKey()));
-        });
+        bookshelfList.addAll(mapBookshelf.values().stream().filter(bookshelfEntity -> bookshelfEntity.getName().contains(name)).map(this::getBookshelfFromBookshelfEntity).collect(Collectors.toList()));
         return result;
     }
 
@@ -193,7 +190,7 @@ public class BiblioService {
             throw new NotFoundException("Bookshelf and item id must exist.");
     }
 
-    public  void addBookshelfItem(BigInteger bid, BigInteger id) throws Exception {
+    public void addBookshelfItem(BigInteger bid, BigInteger id) throws Exception {
         BookshelfEntity bookshelfEntity = getBookshelfEntity(bid);
         getItem(id);
         //todo check if it does what I expect

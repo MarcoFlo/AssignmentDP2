@@ -318,11 +318,12 @@ public class BiblioResources {
     @GET
     @Path("/bookshelves")
     @ApiOperation(value = "getBookshelves", notes = "search bookshelves")
-    @ApiResponses(value = {@ApiResponse(code = 200, message = "OK", response = Bookshelves.class)})
+    @ApiResponses(value = {@ApiResponse(code = 200, message = "OK", response = Bookshelf.class),
+            @ApiResponse(code = 400, message = "Bad Request")})
     @Produces({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
-    public Bookshelves getBookshelves(@ApiParam("The keyword to be used for the search") @QueryParam("keyword") @DefaultValue("") String keyword) {
+    public Bookshelves getBookshelves(@ApiParam("The name to be used for the search") @QueryParam("name") @DefaultValue("") String name) {
         try {
-            return service.getBookshelves(keyword);
+            return service.getBookshelves(name);
         } catch (Exception e) {
             throw new InternalServerErrorException();
         }
