@@ -3,6 +3,7 @@ package it.polito.dp2.BIB.sol3.service;
 import java.math.BigInteger;
 import java.util.*;
 import java.util.Map.Entry;
+import java.util.concurrent.CopyOnWriteArraySet;
 import java.util.stream.Collectors;
 
 import javax.ws.rs.BadRequestException;
@@ -159,9 +160,9 @@ public class BiblioService {
             throw new BadRequestException("Duplicate bookshelf name.");
     }
 
-    public synchronized Bookshelf getBookshelf(BigInteger bid) {
+    public Bookshelf getBookshelf(BigInteger bid) {
         BookshelfEntity bookshelfEntity = getBookshelfEntity(bid);
-        incrementBookshelfReadCounter(bookshelfEntity);
+        bookshelfEntity.incrementReadCount();
         return getBookshelfFromBookshelfEntity(bookshelfEntity);
     }
 
@@ -183,41 +184,40 @@ public class BiblioService {
         return items;
     }
 
-    //todo da sync con la delete di una bookshelf, ma anche con quella dell'item
-    public void addBookshelfItem(BigInteger bid, BigInteger id) throws Exception {
-        BookshelfEntity bookshelfEntity = getBookshelfEntity(bid);
-        getItem(id);
-        Set<BigInteger> setItem = bookshelfEntity.getItem();
-        if (setItem.size() < maxBookshelfItems)
-            setItem.add(id);
-        else
-            throw new BadRequestException("A single bookshelf can contain max " + maxBookshelfItems + " items.");
-    }
-
-    public synchronized Item getBookshelfItem(BigInteger bid, BigInteger id) throws Exception {
+    public Item getBookshelfItem(BigInteger bid, BigInteger id) throws Exception {
         BookshelfEntity bookshelfEntity = getBookshelfEntity(bid);
         if (bookshelfEntity.getItem().contains(id)) {
-            incrementBookshelfReadCounter(bookshelfEntity);
+            bookshelfEntity.incrementReadCount();
             return getItem(id);
         } else
             throw new NotFoundException("Bookshelf and item id must exist.");
     }
 
-    public synchronized void deleteBookshelfItem(BigInteger bid, BigInteger id) throws Exception {
+    public  void addBookshelfItem(BigInteger bid, BigInteger id) throws Exception {
         BookshelfEntity bookshelfEntity = getBookshelfEntity(bid);
         getItem(id);
-        Set<BigInteger> itemSet = bookshelfEntity.getItem();
-        if (itemSet.contains(id)) {
-            itemSet.remove(id);
-        } else
-            throw new NotFoundException("Bookshelf and item id must exist.");
+        //todo check if it does what I expect
+        synchronized (bookshelfEntity.getItem()) {
+            CopyOnWriteArraySet<BigInteger> setItem = bookshelfEntity.getItem();
+            if (setItem.size() < maxBookshelfItems)
+                setItem.add(id);
+            else
+                throw new BadRequestException("A single bookshelf can contain max " + maxBookshelfItems + " items.");
+        }
 
+    }
+
+
+    public void deleteBookshelfItem(BigInteger bid, BigInteger id) {
+        BookshelfEntity bookshelfEntity = getBookshelfEntity(bid);
+        if (!bookshelfEntity.getItem().remove(id))
+            throw new NotFoundException("Bookshelf and item id must exist.");
     }
 
 
     private Bookshelf getBookshelfFromBookshelfEntity(BookshelfEntity bookshelfEntity) {
         Bookshelf bookshelf = new Bookshelf();
-        bookshelf.getItem().addAll(getItemListFromIdSet(bookshelfEntity.getItem()));
+        bookshelf.getItem().addAll(getItemListFromIdSet(bookshelfEntity));
 
         bookshelf.setReadCount(BigInteger.valueOf(bookshelfEntity.getReadCount()));
         bookshelf.setId(bookshelfEntity.getId());
@@ -228,17 +228,27 @@ public class BiblioService {
         return bookshelf;
     }
 
-    private List<Item> getItemListFromIdSet(Set<BigInteger> idList) {
-        return idList.stream().map(id -> {
+    private List<Item> getItemListFromIdSet(BookshelfEntity bookshelfEntity) {
+        List<Item> result = new LinkedList<>();
+        CopyOnWriteArraySet<BigInteger> idSet = bookshelfEntity.getItem();
+        Iterator<BigInteger> iterator = idSet.iterator();
+
+        while (iterator.hasNext()) {
             try {
+                BigInteger id = iterator.next();
                 Item item = getItem(id);
-                rutil.completeItem(item, id);
-                return item;
+                if (item != null) {
+                    rutil.completeItem(item, id);
+                    result.add(item);
+                } else
+                    iterator.remove();
             } catch (Exception e) {
                 //todo
                 throw new InternalServerErrorException("getItemfromid");
             }
-        }).collect(Collectors.toList());
+        }
+
+        return result;
     }
 
     private BookshelfEntity getBookshelfEntity(BigInteger bid) {
@@ -247,12 +257,5 @@ public class BiblioService {
             return bookshelfEntity;
         } else
             throw new NotFoundException("There is no bookshelf with ID " + bid);
-    }
-
-    private void incrementBookshelfReadCounter(BookshelfEntity bookshelfEntity) {
-        bookshelfEntity.incrementReadCount();
-
-        //if in the meanwhile the bookshelf related to this id is deleted, the replace operation will simply not happen
-        mapBookshelf.replace(bookshelfEntity.getId(), bookshelfEntity);
     }
 }
