@@ -152,6 +152,8 @@
         <xsd:complexType>
             <xsd:sequence>
                 <xsd:element name="self" type="xsd:anyURI" minOccurs="0"/>
+                <xsd:element name="readCountUri" type="xsd:anyURI" minOccurs="0"/>
+                <xsd:element name="itemsUri" type="xsd:anyURI" minOccurs="0"/>
                 <!--Each bookshelf can contain max 20 item-->
                 <xsd:element ref="item" minOccurs="0" maxOccurs="20"/>
             </xsd:sequence>

@@ -25,6 +25,7 @@ public class ResourseUtils {
 
     public void completeItem(Item item, BigInteger id) {
         UriBuilder selfBuilder = items.clone().path(id.toString());
+        item.setId(id);
         URI self = selfBuilder.build();
         item.setSelf(self.toString());
         URI citations = selfBuilder.clone().path("citations").build();
@@ -44,8 +45,9 @@ public class ResourseUtils {
 
     public void completeBookshelf(Bookshelf bookshelf) {
         UriBuilder selfBuilder = bookshelves.clone().path(bookshelf.getId().toString());
-        URI self = selfBuilder.build();
-        bookshelf.setSelf(self.toString());
+        bookshelf.setSelf(selfBuilder.build().toString());
+        bookshelf.setReadCountUri(selfBuilder.clone().path("counter").build().toString());
+        bookshelf.setItemsUri(selfBuilder.clone().path("items").build().toString());
     }
 
     public BigInteger getItemIdFromUri(String uri) {

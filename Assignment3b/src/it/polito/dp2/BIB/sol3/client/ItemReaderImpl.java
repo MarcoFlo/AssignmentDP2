@@ -1,7 +1,6 @@
 package it.polito.dp2.BIB.sol3.client;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -9,7 +8,7 @@ import java.util.Set;
 import it.polito.dp2.BIB.ass3.ItemReader;
 import it.polito.dp2.BIB.sol3.client.Items.Item;
 
-public class ItemReaderImpl implements it.polito.dp2.BIB.ass3.ItemReader {
+public class ItemReaderImpl implements ItemReader {
 
 	private Integer id;
 	private String title;
@@ -28,6 +27,7 @@ public class ItemReaderImpl implements it.polito.dp2.BIB.ass3.ItemReader {
 				this.authors.addAll(i.getAuthor());
 		}
 		citingItems = new HashSet<>();
+		this.id = i.getId().intValue();
 	}
 
 	public Integer getId()  {

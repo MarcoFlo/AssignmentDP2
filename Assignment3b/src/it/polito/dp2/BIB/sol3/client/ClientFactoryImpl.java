@@ -18,10 +18,8 @@ import javax.ws.rs.client.WebTarget;
 import javax.ws.rs.core.GenericType;
 import javax.ws.rs.core.MediaType;
 
+import it.polito.dp2.BIB.ass3.*;
 import it.polito.dp2.BIB.ass3.Bookshelf;
-import it.polito.dp2.BIB.ass3.Client;
-import it.polito.dp2.BIB.ass3.ItemReader;
-import it.polito.dp2.BIB.ass3.ServiceException;
 
 public class ClientFactoryImpl implements Client {
     javax.ws.rs.client.Client client;
@@ -40,33 +38,45 @@ public class ClientFactoryImpl implements Client {
 
     @Override
     public Bookshelf createBookshelf(String name) throws ServiceException {
-		return null;
+        try {
+            BookshelfCreateResource bookshelfCreateResource = new BookshelfCreateResource();
+            bookshelfCreateResource.setName(name);
+            return new BookshelfClient(target.path("/bookshelves")
+                    .queryParam("name", name)
+                    .request(MediaType.APPLICATION_JSON_TYPE)
+                    .post(Entity.json(bookshelfCreateResource), it.polito.dp2.BIB.sol3.client.Bookshelves.Bookshelf.class), client);
+
+        } catch (WebApplicationException | ProcessingException e) {
+            e.printStackTrace();
+            throw new ServiceException("Create Bookshelf failed");
+        }
     }
 
     @Override
     public Set<Bookshelf> getBookshelfs(String name) throws ServiceException {
-		try {
-			Bookshelves bookshelves =  target.path("/bookshelves")
-					.queryParam("name", name)
-					.request(MediaType.APPLICATION_JSON_TYPE)
-					.get(Bookshelves.class);
+        try {
+            Bookshelves bookshelves = target.path("/bookshelves")
+                    .queryParam("name", name)
+                    .request(MediaType.APPLICATION_JSON_TYPE)
+                    .get(Bookshelves.class);
 
-			return new HashSet<Bookshelf>(bookshelves.getBookshelf().stream().map(bookshelf -> new BookshelfClient(bookshelf)).collect(Collectors.toSet()));
-		} catch (WebApplicationException | ProcessingException e) {
-			throw new ServiceException("Get Items failed");
-		}
+            return bookshelves.getBookshelf().stream().map(bookshelf -> new BookshelfClient(bookshelf, client)).collect(Collectors.toSet());
+        } catch (WebApplicationException | ProcessingException e) {
+            throw new ServiceException("Get Items failed");
+        }
     }
 
     @Override
     public Set<ItemReader> getItems(String keyword, int since, int to) throws ServiceException {
         try {
-			Set<ItemReader> itemSet = new HashSet<>();
+            Set<ItemReader> itemSet = new HashSet<>();
             Items items = target.path("/items")
                     .queryParam("keyword", keyword)
                     .queryParam("beforeInclusive", to)
                     .queryParam("afterInclusive", since)
                     .request(MediaType.APPLICATION_JSON_TYPE)
                     .get(Items.class);
+
             for (it.polito.dp2.BIB.sol3.client.Items.Item i : items.getItem()) {
                 itemSet.add(new ItemReaderImpl(i));
             }
@@ -136,6 +146,16 @@ public class ClientFactoryImpl implements Client {
         try {
             mainClient = new ClientFactoryImpl(new URI(uri));
             printItems();
+            Set<ItemReader> set = mainClient.getItems("", 0, 3000);
+
+            mainClient.createBookshelf("Libreri");
+            Bookshelf bookshelf = mainClient.getBookshelfs("Libreri").stream().findFirst().get();
+            try {
+                System.out.println(bookshelf.getName() + " created");
+                bookshelf.addItem(set.stream().findFirst().get());
+            } catch (DestroyedBookshelfException | UnknownItemException | TooManyItemsException e) {
+                e.printStackTrace();
+            }
         } catch (URISyntaxException | ServiceException e) {
             e.printStackTrace();
         }

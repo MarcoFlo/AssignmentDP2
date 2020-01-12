@@ -24,12 +24,15 @@ import javax.xml.bind.annotation.XmlType;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
  *         &lt;element name="self" type="{http://www.w3.org/2001/XMLSchema}anyURI" minOccurs="0"/>
+ *         &lt;element name="readCountUri" type="{http://www.w3.org/2001/XMLSchema}anyURI" minOccurs="0"/>
+ *         &lt;element name="itemsUri" type="{http://www.w3.org/2001/XMLSchema}anyURI" minOccurs="0"/>
  *         &lt;element name="item" maxOccurs="unbounded" minOccurs="0">
  *           &lt;complexType>
  *             &lt;complexContent>
  *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *                 &lt;sequence>
  *                   &lt;element name="self" type="{http://www.w3.org/2001/XMLSchema}anyURI" minOccurs="0"/>
+ *                   &lt;element name="id" type="{http://www.w3.org/2001/XMLSchema}integer" minOccurs="0"/>
  *                   &lt;element name="author" type="{http://www.w3.org/2001/XMLSchema}string" maxOccurs="unbounded"/>
  *                   &lt;element name="title" type="{http://www.w3.org/2001/XMLSchema}string"/>
  *                   &lt;element name="subtitle" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
@@ -44,7 +47,7 @@ import javax.xml.bind.annotation.XmlType;
  *           &lt;/complexType>
  *         &lt;/element>
  *       &lt;/sequence>
- *       &lt;attribute name="id" use="required" type="{http://www.w3.org/2001/XMLSchema}string" />
+ *       &lt;attribute name="id" use="required" type="{http://www.w3.org/2001/XMLSchema}integer" />
  *       &lt;attribute name="name" use="required" type="{http://www.w3.org/2001/XMLSchema}string" />
  *       &lt;attribute name="readCount" type="{http://www.w3.org/2001/XMLSchema}positiveInteger" />
  *     &lt;/restriction>
@@ -57,6 +60,8 @@ import javax.xml.bind.annotation.XmlType;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
     "self",
+    "readCountUri",
+    "itemsUri",
     "item"
 })
 @XmlRootElement(name = "bookshelf")
@@ -64,10 +69,14 @@ public class Bookshelf {
 
     @XmlSchemaType(name = "anyURI")
     protected String self;
+    @XmlSchemaType(name = "anyURI")
+    protected String readCountUri;
+    @XmlSchemaType(name = "anyURI")
+    protected String itemsUri;
     @XmlElement(nillable = true)
     protected List<Bookshelf.Item> item;
     @XmlAttribute(name = "id", required = true)
-    protected String id;
+    protected BigInteger id;
     @XmlAttribute(name = "name", required = true)
     protected String name;
     @XmlAttribute(name = "readCount")
@@ -96,6 +105,54 @@ public class Bookshelf {
      */
     public void setSelf(String value) {
         this.self = value;
+    }
+
+    /**
+     * Gets the value of the readCountUri property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getReadCountUri() {
+        return readCountUri;
+    }
+
+    /**
+     * Sets the value of the readCountUri property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setReadCountUri(String value) {
+        this.readCountUri = value;
+    }
+
+    /**
+     * Gets the value of the itemsUri property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getItemsUri() {
+        return itemsUri;
+    }
+
+    /**
+     * Sets the value of the itemsUri property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setItemsUri(String value) {
+        this.itemsUri = value;
     }
 
     /**
@@ -132,10 +189,10 @@ public class Bookshelf {
      * 
      * @return
      *     possible object is
-     *     {@link String }
+     *     {@link BigInteger }
      *     
      */
-    public String getId() {
+    public BigInteger getId() {
         return id;
     }
 
@@ -144,10 +201,10 @@ public class Bookshelf {
      * 
      * @param value
      *     allowed object is
-     *     {@link String }
+     *     {@link BigInteger }
      *     
      */
-    public void setId(String value) {
+    public void setId(BigInteger value) {
         this.id = value;
     }
 
@@ -211,6 +268,7 @@ public class Bookshelf {
      *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
      *       &lt;sequence>
      *         &lt;element name="self" type="{http://www.w3.org/2001/XMLSchema}anyURI" minOccurs="0"/>
+     *         &lt;element name="id" type="{http://www.w3.org/2001/XMLSchema}integer" minOccurs="0"/>
      *         &lt;element name="author" type="{http://www.w3.org/2001/XMLSchema}string" maxOccurs="unbounded"/>
      *         &lt;element name="title" type="{http://www.w3.org/2001/XMLSchema}string"/>
      *         &lt;element name="subtitle" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
@@ -230,6 +288,7 @@ public class Bookshelf {
     @XmlAccessorType(XmlAccessType.FIELD)
     @XmlType(name = "", propOrder = {
         "self",
+        "id",
         "author",
         "title",
         "subtitle",
@@ -243,6 +302,7 @@ public class Bookshelf {
 
         @XmlSchemaType(name = "anyURI")
         protected String self;
+        protected BigInteger id;
         @XmlElement(required = true)
         protected List<String> author;
         @XmlElement(required = true)
@@ -279,6 +339,30 @@ public class Bookshelf {
          */
         public void setSelf(String value) {
             this.self = value;
+        }
+
+        /**
+         * Gets the value of the id property.
+         * 
+         * @return
+         *     possible object is
+         *     {@link BigInteger }
+         *     
+         */
+        public BigInteger getId() {
+            return id;
+        }
+
+        /**
+         * Sets the value of the id property.
+         * 
+         * @param value
+         *     allowed object is
+         *     {@link BigInteger }
+         *     
+         */
+        public void setId(BigInteger value) {
+            this.id = value;
         }
 
         /**

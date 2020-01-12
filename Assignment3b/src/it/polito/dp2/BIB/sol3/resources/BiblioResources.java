@@ -343,6 +343,8 @@ public class BiblioResources {
             Bookshelf returnBookshelf = service.createBookshelf(bookshelfCreateResource);
             return Response.created(new URI(returnBookshelf.getSelf())).entity(returnBookshelf).build();
         } catch (BadRequestException e) {
+            e.printStackTrace();
+            System.out.println(e.getMessage());
             throw e;
         } catch (Exception e) {
             throw new InternalServerErrorException();
@@ -426,7 +428,7 @@ public class BiblioResources {
 
 
     @POST
-    @Path("/bookshelves/{bid}/items/{id}")
+    @Path("/bookshelves/{bid}/items")
     @ApiOperation(value = "addItemToBookshelf", notes = "add item to the specified bookshelf")
     @ApiResponses(value = {
             @ApiResponse(code = 200, message = "OK"),
@@ -436,10 +438,12 @@ public class BiblioResources {
     @Produces({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
     public void addItemToBookshelf(
             @ApiParam("The id of the bookshelf") @PathParam("bid") BigInteger bid,
-            @ApiParam("The id of the item to be added to the bookshelf") @PathParam("id") BigInteger id) {
+            @ApiParam("The id of the item to be added to the bookshelf") @QueryParam("id") BigInteger id) {
         try {
             service.addBookshelfItem(bid, id);
         } catch (NotFoundException | BadRequestException e) {
+            System.out.println(e.getMessage());
+            e.printStackTrace();
             throw e;
         } catch (Exception e) {
             throw new InternalServerErrorException(e);

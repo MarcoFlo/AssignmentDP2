@@ -82,6 +82,14 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link BookshelfCreateResource }
+     * 
+     */
+    public BookshelfCreateResource createBookshelfCreateResource() {
+        return new BookshelfCreateResource();
+    }
+
+    /**
      * Create an instance of {@link PagingType }
      * 
      */
