@@ -4,10 +4,7 @@ import java.net.MalformedURLException;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.net.URL;
-import java.util.Collection;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 import java.util.stream.Collectors;
 
 import javax.ws.rs.ProcessingException;
@@ -148,11 +145,12 @@ public class ClientFactoryImpl implements Client {
             printItems();
             Set<ItemReader> set = mainClient.getItems("", 0, 3000);
 
-            mainClient.createBookshelf("Libreri");
-            Bookshelf bookshelf = mainClient.getBookshelfs("Libreri").stream().findFirst().get();
+            String libName = (new Date()).toString();
+            mainClient.createBookshelf(libName);
+            Bookshelf bookshelf = mainClient.getBookshelfs(libName).stream().findFirst().get();
             try {
-                System.out.println(bookshelf.getName() + " created");
                 bookshelf.addItem(set.stream().findFirst().get());
+                System.out.println(bookshelf.getName() + "  has " + bookshelf.getNumberOfReads() + " reads");
             } catch (DestroyedBookshelfException | UnknownItemException | TooManyItemsException e) {
                 e.printStackTrace();
             }
