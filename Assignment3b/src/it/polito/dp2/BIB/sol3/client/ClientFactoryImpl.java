@@ -162,6 +162,9 @@ public class ClientFactoryImpl implements Client {
                 bookshelf.getItems().forEach(itemReader -> System.out.println(itemReader.getTitle()));
 
                 System.out.println(bookshelf.getName() + "  has " + bookshelf.getNumberOfReads() + " reads");
+
+                bookshelf.destroyBookshelf();
+                bookshelf.destroyBookshelf();
             } catch (DestroyedBookshelfException | UnknownItemException | TooManyItemsException e) {
                 e.printStackTrace();
             }
