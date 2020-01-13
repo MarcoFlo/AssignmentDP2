@@ -148,13 +148,16 @@ public class BiblioService {
         if (bookshelfCreateResource.getItem().size() > maxBookshelfItems)
             throw new BadRequestException("A single bookshelf can contain max " + maxBookshelfItems + " items.");
 
-        if (mapBookshelf.values().stream().noneMatch(b -> b.getName().equals(bookshelfCreateResource.getName()))) {
-            BookshelfEntity bookshelfEntity = new BookshelfEntity(BigInteger.valueOf(BookshelfDB.getNext()), bookshelfCreateResource);
-            mapBookshelf.put(bookshelfEntity.getId(), bookshelfEntity);
+        //todo sync
+        synchronized (mapBookshelf.values()) {
+            if (mapBookshelf.values().stream().noneMatch(b -> b.getName().equals(bookshelfCreateResource.getName()))) {
+                BookshelfEntity bookshelfEntity = new BookshelfEntity(BigInteger.valueOf(BookshelfDB.getNext()), bookshelfCreateResource);
+                mapBookshelf.put(bookshelfEntity.getId(), bookshelfEntity);
 
-            return getBookshelfFromBookshelfEntity(bookshelfEntity);
-        } else
-            throw new BadRequestException("Duplicate bookshelf name.");
+                return getBookshelfFromBookshelfEntity(bookshelfEntity);
+            } else
+                throw new BadRequestException("Duplicate bookshelf name.");
+        }
     }
 
     public Bookshelf getBookshelf(BigInteger bid) {

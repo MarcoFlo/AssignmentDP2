@@ -272,7 +272,6 @@ public class BiblioResources {
             @ApiParam("The id of the cited item of this citation") @PathParam("tid") BigInteger tid,
             Citation citation) {
         UriBuilder builder = uriInfo.getAbsolutePathBuilder();
-        System.out.println(uriInfo.getBaseUri());
         URI u = builder.build();
         UriBuilder fromBuilder = UriBuilder.fromUri(citation.getFrom());
         URI u2 = fromBuilder.path("citations").path(tid.toString()).build();
