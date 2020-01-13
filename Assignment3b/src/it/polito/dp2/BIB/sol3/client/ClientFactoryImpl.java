@@ -19,7 +19,8 @@ import it.polito.dp2.BIB.ass3.*;
 import it.polito.dp2.BIB.ass3.Bookshelf;
 
 public class ClientFactoryImpl implements Client {
-    javax.ws.rs.client.Client client;
+    javax.ws.rs.client.Client client;     //todo close
+
     WebTarget target;
     static String uri = "http://localhost:8080/BiblioSystem/rest";
     static String urlProperty = "it.polito.dp2.BIB.ass3.URL";
@@ -64,9 +65,9 @@ public class ClientFactoryImpl implements Client {
     }
 
     @Override
-    public Set<ItemReader> getItems(String keyword, int since, int to) throws ServiceException {
+    public Set<it.polito.dp2.BIB.ass3.ItemReader> getItems(String keyword, int since, int to) throws ServiceException {
         try {
-            Set<ItemReader> itemSet = new HashSet<>();
+            Set<it.polito.dp2.BIB.ass3.ItemReader> itemSet = new HashSet<>();
             Items items = target.path("/items")
                     .queryParam("keyword", keyword)
                     .queryParam("beforeInclusive", to)
@@ -85,11 +86,11 @@ public class ClientFactoryImpl implements Client {
 
 
     private static void printItems() throws ServiceException {
-        Set<ItemReader> set = mainClient.getItems("", 0, 3000);
+        Set<it.polito.dp2.BIB.ass3.ItemReader> set = mainClient.getItems("", 0, 3000);
         System.out.println("Items returned: " + set.size());
 
         // For each Item print related data
-        for (ItemReader item : set) {
+        for (it.polito.dp2.BIB.ass3.ItemReader item : set) {
             System.out.println("Title: " + item.getTitle());
             if (item.getSubtitle() != null)
                 System.out.println("Subtitle: " + item.getSubtitle());
@@ -100,9 +101,9 @@ public class ClientFactoryImpl implements Client {
                 System.out.print(", " + authors[i]);
             System.out.println(";");
 
-            Set<ItemReader> citingItems = item.getCitingItems();
+            Set<it.polito.dp2.BIB.ass3.ItemReader> citingItems = item.getCitingItems();
             System.out.println("Cited by " + citingItems.size() + " items:");
-            for (ItemReader citing : citingItems) {
+            for (it.polito.dp2.BIB.ass3.ItemReader citing : citingItems) {
                 System.out.println("- " + citing.getTitle());
             }
             printLine('-');
@@ -143,13 +144,23 @@ public class ClientFactoryImpl implements Client {
         try {
             mainClient = new ClientFactoryImpl(new URI(uri));
             printItems();
-            Set<ItemReader> set = mainClient.getItems("", 0, 3000);
+            Set<it.polito.dp2.BIB.ass3.ItemReader> set = mainClient.getItems("", 0, 3000);
 
             String libName = (new Date()).toString();
             mainClient.createBookshelf(libName);
             Bookshelf bookshelf = mainClient.getBookshelfs(libName).stream().findFirst().get();
             try {
-                bookshelf.addItem(set.stream().findFirst().get());
+                it.polito.dp2.BIB.ass3.ItemReader item =set.stream().findFirst().get();
+                bookshelf.addItem(item);
+                System.out.println(item.getTitle() + " has been added");
+                System.out.println("The bookshelf now contains:");
+                bookshelf.getItems().forEach(itemReader -> System.out.println(itemReader.getTitle()));
+
+                bookshelf.removeItem(item);
+                System.out.println(item.getTitle() + " has been remove");
+                System.out.println("The bookshelf now contains:");
+                bookshelf.getItems().forEach(itemReader -> System.out.println(itemReader.getTitle()));
+
                 System.out.println(bookshelf.getName() + "  has " + bookshelf.getNumberOfReads() + " reads");
             } catch (DestroyedBookshelfException | UnknownItemException | TooManyItemsException e) {
                 e.printStackTrace();

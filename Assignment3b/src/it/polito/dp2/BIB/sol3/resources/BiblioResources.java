@@ -70,6 +70,7 @@ public class BiblioResources {
         try {
             return service.getItems(type, keyword, beforeInclusive, afterInclusive, BigInteger.valueOf(page));
         } catch (Exception e) {
+            e.printStackTrace();
             throw new InternalServerErrorException(e);
         }
     }
@@ -347,6 +348,7 @@ public class BiblioResources {
             System.out.println(e.getMessage());
             throw e;
         } catch (Exception e) {
+            e.printStackTrace();
             throw new InternalServerErrorException();
         }
     }

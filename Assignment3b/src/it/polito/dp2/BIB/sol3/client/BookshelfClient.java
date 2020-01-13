@@ -9,6 +9,7 @@ import javax.ws.rs.client.WebTarget;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 public class BookshelfClient implements Bookshelf {
     private it.polito.dp2.BIB.sol3.client.Bookshelves.Bookshelf bookshelf;
@@ -45,12 +46,31 @@ public class BookshelfClient implements Bookshelf {
 
     @Override
     public void removeItem(it.polito.dp2.BIB.ass3.ItemReader item) throws DestroyedBookshelfException, UnknownItemException, ServiceException {
-
+        WebTarget target = client.target(bookshelf.getItemsUri());
+        Response response = target.path((String.valueOf(((ItemReaderImpl) item).getId())))
+                .request()
+                .delete();
+        if (response.getStatus() != Response.Status.NO_CONTENT.getStatusCode()) {
+            if (response.getStatus() == Response.Status.NOT_FOUND.getStatusCode())
+                throw new UnknownItemException();
+            if (response.getStatus() == Response.Status.GONE.getStatusCode())
+                throw new DestroyedBookshelfException();
+            System.out.println(response.getStatus());
+            throw new ServiceException();
+        }
     }
 
     @Override
     public Set<ItemReader> getItems() throws DestroyedBookshelfException, ServiceException {
-        return null;
+        WebTarget target = client.target(bookshelf.getItemsUri());
+        Response response = target.request(MediaType.APPLICATION_JSON_TYPE).get();
+        if (response.getStatus() != Response.Status.OK.getStatusCode()) {
+            if (response.getStatus() == Response.Status.NOT_FOUND.getStatusCode())
+                throw new DestroyedBookshelfException();
+            throw new ServiceException();
+        }
+        response.bufferEntity();
+        return response.readEntity(Items.class).getItem().stream().map(ItemReaderImpl::new).collect(Collectors.toSet());
     }
 
 
@@ -68,7 +88,6 @@ public class BookshelfClient implements Bookshelf {
                 throw new DestroyedBookshelfException();
         }
         response.bufferEntity();
-        System.out.println(response.toString());
         return response.readEntity(Integer.class);
     }
 }

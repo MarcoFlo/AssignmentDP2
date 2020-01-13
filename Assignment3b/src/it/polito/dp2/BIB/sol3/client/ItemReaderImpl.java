@@ -8,7 +8,7 @@ import java.util.Set;
 import it.polito.dp2.BIB.ass3.ItemReader;
 import it.polito.dp2.BIB.sol3.client.Items.Item;
 
-public class ItemReaderImpl implements ItemReader {
+public class ItemReaderImpl implements it.polito.dp2.BIB.ass3.ItemReader {
 
 	private Integer id;
 	private String title;
@@ -17,7 +17,7 @@ public class ItemReaderImpl implements ItemReader {
 	private Set<it.polito.dp2.BIB.ass3.ItemReader> citingItems;
 	
 	
-	public ItemReaderImpl(Item i) {
+	public ItemReaderImpl(it.polito.dp2.BIB.sol3.client.Items.Item i) {
 		this.title = i.getTitle();
 		if (i.getSubtitle() != null)
 			this.subtitle = i.getSubtitle();
