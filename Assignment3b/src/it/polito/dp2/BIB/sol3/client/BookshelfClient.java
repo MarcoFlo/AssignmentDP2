@@ -39,11 +39,12 @@ public class BookshelfClient implements Bookshelf {
         Response response = target.queryParam("id", (String.valueOf(((ItemReaderImpl) item).getId())))
                 .request(MediaType.APPLICATION_JSON_TYPE)
                 .post(Entity.json(null));
-        if (response.getStatus() != Response.Status.NO_CONTENT.getStatusCode()) {
+        if (response.getStatus() != Response.Status.OK.getStatusCode()) {
             if (response.getStatus() == Response.Status.BAD_REQUEST.getStatusCode())
                 throw new TooManyItemsException();
             if (response.getStatus() == Response.Status.NOT_FOUND.getStatusCode())
                 throw new UnknownItemException();
+            System.out.println(response.getStatus());
             throw new ServiceException();
         }
 

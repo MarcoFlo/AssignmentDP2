@@ -40,7 +40,6 @@ public class ClientFactoryImpl implements Client {
             BookshelfCreateResource bookshelfCreateResource = new BookshelfCreateResource();
             bookshelfCreateResource.setName(name);
             return new BookshelfClient(target.path("/bookshelves")
-                    .queryParam("name", name)
                     .request(MediaType.APPLICATION_JSON_TYPE)
                     .post(Entity.json(bookshelfCreateResource), it.polito.dp2.BIB.sol3.client.Bookshelves.Bookshelf.class), client);
 

@@ -1,37 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e7b00b48-08a1-41c8-97c7-e46eb03f81f6" name="Default Changelist" comment="">
+    <list default="true" id="e7b00b48-08a1-41c8-97c7-e46eb03f81f6" name="Default Changelist" comment="[3b-client] aggiunta service exception alla getCount">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gen-src/it/polito/dp2/BIB/sol3/client/ArticleType.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gen-src/it/polito/dp2/BIB/sol3/client/BookType.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gen-src/it/polito/dp2/BIB/sol3/client/Bookshelf.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gen-src/it/polito/dp2/BIB/sol3/client/BookshelfCreateResource.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gen-src/it/polito/dp2/BIB/sol3/client/Bookshelves.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gen-src/it/polito/dp2/BIB/sol3/client/Citation.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gen-src/it/polito/dp2/BIB/sol3/client/Item.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gen-src/it/polito/dp2/BIB/sol3/client/Items.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gen-src/it/polito/dp2/BIB/sol3/client/Journal.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gen-src/it/polito/dp2/BIB/sol3/client/Journals.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gen-src/it/polito/dp2/BIB/sol3/client/Localhost_BiblioSystemRest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gen-src/it/polito/dp2/BIB/sol3/client/ObjectFactory.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gen-src/it/polito/dp2/BIB/sol3/client/PagingType.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gen-src/it/polito/dp2/BIB/sol3/service/jaxb/ArticleType.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gen-src/it/polito/dp2/BIB/sol3/service/jaxb/Biblio.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gen-src/it/polito/dp2/BIB/sol3/service/jaxb/BookType.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gen-src/it/polito/dp2/BIB/sol3/service/jaxb/Bookshelf.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gen-src/it/polito/dp2/BIB/sol3/service/jaxb/BookshelfCreateResource.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gen-src/it/polito/dp2/BIB/sol3/service/jaxb/Bookshelves.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gen-src/it/polito/dp2/BIB/sol3/service/jaxb/Citation.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gen-src/it/polito/dp2/BIB/sol3/service/jaxb/Citations.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gen-src/it/polito/dp2/BIB/sol3/service/jaxb/Item.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gen-src/it/polito/dp2/BIB/sol3/service/jaxb/Items.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gen-src/it/polito/dp2/BIB/sol3/service/jaxb/Journal.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gen-src/it/polito/dp2/BIB/sol3/service/jaxb/Journals.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gen-src/it/polito/dp2/BIB/sol3/service/jaxb/Number.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gen-src/it/polito/dp2/BIB/sol3/service/jaxb/ObjectFactory.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gen-src/it/polito/dp2/BIB/sol3/service/jaxb/PagingType.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gen-src/it/polito/dp2/BIB/sol3/service/jaxb/Volume.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gen-src/it/polito/dp2/BIB/sol3/client/Localhost_BiblioSystemRest.java" beforeDir="false" afterPath="$PROJECT_DIR$/gen-src/it/polito/dp2/BIB/sol3/client/Localhost_BiblioSystemRest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gen-src/it/polito/dp2/BIB/sol3/service/jaxb/ArticleType.java" beforeDir="false" afterPath="$PROJECT_DIR$/gen-src/it/polito/dp2/BIB/sol3/service/jaxb/ArticleType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gen-src/it/polito/dp2/BIB/sol3/service/jaxb/Biblio.java" beforeDir="false" afterPath="$PROJECT_DIR$/gen-src/it/polito/dp2/BIB/sol3/service/jaxb/Biblio.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gen-src/it/polito/dp2/BIB/sol3/service/jaxb/BookType.java" beforeDir="false" afterPath="$PROJECT_DIR$/gen-src/it/polito/dp2/BIB/sol3/service/jaxb/BookType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gen-src/it/polito/dp2/BIB/sol3/service/jaxb/Bookshelf.java" beforeDir="false" afterPath="$PROJECT_DIR$/gen-src/it/polito/dp2/BIB/sol3/service/jaxb/Bookshelf.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gen-src/it/polito/dp2/BIB/sol3/service/jaxb/BookshelfCreateResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/gen-src/it/polito/dp2/BIB/sol3/service/jaxb/BookshelfCreateResource.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gen-src/it/polito/dp2/BIB/sol3/service/jaxb/Bookshelves.java" beforeDir="false" afterPath="$PROJECT_DIR$/gen-src/it/polito/dp2/BIB/sol3/service/jaxb/Bookshelves.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gen-src/it/polito/dp2/BIB/sol3/service/jaxb/Citation.java" beforeDir="false" afterPath="$PROJECT_DIR$/gen-src/it/polito/dp2/BIB/sol3/service/jaxb/Citation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gen-src/it/polito/dp2/BIB/sol3/service/jaxb/Citations.java" beforeDir="false" afterPath="$PROJECT_DIR$/gen-src/it/polito/dp2/BIB/sol3/service/jaxb/Citations.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gen-src/it/polito/dp2/BIB/sol3/service/jaxb/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/gen-src/it/polito/dp2/BIB/sol3/service/jaxb/Item.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gen-src/it/polito/dp2/BIB/sol3/service/jaxb/Items.java" beforeDir="false" afterPath="$PROJECT_DIR$/gen-src/it/polito/dp2/BIB/sol3/service/jaxb/Items.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gen-src/it/polito/dp2/BIB/sol3/service/jaxb/Journal.java" beforeDir="false" afterPath="$PROJECT_DIR$/gen-src/it/polito/dp2/BIB/sol3/service/jaxb/Journal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gen-src/it/polito/dp2/BIB/sol3/service/jaxb/Journals.java" beforeDir="false" afterPath="$PROJECT_DIR$/gen-src/it/polito/dp2/BIB/sol3/service/jaxb/Journals.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gen-src/it/polito/dp2/BIB/sol3/service/jaxb/Number.java" beforeDir="false" afterPath="$PROJECT_DIR$/gen-src/it/polito/dp2/BIB/sol3/service/jaxb/Number.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gen-src/it/polito/dp2/BIB/sol3/service/jaxb/ObjectFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/gen-src/it/polito/dp2/BIB/sol3/service/jaxb/ObjectFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gen-src/it/polito/dp2/BIB/sol3/service/jaxb/PagingType.java" beforeDir="false" afterPath="$PROJECT_DIR$/gen-src/it/polito/dp2/BIB/sol3/service/jaxb/PagingType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gen-src/it/polito/dp2/BIB/sol3/service/jaxb/Volume.java" beforeDir="false" afterPath="$PROJECT_DIR$/gen-src/it/polito/dp2/BIB/sol3/service/jaxb/Volume.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/it/polito/dp2/BIB/sol3/client/BookshelfClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/it/polito/dp2/BIB/sol3/client/BookshelfClient.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/it/polito/dp2/BIB/sol3/client/ClientFactoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/it/polito/dp2/BIB/sol3/client/ClientFactoryImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/it/polito/dp2/BIB/sol3/resources/BiblioResources.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/it/polito/dp2/BIB/sol3/resources/BiblioResources.java" afterDir="false" />
@@ -139,7 +127,7 @@
       <workItem from="1578922317495" duration="3628000" />
       <workItem from="1578928337719" duration="6171000" />
       <workItem from="1578935014331" duration="96000" />
-      <workItem from="1579628131765" duration="3041000" />
+      <workItem from="1579628131765" duration="3304000" />
     </task>
     <task id="LOCAL-00001" summary="ass 3b initial">
       <created>1577454917373</created>
@@ -274,7 +262,14 @@
       <option name="project" value="LOCAL" />
       <updated>1579629008632</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="[3b-server] restituiamo l'item che aggiungiamo alla bookshelf">
+      <created>1579631442247</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1579631442247</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -309,7 +304,8 @@
     <MESSAGE value="[3b-client] sync" />
     <MESSAGE value="[3b] rev4" />
     <MESSAGE value="[3b-client] aggiunta service exception alla getCount" />
-    <option name="LAST_COMMIT_MESSAGE" value="[3b-client] aggiunta service exception alla getCount" />
+    <MESSAGE value="[3b-server] restituiamo l'item che aggiungiamo alla bookshelf" />
+    <option name="LAST_COMMIT_MESSAGE" value="[3b-server] restituiamo l'item che aggiungiamo alla bookshelf" />
   </component>
   <component name="WindowStateProjectService">
     <state x="588" y="214" width="800" height="677" key="#Project_Structure" timestamp="1577452080469">
@@ -328,10 +324,10 @@
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state x="821" y="266" width="798" height="572" key="#com.intellij.openapi.roots.ui.configuration.libraryEditor.LibraryEditorDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1577964658191" />
-    <state x="316" y="147" width="1442" height="810" key="CommitChangelistDialog2" timestamp="1579631244227">
+    <state x="316" y="147" width="1442" height="810" key="CommitChangelistDialog2" timestamp="1579631441887">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state x="316" y="147" width="1442" height="810" key="CommitChangelistDialog2/67.27.1853.1053@67.27.1853.1053" timestamp="1579631244227" />
+    <state x="316" y="147" width="1442" height="810" key="CommitChangelistDialog2/67.27.1853.1053@67.27.1853.1053" timestamp="1579631441887" />
     <state x="291" y="116" width="1482" height="872" key="DiffContextDialog" timestamp="1578046500227">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
