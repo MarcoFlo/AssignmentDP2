@@ -430,18 +430,20 @@ public class BiblioResources {
 
     @POST
     @Path("/bookshelves/{bid}/items")
-    @ApiOperation(value = "addItemToBookshelf", notes = "add item to the specified bookshelf")
+    @ApiOperation(value = "addItemToBookshelf", notes = "add item to the specified bookshelf", response = Item.class)
     @ApiResponses(value = {
             @ApiResponse(code = 200, message = "OK"),
+            @ApiResponse(code = 400, message = "Bad request"),
             @ApiResponse(code = 404, message = "Not Found"),
     })
     @Consumes({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
     @Produces({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
-    public void addItemToBookshelf(
+    public Response addItemToBookshelf(
             @ApiParam("The id of the bookshelf") @PathParam("bid") BigInteger bid,
             @ApiParam("The id of the item to be added to the bookshelf") @QueryParam("id") BigInteger id) {
         try {
-            service.addBookshelfItem(bid, id);
+            Item item = service.addBookshelfItem(bid, id);
+            return Response.ok(new URI(item.getSelf())).entity(item).build();
         } catch (NotFoundException | BadRequestException e) {
             System.out.println(e.getMessage());
             e.printStackTrace();

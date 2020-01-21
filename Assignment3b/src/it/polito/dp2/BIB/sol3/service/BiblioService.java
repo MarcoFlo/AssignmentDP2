@@ -193,15 +193,16 @@ public class BiblioService {
             throw new NotFoundException("Bookshelf and item id must exist.");
     }
 
-    public void addBookshelfItem(BigInteger bid, BigInteger id) throws Exception {
+    public Item addBookshelfItem(BigInteger bid, BigInteger id) throws Exception {
         BookshelfEntity bookshelfEntity = getBookshelfEntity(bid);
-        getItem(id);
+        Item item = getItem(id);
         //todo check if it does what I expect
         synchronized (bookshelfEntity.getItem()) {
             CopyOnWriteArraySet<BigInteger> setItem = bookshelfEntity.getItem();
-            if (setItem.size() < maxBookshelfItems)
+            if (setItem.size() < maxBookshelfItems) {
                 setItem.add(id);
-            else
+                return item;
+            } else
                 throw new BadRequestException("A single bookshelf can contain max " + maxBookshelfItems + " items.");
         }
 
