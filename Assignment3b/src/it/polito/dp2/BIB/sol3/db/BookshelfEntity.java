@@ -3,7 +3,6 @@ package it.polito.dp2.BIB.sol3.db;
 import it.polito.dp2.BIB.sol3.service.jaxb.BookshelfCreateResource;
 
 import java.math.BigInteger;
-import java.util.Set;
 import java.util.concurrent.CopyOnWriteArraySet;
 import java.util.concurrent.atomic.AtomicLong;
 
@@ -12,7 +11,6 @@ public class BookshelfEntity {
     private BigInteger id;
     private String name;
     private AtomicLong readCount = new AtomicLong(1);
-    ;
 
     public BookshelfEntity(BigInteger id, BookshelfCreateResource bookshelfCreateResource) {
         this.id = id;

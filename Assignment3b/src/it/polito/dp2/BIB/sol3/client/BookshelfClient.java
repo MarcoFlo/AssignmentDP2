@@ -88,13 +88,10 @@ public class BookshelfClient implements Bookshelf {
 
         WebTarget target = client.target(bookshelf.getSelf());
         Response response = target.request().delete();
-        if (response.getStatus() != Response.Status.NO_CONTENT.getStatusCode()) {
-            System.out.println(response.getStatus());
+        if (response.getStatus() != Response.Status.NO_CONTENT.getStatusCode())
             throw new ServiceException();
-        } else {
-            System.out.println("Cancellata correttamente");
-            isDestroyed = true;
-        }
+
+        isDestroyed = true;
     }
 
     @Override

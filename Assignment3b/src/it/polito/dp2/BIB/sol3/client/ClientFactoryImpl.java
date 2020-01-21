@@ -1,9 +1,7 @@
 package it.polito.dp2.BIB.sol3.client;
 
-import java.net.MalformedURLException;
 import java.net.URI;
 import java.net.URISyntaxException;
-import java.net.URL;
 import java.util.*;
 import java.util.stream.Collectors;
 
@@ -12,7 +10,6 @@ import javax.ws.rs.WebApplicationException;
 import javax.ws.rs.client.ClientBuilder;
 import javax.ws.rs.client.Entity;
 import javax.ws.rs.client.WebTarget;
-import javax.ws.rs.core.GenericType;
 import javax.ws.rs.core.MediaType;
 
 import it.polito.dp2.BIB.ass3.*;
