@@ -155,7 +155,7 @@
                 <xsd:element name="readCountUri" type="xsd:anyURI" minOccurs="0"/>
                 <xsd:element name="itemsUri" type="xsd:anyURI" minOccurs="0"/>
                 <!--Each bookshelf can contain max 20 item-->
-                <xsd:element ref="item" minOccurs="0" maxOccurs="20"/>
+                <xsd:element name="item" type="xsd:integer" minOccurs="0" maxOccurs="20"/>
             </xsd:sequence>
             <xsd:attribute name="id" type="xsd:integer" use="required"/>
             <xsd:attribute name="name" type="xsd:string" use="required"/>

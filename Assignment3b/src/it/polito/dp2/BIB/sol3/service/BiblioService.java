@@ -178,7 +178,27 @@ public class BiblioService {
     public Items getBookshelfItems(BigInteger bid) {
         Items items = new Items();
         List<Item> list = items.getItem();
-        list.addAll(getBookshelf(bid).getItem());
+
+        BookshelfEntity bookshelfEntity = getBookshelfEntity(bid);
+        bookshelfEntity.incrementReadCount();
+        CopyOnWriteArraySet<BigInteger> idSet = bookshelfEntity.getItem();
+        Iterator<BigInteger> iterator = idSet.iterator();
+
+        while (iterator.hasNext()) {
+            try {
+                BigInteger id = iterator.next();
+                Item item = getItem(id);
+                if (item != null) {
+                    rutil.completeItem(item, id);
+                    list.add(item);
+                } else
+                    iterator.remove();
+            } catch (Exception e) {
+                //todo
+                throw new InternalServerErrorException("getItemfromid");
+            }
+        }
+
         items.setTotalPages(BigInteger.ONE);
         items.setPage(BigInteger.ONE);
         return items;
@@ -218,7 +238,7 @@ public class BiblioService {
 
     private Bookshelf getBookshelfFromBookshelfEntity(BookshelfEntity bookshelfEntity) {
         Bookshelf bookshelf = new Bookshelf();
-        bookshelf.getItem().addAll(getItemListFromIdSet(bookshelfEntity));
+        bookshelf.getItem().addAll(bookshelfEntity.getItem());
 
         bookshelf.setReadCount(BigInteger.valueOf(bookshelfEntity.getReadCount()));
         bookshelf.setId(bookshelfEntity.getId());
@@ -227,29 +247,6 @@ public class BiblioService {
         rutil.completeBookshelf(bookshelf);
 
         return bookshelf;
-    }
-
-    private List<Item> getItemListFromIdSet(BookshelfEntity bookshelfEntity) {
-        List<Item> result = new LinkedList<>();
-        CopyOnWriteArraySet<BigInteger> idSet = bookshelfEntity.getItem();
-        Iterator<BigInteger> iterator = idSet.iterator();
-
-        while (iterator.hasNext()) {
-            try {
-                BigInteger id = iterator.next();
-                Item item = getItem(id);
-                if (item != null) {
-                    rutil.completeItem(item, id);
-                    result.add(item);
-                } else
-                    iterator.remove();
-            } catch (Exception e) {
-                //todo
-                throw new InternalServerErrorException("getItemfromid");
-            }
-        }
-
-        return result;
     }
 
     private BookshelfEntity getBookshelfEntity(BigInteger bid) {
