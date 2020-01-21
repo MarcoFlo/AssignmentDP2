@@ -97,7 +97,7 @@ public class BookshelfClient implements Bookshelf {
     }
 
     @Override
-    public int getNumberOfReads() throws DestroyedBookshelfException {
+    public int getNumberOfReads() throws DestroyedBookshelfException, ServiceException {
         if (isDestroyed)
             throw new DestroyedBookshelfException();
 
@@ -105,7 +105,7 @@ public class BookshelfClient implements Bookshelf {
         Response response = target.request(MediaType.TEXT_PLAIN).get();
         if (response.getStatus() != Response.Status.OK.getStatusCode()) {
             if (response.getStatus() == Response.Status.NOT_FOUND.getStatusCode())
-                throw new DestroyedBookshelfException(); //todo
+                throw new ServiceException();
         }
         response.bufferEntity();
         return response.readEntity(Integer.class);
