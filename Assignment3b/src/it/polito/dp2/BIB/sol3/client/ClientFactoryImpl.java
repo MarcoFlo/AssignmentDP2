@@ -85,7 +85,7 @@ public class ClientFactoryImpl implements Client {
 
 
     private static void printItems() throws ServiceException {
-        Set<it.polito.dp2.BIB.ass3.ItemReader> set = mainClient.getItems("Transparent partial order", 0, 3000);
+        Set<it.polito.dp2.BIB.ass3.ItemReader> set = mainClient.getItems("", 0, 3000);
         System.out.println("Items returned: " + set.size());
 
         // For each Item print related data
