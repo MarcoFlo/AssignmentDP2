@@ -7,7 +7,6 @@ import java.util.concurrent.CopyOnWriteArraySet;
 import java.util.stream.Collectors;
 
 import javax.ws.rs.BadRequestException;
-import javax.ws.rs.InternalServerErrorException;
 import javax.ws.rs.NotFoundException;
 import javax.ws.rs.core.UriInfo;
 
@@ -180,12 +179,10 @@ public class BiblioService {
         for (BigInteger id : idSet) {
             Item item = getItem(id);
             if (item != null) {
-                System.out.println("not null");
                 rutil.completeItem(item, id);
                 list.add(item);
             } else {
                 idSet.remove(id);
-                System.out.println("null item");
             }
         }
 

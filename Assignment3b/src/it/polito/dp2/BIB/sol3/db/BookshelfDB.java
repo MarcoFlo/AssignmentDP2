@@ -14,6 +14,6 @@ public class BookshelfDB {
     }
 
     public static synchronized long getNext() {
-        return last.incrementAndGet();
+        return last.getAndIncrement();
     }
 }
