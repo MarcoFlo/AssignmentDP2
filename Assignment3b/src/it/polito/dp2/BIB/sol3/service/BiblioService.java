@@ -200,6 +200,7 @@ public class BiblioService {
         if (result != null) {
             if (bookshelfEntity.getItem().contains(id)) {
                 bookshelfEntity.incrementReadCount();
+                rutil.completeItem(result, id);
                 return result;
             } else
                 bookshelfEntity.getItem().remove(id);

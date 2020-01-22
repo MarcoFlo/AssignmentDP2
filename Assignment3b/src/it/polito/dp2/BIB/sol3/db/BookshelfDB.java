@@ -13,10 +13,6 @@ public class BookshelfDB {
         return map;
     }
 
-//    public static void setMap(Map<Long, Bookshelf> map) {
-//        BookshelfDB.map = map;
-//    }
-
     public static synchronized long getNext() {
         return last.incrementAndGet();
     }

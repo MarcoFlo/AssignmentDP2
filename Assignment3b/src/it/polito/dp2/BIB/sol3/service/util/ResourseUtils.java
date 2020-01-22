@@ -3,7 +3,6 @@ package it.polito.dp2.BIB.sol3.service.util;
 import java.math.BigInteger;
 import java.net.URI;
 
-import javax.ws.rs.BadRequestException;
 import javax.ws.rs.core.UriBuilder;
 
 import it.polito.dp2.BIB.sol3.service.jaxb.Bookshelf;
@@ -15,12 +14,10 @@ public class ResourseUtils {
     UriBuilder items;
     UriBuilder bookshelves;
 
-
     public ResourseUtils(UriBuilder base) {
         this.base = base;
         this.items = base.clone().path("biblio/items");
         this.bookshelves = base.clone().path("biblio/bookshelves");
-
     }
 
     public void completeItem(Item item, BigInteger id) {
@@ -49,15 +46,4 @@ public class ResourseUtils {
         bookshelf.setReadCountUri(selfBuilder.clone().path("counter").build().toString());
         bookshelf.setItemsUri(selfBuilder.clone().path("items").build().toString());
     }
-
-    public BigInteger getItemIdFromUri(String uri) {
-        try {
-            return BigInteger.valueOf(Long.parseLong(uri.replace(bookshelves.toString() + "/", "")));
-
-        } catch (NumberFormatException e) {
-            throw new BadRequestException("The item link should be a valid one");
-        }
-    }
-
-
 }

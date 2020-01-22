@@ -3,8 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="e7b00b48-08a1-41c8-97c7-e46eb03f81f6" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gen-src/it/polito/dp2/BIB/sol3/service/jaxb/ArticleType.java" beforeDir="false" afterPath="$PROJECT_DIR$/gen-src/it/polito/dp2/BIB/sol3/service/jaxb/ArticleType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/it/polito/dp2/BIB/sol3/client/BookshelfClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/it/polito/dp2/BIB/sol3/client/BookshelfClient.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/it/polito/dp2/BIB/sol3/client/ClientFactoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/it/polito/dp2/BIB/sol3/client/ClientFactoryImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/it/polito/dp2/BIB/sol3/client/ItemReaderImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/it/polito/dp2/BIB/sol3/client/ItemReaderImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/it/polito/dp2/BIB/sol3/db/BookshelfDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/it/polito/dp2/BIB/sol3/db/BookshelfDB.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/it/polito/dp2/BIB/sol3/service/BiblioService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/it/polito/dp2/BIB/sol3/service/BiblioService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/it/polito/dp2/BIB/sol3/service/util/ResourseUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/it/polito/dp2/BIB/sol3/service/util/ResourseUtils.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -172,7 +176,7 @@
       <workItem from="1579628131765" duration="5695000" />
       <workItem from="1579685728678" duration="8082000" />
       <workItem from="1579693860833" duration="115000" />
-      <workItem from="1579705769096" duration="4550000" />
+      <workItem from="1579705769096" duration="5538000" />
     </task>
     <task id="LOCAL-00001" summary="ass 3b initial">
       <created>1577454917373</created>
@@ -356,7 +360,14 @@
       <option name="project" value="LOCAL" />
       <updated>1579710338791</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="[3b-server&amp;client] rollback modifica alla printItems">
+      <created>1579710424204</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1579710424204</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -373,7 +384,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="ass 3b initial" />
     <MESSAGE value="[3b]prima di provare a usare gli id invece della risorsa intera" />
     <MESSAGE value="[3b] un botto di roba + bug" />
     <MESSAGE value="[3b] definizione di tutti gli endpoint, tutto da testare" />
@@ -398,7 +408,8 @@
     <MESSAGE value="[3b-server&amp;client] test funzionanti" />
     <MESSAGE value="[3b-server&amp;client] pulizia + custom uri&amp;port" />
     <MESSAGE value="[3b-server&amp;client] getItem/s, close, multiple bookshelf same name" />
-    <option name="LAST_COMMIT_MESSAGE" value="[3b-server&amp;client] getItem/s, close, multiple bookshelf same name" />
+    <MESSAGE value="[3b-server&amp;client] rollback modifica alla printItems" />
+    <option name="LAST_COMMIT_MESSAGE" value="[3b-server&amp;client] rollback modifica alla printItems" />
   </component>
   <component name="WindowStateProjectService">
     <state x="588" y="214" width="800" height="677" key="#Project_Structure" timestamp="1577452080469">
@@ -421,10 +432,10 @@
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state x="821" y="266" width="798" height="572" key="#com.intellij.openapi.roots.ui.configuration.libraryEditor.LibraryEditorDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1577964658191" />
-    <state x="316" y="147" width="1442" height="921" key="CommitChangelistDialog2" timestamp="1579710338163">
+    <state x="316" y="147" width="1442" height="921" key="CommitChangelistDialog2" timestamp="1579711428951">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state x="316" y="147" width="1442" height="921" key="CommitChangelistDialog2/67.27.1853.1053@67.27.1853.1053" timestamp="1579710338163" />
+    <state x="316" y="147" width="1442" height="921" key="CommitChangelistDialog2/67.27.1853.1053@67.27.1853.1053" timestamp="1579711428951" />
     <state x="291" y="116" width="1482" height="872" key="DiffContextDialog" timestamp="1578046500227">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>

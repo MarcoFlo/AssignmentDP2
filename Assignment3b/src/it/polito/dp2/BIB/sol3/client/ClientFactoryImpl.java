@@ -25,8 +25,6 @@ public class ClientFactoryImpl implements Client {
 
     public ClientFactoryImpl(URI uri) {
         this.uri = uri.toString();
-        System.out.println(uri.toString());
-
         client = ClientBuilder.newClient();
         target = client.target(uri).path("biblio");
     }
@@ -59,7 +57,7 @@ public class ClientFactoryImpl implements Client {
 
             return bookshelves.getBookshelf().stream().map(bookshelf -> new BookshelfClient(bookshelf, client)).collect(Collectors.toSet());
         } catch (WebApplicationException | ProcessingException e) {
-            throw new ServiceException("Get Items failed");
+            throw new ServiceException("Get bookshelfs failed");
         }
     }
 
@@ -164,6 +162,7 @@ public class ClientFactoryImpl implements Client {
 
 //                bookshelf.destroyBookshelf();
 //                bookshelf.destroyBookshelf();
+                mainClient.close();
             } catch (DestroyedBookshelfException e) {
                 e.printStackTrace();
             }

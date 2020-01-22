@@ -5,9 +5,6 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-import it.polito.dp2.BIB.ass3.ItemReader;
-import it.polito.dp2.BIB.sol3.client.Items.Item;
-
 public class ItemReaderImpl implements it.polito.dp2.BIB.ass3.ItemReader {
 
 	private Integer id;
@@ -15,8 +12,7 @@ public class ItemReaderImpl implements it.polito.dp2.BIB.ass3.ItemReader {
 	private String subtitle = null;
 	private List<String> authors;
 	private Set<it.polito.dp2.BIB.ass3.ItemReader> citingItems;
-	
-	
+
 	public ItemReaderImpl(it.polito.dp2.BIB.sol3.client.Items.Item i) {
 		this.title = i.getTitle();
 		if (i.getSubtitle() != null)

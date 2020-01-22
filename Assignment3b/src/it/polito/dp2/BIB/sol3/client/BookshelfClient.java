@@ -54,9 +54,7 @@ public class BookshelfClient implements Bookshelf {
             throw new DestroyedBookshelfException();
 
         WebTarget target = client.target(bookshelf.getItemsUri());
-        Response response = target.path((String.valueOf(((ItemReaderImpl) item).getId())))
-                .request()
-                .delete();
+        Response response = target.path((String.valueOf(((ItemReaderImpl) item).getId()))).request().delete();
         if (response.getStatus() != Response.Status.NO_CONTENT.getStatusCode()) {
             if (response.getStatus() == Response.Status.NOT_FOUND.getStatusCode())
                 throw new UnknownItemException();
