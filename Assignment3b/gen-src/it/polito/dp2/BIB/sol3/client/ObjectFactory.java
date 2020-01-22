@@ -34,14 +34,6 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link it.polito.dp2.BIB.sol3.client.Bookshelf }
-     * 
-     */
-    public it.polito.dp2.BIB.sol3.client.Bookshelf createBookshelf() {
-        return new it.polito.dp2.BIB.sol3.client.Bookshelf();
-    }
-
-    /**
      * Create an instance of {@link Bookshelves }
      * 
      */
@@ -66,19 +58,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link Bookshelves.Bookshelf }
+     * Create an instance of {@link it.polito.dp2.BIB.sol3.client.Bookshelf }
      * 
      */
-    public Bookshelves.Bookshelf createBookshelvesBookshelf() {
-        return new Bookshelves.Bookshelf();
-    }
-
-    /**
-     * Create an instance of {@link it.polito.dp2.BIB.sol3.client.Bookshelf.Item }
-     * 
-     */
-    public it.polito.dp2.BIB.sol3.client.Bookshelf.Item createBookshelfItem() {
-        return new it.polito.dp2.BIB.sol3.client.Bookshelf.Item();
+    public it.polito.dp2.BIB.sol3.client.Bookshelf createBookshelf() {
+        return new it.polito.dp2.BIB.sol3.client.Bookshelf();
     }
 
     /**
@@ -95,6 +79,14 @@ public class ObjectFactory {
      */
     public PagingType createPagingType() {
         return new PagingType();
+    }
+
+    /**
+     * Create an instance of {@link Bookshelves.Bookshelf }
+     * 
+     */
+    public Bookshelves.Bookshelf createBookshelvesBookshelf() {
+        return new Bookshelves.Bookshelf();
     }
 
     /**
@@ -151,14 +143,6 @@ public class ObjectFactory {
      */
     public Journals.Journal createJournalsJournal() {
         return new Journals.Journal();
-    }
-
-    /**
-     * Create an instance of {@link Bookshelves.Bookshelf.Item }
-     * 
-     */
-    public Bookshelves.Bookshelf.Item createBookshelvesBookshelfItem() {
-        return new Bookshelves.Bookshelf.Item();
     }
 
     /**

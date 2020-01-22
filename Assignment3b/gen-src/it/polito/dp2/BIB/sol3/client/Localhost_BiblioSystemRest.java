@@ -18,7 +18,7 @@ import com.sun.jersey.api.uri.UriTemplate;
 
 @Generated(value = {
     "wadl|http://localhost:8080/BiblioSystem/rest/application.wadl"
-}, comments = "wadl2java, http://wadl.java.net", date = "2020-01-21T19:03:53.962+01:00")
+}, comments = "wadl2java, http://wadl.java.net", date = "2020-01-22T11:43:41.771+01:00")
 public class Localhost_BiblioSystemRest {
 
     /**
@@ -1030,19 +1030,11 @@ public class Localhost_BiblioSystemRest {
                 }
             }
 
-            public ClientResponse post() {
+            public<T >T postAsXml(GenericType<T> returnType) {
                 UriBuilder localUriBuilder = _uriBuilder.clone();
                 WebResource resource = _client.resource(localUriBuilder.buildFromMap(_templateAndMatrixParameterValues));
                 com.sun.jersey.api.client.WebResource.Builder resourceBuilder = resource.getRequestBuilder();
-                ClientResponse response;
-                response = resourceBuilder.method("POST", ClientResponse.class);
-                return response;
-            }
-
-            public<T >T post(GenericType<T> returnType) {
-                UriBuilder localUriBuilder = _uriBuilder.clone();
-                WebResource resource = _client.resource(localUriBuilder.buildFromMap(_templateAndMatrixParameterValues));
-                com.sun.jersey.api.client.WebResource.Builder resourceBuilder = resource.getRequestBuilder();
+                resourceBuilder = resourceBuilder.accept("application/xml");
                 ClientResponse response;
                 response = resourceBuilder.method("POST", ClientResponse.class);
                 if (response.getStatus()>= 400) {
@@ -1051,10 +1043,11 @@ public class Localhost_BiblioSystemRest {
                 return response.getEntity(returnType);
             }
 
-            public<T >T post(Class<T> returnType) {
+            public<T >T postAsXml(Class<T> returnType) {
                 UriBuilder localUriBuilder = _uriBuilder.clone();
                 WebResource resource = _client.resource(localUriBuilder.buildFromMap(_templateAndMatrixParameterValues));
                 com.sun.jersey.api.client.WebResource.Builder resourceBuilder = resource.getRequestBuilder();
+                resourceBuilder = resourceBuilder.accept("application/xml");
                 ClientResponse response;
                 response = resourceBuilder.method("POST", ClientResponse.class);
                 if (!ClientResponse.class.isAssignableFrom(returnType)) {
@@ -1069,7 +1062,7 @@ public class Localhost_BiblioSystemRest {
                 }
             }
 
-            public ClientResponse post(String id) {
+            public<T >T postAsXml(String id, GenericType<T> returnType) {
                 UriBuilder localUriBuilder = _uriBuilder.clone();
                 if (id == null) {
                 }
@@ -1080,22 +1073,7 @@ public class Localhost_BiblioSystemRest {
                 }
                 WebResource resource = _client.resource(localUriBuilder.buildFromMap(_templateAndMatrixParameterValues));
                 com.sun.jersey.api.client.WebResource.Builder resourceBuilder = resource.getRequestBuilder();
-                ClientResponse response;
-                response = resourceBuilder.method("POST", ClientResponse.class);
-                return response;
-            }
-
-            public<T >T post(String id, GenericType<T> returnType) {
-                UriBuilder localUriBuilder = _uriBuilder.clone();
-                if (id == null) {
-                }
-                if (id!= null) {
-                    localUriBuilder = localUriBuilder.replaceQueryParam("id", id);
-                } else {
-                    localUriBuilder = localUriBuilder.replaceQueryParam("id", ((Object[]) null));
-                }
-                WebResource resource = _client.resource(localUriBuilder.buildFromMap(_templateAndMatrixParameterValues));
-                com.sun.jersey.api.client.WebResource.Builder resourceBuilder = resource.getRequestBuilder();
+                resourceBuilder = resourceBuilder.accept("application/xml");
                 ClientResponse response;
                 response = resourceBuilder.method("POST", ClientResponse.class);
                 if (response.getStatus()>= 400) {
@@ -1104,7 +1082,7 @@ public class Localhost_BiblioSystemRest {
                 return response.getEntity(returnType);
             }
 
-            public<T >T post(String id, Class<T> returnType) {
+            public<T >T postAsXml(String id, Class<T> returnType) {
                 UriBuilder localUriBuilder = _uriBuilder.clone();
                 if (id == null) {
                 }
@@ -1115,6 +1093,85 @@ public class Localhost_BiblioSystemRest {
                 }
                 WebResource resource = _client.resource(localUriBuilder.buildFromMap(_templateAndMatrixParameterValues));
                 com.sun.jersey.api.client.WebResource.Builder resourceBuilder = resource.getRequestBuilder();
+                resourceBuilder = resourceBuilder.accept("application/xml");
+                ClientResponse response;
+                response = resourceBuilder.method("POST", ClientResponse.class);
+                if (!ClientResponse.class.isAssignableFrom(returnType)) {
+                    if (response.getStatus()>= 400) {
+                        throw new Localhost_BiblioSystemRest.WebApplicationExceptionMessage(Response.status(response.getClientResponseStatus()).build());
+                    }
+                }
+                if (!ClientResponse.class.isAssignableFrom(returnType)) {
+                    return response.getEntity(returnType);
+                } else {
+                    return returnType.cast(response);
+                }
+            }
+
+            public<T >T postAsJson(GenericType<T> returnType) {
+                UriBuilder localUriBuilder = _uriBuilder.clone();
+                WebResource resource = _client.resource(localUriBuilder.buildFromMap(_templateAndMatrixParameterValues));
+                com.sun.jersey.api.client.WebResource.Builder resourceBuilder = resource.getRequestBuilder();
+                resourceBuilder = resourceBuilder.accept("application/json");
+                ClientResponse response;
+                response = resourceBuilder.method("POST", ClientResponse.class);
+                if (response.getStatus()>= 400) {
+                    throw new Localhost_BiblioSystemRest.WebApplicationExceptionMessage(Response.status(response.getClientResponseStatus()).build());
+                }
+                return response.getEntity(returnType);
+            }
+
+            public<T >T postAsJson(Class<T> returnType) {
+                UriBuilder localUriBuilder = _uriBuilder.clone();
+                WebResource resource = _client.resource(localUriBuilder.buildFromMap(_templateAndMatrixParameterValues));
+                com.sun.jersey.api.client.WebResource.Builder resourceBuilder = resource.getRequestBuilder();
+                resourceBuilder = resourceBuilder.accept("application/json");
+                ClientResponse response;
+                response = resourceBuilder.method("POST", ClientResponse.class);
+                if (!ClientResponse.class.isAssignableFrom(returnType)) {
+                    if (response.getStatus()>= 400) {
+                        throw new Localhost_BiblioSystemRest.WebApplicationExceptionMessage(Response.status(response.getClientResponseStatus()).build());
+                    }
+                }
+                if (!ClientResponse.class.isAssignableFrom(returnType)) {
+                    return response.getEntity(returnType);
+                } else {
+                    return returnType.cast(response);
+                }
+            }
+
+            public<T >T postAsJson(String id, GenericType<T> returnType) {
+                UriBuilder localUriBuilder = _uriBuilder.clone();
+                if (id == null) {
+                }
+                if (id!= null) {
+                    localUriBuilder = localUriBuilder.replaceQueryParam("id", id);
+                } else {
+                    localUriBuilder = localUriBuilder.replaceQueryParam("id", ((Object[]) null));
+                }
+                WebResource resource = _client.resource(localUriBuilder.buildFromMap(_templateAndMatrixParameterValues));
+                com.sun.jersey.api.client.WebResource.Builder resourceBuilder = resource.getRequestBuilder();
+                resourceBuilder = resourceBuilder.accept("application/json");
+                ClientResponse response;
+                response = resourceBuilder.method("POST", ClientResponse.class);
+                if (response.getStatus()>= 400) {
+                    throw new Localhost_BiblioSystemRest.WebApplicationExceptionMessage(Response.status(response.getClientResponseStatus()).build());
+                }
+                return response.getEntity(returnType);
+            }
+
+            public<T >T postAsJson(String id, Class<T> returnType) {
+                UriBuilder localUriBuilder = _uriBuilder.clone();
+                if (id == null) {
+                }
+                if (id!= null) {
+                    localUriBuilder = localUriBuilder.replaceQueryParam("id", id);
+                } else {
+                    localUriBuilder = localUriBuilder.replaceQueryParam("id", ((Object[]) null));
+                }
+                WebResource resource = _client.resource(localUriBuilder.buildFromMap(_templateAndMatrixParameterValues));
+                com.sun.jersey.api.client.WebResource.Builder resourceBuilder = resource.getRequestBuilder();
+                resourceBuilder = resourceBuilder.accept("application/json");
                 ClientResponse response;
                 response = resourceBuilder.method("POST", ClientResponse.class);
                 if (!ClientResponse.class.isAssignableFrom(returnType)) {
@@ -3488,12 +3545,12 @@ public class Localhost_BiblioSystemRest {
             _templateAndMatrixParameterValues = new HashMap<String, Object>();
         }
 
-        public Localhost_BiblioSystemRest.Root.SwaggerYaml swaggerYaml() {
-            return new Localhost_BiblioSystemRest.Root.SwaggerYaml(_client, _uriBuilder.buildFromMap(_templateAndMatrixParameterValues));
-        }
-
         public Localhost_BiblioSystemRest.Root.SwaggerJson swaggerJson() {
             return new Localhost_BiblioSystemRest.Root.SwaggerJson(_client, _uriBuilder.buildFromMap(_templateAndMatrixParameterValues));
+        }
+
+        public Localhost_BiblioSystemRest.Root.SwaggerYaml swaggerYaml() {
+            return new Localhost_BiblioSystemRest.Root.SwaggerYaml(_client, _uriBuilder.buildFromMap(_templateAndMatrixParameterValues));
         }
 
         public static class SwaggerJson {

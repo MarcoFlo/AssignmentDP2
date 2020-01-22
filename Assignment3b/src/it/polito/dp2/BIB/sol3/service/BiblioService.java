@@ -192,9 +192,10 @@ public class BiblioService {
                     rutil.completeItem(item, id);
                     list.add(item);
                 } else
-                    iterator.remove();
+                    idSet.remove(id);
             } catch (Exception e) {
                 //todo
+                e.printStackTrace();
                 throw new InternalServerErrorException("getItemfromid");
             }
         }

@@ -39,9 +39,7 @@ public class ClientFactoryImpl implements Client {
             return new BookshelfClient(target.path("/bookshelves")
                     .request(MediaType.APPLICATION_JSON_TYPE)
                     .post(Entity.json(bookshelfCreateResource), it.polito.dp2.BIB.sol3.client.Bookshelves.Bookshelf.class), client);
-
         } catch (WebApplicationException | ProcessingException e) {
-            e.printStackTrace();
             throw new ServiceException("Create Bookshelf failed");
         }
     }
@@ -146,7 +144,7 @@ public class ClientFactoryImpl implements Client {
             mainClient.createBookshelf(libName);
             Bookshelf bookshelf = mainClient.getBookshelfs(libName).stream().findFirst().get();
             try {
-                it.polito.dp2.BIB.ass3.ItemReader item =set.stream().findFirst().get();
+                it.polito.dp2.BIB.ass3.ItemReader item = set.stream().findFirst().get();
                 bookshelf.addItem(item);
                 System.out.println(item.getTitle() + " has been added");
                 System.out.println("The bookshelf now contains:");
