@@ -25,6 +25,7 @@ public class ClientFactoryImpl implements Client {
 
     public ClientFactoryImpl(URI uri) {
         this.uri = uri.toString();
+        System.out.println(uri.toString());
 
         client = ClientBuilder.newClient();
         target = client.target(uri).path("biblio");
@@ -40,6 +41,7 @@ public class ClientFactoryImpl implements Client {
                     .request(MediaType.APPLICATION_JSON_TYPE)
                     .post(Entity.json(bookshelfCreateResource), it.polito.dp2.BIB.sol3.client.Bookshelves.Bookshelf.class), client);
         } catch (WebApplicationException | ProcessingException e) {
+            e.printStackTrace();
             throw new ServiceException("Create Bookshelf failed");
         }
     }

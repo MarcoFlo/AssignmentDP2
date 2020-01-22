@@ -44,16 +44,15 @@ public class BookshelfClient implements Bookshelf {
                 throw new TooManyItemsException();
             if (response.getStatus() == Response.Status.NOT_FOUND.getStatusCode())
                 throw new UnknownItemException();
-            System.out.println(response.getStatus());
             throw new ServiceException();
         }
-
     }
 
     @Override
     public void removeItem(it.polito.dp2.BIB.ass3.ItemReader item) throws DestroyedBookshelfException, UnknownItemException, ServiceException {
         if (isDestroyed)
             throw new DestroyedBookshelfException();
+
         WebTarget target = client.target(bookshelf.getItemsUri());
         Response response = target.path((String.valueOf(((ItemReaderImpl) item).getId())))
                 .request()
@@ -61,7 +60,7 @@ public class BookshelfClient implements Bookshelf {
         if (response.getStatus() != Response.Status.NO_CONTENT.getStatusCode()) {
             if (response.getStatus() == Response.Status.NOT_FOUND.getStatusCode())
                 throw new UnknownItemException();
-            System.out.println(response.getStatus());
+
             throw new ServiceException();
         }
     }
@@ -102,8 +101,7 @@ public class BookshelfClient implements Bookshelf {
         WebTarget target = client.target(bookshelf.getReadCountUri());
         Response response = target.request(MediaType.TEXT_PLAIN).get();
         if (response.getStatus() != Response.Status.OK.getStatusCode()) {
-            if (response.getStatus() == Response.Status.NOT_FOUND.getStatusCode())
-                throw new ServiceException();
+            throw new ServiceException();
         }
         response.bufferEntity();
         return response.readEntity(Integer.class);
