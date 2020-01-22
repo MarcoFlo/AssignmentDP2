@@ -31,11 +31,9 @@ import javax.xml.bind.annotation.XmlType;
  *                   &lt;element name="self" type="{http://www.w3.org/2001/XMLSchema}anyURI" minOccurs="0"/>
  *                   &lt;element name="readCountUri" type="{http://www.w3.org/2001/XMLSchema}anyURI" minOccurs="0"/>
  *                   &lt;element name="itemsUri" type="{http://www.w3.org/2001/XMLSchema}anyURI" minOccurs="0"/>
- *                   &lt;element name="item" type="{http://www.w3.org/2001/XMLSchema}integer" maxOccurs="unbounded" minOccurs="0"/>
  *                 &lt;/sequence>
  *                 &lt;attribute name="id" use="required" type="{http://www.w3.org/2001/XMLSchema}integer" />
  *                 &lt;attribute name="name" use="required" type="{http://www.w3.org/2001/XMLSchema}string" />
- *                 &lt;attribute name="readCount" type="{http://www.w3.org/2001/XMLSchema}positiveInteger" />
  *               &lt;/restriction>
  *             &lt;/complexContent>
  *           &lt;/complexType>
@@ -103,11 +101,9 @@ public class Bookshelves
      *         &lt;element name="self" type="{http://www.w3.org/2001/XMLSchema}anyURI" minOccurs="0"/>
      *         &lt;element name="readCountUri" type="{http://www.w3.org/2001/XMLSchema}anyURI" minOccurs="0"/>
      *         &lt;element name="itemsUri" type="{http://www.w3.org/2001/XMLSchema}anyURI" minOccurs="0"/>
-     *         &lt;element name="item" type="{http://www.w3.org/2001/XMLSchema}integer" maxOccurs="unbounded" minOccurs="0"/>
      *       &lt;/sequence>
      *       &lt;attribute name="id" use="required" type="{http://www.w3.org/2001/XMLSchema}integer" />
      *       &lt;attribute name="name" use="required" type="{http://www.w3.org/2001/XMLSchema}string" />
-     *       &lt;attribute name="readCount" type="{http://www.w3.org/2001/XMLSchema}positiveInteger" />
      *     &lt;/restriction>
      *   &lt;/complexContent>
      * &lt;/complexType>
@@ -119,8 +115,7 @@ public class Bookshelves
     @XmlType(name = "", propOrder = {
         "self",
         "readCountUri",
-        "itemsUri",
-        "item"
+        "itemsUri"
     })
     public static class Bookshelf {
 
@@ -130,15 +125,10 @@ public class Bookshelves
         protected String readCountUri;
         @XmlSchemaType(name = "anyURI")
         protected String itemsUri;
-        @XmlElement(nillable = true)
-        protected List<BigInteger> item;
         @XmlAttribute(name = "id", required = true)
         protected BigInteger id;
         @XmlAttribute(name = "name", required = true)
         protected String name;
-        @XmlAttribute(name = "readCount")
-        @XmlSchemaType(name = "positiveInteger")
-        protected BigInteger readCount;
 
         /**
          * Gets the value of the self property.
@@ -213,35 +203,6 @@ public class Bookshelves
         }
 
         /**
-         * Gets the value of the item property.
-         * 
-         * <p>
-         * This accessor method returns a reference to the live list,
-         * not a snapshot. Therefore any modification you make to the
-         * returned list will be present inside the JAXB object.
-         * This is why there is not a <CODE>set</CODE> method for the item property.
-         * 
-         * <p>
-         * For example, to add a new item, do as follows:
-         * <pre>
-         *    getItem().add(newItem);
-         * </pre>
-         * 
-         * 
-         * <p>
-         * Objects of the following type(s) are allowed in the list
-         * {@link BigInteger }
-         * 
-         * 
-         */
-        public List<BigInteger> getItem() {
-            if (item == null) {
-                item = new ArrayList<BigInteger>();
-            }
-            return this.item;
-        }
-
-        /**
          * Gets the value of the id property.
          * 
          * @return
@@ -287,30 +248,6 @@ public class Bookshelves
          */
         public void setName(String value) {
             this.name = value;
-        }
-
-        /**
-         * Gets the value of the readCount property.
-         * 
-         * @return
-         *     possible object is
-         *     {@link BigInteger }
-         *     
-         */
-        public BigInteger getReadCount() {
-            return readCount;
-        }
-
-        /**
-         * Sets the value of the readCount property.
-         * 
-         * @param value
-         *     allowed object is
-         *     {@link BigInteger }
-         *     
-         */
-        public void setReadCount(BigInteger value) {
-            this.readCount = value;
         }
 
     }

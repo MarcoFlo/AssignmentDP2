@@ -18,7 +18,7 @@ import com.sun.jersey.api.uri.UriTemplate;
 
 @Generated(value = {
     "wadl|http://localhost:8080/BiblioSystem/rest/application.wadl"
-}, comments = "wadl2java, http://wadl.java.net", date = "2020-01-22T12:12:10.078+01:00")
+}, comments = "wadl2java, http://wadl.java.net", date = "2020-01-22T17:22:39.204+01:00")
 public class Localhost_BiblioSystemRest {
 
     /**
@@ -3545,12 +3545,12 @@ public class Localhost_BiblioSystemRest {
             _templateAndMatrixParameterValues = new HashMap<String, Object>();
         }
 
-        public Localhost_BiblioSystemRest.Root.SwaggerJson swaggerJson() {
-            return new Localhost_BiblioSystemRest.Root.SwaggerJson(_client, _uriBuilder.buildFromMap(_templateAndMatrixParameterValues));
-        }
-
         public Localhost_BiblioSystemRest.Root.SwaggerYaml swaggerYaml() {
             return new Localhost_BiblioSystemRest.Root.SwaggerYaml(_client, _uriBuilder.buildFromMap(_templateAndMatrixParameterValues));
+        }
+
+        public Localhost_BiblioSystemRest.Root.SwaggerJson swaggerJson() {
+            return new Localhost_BiblioSystemRest.Root.SwaggerJson(_client, _uriBuilder.buildFromMap(_templateAndMatrixParameterValues));
         }
 
         public static class SwaggerJson {

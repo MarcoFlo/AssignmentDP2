@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite errors="0" failures="0" hostname="marco" name="it.polito.dp2.BIB.ass3.tests.BibTests" skipped="0" tests="5" time="4.429" timestamp="2020-01-22T10:43:43">
+<testsuite errors="0" failures="0" hostname="marco" name="it.polito.dp2.BIB.ass3.tests.BibTests" skipped="0" tests="5" time="78.209" timestamp="2020-01-22T16:22:41">
   <properties>
-    <property name="env.SNAP_REVISION" value="193" />
+    <property name="env.SNAP_REVISION" value="198" />
     <property name="it.polito.dp2.BIB.ass3.ClientFactory" value="it.polito.dp2.BIB.sol3.client.ClientFactory" />
-    <property name="env.OLDPWD" value="/snap/intellij-idea-ultimate/193/bin" />
+    <property name="env.OLDPWD" value="/snap/intellij-idea-ultimate/198/bin" />
     <property name="file.encoding.pkg" value="sun.io" />
     <property name="java.home" value="/usr/lib/jvm/jdk1.8.0_231/jre" />
     <property name="custom.dir" value="/home/marco/Documents/AssignmentDP2/Assignment3b/custom" />
@@ -18,9 +18,9 @@
     <property name="ant.file.BIB-3" value="/home/marco/Documents/AssignmentDP2/Assignment3b/build.xml" />
     <property name="debuglevel" value="source,lines,vars" />
     <property name="src.dir" value="/home/marco/Documents/AssignmentDP2/Assignment3b/src" />
-    <property name="env.SNAP" value="/snap/intellij-idea-ultimate/193" />
+    <property name="env.SNAP" value="/snap/intellij-idea-ultimate/198" />
     <property name="env.LC_PAPER" value="it_IT.UTF-8" />
-    <property name="env.SESSION_MANAGER" value="local/marco:@/tmp/.ICE-unix/1841,unix/marco:/tmp/.ICE-unix/1841" />
+    <property name="env.SESSION_MANAGER" value="local/marco:@/tmp/.ICE-unix/1324,unix/marco:/tmp/.ICE-unix/1324" />
     <property name="sun.os.patch.level" value="unknown" />
     <property name="sol.build.file" value="sol_build.xml" />
     <property name="java.vendor.url" value="http://java.oracle.com/" />
@@ -54,7 +54,7 @@
     <property name="ant.project.default-target" value="package-service" />
     <property name="env.HOME" value="/home/marco" />
     <property name="catalina.home.bin.dir" value="/opt/apache-tomcat-8.5.20/bin" />
-    <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner it.polito.dp2.BIB.ass3.tests.BibTests methods=testCreateBookshelf,testBookShelfOperations,testRemoveItemFromBibliography,testNumberOfReads,testNonExistingBookshelf skipNonTests=false filtertrace=true haltOnError=false haltOnFailure=false formatter=org.apache.tools.ant.taskdefs.optional.junit.SummaryJUnitResultFormatter showoutput=false outputtoformatters=true logfailedtests=true threadid=0 logtestlistenerevents=false formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,/home/marco/Documents/AssignmentDP2/Assignment3b/testout.xml formatter=org.apache.tools.ant.taskdefs.optional.junit.PlainJUnitResultFormatter crashfile=/home/marco/Documents/AssignmentDP2/Assignment3b/junitvmwatcher7425755166338843940.properties propsfile=/home/marco/Documents/AssignmentDP2/Assignment3b/junit6637851192283045329.properties" />
+    <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner it.polito.dp2.BIB.ass3.tests.BibTests methods=testCreateBookshelf,testBookShelfOperations,testRemoveItemFromBibliography,testNumberOfReads,testNonExistingBookshelf skipNonTests=false filtertrace=true haltOnError=false haltOnFailure=false formatter=org.apache.tools.ant.taskdefs.optional.junit.SummaryJUnitResultFormatter showoutput=false outputtoformatters=true logfailedtests=true threadid=0 logtestlistenerevents=false formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,/home/marco/Documents/AssignmentDP2/Assignment3b/testout.xml formatter=org.apache.tools.ant.taskdefs.optional.junit.PlainJUnitResultFormatter crashfile=/home/marco/Documents/AssignmentDP2/Assignment3b/junitvmwatcher1832853174192228847.properties propsfile=/home/marco/Documents/AssignmentDP2/Assignment3b/junit4657122913113665425.properties" />
     <property name="tomcatUrl" value="http://localhost:8080/manager/text" />
     <property name="ant.file" value="/home/marco/Documents/AssignmentDP2/Assignment3b/build.xml" />
     <property name="env.LC_TELEPHONE" value="it_IT.UTF-8" />
@@ -66,7 +66,7 @@
     <property name="target" value="1.8" />
     <property name="server.location" value="/opt/apache-tomcat-8.5.20" />
     <property name="ant.file.type" value="file" />
-    <property name="env.SSH_AGENT_PID" value="1944" />
+    <property name="env.SSH_AGENT_PID" value="1409" />
     <property name="env.CLUTTER_IM_MODULE" value="xim" />
     <property name="java.vm.info" value="mixed mode" />
     <property name="source" value="1.8" />
@@ -106,10 +106,10 @@
     <property name="java.class.version" value="52.0" />
     <property name="ext.lib.dir" value="/opt/dp2/shared/lib" />
     <property name="sol.zip" value="ass3.zip" />
-    <property name="ant.home" value="/snap/intellij-idea-ultimate/193/lib/ant" />
+    <property name="ant.home" value="/snap/intellij-idea-ultimate/198/lib/ant" />
     <property name="env.GJS_DEBUG_OUTPUT" value="stderr" />
     <property name="env.SNAP_COMMON" value="/var/snap/intellij-idea-ultimate/common" />
-    <property name="env.SNAP_DATA" value="/var/snap/intellij-idea-ultimate/193" />
+    <property name="env.SNAP_DATA" value="/var/snap/intellij-idea-ultimate/198" />
     <property name="env.SNAP_CONTEXT" value="6ScLJVt0hSby02qQP8BF2fhMGW6XyKb1sDTKD9vCN1Kf" />
     <property name="env.SNAP_USER_COMMON" value="/home/marco/snap/intellij-idea-ultimate/common" />
     <property name="env.SNAP_INSTANCE_NAME" value="intellij-idea-ultimate" />
@@ -132,12 +132,12 @@
     <property name="sun.cpu.isalist" value="" />
     <property name="java.ext.dirs" value="/usr/lib/jvm/jdk1.8.0_231/jre/lib/ext:/usr/java/packages/lib/ext" />
     <property name="env.GJS_DEBUG_TOPICS" value="JS ERROR;JS LOG" />
-    <property name="os.version" value="5.0.0-37-generic" />
+    <property name="os.version" value="5.3.0-26-generic" />
     <property name="user.home" value="/home/marco" />
     <property name="env.XDG_CURRENT_DESKTOP" value="ubuntu:GNOME" />
     <property name="test.class" value="it.polito.dp2.BIB.ass3.tests.BibTests" />
     <property name="java.vm.vendor" value="Oracle Corporation" />
-    <property name="env.XDG_SESSION_ID" value="c4" />
+    <property name="env.XDG_SESSION_ID" value="c3" />
     <property name="user.dir" value="/home/marco/Documents/AssignmentDP2/Assignment3b" />
     <property name="env.PWD" value="/home/marco/Documents/AssignmentDP2/Assignment3b" />
     <property name="env.SNAP_REEXEC" value="" />
@@ -145,17 +145,17 @@
     <property name="sol3.dir" value="src/it/polito/dp2/BIB/sol3" />
     <property name="tomcatPort" value="8080" />
     <property name="java.vm.version" value="25.231-b11" />
-    <property name="java.class.path" value="/home/marco/Documents/AssignmentDP2/Assignment3b/build:/home/marco/Documents/AssignmentDP2/Assignment3b/lib/BIB.jar:/home/marco/Documents/AssignmentDP2/Assignment3b/lib/BIBRandom.jar:/home/marco/Documents/AssignmentDP2/Assignment3b/lib/ass1.jar:/home/marco/Documents/AssignmentDP2/Assignment3b/lib/ass2.jar:/home/marco/Documents/AssignmentDP2/Assignment3b/lib/ass3.jar:/home/marco/Documents/AssignmentDP2/Assignment3b/lib/db.jar:/home/marco/Documents/AssignmentDP2/Assignment3b/lib/hamcrest-core-1.3.jar:/home/marco/Documents/AssignmentDP2/Assignment3b/lib/junit-4.12.jar:/home/marco/Documents/AssignmentDP2/Assignment3b/lib/swagger-annotations-1.5.0.jar:/home/marco/Documents/AssignmentDP2/Assignment3b/lib/swagger-core-1.5.0.jar:/home/marco/Documents/AssignmentDP2/Assignment3b/lib/swagger-jaxrs-1.5.0.jar:/home/marco/Documents/AssignmentDP2/Assignment3b/lib/swagger-jersey2-jaxrs-1.5.0.jar:/home/marco/Documents/AssignmentDP2/Assignment3b/lib/swagger-models-1.5.0.jar:/opt/dp2/shared/lib/activation-1.1.jar:/opt/dp2/shared/lib/annotations-2.0.1.jar:/opt/dp2/shared/lib/aopalliance-repackaged-2.5.0-b32.jar:/opt/dp2/shared/lib/codemodel-2.6.jar:/opt/dp2/shared/lib/commons-lang-2.6.jar:/opt/dp2/shared/lib/commons-lang3-3.2.1.jar:/opt/dp2/shared/lib/comresrcgen-1.0.jar:/opt/dp2/shared/lib/gson-2.2.4.jar:/opt/dp2/shared/lib/guava-15.0.jar:/opt/dp2/shared/lib/hk2-api-2.5.0-b32.jar:/opt/dp2/shared/lib/hk2-locator-2.5.0-b32.jar:/opt/dp2/shared/lib/hk2-utils-2.5.0-b32.jar:/opt/dp2/shared/lib/istack-commons-runtime-2.21.jar:/opt/dp2/shared/lib/istack-commons-tools-2.21.jar:/opt/dp2/shared/lib/jackson-annotations-2.4.0.jar:/opt/dp2/shared/lib/jackson-core-2.4.2.jar:/opt/dp2/shared/lib/jackson-core-asl-1.9.11.jar:/opt/dp2/shared/lib/jackson-databind-2.4.2.jar:/opt/dp2/shared/lib/jackson-dataformat-xml-2.4.2.jar:/opt/dp2/shared/lib/jackson-dataformat-yaml-2.4.2.jar:/opt/dp2/shared/lib/jackson-datatype-joda-2.4.2.jar:/opt/dp2/shared/lib/jackson-jaxrs-base-2.4.2.jar:/opt/dp2/shared/lib/jackson-jaxrs-json-provider-2.4.2.jar:/opt/dp2/shared/lib/jackson-mapper-asl-1.9.11.jar:/opt/dp2/shared/lib/jackson-module-jaxb-annotations-2.4.2.jar:/opt/dp2/shared/lib/javassist-3.20.0-GA.jar:/opt/dp2/shared/lib/javax.annotation-api-1.2.jar:/opt/dp2/shared/lib/javax.inject-2.5.0-b32.jar:/opt/dp2/shared/lib/javax.json-1.0.4.jar:/opt/dp2/shared/lib/javax.ws.rs-api-2.0.1.jar:/opt/dp2/shared/lib/jaxb-api-2.2.12-b140109.1041.jar:/opt/dp2/shared/lib/jaxb-core-2.2.11.jar:/opt/dp2/shared/lib/jaxb-runtime-2.2.11.jar:/opt/dp2/shared/lib/jaxb-xjc-2.2.11.jar:/opt/dp2/shared/lib/jersey-client-1.19.1.jar:/opt/dp2/shared/lib/jersey-client-2.25.1.jar:/opt/dp2/shared/lib/jersey-common-2.25.1.jar:/opt/dp2/shared/lib/jersey-container-servlet-2.25.1.jar:/opt/dp2/shared/lib/jersey-container-servlet-core-2.25.1.jar:/opt/dp2/shared/lib/jersey-core-1.19.1.jar:/opt/dp2/shared/lib/jersey-entity-filtering-2.25.1.jar:/opt/dp2/shared/lib/jersey-guava-2.25.1.jar:/opt/dp2/shared/lib/jersey-media-jaxb-2.25.1.jar:/opt/dp2/shared/lib/jersey-media-moxy-2.25.1.jar:/opt/dp2/shared/lib/jersey-media-multipart-2.25.1.jar:/opt/dp2/shared/lib/jersey-server-2.25.1.jar:/opt/dp2/shared/lib/joda-time-2.2.jar:/opt/dp2/shared/lib/json-simple-1.1.jar:/opt/dp2/shared/lib/jsonschema2pojo-core-0.4.0.jar:/opt/dp2/shared/lib/localizer-1.0.jar:/opt/dp2/shared/lib/mimepull-1.9.6.jar:/opt/dp2/shared/lib/org.eclipse.persistence.asm-2.6.0.jar:/opt/dp2/shared/lib/org.eclipse.persistence.core-2.6.0.jar:/opt/dp2/shared/lib/org.eclipse.persistence.moxy-2.6.0.jar:/opt/dp2/shared/lib/osgi-resource-locator-1.0.1.jar:/opt/dp2/shared/lib/reflections-0.9.9.jar:/opt/dp2/shared/lib/rngom-2.2.11.jar:/opt/dp2/shared/lib/slf4j-api-1.6.3.jar:/opt/dp2/shared/lib/stax2-api-3.1.4.jar:/opt/dp2/shared/lib/txw2-2.2.11.jar:/opt/dp2/shared/lib/validation-api-1.1.0.Final.jar:/opt/dp2/shared/lib/wadl-ant-1.1.6.jar:/opt/dp2/shared/lib/wadl-core-1.1.6.jar:/opt/dp2/shared/lib/wadl-xslt-1.1.6.jar:/opt/dp2/shared/lib/xsom-20140925.jar:/snap/intellij-idea-ultimate/193/lib/ant/lib/ant-launcher.jar:/snap/intellij-idea-ultimate/193/lib/ant/lib/ant.jar:/snap/intellij-idea-ultimate/193/lib/ant/lib/ant-junit.jar:/snap/intellij-idea-ultimate/193/lib/ant/lib/ant-junit4.jar" />
+    <property name="java.class.path" value="/home/marco/Documents/AssignmentDP2/Assignment3b/build:/home/marco/Documents/AssignmentDP2/Assignment3b/lib/BIB.jar:/home/marco/Documents/AssignmentDP2/Assignment3b/lib/BIBRandom.jar:/home/marco/Documents/AssignmentDP2/Assignment3b/lib/ass1.jar:/home/marco/Documents/AssignmentDP2/Assignment3b/lib/ass2.jar:/home/marco/Documents/AssignmentDP2/Assignment3b/lib/ass3.jar:/home/marco/Documents/AssignmentDP2/Assignment3b/lib/db.jar:/home/marco/Documents/AssignmentDP2/Assignment3b/lib/hamcrest-core-1.3.jar:/home/marco/Documents/AssignmentDP2/Assignment3b/lib/junit-4.12.jar:/home/marco/Documents/AssignmentDP2/Assignment3b/lib/swagger-annotations-1.5.0.jar:/home/marco/Documents/AssignmentDP2/Assignment3b/lib/swagger-core-1.5.0.jar:/home/marco/Documents/AssignmentDP2/Assignment3b/lib/swagger-jaxrs-1.5.0.jar:/home/marco/Documents/AssignmentDP2/Assignment3b/lib/swagger-jersey2-jaxrs-1.5.0.jar:/home/marco/Documents/AssignmentDP2/Assignment3b/lib/swagger-models-1.5.0.jar:/opt/dp2/shared/lib/activation-1.1.jar:/opt/dp2/shared/lib/annotations-2.0.1.jar:/opt/dp2/shared/lib/aopalliance-repackaged-2.5.0-b32.jar:/opt/dp2/shared/lib/codemodel-2.6.jar:/opt/dp2/shared/lib/commons-lang-2.6.jar:/opt/dp2/shared/lib/commons-lang3-3.2.1.jar:/opt/dp2/shared/lib/comresrcgen-1.0.jar:/opt/dp2/shared/lib/gson-2.2.4.jar:/opt/dp2/shared/lib/guava-15.0.jar:/opt/dp2/shared/lib/hk2-api-2.5.0-b32.jar:/opt/dp2/shared/lib/hk2-locator-2.5.0-b32.jar:/opt/dp2/shared/lib/hk2-utils-2.5.0-b32.jar:/opt/dp2/shared/lib/istack-commons-runtime-2.21.jar:/opt/dp2/shared/lib/istack-commons-tools-2.21.jar:/opt/dp2/shared/lib/jackson-annotations-2.4.0.jar:/opt/dp2/shared/lib/jackson-core-2.4.2.jar:/opt/dp2/shared/lib/jackson-core-asl-1.9.11.jar:/opt/dp2/shared/lib/jackson-databind-2.4.2.jar:/opt/dp2/shared/lib/jackson-dataformat-xml-2.4.2.jar:/opt/dp2/shared/lib/jackson-dataformat-yaml-2.4.2.jar:/opt/dp2/shared/lib/jackson-datatype-joda-2.4.2.jar:/opt/dp2/shared/lib/jackson-jaxrs-base-2.4.2.jar:/opt/dp2/shared/lib/jackson-jaxrs-json-provider-2.4.2.jar:/opt/dp2/shared/lib/jackson-mapper-asl-1.9.11.jar:/opt/dp2/shared/lib/jackson-module-jaxb-annotations-2.4.2.jar:/opt/dp2/shared/lib/javassist-3.20.0-GA.jar:/opt/dp2/shared/lib/javax.annotation-api-1.2.jar:/opt/dp2/shared/lib/javax.inject-2.5.0-b32.jar:/opt/dp2/shared/lib/javax.json-1.0.4.jar:/opt/dp2/shared/lib/javax.ws.rs-api-2.0.1.jar:/opt/dp2/shared/lib/jaxb-api-2.2.12-b140109.1041.jar:/opt/dp2/shared/lib/jaxb-core-2.2.11.jar:/opt/dp2/shared/lib/jaxb-runtime-2.2.11.jar:/opt/dp2/shared/lib/jaxb-xjc-2.2.11.jar:/opt/dp2/shared/lib/jersey-client-1.19.1.jar:/opt/dp2/shared/lib/jersey-client-2.25.1.jar:/opt/dp2/shared/lib/jersey-common-2.25.1.jar:/opt/dp2/shared/lib/jersey-container-servlet-2.25.1.jar:/opt/dp2/shared/lib/jersey-container-servlet-core-2.25.1.jar:/opt/dp2/shared/lib/jersey-core-1.19.1.jar:/opt/dp2/shared/lib/jersey-entity-filtering-2.25.1.jar:/opt/dp2/shared/lib/jersey-guava-2.25.1.jar:/opt/dp2/shared/lib/jersey-media-jaxb-2.25.1.jar:/opt/dp2/shared/lib/jersey-media-moxy-2.25.1.jar:/opt/dp2/shared/lib/jersey-media-multipart-2.25.1.jar:/opt/dp2/shared/lib/jersey-server-2.25.1.jar:/opt/dp2/shared/lib/joda-time-2.2.jar:/opt/dp2/shared/lib/json-simple-1.1.jar:/opt/dp2/shared/lib/jsonschema2pojo-core-0.4.0.jar:/opt/dp2/shared/lib/localizer-1.0.jar:/opt/dp2/shared/lib/mimepull-1.9.6.jar:/opt/dp2/shared/lib/org.eclipse.persistence.asm-2.6.0.jar:/opt/dp2/shared/lib/org.eclipse.persistence.core-2.6.0.jar:/opt/dp2/shared/lib/org.eclipse.persistence.moxy-2.6.0.jar:/opt/dp2/shared/lib/osgi-resource-locator-1.0.1.jar:/opt/dp2/shared/lib/reflections-0.9.9.jar:/opt/dp2/shared/lib/rngom-2.2.11.jar:/opt/dp2/shared/lib/slf4j-api-1.6.3.jar:/opt/dp2/shared/lib/stax2-api-3.1.4.jar:/opt/dp2/shared/lib/txw2-2.2.11.jar:/opt/dp2/shared/lib/validation-api-1.1.0.Final.jar:/opt/dp2/shared/lib/wadl-ant-1.1.6.jar:/opt/dp2/shared/lib/wadl-core-1.1.6.jar:/opt/dp2/shared/lib/wadl-xslt-1.1.6.jar:/opt/dp2/shared/lib/xsom-20140925.jar:/snap/intellij-idea-ultimate/198/lib/ant/lib/ant-launcher.jar:/snap/intellij-idea-ultimate/198/lib/ant/lib/ant.jar:/snap/intellij-idea-ultimate/198/lib/ant/lib/ant-junit.jar:/snap/intellij-idea-ultimate/198/lib/ant/lib/ant-junit4.jar" />
     <property name="env.SNAP_LIBRARY_PATH" value="/var/lib/snapd/lib/gl:/var/lib/snapd/lib/gl32:/var/lib/snapd/void" />
     <property name="env.LC_ADDRESS" value="it_IT.UTF-8" />
-    <property name="ant.library.dir" value="/snap/intellij-idea-ultimate/193/lib/ant/lib" />
+    <property name="ant.library.dir" value="/snap/intellij-idea-ultimate/198/lib/ant/lib" />
     <property name="os.arch" value="amd64" />
-    <property name="env.SNAP_USER_DATA" value="/home/marco/snap/intellij-idea-ultimate/193" />
+    <property name="env.SNAP_USER_DATA" value="/home/marco/snap/intellij-idea-ultimate/198" />
     <property name="env.LC_NUMERIC" value="it_IT.UTF-8" />
     <property name="tomcatPassword" value="root" />
     <property name="sun.java.launcher" value="SUN_STANDARD" />
-    <property name="env.GIO_LAUNCHED_DESKTOP_FILE_PID" value="2506" />
-    <property name="ant.core.lib" value="/snap/intellij-idea-ultimate/193/lib/ant/lib/ant.jar" />
+    <property name="env.GIO_LAUNCHED_DESKTOP_FILE_PID" value="1757" />
+    <property name="ant.core.lib" value="/snap/intellij-idea-ultimate/198/lib/ant/lib/ant.jar" />
     <property name="java.vm.specification.vendor" value="Oracle Corporation" />
     <property name="URL" value="http://localhost:8080/BiblioSystem/rest" />
     <property name="file.separator" value="/" />
@@ -169,7 +169,7 @@
     <property name="env.SHELL" value="/bin/bash" />
     <property name="xsd.dir" value="/home/marco/Documents/AssignmentDP2/Assignment3b/xsd" />
     <property name="env.XRDP_SOCKET_PATH" value="/var/run/xrdp/sockdir" />
-    <property name="env.SNAP_VERSION" value="2019.3.1" />
+    <property name="env.SNAP_VERSION" value="2019.3.2" />
     <property name="service.name" value="BiblioSystem" />
     <property name="java.vendor" value="Oracle Corporation" />
     <property name="env.GPG_AGENT_INFO" value="/run/user/1000/gnupg/S.gpg-agent:0:1" />
@@ -179,13 +179,15 @@
     <property name="sun.arch.data.model" value="64" />
     <property name="env.GNOME_DESKTOP_SESSION_ID" value="this-is-deprecated" />
   </properties>
-  <testcase classname="it.polito.dp2.BIB.ass3.tests.BibTests" name="testRemoveItemFromBibliography" time="0.615" />
-  <testcase classname="it.polito.dp2.BIB.ass3.tests.BibTests" name="testBookShelfOperations" time="0.556" />
-  <testcase classname="it.polito.dp2.BIB.ass3.tests.BibTests" name="testNonExistingBookshelf" time="0.051" />
-  <testcase classname="it.polito.dp2.BIB.ass3.tests.BibTests" name="testCreateBookshelf" time="0.051" />
-  <testcase classname="it.polito.dp2.BIB.ass3.tests.BibTests" name="testNumberOfReads" time="0.314" />
+  <testcase classname="it.polito.dp2.BIB.ass3.tests.BibTests" name="testRemoveItemFromBibliography" time="0.968" />
+  <testcase classname="it.polito.dp2.BIB.ass3.tests.BibTests" name="testBookShelfOperations" time="0.981" />
+  <testcase classname="it.polito.dp2.BIB.ass3.tests.BibTests" name="testNonExistingBookshelf" time="0.122" />
+  <testcase classname="it.polito.dp2.BIB.ass3.tests.BibTests" name="testCreateBookshelf" time="0.136" />
+  <testcase classname="it.polito.dp2.BIB.ass3.tests.BibTests" name="testNumberOfReads" time="0.582" />
   <system-out><![CDATA[Reference BibReader: Using file: xsd/biblio.xml
-property: http://localhost:8080/BiblioSystem/rest
+uri property: http://localhost:8080/BiblioSystem/rest
+port property: 8080
+http://localhost:8080/BiblioSystem/rest
 Reference BibReader: Using file: xsd/biblio.xml
 DEBUG: starting testRemoveItemFromBibliography
 Response code for creating an item: 201

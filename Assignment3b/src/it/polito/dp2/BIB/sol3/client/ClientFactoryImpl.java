@@ -31,6 +31,9 @@ public class ClientFactoryImpl implements Client {
         target = client.target(uri).path("biblio");
     }
 
+    public void close() {
+        client.close();
+    }
 
     @Override
     public Bookshelf createBookshelf(String name) throws ServiceException {
@@ -82,7 +85,7 @@ public class ClientFactoryImpl implements Client {
 
 
     private static void printItems() throws ServiceException {
-        Set<it.polito.dp2.BIB.ass3.ItemReader> set = mainClient.getItems("", 0, 3000);
+        Set<it.polito.dp2.BIB.ass3.ItemReader> set = mainClient.getItems("Transparent partial order", 0, 3000);
         System.out.println("Items returned: " + set.size());
 
         // For each Item print related data
@@ -140,28 +143,28 @@ public class ClientFactoryImpl implements Client {
         try {
             mainClient = new ClientFactoryImpl(new URI(uri));
             printItems();
-            Set<it.polito.dp2.BIB.ass3.ItemReader> set = mainClient.getItems("", 0, 3000);
+            Set<it.polito.dp2.BIB.ass3.ItemReader> set = mainClient.getItems("Transparent partial order", 0, 3000);
 
             String libName = (new Date()).toString();
-            mainClient.createBookshelf(libName);
-            Bookshelf bookshelf = mainClient.getBookshelfs(libName).stream().findFirst().get();
+//            mainClient.createBookshelf("libName");
+            Bookshelf bookshelf = mainClient.getBookshelfs("libName").stream().findFirst().get();
             try {
-                it.polito.dp2.BIB.ass3.ItemReader item = set.stream().findFirst().get();
-                bookshelf.addItem(item);
-                System.out.println(item.getTitle() + " has been added");
+//                it.polito.dp2.BIB.ass3.ItemReader item = set.stream().findFirst().get();
+//                bookshelf.addItem(item);
+//                System.out.println(item.getTitle() + " has been added");
                 System.out.println("The bookshelf now contains:");
                 bookshelf.getItems().forEach(itemReader -> System.out.println(itemReader.getTitle()));
 
-                bookshelf.removeItem(item);
-                System.out.println(item.getTitle() + " has been remove");
+//                bookshelf.removeItem(item);
+//                System.out.println(item.getTitle() + " has been remove");
                 System.out.println("The bookshelf now contains:");
                 bookshelf.getItems().forEach(itemReader -> System.out.println(itemReader.getTitle()));
 
                 System.out.println(bookshelf.getName() + "  has " + bookshelf.getNumberOfReads() + " reads");
 
-                bookshelf.destroyBookshelf();
-                bookshelf.destroyBookshelf();
-            } catch (DestroyedBookshelfException | UnknownItemException | TooManyItemsException e) {
+//                bookshelf.destroyBookshelf();
+//                bookshelf.destroyBookshelf();
+            } catch (DestroyedBookshelfException e) {
                 e.printStackTrace();
             }
         } catch (URISyntaxException | ServiceException e) {
