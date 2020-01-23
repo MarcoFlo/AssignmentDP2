@@ -300,9 +300,8 @@ public class BiblioResources {
 
     @GET
     @Path("/bookshelves")
-    @ApiOperation(value = "getBookshelves", notes = "search bookshelves")
-    @ApiResponses(value = {@ApiResponse(code = 200, message = "OK", response = Bookshelf.class),
-            @ApiResponse(code = 400, message = "Bad Request")})
+    @ApiOperation(value = "getBookshelves", notes = "search bookshelves matching the given name", response = Bookshelves.class)
+    @ApiResponses(value = {@ApiResponse(code = 200, message = "OK")})
     @Produces({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
     public Bookshelves getBookshelves(@ApiParam("The name to be used for the search") @QueryParam("name") @DefaultValue("") String name) {
         try {
@@ -314,11 +313,10 @@ public class BiblioResources {
 
     @POST
     @Path("/bookshelves")
-    @ApiOperation(value = "createBookshelves", notes = "create a new bookshelf", response = Bookshelf.class)
+    @ApiOperation(value = "createBookshelf", notes = "create a new bookshelf")
     @ApiResponses(value = {
             @ApiResponse(code = 201, message = "OK", response = Bookshelf.class),
-            @ApiResponse(code = 400, message = "Bad Request"),
-    })
+            @ApiResponse(code = 400, message = "Bad Request")})
     @Consumes({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
     @Produces({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
     public Response createBookshelf(BookshelfCreateResource bookshelfCreateResource) {
@@ -340,8 +338,7 @@ public class BiblioResources {
     @ApiOperation(value = "getBookshelf", notes = "read a single bookshelf")
     @ApiResponses(value = {
             @ApiResponse(code = 200, message = "OK", response = Bookshelf.class),
-            @ApiResponse(code = 404, message = "Not Found"),
-    })
+            @ApiResponse(code = 404, message = "Not Found")})
     @Produces({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
     public Bookshelf getBookshelf(
             @ApiParam("The id of the bookshelf") @PathParam("bid") BigInteger bid) {
@@ -359,8 +356,7 @@ public class BiblioResources {
     @ApiOperation(value = "deleteBookshelf", notes = "delete a single bookshelf")
     @ApiResponses(value = {
             @ApiResponse(code = 204, message = "No content"),
-            @ApiResponse(code = 404, message = "Not Found"),
-    })
+            @ApiResponse(code = 404, message = "Not Found")})
     public void deleteBookshelf(
             @ApiParam("The id of the bookshelf") @PathParam("bid") BigInteger bid) {
         try {
@@ -374,11 +370,10 @@ public class BiblioResources {
 
     @GET
     @Path("/bookshelves/{bid}/counter")
-    @ApiOperation(value = "getBookshelfCounter", notes = "read the read counter of a single bookshelf")
+    @ApiOperation(value = "getBookshelfCounter", notes = "read the counter of a bookshelf")
     @ApiResponses(value = {
             @ApiResponse(code = 200, message = "OK", response = long.class),
-            @ApiResponse(code = 404, message = "Not Found"),
-    })
+            @ApiResponse(code = 404, message = "Not Found")})
     @Produces({MediaType.TEXT_PLAIN})
     public long getBookshelfCounter(
             @ApiParam("The id of the bookshelf") @PathParam("bid") BigInteger bid) {
@@ -391,14 +386,12 @@ public class BiblioResources {
         }
     }
 
-
     @GET
     @Path("/bookshelves/{bid}/items")
     @ApiOperation(value = "getBookshelfItems", notes = "read items of the specified bookshelf")
     @ApiResponses(value = {
             @ApiResponse(code = 200, message = "OK", response = Items.class),
-            @ApiResponse(code = 404, message = "Not Found"),
-    })
+            @ApiResponse(code = 404, message = "Not Found")})
     @Produces({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
     public Items getBookshelfItems(@ApiParam("The id of the bookshelf") @PathParam("bid") BigInteger bid) {
         try {
@@ -413,12 +406,11 @@ public class BiblioResources {
 
     @POST
     @Path("/bookshelves/{bid}/items")
-    @ApiOperation(value = "addItemToBookshelf", notes = "add item to the specified bookshelf", response = Item.class)
+    @ApiOperation(value = "addItemToBookshelf", notes = "add item to the specified bookshelf")
     @ApiResponses(value = {
-            @ApiResponse(code = 200, message = "OK"),
+            @ApiResponse(code = 200, message = "OK", response = Item.class),
             @ApiResponse(code = 400, message = "Bad request"),
-            @ApiResponse(code = 404, message = "Not Found"),
-    })
+            @ApiResponse(code = 404, message = "Not Found")})
     @Consumes({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
     @Produces({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
     public Response addItemToBookshelf(
@@ -441,8 +433,7 @@ public class BiblioResources {
     @ApiOperation(value = "getBookshelfItem", notes = "read the specified item belonging to the specified bookshelf")
     @ApiResponses(value = {
             @ApiResponse(code = 200, message = "OK", response = Item.class),
-            @ApiResponse(code = 404, message = "Not Found"),
-    })
+            @ApiResponse(code = 404, message = "Not Found")})
     @Produces({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
     public Item getBookshelfItem(@ApiParam("The id of the bookshelf") @PathParam("bid") BigInteger bid,
                                  @ApiParam("The id of the item to be added to the bookshelf") @PathParam("id") BigInteger id) {
@@ -460,8 +451,7 @@ public class BiblioResources {
     @ApiOperation(value = "deleteBookshelfItem", notes = "delete a single item from the specified bookshelf")
     @ApiResponses(value = {
             @ApiResponse(code = 204, message = "No content"),
-            @ApiResponse(code = 404, message = "Not Found"),
-    })
+            @ApiResponse(code = 404, message = "Not Found")})
     public void deletBookshelfItem(@ApiParam("The id of the bookshelf") @PathParam("bid") BigInteger bid,
                                    @ApiParam("The id of the item to be added to the bookshelf") @PathParam("id") BigInteger id) {
         try {
