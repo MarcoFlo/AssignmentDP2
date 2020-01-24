@@ -8,6 +8,7 @@ import java.util.stream.Collectors;
 
 import javax.ws.rs.BadRequestException;
 import javax.ws.rs.NotFoundException;
+import javax.ws.rs.core.Response;
 import javax.ws.rs.core.UriInfo;
 
 import it.polito.dp2.BIB.sol3.db.*;
@@ -142,10 +143,14 @@ public class BiblioService {
 
     public Bookshelf createBookshelf(BookshelfCreateResource bookshelfCreateResource) {
         if (bookshelfCreateResource.getName().equals(""))
-            throw new BadRequestException("The bookshelf must have a name");
+            throw new BadRequestException("The bookshelf must have a name", Response.status(Response.Status.BAD_REQUEST)
+                    .entity("The bookshelf must have a name")
+                    .build());
 
         if (bookshelfCreateResource.getItem().size() > maxBookshelfItems)
-            throw new BadRequestException("A single bookshelf can contain max " + maxBookshelfItems + " items.");
+            throw new BadRequestException("A single bookshelf can contain max " + maxBookshelfItems + " items.", Response.status(Response.Status.BAD_REQUEST)
+                    .entity("A single bookshelf can contain max " + maxBookshelfItems + " items.")
+                    .build());
 
         BookshelfEntity bookshelfEntity = new BookshelfEntity(BigInteger.valueOf(BookshelfDB.getNext()), bookshelfCreateResource);
         mapBookshelf.put(bookshelfEntity.getId(), bookshelfEntity);
@@ -161,7 +166,9 @@ public class BiblioService {
 
     public void deleteBookshelf(BigInteger bid) {
         if (mapBookshelf.remove(bid) == null)
-            throw new NotFoundException("There is no bookshelf with ID " + bid);
+            throw new NotFoundException("The bookshelf " + bid + " doesn't exist", Response.status(Response.Status.NOT_FOUND)
+                    .entity("The bookshelf " + bid + " doesn't exist")
+                    .build());
     }
 
     public long getBookshelfCounter(BigInteger bid) {
@@ -194,15 +201,21 @@ public class BiblioService {
     public Item getBookshelfItem(BigInteger bid, BigInteger id) throws Exception {
         BookshelfEntity bookshelfEntity = getBookshelfEntity(bid);
         Item result = getItem(id);
-        if (result != null) {
-            if (bookshelfEntity.getItem().contains(id)) {
+        if (bookshelfEntity.getItem().contains(id)) {
+            if (result != null) {
                 bookshelfEntity.incrementReadCount();
                 rutil.completeItem(result, id);
                 return result;
-            } else
+            } else {
                 bookshelfEntity.getItem().remove(id);
-        }
-        throw new NotFoundException("Item id must exist and bookshelf must contain it.");
+                throw new NotFoundException("The item " + id + " doesn't exist", Response.status(Response.Status.NOT_FOUND)
+                        .entity("The item " + id + " doesn't exist")
+                        .build());
+            }
+        } else
+            throw new NotFoundException("The bookshelf " + bid + " doesn't contain the item " + id, Response.status(Response.Status.NOT_FOUND)
+                    .entity("The bookshelf " + bid + " doesn't contain the item " + id)
+                    .build());
     }
 
     /**
@@ -217,7 +230,9 @@ public class BiblioService {
         BookshelfEntity bookshelfEntity = getBookshelfEntity(bid);
         Item item = getItem(id);
         if (item == null)
-            throw new NotFoundException();
+            throw new NotFoundException("The item " + id + " doesn't exist", Response.status(Response.Status.NOT_FOUND)
+                    .entity("The item " + id + " doesn't exist")
+                    .build());
 
         synchronized (bookshelfEntity.getItem()) {
             CopyOnWriteArraySet<BigInteger> setItem = bookshelfEntity.getItem();
@@ -225,7 +240,9 @@ public class BiblioService {
                 setItem.add(id);
                 return item;
             } else
-                throw new BadRequestException("A single bookshelf can contain max " + maxBookshelfItems + " items.");
+                throw new BadRequestException("A single bookshelf can contain max " + maxBookshelfItems + " items.", Response.status(Response.Status.BAD_REQUEST)
+                        .entity("A single bookshelf can contain max " + maxBookshelfItems + " items.")
+                        .build());
         }
     }
 
@@ -233,7 +250,9 @@ public class BiblioService {
     public void deleteBookshelfItem(BigInteger bid, BigInteger id) {
         BookshelfEntity bookshelfEntity = getBookshelfEntity(bid);
         if (!bookshelfEntity.getItem().remove(id))
-            throw new NotFoundException("This item is not present in the bookshelf " + bid);
+            throw new NotFoundException("The bookshelf " + bid + " doesn't contain the item " + id, Response.status(Response.Status.NOT_FOUND)
+                    .entity("The bookshelf " + bid + " doesn't contain the item " + id)
+                    .build());
     }
 
 
@@ -251,6 +270,7 @@ public class BiblioService {
         if (bookshelfEntity != null) {
             return bookshelfEntity;
         } else
-            throw new NotFoundException("There is no bookshelf with ID " + bid);
-    }
+            throw new NotFoundException("The bookshelf " + bid + " doesn't exist", Response.status(Response.Status.NOT_FOUND)
+                    .entity("The bookshelf " + bid + " doesn't exist")
+                    .build());    }
 }

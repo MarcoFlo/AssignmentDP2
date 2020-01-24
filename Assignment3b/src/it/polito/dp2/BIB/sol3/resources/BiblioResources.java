@@ -53,8 +53,7 @@ public class BiblioResources {
         try {
             return service.getItems(type, keyword, beforeInclusive, afterInclusive, BigInteger.valueOf(page));
         } catch (Exception e) {
-            e.printStackTrace();
-            throw new InternalServerErrorException(e);
+            throw new InternalServerErrorException();
         }
     }
 
@@ -73,7 +72,7 @@ public class BiblioResources {
         try {
             return service.getItems(SearchScope.ARTICLES, keyword, beforeInclusive, afterInclusive, BigInteger.valueOf(page));
         } catch (Exception e) {
-            throw new InternalServerErrorException(e);
+            throw new InternalServerErrorException();
         }
     }
 
@@ -324,11 +323,8 @@ public class BiblioResources {
             Bookshelf returnBookshelf = service.createBookshelf(bookshelfCreateResource);
             return Response.created(new URI(returnBookshelf.getSelf())).entity(returnBookshelf).build();
         } catch (BadRequestException e) {
-            e.printStackTrace();
-            System.out.println(e.getMessage());
             throw e;
         } catch (Exception e) {
-            e.printStackTrace();
             throw new InternalServerErrorException();
         }
     }
@@ -399,7 +395,7 @@ public class BiblioResources {
         } catch (NotFoundException e) {
             throw e;
         } catch (Exception e) {
-            throw new InternalServerErrorException(e);
+            throw new InternalServerErrorException();
         }
     }
 
@@ -420,11 +416,9 @@ public class BiblioResources {
             Item item = service.addBookshelfItem(bid, id);
             return Response.ok(new URI(item.getSelf())).entity(item).build();
         } catch (NotFoundException | BadRequestException e) {
-            System.out.println(e.getMessage());
-            e.printStackTrace();
             throw e;
         } catch (Exception e) {
-            throw new InternalServerErrorException(e);
+            throw new InternalServerErrorException();
         }
     }
 
@@ -442,7 +436,7 @@ public class BiblioResources {
         } catch (NotFoundException e) {
             throw e;
         } catch (Exception e) {
-            throw new InternalServerErrorException(e);
+            throw new InternalServerErrorException();
         }
     }
 
