@@ -20,8 +20,7 @@ public class BiblioService {
     private DB n4jDb = Neo4jDB.getNeo4jDB();
     private Map<BigInteger, BookshelfEntity> mapBookshelf = BookshelfDB.getMap();
     private int maxBookshelfItems = 20;
-
-    ResourseUtils rutil;
+    private ResourseUtils rutil;
 
 
     public BiblioService(UriInfo uriInfo) {
@@ -172,7 +171,8 @@ public class BiblioService {
     }
 
     public long getBookshelfCounter(BigInteger bid) {
-        return mapBookshelf.get(bid).getReadCount();
+        BookshelfEntity bookshelfEntity = getBookshelfEntity(bid);
+        return bookshelfEntity.getReadCount();
     }
 
     public Items getBookshelfItems(BigInteger bid) throws Exception {
@@ -226,7 +226,7 @@ public class BiblioService {
      * @return
      * @throws Exception
      */
-    public Item addBookshelfItem(BigInteger bid, BigInteger id) throws Exception {
+    public synchronized Item addBookshelfItem(BigInteger bid, BigInteger id) throws Exception {
         BookshelfEntity bookshelfEntity = getBookshelfEntity(bid);
         Item item = getItem(id);
         if (item == null)
@@ -234,16 +234,15 @@ public class BiblioService {
                     .entity("The item " + id + " doesn't exist")
                     .build());
 
-        synchronized (bookshelfEntity.getItem()) {
-            CopyOnWriteArraySet<BigInteger> setItem = bookshelfEntity.getItem();
-            if (setItem.size() < maxBookshelfItems) {
-                setItem.add(id);
-                return item;
-            } else
-                throw new BadRequestException("A single bookshelf can contain max " + maxBookshelfItems + " items.", Response.status(Response.Status.BAD_REQUEST)
-                        .entity("A single bookshelf can contain max " + maxBookshelfItems + " items.")
-                        .build());
-        }
+        CopyOnWriteArraySet<BigInteger> setItem = bookshelfEntity.getItem();
+        if (setItem.size() < maxBookshelfItems) {
+            setItem.add(id);
+            return item;
+        } else
+            throw new BadRequestException("A single bookshelf can contain max " + maxBookshelfItems + " items.", Response.status(Response.Status.BAD_REQUEST)
+                    .entity("A single bookshelf can contain max " + maxBookshelfItems + " items.")
+                    .build());
+
     }
 
 
@@ -272,5 +271,6 @@ public class BiblioService {
         } else
             throw new NotFoundException("The bookshelf " + bid + " doesn't exist", Response.status(Response.Status.NOT_FOUND)
                     .entity("The bookshelf " + bid + " doesn't exist")
-                    .build());    }
+                    .build());
+    }
 }

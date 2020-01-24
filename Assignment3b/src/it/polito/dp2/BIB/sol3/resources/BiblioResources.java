@@ -377,6 +377,8 @@ public class BiblioResources {
             return service.getBookshelfCounter(bid);
         } catch (NullPointerException e) {
             throw new NotFoundException("Bookshelf id not found");
+        } catch (NotFoundException e) {
+            throw e;
         } catch (Exception e) {
             throw new InternalServerErrorException();
         }
