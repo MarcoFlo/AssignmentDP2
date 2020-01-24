@@ -36,14 +36,18 @@ public class BookshelfClient implements Bookshelf {
             throw new DestroyedBookshelfException();
 
         WebTarget target = client.target(bookshelf.getItemsUri());
-        Response response = target.queryParam("id", (String.valueOf(((ItemReaderImpl) item).getId())))
-                .request(MediaType.APPLICATION_JSON_TYPE)
-                .post(Entity.json(null));
+        Response response;
+        try {
+            response = target.queryParam("id", (String.valueOf(((ItemReaderImpl) item).getId())))
+                    .request(MediaType.APPLICATION_JSON_TYPE)
+                    .post(Entity.json(null));
+        } catch (Exception e) {
+            throw new UnknownItemException();
+        }
         if (response.getStatus() != Response.Status.OK.getStatusCode()) {
             if (response.getStatus() == Response.Status.BAD_REQUEST.getStatusCode())
                 throw new TooManyItemsException();
-            if (response.getStatus() == Response.Status.NOT_FOUND.getStatusCode())
-                throw new UnknownItemException();
+
             throw new ServiceException();
         }
     }
@@ -54,11 +58,14 @@ public class BookshelfClient implements Bookshelf {
             throw new DestroyedBookshelfException();
 
         WebTarget target = client.target(bookshelf.getItemsUri());
-        Response response = target.path((String.valueOf(((ItemReaderImpl) item).getId()))).request().delete();
-        if (response.getStatus() != Response.Status.NO_CONTENT.getStatusCode()) {
-            if (response.getStatus() == Response.Status.NOT_FOUND.getStatusCode())
-                throw new UnknownItemException();
 
+        Response response;
+        try {
+            response = target.path((String.valueOf(((ItemReaderImpl) item).getId()))).request().delete();
+        } catch (Exception e) {
+            throw new UnknownItemException();
+        }
+        if (response.getStatus() != Response.Status.NO_CONTENT.getStatusCode()) {
             throw new ServiceException();
         }
     }

@@ -43,7 +43,6 @@ public class ClientFactoryImpl implements Client {
                     .request(MediaType.APPLICATION_JSON_TYPE)
                     .post(Entity.json(bookshelfCreateResource), it.polito.dp2.BIB.sol3.client.Bookshelves.Bookshelf.class), client);
         } catch (WebApplicationException | ProcessingException e) {
-            e.printStackTrace();
             throw new ServiceException("Create Bookshelf failed");
         }
     }
