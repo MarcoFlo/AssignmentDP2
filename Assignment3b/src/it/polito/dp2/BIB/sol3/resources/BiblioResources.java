@@ -376,7 +376,7 @@ public class BiblioResources {
         try {
             return service.getBookshelfCounter(bid);
         } catch (NullPointerException e) {
-            throw new NotFoundException("Bookshelf id not found");
+            throw new NotFoundException("The bookshelf " + bid + " doesn't exist");
         } catch (NotFoundException e) {
             throw e;
         } catch (Exception e) {
@@ -458,5 +458,4 @@ public class BiblioResources {
             throw new InternalServerErrorException();
         }
     }
-
 }
