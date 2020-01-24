@@ -27,6 +27,7 @@ public class BookshelfClient implements Bookshelf {
     public String getName() throws DestroyedBookshelfException {
         if (isDestroyed)
             throw new DestroyedBookshelfException();
+
         return bookshelf.getName();
     }
 
@@ -58,7 +59,6 @@ public class BookshelfClient implements Bookshelf {
             throw new DestroyedBookshelfException();
 
         WebTarget target = client.target(bookshelf.getItemsUri());
-
         Response response;
         try {
             response = target.path((String.valueOf(((ItemReaderImpl) item).getId()))).request().delete();

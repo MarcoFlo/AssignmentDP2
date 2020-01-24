@@ -13,7 +13,7 @@ public class BookshelfDB {
         return map;
     }
 
-    public static synchronized long getNext() {
+    public static long getNext() {
         return last.getAndIncrement();
     }
 }

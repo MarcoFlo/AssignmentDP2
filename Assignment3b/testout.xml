@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite errors="0" failures="0" hostname="marco" name="it.polito.dp2.BIB.ass3.tests.BibTests" skipped="0" tests="5" time="78.209" timestamp="2020-01-22T16:22:41">
+<testsuite errors="0" failures="0" hostname="marco" name="it.polito.dp2.BIB.ass3.tests.BibTests" skipped="0" tests="5" time="5.246" timestamp="2020-01-24T20:36:59">
   <properties>
     <property name="env.SNAP_REVISION" value="198" />
     <property name="it.polito.dp2.BIB.ass3.ClientFactory" value="it.polito.dp2.BIB.sol3.client.ClientFactory" />
@@ -20,7 +20,7 @@
     <property name="src.dir" value="/home/marco/Documents/AssignmentDP2/Assignment3b/src" />
     <property name="env.SNAP" value="/snap/intellij-idea-ultimate/198" />
     <property name="env.LC_PAPER" value="it_IT.UTF-8" />
-    <property name="env.SESSION_MANAGER" value="local/marco:@/tmp/.ICE-unix/1324,unix/marco:/tmp/.ICE-unix/1324" />
+    <property name="env.SESSION_MANAGER" value="local/marco:@/tmp/.ICE-unix/1344,unix/marco:/tmp/.ICE-unix/1344" />
     <property name="sun.os.patch.level" value="unknown" />
     <property name="sol.build.file" value="sol_build.xml" />
     <property name="java.vendor.url" value="http://java.oracle.com/" />
@@ -54,7 +54,7 @@
     <property name="ant.project.default-target" value="package-service" />
     <property name="env.HOME" value="/home/marco" />
     <property name="catalina.home.bin.dir" value="/opt/apache-tomcat-8.5.20/bin" />
-    <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner it.polito.dp2.BIB.ass3.tests.BibTests methods=testCreateBookshelf,testBookShelfOperations,testRemoveItemFromBibliography,testNumberOfReads,testNonExistingBookshelf skipNonTests=false filtertrace=true haltOnError=false haltOnFailure=false formatter=org.apache.tools.ant.taskdefs.optional.junit.SummaryJUnitResultFormatter showoutput=false outputtoformatters=true logfailedtests=true threadid=0 logtestlistenerevents=false formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,/home/marco/Documents/AssignmentDP2/Assignment3b/testout.xml formatter=org.apache.tools.ant.taskdefs.optional.junit.PlainJUnitResultFormatter crashfile=/home/marco/Documents/AssignmentDP2/Assignment3b/junitvmwatcher1832853174192228847.properties propsfile=/home/marco/Documents/AssignmentDP2/Assignment3b/junit4657122913113665425.properties" />
+    <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner it.polito.dp2.BIB.ass3.tests.BibTests methods=testCreateBookshelf,testBookShelfOperations,testRemoveItemFromBibliography,testNumberOfReads,testNonExistingBookshelf skipNonTests=false filtertrace=true haltOnError=false haltOnFailure=false formatter=org.apache.tools.ant.taskdefs.optional.junit.SummaryJUnitResultFormatter showoutput=false outputtoformatters=true logfailedtests=true threadid=0 logtestlistenerevents=false formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,/home/marco/Documents/AssignmentDP2/Assignment3b/testout.xml formatter=org.apache.tools.ant.taskdefs.optional.junit.PlainJUnitResultFormatter crashfile=/home/marco/Documents/AssignmentDP2/Assignment3b/junitvmwatcher8609999153292325232.properties propsfile=/home/marco/Documents/AssignmentDP2/Assignment3b/junit4117882109549801504.properties" />
     <property name="tomcatUrl" value="http://localhost:8080/manager/text" />
     <property name="ant.file" value="/home/marco/Documents/AssignmentDP2/Assignment3b/build.xml" />
     <property name="env.LC_TELEPHONE" value="it_IT.UTF-8" />
@@ -66,7 +66,7 @@
     <property name="target" value="1.8" />
     <property name="server.location" value="/opt/apache-tomcat-8.5.20" />
     <property name="ant.file.type" value="file" />
-    <property name="env.SSH_AGENT_PID" value="1409" />
+    <property name="env.SSH_AGENT_PID" value="1429" />
     <property name="env.CLUTTER_IM_MODULE" value="xim" />
     <property name="java.vm.info" value="mixed mode" />
     <property name="source" value="1.8" />
@@ -154,7 +154,7 @@
     <property name="env.LC_NUMERIC" value="it_IT.UTF-8" />
     <property name="tomcatPassword" value="root" />
     <property name="sun.java.launcher" value="SUN_STANDARD" />
-    <property name="env.GIO_LAUNCHED_DESKTOP_FILE_PID" value="1757" />
+    <property name="env.GIO_LAUNCHED_DESKTOP_FILE_PID" value="1774" />
     <property name="ant.core.lib" value="/snap/intellij-idea-ultimate/198/lib/ant/lib/ant.jar" />
     <property name="java.vm.specification.vendor" value="Oracle Corporation" />
     <property name="URL" value="http://localhost:8080/BiblioSystem/rest" />
@@ -179,15 +179,14 @@
     <property name="sun.arch.data.model" value="64" />
     <property name="env.GNOME_DESKTOP_SESSION_ID" value="this-is-deprecated" />
   </properties>
-  <testcase classname="it.polito.dp2.BIB.ass3.tests.BibTests" name="testRemoveItemFromBibliography" time="0.968" />
-  <testcase classname="it.polito.dp2.BIB.ass3.tests.BibTests" name="testBookShelfOperations" time="0.981" />
-  <testcase classname="it.polito.dp2.BIB.ass3.tests.BibTests" name="testNonExistingBookshelf" time="0.122" />
-  <testcase classname="it.polito.dp2.BIB.ass3.tests.BibTests" name="testCreateBookshelf" time="0.136" />
-  <testcase classname="it.polito.dp2.BIB.ass3.tests.BibTests" name="testNumberOfReads" time="0.582" />
+  <testcase classname="it.polito.dp2.BIB.ass3.tests.BibTests" name="testRemoveItemFromBibliography" time="0.723" />
+  <testcase classname="it.polito.dp2.BIB.ass3.tests.BibTests" name="testBookShelfOperations" time="0.701" />
+  <testcase classname="it.polito.dp2.BIB.ass3.tests.BibTests" name="testNonExistingBookshelf" time="0.059" />
+  <testcase classname="it.polito.dp2.BIB.ass3.tests.BibTests" name="testCreateBookshelf" time="0.088" />
+  <testcase classname="it.polito.dp2.BIB.ass3.tests.BibTests" name="testNumberOfReads" time="0.497" />
   <system-out><![CDATA[Reference BibReader: Using file: xsd/biblio.xml
 uri property: http://localhost:8080/BiblioSystem/rest
 port property: 8080
-http://localhost:8080/BiblioSystem/rest
 Reference BibReader: Using file: xsd/biblio.xml
 DEBUG: starting testRemoveItemFromBibliography
 Response code for creating an item: 201

@@ -52,9 +52,9 @@
 	<!-- Target that builds the service	-->
 	<target name="build-service" depends="init, generate-service-artifacts-bib">
 		<echo>Building the BibService ...</echo>
-		<javac destdir="${build.dir}" debug="${debug}" 
+		<javac destdir="${build.dir}" debug="${debug}"
 				debuglevel="${debuglevel}" source="${source}"
-				target="${target}" includeantruntime="false" 
+				target="${target}" includeantruntime="false"
 				encoding="ISO-8859-1">
 			<src path="${src.dir}"/>
 			<src path="${gen.dir}"/>

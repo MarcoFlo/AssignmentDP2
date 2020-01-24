@@ -141,7 +141,7 @@ public class ClientFactoryImpl implements Client {
         try {
             mainClient = new ClientFactoryImpl(new URI(uri));
             printItems();
-            Set<it.polito.dp2.BIB.ass3.ItemReader> set = mainClient.getItems("Transparent partial order", 0, 3000);
+            Set<it.polito.dp2.BIB.ass3.ItemReader> set = mainClient.getItems("", 0, 3000);
 
             mainClient.createBookshelf("libName");
             Set<Bookshelf> bookshelfs = mainClient.getBookshelfs("libName");
@@ -161,7 +161,7 @@ public class ClientFactoryImpl implements Client {
             System.out.println(bookshelf.getName() + "  has " + bookshelf.getNumberOfReads() + " reads");
 
             bookshelf.destroyBookshelf();
-        } catch (URISyntaxException | ServiceException | DestroyedBookshelfException | UnknownItemException | TooManyItemsException e) {
+        } catch (Exception e) {
             e.printStackTrace();
         } finally {
             mainClient.close();

@@ -23,7 +23,6 @@ import io.swagger.annotations.ApiResponses;
 @Api(value = "/biblio")
 public class BiblioResources {
     public UriInfo uriInfo;
-
     BiblioService service;
 
     public BiblioResources(@Context UriInfo uriInfo) {
@@ -100,15 +99,14 @@ public class BiblioResources {
     @ApiOperation(value = "createItem", notes = "create a new item", response = Item.class)
     @ApiResponses(value = {
             @ApiResponse(code = 201, message = "OK", response = Item.class),
-            @ApiResponse(code = 400, message = "Bad Request"),
-    })
+            @ApiResponse(code = 400, message = "Bad Request")})
     @Consumes({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
     @Produces({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
     public Response createItem(Item item) {
         try {
             Item returnItem = service.createItem(item);
             return Response.created(new URI(returnItem.getSelf())).entity(returnItem).build();
-        } catch (Exception e1) {
+        } catch (Exception e) {
             throw new InternalServerErrorException();
         }
     }
@@ -118,8 +116,7 @@ public class BiblioResources {
     @ApiOperation(value = "getItem", notes = "read a single item")
     @ApiResponses(value = {
             @ApiResponse(code = 200, message = "OK", response = Item.class),
-            @ApiResponse(code = 404, message = "Not Found"),
-    })
+            @ApiResponse(code = 404, message = "Not Found")})
     @Produces({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
     public Item getItem(@ApiParam("The id of the item") @PathParam("id") BigInteger id) {
         Item item;
@@ -139,8 +136,7 @@ public class BiblioResources {
     @ApiResponses(value = {
             @ApiResponse(code = 200, message = "OK", response = Item.class),
             @ApiResponse(code = 400, message = "Bad Request"),
-            @ApiResponse(code = 404, message = "Not Found"),
-    })
+            @ApiResponse(code = 404, message = "Not Found")})
     @Consumes({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
     @Produces({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
     public Item updateItem(@ApiParam("The id of the item") @PathParam("id") BigInteger id, Item item) {
@@ -161,8 +157,7 @@ public class BiblioResources {
     @ApiResponses(value = {
             @ApiResponse(code = 204, message = "No content"),
             @ApiResponse(code = 404, message = "Not Found"),
-            @ApiResponse(code = 409, message = "Conflict (item is cited)"),
-    })
+            @ApiResponse(code = 409, message = "Conflict (item is cited)")})
     public void deleteItem(@ApiParam("The id of the item") @PathParam("id") BigInteger id) {
         BigInteger ret;
         try {
@@ -181,8 +176,7 @@ public class BiblioResources {
     @ApiOperation(value = "getItemCitedBy", notes = "read the items citing an item")
     @ApiResponses(value = {
             @ApiResponse(code = 200, message = "OK", response = Items.class),
-            @ApiResponse(code = 404, message = "Not Found"),
-    })
+            @ApiResponse(code = 404, message = "Not Found")})
     @Produces({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
     public Items getItemCitedBy(@ApiParam("The id of the item for which citing items have to be read") @PathParam("id") BigInteger id) {
         Items items;
@@ -201,8 +195,7 @@ public class BiblioResources {
     @ApiOperation(value = "getItemCitations", notes = "read the target items of the citations from an item")
     @ApiResponses(value = {
             @ApiResponse(code = 200, message = "OK", response = Items.class),
-            @ApiResponse(code = 404, message = "Not Found"),
-    })
+            @ApiResponse(code = 404, message = "Not Found")})
     @Produces({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
     public Items getItemCitations(@ApiParam("The id of the item from which citations are considered") @PathParam("id") BigInteger id) {
         Items items;
@@ -221,8 +214,7 @@ public class BiblioResources {
     @ApiOperation(value = "getItemCitation", notes = "read a citation")
     @ApiResponses(value = {
             @ApiResponse(code = 200, message = "OK", response = Citation.class),
-            @ApiResponse(code = 404, message = "Not Found"),
-    })
+            @ApiResponse(code = 404, message = "Not Found")})
     @Produces({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
     public Citation getItemCitation(
             @ApiParam("The id of the citing item of this citation") @PathParam("id") BigInteger id,
@@ -245,8 +237,7 @@ public class BiblioResources {
             @ApiResponse(code = 201, message = "Created", response = Citation.class),
             @ApiResponse(code = 400, message = "Bad Request"),
             @ApiResponse(code = 404, message = "Not Found"),
-            @ApiResponse(code = 409, message = "Conflict"),
-    })
+            @ApiResponse(code = 409, message = "Conflict")})
     @Consumes({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
     @Produces({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
     public Response createItemCitation(
@@ -280,8 +271,7 @@ public class BiblioResources {
     @ApiOperation(value = "deleteItemCitation", notes = "delete a citation")
     @ApiResponses(value = {
             @ApiResponse(code = 204, message = "OK", response = Citation.class),
-            @ApiResponse(code = 404, message = "Not Found"),
-    })
+            @ApiResponse(code = 404, message = "Not Found")})
     public void deleteItemCitation(
             @ApiParam("The id of the citing item of this citation") @PathParam("id") BigInteger id,
             @ApiParam("The id of the cited item of this citation") @PathParam("tid") BigInteger tid) {
