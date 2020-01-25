@@ -1,0 +1,32 @@
+Assignment 3 - Marco Florian - s247030
+Server design choice rundown.
+(DB = ConcurrentHashMap)
+bookshelves representation:
+  xsd:    
+      bookshelf: doesn’t contain any item, but only a link to them. This decision was made due to the client not storing anything, but always retrieving an updated copy from the server. 
+                “if-modified-since” has been taken into consideration but not implemented due to time constraints.
+      bookshelves: contains a list of Bookshelf.
+      bookshelfCreateResource: specify new bookshelf name and eventually a list of items. 
+  java:
+      BookshelfEntity: the entity modelling the bookshelf in the DB.
+
+Model structure:
+I avoided denormalizing the item data: the bookshelves in my DB do not contain the items directly, but only a reference to them (id).
+This allowed me to overcome any extra computation if an item is updated or deleted: the item id will be stored in the bookshelfEntity on the DB up to when a GET bookshelf item/s is performed.
+
+Synchronization:
+I used mainly concurrent collections and atomic primitives, the only function where I deemed necessary to synchronize is the BiblioService::addBookshelfItem to avoid overcoming the 20 limit.
+In any other request involving a bookshelf if it exists when is retrieved from the DB, the request will be completed even if that bookshelf is deleted before the response is sent.
+
+Exception msg:
+Any HTTP Client error related to the bookshelf have a message specifying the reason in the body.
+
+404 not found:
+GET /bookshelves/{bid}/items/{id} (e.g)
+404 is used if the item id is not present in the bookshelf specified, but being interconnected also if the bookshelf do not exist.
+
+
+Client design choice rundown.
+close:
+I decided to not close the jax-rs client inside our implementation, even if an exception has been thrown. 
+This allows someone using my client to recover from the exception without having to reinstantiate it. (e.g. if it wants to retry 3 times before giving up)
