@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e7b00b48-08a1-41c8-97c7-e46eb03f81f6" name="Default Changelist" comment="[3b-server] fix exception msg">
+    <list default="true" id="e7b00b48-08a1-41c8-97c7-e46eb03f81f6" name="Default Changelist" comment="[3b] pulizia generale per consegna + rimossa sync da BookshelfDB">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gen-src/it/polito/dp2/BIB/sol3/service/jaxb/ArticleType.java" beforeDir="false" afterPath="$PROJECT_DIR$/gen-src/it/polito/dp2/BIB/sol3/service/jaxb/ArticleType.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gen-src/it/polito/dp2/BIB/sol3/service/jaxb/Biblio.java" beforeDir="false" afterPath="$PROJECT_DIR$/gen-src/it/polito/dp2/BIB/sol3/service/jaxb/Biblio.java" afterDir="false" />
@@ -19,12 +19,6 @@
       <change beforePath="$PROJECT_DIR$/gen-src/it/polito/dp2/BIB/sol3/service/jaxb/ObjectFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/gen-src/it/polito/dp2/BIB/sol3/service/jaxb/ObjectFactory.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gen-src/it/polito/dp2/BIB/sol3/service/jaxb/PagingType.java" beforeDir="false" afterPath="$PROJECT_DIR$/gen-src/it/polito/dp2/BIB/sol3/service/jaxb/PagingType.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gen-src/it/polito/dp2/BIB/sol3/service/jaxb/Volume.java" beforeDir="false" afterPath="$PROJECT_DIR$/gen-src/it/polito/dp2/BIB/sol3/service/jaxb/Volume.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sol_build.xml" beforeDir="false" afterPath="$PROJECT_DIR$/sol_build.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/it/polito/dp2/BIB/sol3/client/BookshelfClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/it/polito/dp2/BIB/sol3/client/BookshelfClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/it/polito/dp2/BIB/sol3/client/ClientFactoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/it/polito/dp2/BIB/sol3/client/ClientFactoryImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/it/polito/dp2/BIB/sol3/client/ItemReaderImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/it/polito/dp2/BIB/sol3/client/ItemReaderImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/it/polito/dp2/BIB/sol3/db/BookshelfDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/it/polito/dp2/BIB/sol3/db/BookshelfDB.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/it/polito/dp2/BIB/sol3/resources/BiblioResources.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/it/polito/dp2/BIB/sol3/resources/BiblioResources.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/it/polito/dp2/BIB/sol3/service/BiblioService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/it/polito/dp2/BIB/sol3/service/BiblioService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -212,7 +206,8 @@
       <workItem from="1579782310450" duration="247000" />
       <workItem from="1579860447008" duration="7793000" />
       <workItem from="1579874025040" duration="4201000" />
-      <workItem from="1579885776952" duration="6942000" />
+      <workItem from="1579885776952" duration="7760000" />
+      <workItem from="1579948128544" duration="2767000" />
     </task>
     <task id="LOCAL-00001" summary="ass 3b initial">
       <created>1577454917373</created>
@@ -459,7 +454,14 @@
       <option name="project" value="LOCAL" />
       <updated>1579879163713</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="[3b] pulizia generale per consegna + rimossa sync da BookshelfDB">
+      <created>1579898518613</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1579898518613</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -476,7 +478,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="[3b] inizio client, non compila" />
     <MESSAGE value="[3b] client pastrocchio, 204 invece di 200 come risp alla post per aggiunta item a bookshelf" />
     <MESSAGE value="[3b] getreadCOunt, 204 instead of 200 ok" />
     <MESSAGE value="[3b] rev3" />
@@ -501,7 +502,8 @@
     <MESSAGE value="[3b-client] corretta gestione eccezioni e val di ritorno" />
     <MESSAGE value="[3b-server] bug + syncronized" />
     <MESSAGE value="[3b-server] fix exception msg" />
-    <option name="LAST_COMMIT_MESSAGE" value="[3b-server] fix exception msg" />
+    <MESSAGE value="[3b] pulizia generale per consegna + rimossa sync da BookshelfDB" />
+    <option name="LAST_COMMIT_MESSAGE" value="[3b] pulizia generale per consegna + rimossa sync da BookshelfDB" />
   </component>
   <component name="WindowStateProjectService">
     <state x="588" y="214" width="800" height="677" key="#Project_Structure" timestamp="1577452080469">
@@ -524,10 +526,10 @@
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state x="821" y="266" width="798" height="572" key="#com.intellij.openapi.roots.ui.configuration.libraryEditor.LibraryEditorDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1577964658191" />
-    <state x="316" y="147" width="1442" height="921" key="CommitChangelistDialog2" timestamp="1579895254025">
+    <state x="316" y="147" width="1442" height="921" key="CommitChangelistDialog2" timestamp="1579950400378">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state x="316" y="147" width="1442" height="921" key="CommitChangelistDialog2/67.27.1853.1053@67.27.1853.1053" timestamp="1579895254025" />
+    <state x="316" y="147" width="1442" height="921" key="CommitChangelistDialog2/67.27.1853.1053@67.27.1853.1053" timestamp="1579950400378" />
     <state x="291" y="116" width="1482" height="872" key="DiffContextDialog" timestamp="1578046500227">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
@@ -560,10 +562,10 @@
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state x="167" y="125" width="1653" height="855" key="VCS.FileHistoryDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1579895784672" />
-    <state x="588" y="288" width="800" height="528" key="Vcs.Push.Dialog.v2" timestamp="1579879249548">
+    <state x="588" y="288" width="800" height="528" key="Vcs.Push.Dialog.v2" timestamp="1579898521732">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state x="588" y="288" width="800" height="528" key="Vcs.Push.Dialog.v2/67.27.1853.1053@67.27.1853.1053" timestamp="1579879249548" />
+    <state x="588" y="288" width="800" height="528" key="Vcs.Push.Dialog.v2/67.27.1853.1053@67.27.1853.1053" timestamp="1579898521732" />
     <state x="652" y="230" width="672" height="645" key="antBuildFilePropertiesDialogDimension" timestamp="1578070381064">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>

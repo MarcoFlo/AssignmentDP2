@@ -146,11 +146,6 @@ public class BiblioService {
                     .entity("The bookshelf must have a name")
                     .build());
 
-        if (bookshelfCreateResource.getItem().size() > MAX_BOOKSHELF_ITEMS)
-            throw new BadRequestException("A single bookshelf can contain max " + MAX_BOOKSHELF_ITEMS + " items.", Response.status(Response.Status.BAD_REQUEST)
-                    .entity("A single bookshelf can contain max " + MAX_BOOKSHELF_ITEMS + " items.")
-                    .build());
-
         BookshelfEntity bookshelfEntity = new BookshelfEntity(BigInteger.valueOf(BookshelfDB.getNext()), bookshelfCreateResource);
         mapBookshelf.put(bookshelfEntity.getId(), bookshelfEntity);
 
