@@ -1,7 +1,6 @@
 package it.polito.dp2.BIB.sol3.client;
 
 import java.net.URI;
-import java.net.URISyntaxException;
 import java.util.*;
 import java.util.stream.Collectors;
 
