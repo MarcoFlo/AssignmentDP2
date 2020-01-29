@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<bookshelf xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance"
-            xsd:noNamespaceSchemaLocation="biblio.xsd" id="a" name="a">
-<item>
-    <author>Sandro</author>
-    <title>Titolo</title>
-    <article journal="1234-5678" volume="2019" number="0"/>
-</item>
-</bookshelf>
