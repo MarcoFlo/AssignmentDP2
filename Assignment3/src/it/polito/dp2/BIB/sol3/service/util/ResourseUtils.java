@@ -5,19 +5,20 @@ import java.net.URI;
 
 import javax.ws.rs.core.UriBuilder;
 
-import it.polito.dp2.BIB.sol3.service.jaxb.Bookshelf;
-import it.polito.dp2.BIB.sol3.service.jaxb.Citation;
-import it.polito.dp2.BIB.sol3.service.jaxb.Item;
+import it.polito.dp2.BIB.sol3.service.jaxb.*;
 
 public class ResourseUtils {
     UriBuilder base;
     UriBuilder items;
+    UriBuilder journals;
     UriBuilder bookshelves;
 
     public ResourseUtils(UriBuilder base) {
         this.base = base;
         this.items = base.clone().path("biblio/items");
+        this.journals = base.clone().path("biblio/journals");
         this.bookshelves = base.clone().path("biblio/bookshelves");
+
     }
 
     public void completeItem(Item item, BigInteger id) {
@@ -38,6 +39,15 @@ public class ResourseUtils {
         citation.setFrom(fromBuilder.build().toString());
         citation.setTo(items.clone().path(tid.toString()).build().toString());
         citation.setSelf(fromBuilder.clone().path("citations").path(tid.toString()).build().toString());
+    }
+
+    public void completeJournals(Journals res, String keyword, int page) {
+        res.setNext(journals.clone().queryParam("page", page).queryParam("keyword", keyword).toString());
+
+    }
+
+    public void completeJournal(Journal res) {
+        res.setSelf(journals.clone().path(res.getISSN()).toString());
     }
 
     public void completeBookshelf(Bookshelf bookshelf) {
