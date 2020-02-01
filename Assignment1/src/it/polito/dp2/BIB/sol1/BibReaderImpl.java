@@ -51,7 +51,7 @@ public class BibReaderImpl implements it.polito.dp2.BIB.BibReader {
 
     private void fillDataStructure(BiblioType biblioType) {
         //journal
-        journalByIssn = biblioType.getJournal().stream().map(JournalReaderImpl::new).collect(Collectors.toMap(JournalReaderImpl::getISSN, journalReader -> journalReader, (prev, next) -> next, HashMap::new));
+        journalByIssn = biblioType.getJournal().stream().collect(Collectors.toMap(JournalType::getISSN, JournalReaderImpl::new, (prev, post) -> post, HashMap::new));
 
         //article
         HashMap<BigInteger, ItemReader> mapItemById = biblioType.getArticle().stream().collect(Collectors.toMap(ArticleType::getId, articleType -> {

@@ -25,7 +25,7 @@
             <field xpath="@issue"/>
         </keyref>
         <key name="itemKey">
-            <selector xpath=".//book/chapter | ./book | ./article"/>
+            <selector xpath=".//chapter | book | article"/>
             <field xpath="@id"/>
         </key>
         <keyref name="citedByRef" refer="tns:itemKey">

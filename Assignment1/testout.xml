@@ -1,68 +1,66 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite errors="0" failures="0" hostname="DESKTOP-FMD4HBA" name="it.polito.dp2.BIB.ass1.tests.BibTests" skipped="0" tests="2" time="0.396" timestamp="2019-11-19T16:16:50">
+<testsuite errors="0" failures="0" hostname="marco" name="it.polito.dp2.BIB.ass1.tests.BibTests" skipped="0" tests="2" time="0.319" timestamp="2020-01-31T17:49:33">
   <properties>
     <property name="java.vendor" value="Oracle Corporation" />
-    <property name="lib.dir" value="C:\Users\flori\Documents\Universita\DP2\AssignmentDP2\Assignment1c\lib" />
+    <property name="lib.dir" value="/home/marco/Documents/AssignmentDP2/Assignment1/lib" />
     <property name="sun.java.launcher" value="SUN_STANDARD" />
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers" />
-    <property name="xsd.dir" value="C:\Users\flori\Documents\Universita\DP2\AssignmentDP2\Assignment1c\xsd" />
-    <property name="os.name" value="Windows 10" />
+    <property name="xsd.dir" value="/home/marco/Documents/AssignmentDP2/Assignment1/xsd" />
+    <property name="os.name" value="Linux" />
     <property name="generate-bindings.notRequired" value="true" />
-    <property name="sun.boot.class.path" value="C:\Program Files\Java\jdk1.8.0_202\jre\lib\resources.jar;C:\Program Files\Java\jdk1.8.0_202\jre\lib\rt.jar;C:\Program Files\Java\jdk1.8.0_202\jre\lib\sunrsasign.jar;C:\Program Files\Java\jdk1.8.0_202\jre\lib\jsse.jar;C:\Program Files\Java\jdk1.8.0_202\jre\lib\jce.jar;C:\Program Files\Java\jdk1.8.0_202\jre\lib\charsets.jar;C:\Program Files\Java\jdk1.8.0_202\jre\lib\jfr.jar;C:\Program Files\Java\jdk1.8.0_202\jre\classes" />
-    <property name="sun.desktop" value="windows" />
+    <property name="sun.boot.class.path" value="/usr/lib/jvm/jdk1.8.0_231/jre/lib/resources.jar:/usr/lib/jvm/jdk1.8.0_231/jre/lib/rt.jar:/usr/lib/jvm/jdk1.8.0_231/jre/lib/sunrsasign.jar:/usr/lib/jvm/jdk1.8.0_231/jre/lib/jsse.jar:/usr/lib/jvm/jdk1.8.0_231/jre/lib/jce.jar:/usr/lib/jvm/jdk1.8.0_231/jre/lib/charsets.jar:/usr/lib/jvm/jdk1.8.0_231/jre/lib/jfr.jar:/usr/lib/jvm/jdk1.8.0_231/jre/classes" />
+    <property name="sun.desktop" value="gnome" />
     <property name="java.vm.specification.vendor" value="Oracle Corporation" />
-    <property name="ant.home" value="C:\Program Files\JetBrains\IntelliJ IDEA 2019.1\lib\ant" />
-    <property name="java.runtime.version" value="1.8.0_202-b08" />
+    <property name="ant.home" value="/snap/intellij-idea-ultimate/198/lib/ant" />
+    <property name="java.runtime.version" value="1.8.0_231-b11" />
     <property name="lib.jar" value="ass1.jar" />
-    <property name="gen.dir" value="C:\Users\flori\Documents\Universita\DP2\AssignmentDP2\Assignment1c\gen-src" />
+    <property name="gen.dir" value="/home/marco/Documents/AssignmentDP2/Assignment1/gen-src" />
     <property name="it.polito.dp2.BIB.Random.sourceFileName" value="xsd/biblio.xml" />
-    <property name="user.name" value="flori" />
-    <property name="output" value="C:\Users\flori\AppData\Local\Temp\out1.xml" />
+    <property name="user.name" value="marco" />
+    <property name="output" value="/tmp/out1.xml" />
     <property name="debug" value="true" />
-    <property name="build.dir" value="C:\Users\flori\Documents\Universita\DP2\AssignmentDP2\Assignment1c\build" />
-    <property name="user.language" value="it" />
+    <property name="build.dir" value="/home/marco/Documents/AssignmentDP2/Assignment1/build" />
+    <property name="user.language" value="en" />
     <property name="validation_result" value="0" />
-    <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.8.0_202\jre\bin" />
+    <property name="sun.boot.library.path" value="/usr/lib/jvm/jdk1.8.0_231/jre/lib/amd64" />
     <property name="ant.project.default-target" value="build" />
     <property name="ant.project.name" value="BIB-1" />
-    <property name="it.polito.dp2.BIB.sol1.BibInfo.file" value="C:\Users\flori\Documents\Universita\DP2\AssignmentDP2\Assignment1c\temp1546592574\out479589105.xml" />
-    <property name="java.version" value="1.8.0_202" />
+    <property name="it.polito.dp2.BIB.sol1.BibInfo.file" value="/home/marco/Documents/AssignmentDP2/Assignment1/temp1487397104/out601919863.xml" />
+    <property name="java.version" value="1.8.0_231" />
     <property name="user.timezone" value="" />
     <property name="BibInfo.BibReaderFactory" value="it.polito.dp2.BIB.Random.BibReaderFactoryImpl" />
     <property name="sun.arch.data.model" value="64" />
-    <property name="java.endorsed.dirs" value="C:\Program Files\Java\jdk1.8.0_202\jre\lib\endorsed" />
-    <property name="sun.cpu.isalist" value="amd64" />
-    <property name="sun.jnu.encoding" value="Cp1252" />
+    <property name="java.endorsed.dirs" value="/usr/lib/jvm/jdk1.8.0_231/jre/lib/endorsed" />
+    <property name="sun.cpu.isalist" value="" />
+    <property name="sun.jnu.encoding" value="UTF-8" />
     <property name="file.encoding.pkg" value="sun.io" />
-    <property name="file.separator" value="\" />
+    <property name="file.separator" value="/" />
     <property name="java.specification.name" value="Java Platform API Specification" />
     <property name="java.class.version" value="52.0" />
-    <property name="ass1.location" value="C:\Users\flori\Documents\Universita\DP2\AssignmentDP2\Assignment1c" />
-    <property name="user.country" value="IT" />
-    <property name="java.home" value="C:\Program Files\Java\jdk1.8.0_202\jre" />
+    <property name="ass1.location" value="/home/marco/Documents/AssignmentDP2/Assignment1" />
+    <property name="user.country" value="US" />
+    <property name="java.home" value="/usr/lib/jvm/jdk1.8.0_231/jre" />
     <property name="java.vm.info" value="mixed mode" />
-    <property name="ant.file" value="C:\Users\flori\Documents\Universita\DP2\AssignmentDP2\Assignment1c\build.xml" />
-    <property name="os.version" value="10.0" />
-    <property name="temp.dir" value="C:\Users\flori\Documents\Universita\DP2\AssignmentDP2\Assignment1c\temp1546592574" />
-    <property name="path.separator" value=";" />
-    <property name="java.vm.version" value="25.202-b08" />
-    <property name="user.variant" value="" />
-    <property name="ant.library.dir" value="C:\Program Files\JetBrains\IntelliJ IDEA 2019.1\lib\ant\lib" />
-    <property name="java.awt.printerjob" value="sun.awt.windows.WPrinterJob" />
+    <property name="ant.file" value="/home/marco/Documents/AssignmentDP2/Assignment1/build.xml" />
+    <property name="os.version" value="5.3.0-28-generic" />
+    <property name="temp.dir" value="/home/marco/Documents/AssignmentDP2/Assignment1/temp1487397104" />
+    <property name="path.separator" value=":" />
+    <property name="java.vm.version" value="25.231-b11" />
+    <property name="ant.library.dir" value="/snap/intellij-idea-ultimate/198/lib/ant/lib" />
+    <property name="java.awt.printerjob" value="sun.print.PSPrinterJob" />
     <property name="sun.io.unicode.encoding" value="UnicodeLittle" />
     <property name="jaxb.package" value="it.polito.dp2.BIB.sol1.jaxb" />
-    <property name="awt.toolkit" value="sun.awt.windows.WToolkit" />
-    <property name="user.script" value="" />
-    <property name="user.home" value="C:\Users\flori" />
+    <property name="awt.toolkit" value="sun.awt.X11.XToolkit" />
+    <property name="user.home" value="/home/marco" />
     <property name="target" value="1.8" />
     <property name="java.specification.vendor" value="Oracle Corporation" />
-    <property name="java.library.path" value="C:\Program Files\Java\jdk1.8.0_202\jre\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\ProgramData\DockerDesktop\version-bin;C:\Program Files\Docker\Docker\Resources\bin;C:\Perl64\site\bin;C:\Perl64\bin;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\MongoDB\Server\4.0\bin;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\nodejs\;C:\Users\flori\AppData\Local\Programs\Python\Python37;C:\Program Files\apache-maven-3.6.1\bin;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\ProgramData\chocolatey\bin;C:\Go\bin;C:\ProgramData\chocolatey\lib\yasm\tools;C:\Program Files\CMake\bin;C:\Qt\5.12.5\msvc2017\bin;C:\Program Files\Git\cmd;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\Users\flori\AppData\Local\atom\bin;C:\Users\flori\AppData\Local\Microsoft\WindowsApps;;C:\Program Files\JetBrains\CLion 2019.2.2\bin;;C:\Users\flori\go\bin;." />
+    <property name="java.library.path" value="/usr/java/packages/lib/amd64:/usr/lib64:/lib64:/lib:/usr/lib" />
     <property name="java.vendor.url" value="http://java.oracle.com/" />
     <property name="java.vm.vendor" value="Oracle Corporation" />
-    <property name="xsd.sol" value="C:\Users\flori\Documents\Universita\DP2\AssignmentDP2\Assignment1c\xsd\biblio_e.xsd" />
+    <property name="xsd.sol" value="/home/marco/Documents/AssignmentDP2/Assignment1/xsd/biblio_e.xsd" />
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment" />
-    <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner it.polito.dp2.BIB.ass1.tests.BibTests skipNonTests=false filtertrace=true haltOnError=false haltOnFailure=false formatter=org.apache.tools.ant.taskdefs.optional.junit.SummaryJUnitResultFormatter showoutput=false outputtoformatters=true logfailedtests=true threadid=0 logtestlistenerevents=false formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,C:\Users\flori\Documents\Universita\DP2\AssignmentDP2\Assignment1c\testout.xml formatter=org.apache.tools.ant.taskdefs.optional.junit.PlainJUnitResultFormatter crashfile=C:\Users\flori\Documents\Universita\DP2\AssignmentDP2\Assignment1c\junitvmwatcher4914745440332717813.properties propsfile=C:\Users\flori\Documents\Universita\DP2\AssignmentDP2\Assignment1c\junit8539680816661831594.properties" />
-    <property name="java.class.path" value="C:\Users\flori\Documents\Universita\DP2\AssignmentDP2\Assignment1c\lib\BIB.jar;C:\Users\flori\Documents\Universita\DP2\AssignmentDP2\Assignment1c\lib\BIBRandom.jar;C:\Users\flori\Documents\Universita\DP2\AssignmentDP2\Assignment1c\build;C:\Users\flori\Documents\Universita\DP2\AssignmentDP2\Assignment1c\lib\ass1.jar;C:\Users\flori\Documents\Universita\DP2\AssignmentDP2\Assignment1c\lib\junit-4.12.jar;C:\Users\flori\Documents\Universita\DP2\AssignmentDP2\Assignment1c\lib\hamcrest-core-1.3.jar;C:\Program Files\JetBrains\IntelliJ IDEA 2019.1\lib\ant\lib\ant-launcher.jar;C:\Program Files\JetBrains\IntelliJ IDEA 2019.1\lib\ant\lib\ant.jar;C:\Program Files\JetBrains\IntelliJ IDEA 2019.1\lib\ant\lib\ant-junit.jar;C:\Program Files\JetBrains\IntelliJ IDEA 2019.1\lib\ant\lib\ant-junit4.jar" />
+    <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner it.polito.dp2.BIB.ass1.tests.BibTests skipNonTests=false filtertrace=true haltOnError=false haltOnFailure=false formatter=org.apache.tools.ant.taskdefs.optional.junit.SummaryJUnitResultFormatter showoutput=false outputtoformatters=true logfailedtests=true threadid=0 logtestlistenerevents=false formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,/home/marco/Documents/AssignmentDP2/Assignment1/testout.xml formatter=org.apache.tools.ant.taskdefs.optional.junit.PlainJUnitResultFormatter crashfile=/home/marco/Documents/AssignmentDP2/Assignment1/junitvmwatcher315773421392270477.properties propsfile=/home/marco/Documents/AssignmentDP2/Assignment1/junit8163882113388085566.properties" />
+    <property name="java.class.path" value="/home/marco/Documents/AssignmentDP2/Assignment1/lib/BIB.jar:/home/marco/Documents/AssignmentDP2/Assignment1/lib/BIBRandom.jar:/home/marco/Documents/AssignmentDP2/Assignment1/build:/home/marco/Documents/AssignmentDP2/Assignment1/lib/ass1.jar:/home/marco/Documents/AssignmentDP2/Assignment1/lib/junit-4.12.jar:/home/marco/Documents/AssignmentDP2/Assignment1/lib/hamcrest-core-1.3.jar:/snap/intellij-idea-ultimate/198/lib/ant/lib/ant-launcher.jar:/snap/intellij-idea-ultimate/198/lib/ant/lib/ant.jar:/snap/intellij-idea-ultimate/198/lib/ant/lib/ant-junit.jar:/snap/intellij-idea-ultimate/198/lib/ant/lib/ant-junit4.jar" />
     <property name="ant.version" value="Apache Ant(TM) version 1.10.5 compiled on July 10 2018" />
     <property name="test.class" value="it.polito.dp2.BIB.ass1.tests.BibTests" />
     <property name="sourceFileName" value="xsd/biblio.xml" />
@@ -70,30 +68,30 @@
     <property name="ant.file.type" value="file" />
     <property name="java.vm.specification.version" value="1.8" />
     <property name="sun.cpu.endian" value="little" />
-    <property name="sun.os.patch.level" value="" />
+    <property name="sun.os.patch.level" value="unknown" />
     <property name="debuglevel" value="source,lines,vars" />
-    <property name="java.io.tmpdir" value="C:\Users\flori\AppData\Local\Temp\" />
+    <property name="java.io.tmpdir" value="/tmp" />
     <property name="java.vendor.url.bug" value="http://bugreport.sun.com/bugreport/" />
-    <property name="temp.xmlfile" value="C:\Users\flori\Documents\Universita\DP2\AssignmentDP2\Assignment1c\temp1546592574\out479589105.xml" />
-    <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment" />
+    <property name="temp.xmlfile" value="/home/marco/Documents/AssignmentDP2/Assignment1/temp1487397104/out601919863.xml" />
+    <property name="java.awt.graphicsenv" value="sun.awt.X11GraphicsEnvironment" />
     <property name="os.arch" value="amd64" />
-    <property name="java.ext.dirs" value="C:\Program Files\Java\jdk1.8.0_202\jre\lib\ext;C:\WINDOWS\Sun\Java\lib\ext" />
+    <property name="java.ext.dirs" value="/usr/lib/jvm/jdk1.8.0_231/jre/lib/ext:/usr/java/packages/lib/ext" />
     <property name="ant.file.type.BIB-1" value="file" />
-    <property name="user.dir" value="C:\Users\flori\Documents\Universita\DP2\AssignmentDP2\Assignment1c\temp1546592574" />
-    <property name="line.separator" value="&#xd;&#xa;" />
+    <property name="user.dir" value="/home/marco/Documents/AssignmentDP2/Assignment1/temp1487397104" />
+    <property name="line.separator" value="&#xa;" />
     <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM" />
-    <property name="ant.file.BIB-1" value="C:\Users\flori\Documents\Universita\DP2\AssignmentDP2\Assignment1c\build.xml" />
-    <property name="basedir" value="C:\Users\flori\Documents\Universita\DP2\AssignmentDP2\Assignment1c" />
+    <property name="ant.file.BIB-1" value="/home/marco/Documents/AssignmentDP2/Assignment1/build.xml" />
+    <property name="basedir" value="/home/marco/Documents/AssignmentDP2/Assignment1" />
     <property name="ant.java.version" value="1.8" />
-    <property name="ant.core.lib" value="C:\Program Files\JetBrains\IntelliJ IDEA 2019.1\lib\ant\lib\ant.jar" />
+    <property name="ant.core.lib" value="/snap/intellij-idea-ultimate/198/lib/ant/lib/ant.jar" />
     <property name="source" value="1.8" />
-    <property name="file.encoding" value="Cp1252" />
+    <property name="file.encoding" value="UTF-8" />
     <property name="java.specification.version" value="1.8" />
-    <property name="src.dir" value="C:\Users\flori\Documents\Universita\DP2\AssignmentDP2\Assignment1c\src" />
+    <property name="src.dir" value="/home/marco/Documents/AssignmentDP2/Assignment1/src" />
     <property name="ant.project.invoked-targets" value="runFuncTest" />
   </properties>
-  <testcase classname="it.polito.dp2.BIB.ass1.tests.BibTests" name="testGetItems" time="0.009" />
-  <testcase classname="it.polito.dp2.BIB.ass1.tests.BibTests" name="testGetJournals" time="0.002" />
+  <testcase classname="it.polito.dp2.BIB.ass1.tests.BibTests" name="testGetItems" time="0.014" />
+  <testcase classname="it.polito.dp2.BIB.ass1.tests.BibTests" name="testGetJournals" time="0.004" />
   <system-out><![CDATA[Reference BibReader: Using file: xsd/biblio.xml
 Comparing  item  Achievement of secure Internet access to fieldbus systems
   citing items:
