@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="Generator for assignment 2" default="generate-artifacts" basedir=".">
+
+	<!-- These properties are repeated only in case this ant file is executed directly.
+	The names of the properties match the names of the properties in the build.xml file,
+	so that the caller build.xml can override them -->
+	<property name="PORT" value="8080" />
+	<property name="URL" value="http://localhost:${PORT}/db" />
+	<property name="ass2.location" location="${basedir}" />
+	<property name="gen.dir" location="${ass2.location}/gen-src" />
+	<property name="lib.dir" location="${ass2.location}/lib" />
+	<property name="custom.dir" location="${ass2.location}/custom" />
+	<property name="xsd.dir" location="${ass2.location}/xsd" />
+	<property name="neo4j.schema" location="${xsd.dir}/neo4j/DataTypes.xsd" />
+	<property name="ext.lib.dir" location="/opt/dp2/shared/lib" />
+	
+	<property name="ex1.schema" location="${xsd.dir}/exercise1/DataTypes.xsd" />
+	<property name="ex2.schema.crossref" location="${xsd.dir}/exercise2/cross.xsd" />
+
+	<!-- define the client artifacts generation target -->
+	<target name="generate-artifacts"  >
+		<mkdir dir="${gen.dir}" />
+		<exec executable="xjc" failonerror="true">
+			<arg line="-d ${gen.dir} -p it.polito.dp2.BIB.sol2.exercise1.jaxb ${ex1.schema}"/>
+		</exec>
+		<exec executable="xjc">
+			<arg line="-d ${gen.dir} -p it.polito.dp2.BIB.sol2.crossref.jaxb  ${ex2.schema.crossref}"/>
+		</exec>
+		<touch file="${gen.dir}/.flagfile" />
+	</target>
+</project>
