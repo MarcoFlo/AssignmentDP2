@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bankInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="accounts.xsd">
+	<account
+	    xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" 
+	    xsd:noNamespaceSchemaLocation="account.xsd" number="123456">
+	    <holder>ABCDEF00A00Y000B</holder>
+	    <holder>ABCDEF00A00Y000C</holder>
+	    <yearOperations year="2019">
+	     <operation date="2019-06-01" amount="1000.00">
+	       <description>Salary</description>
+	     </operation>
+	     <operation date="2019-10-01" amount="-400.00">
+	       <description>Credit card operation</description>
+	     </operation>
+	    </yearOperations>
+	</account>
+	<account
+	    xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" 
+	    xsd:noNamespaceSchemaLocation="account.xsd" number="6543">
+	    <holder>ABCDEF00A00Y000B</holder>
+	</account>
+	<holder name="Elia" address="Via dei Pioppi, 20" fiscalID="ABCDEF00A00Y000B"/>
+	<holder name="Elia Jr" address="Via dei Pioppi, 20" fiscalID="ABCDEF00A00Y000C"/>
+	<holder name="Elis" address="Via degli Ontani, 20" fiscalID="ABCDEF00A00Y000D"/>
+</bankInfo>
