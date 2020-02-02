@@ -168,7 +168,7 @@ public class BibInfoSerializer {
         Set<ItemReader> set = monitor.getItems(null, 0, 3000);
         XMLGregorianCalendar calendar;
         int counterBA = 0;
-        Map<String, BigInteger> mapItemID = new HashMap<>();
+        Map<ItemReader, BigInteger> mapItemID = new HashMap<>();
         BookType bookType;
         ArticleType articleType;
 
@@ -180,11 +180,11 @@ public class BibInfoSerializer {
                 ArticleReader articleSource = (ArticleReader) item;
 
                 //article attribute
-                if (mapItemID.containsKey(articleSource.getTitle())) {
-                    articleType.setId(mapItemID.get(articleSource.getTitle()));
+                if (mapItemID.containsKey(articleSource)) {
+                    articleType.setId(mapItemID.get(articleSource));
                 } else {
                     articleType.setId(BigInteger.valueOf(counterBA));
-                    mapItemID.put(articleSource.getTitle(), BigInteger.valueOf(counterBA));
+                    mapItemID.put(articleSource, BigInteger.valueOf(counterBA));
                     counterBA++;
                 }
                 articleType.setJournal(articleSource.getJournal().getISSN());
@@ -203,10 +203,10 @@ public class BibInfoSerializer {
 
 
                 for (ItemReader citing : articleSource.getCitingItems()) {
-                    if (mapItemID.containsKey(citing.getTitle())) {
-                        articleType.getCitedBy().add(mapItemID.get(citing.getTitle()));
+                    if (mapItemID.containsKey(citing)) {
+                        articleType.getCitedBy().add(mapItemID.get(citing));
                     } else {
-                        mapItemID.put(citing.getTitle(), BigInteger.valueOf(counterBA));
+                        mapItemID.put(citing, BigInteger.valueOf(counterBA));
                         articleType.getCitedBy().add(BigInteger.valueOf(counterBA));
                         counterBA++;
 
@@ -219,11 +219,11 @@ public class BibInfoSerializer {
                 BookReader bookSource = (BookReader) item;
 
                 //book attribute
-                if (mapItemID.containsKey(bookSource.getTitle())) {
-                    bookType.setId(mapItemID.get(bookSource.getTitle()));
+                if (mapItemID.containsKey(bookSource)) {
+                    bookType.setId(mapItemID.get(bookSource));
                 } else {
                     bookType.setId(BigInteger.valueOf(counterBA));
-                    mapItemID.put(bookSource.getTitle(), BigInteger.valueOf(counterBA));
+                    mapItemID.put(bookSource, BigInteger.valueOf(counterBA));
                     counterBA++;
                 }
                 bookType.setISBN(bookSource.getISBN());
@@ -238,10 +238,10 @@ public class BibInfoSerializer {
                 bookType.setSubtitle(bookSource.getSubtitle());
 
                 for (ItemReader citing : bookSource.getCitingItems()) {
-                    if (mapItemID.containsKey(citing.getTitle())) {
-                        bookType.getCitedBy().add(mapItemID.get(citing.getTitle()));
+                    if (mapItemID.containsKey(citing)) {
+                        bookType.getCitedBy().add(mapItemID.get(citing));
                     } else {
-                        mapItemID.put(citing.getTitle(), BigInteger.valueOf(counterBA));
+                        mapItemID.put(citing, BigInteger.valueOf(counterBA));
                         bookType.getCitedBy().add(BigInteger.valueOf(counterBA));
                         counterBA++;
                     }

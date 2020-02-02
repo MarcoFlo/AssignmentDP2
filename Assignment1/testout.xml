@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite errors="0" failures="0" hostname="marco" name="it.polito.dp2.BIB.ass1.tests.BibTests" skipped="0" tests="2" time="0.319" timestamp="2020-01-31T17:49:33">
+<testsuite errors="0" failures="0" hostname="marco" name="it.polito.dp2.BIB.ass1.tests.BibTests" skipped="0" tests="2" time="0.28" timestamp="2020-02-02T16:23:58">
   <properties>
     <property name="java.vendor" value="Oracle Corporation" />
     <property name="lib.dir" value="/home/marco/Documents/AssignmentDP2/Assignment1/lib" />
@@ -25,7 +25,7 @@
     <property name="sun.boot.library.path" value="/usr/lib/jvm/jdk1.8.0_231/jre/lib/amd64" />
     <property name="ant.project.default-target" value="build" />
     <property name="ant.project.name" value="BIB-1" />
-    <property name="it.polito.dp2.BIB.sol1.BibInfo.file" value="/home/marco/Documents/AssignmentDP2/Assignment1/temp1487397104/out601919863.xml" />
+    <property name="it.polito.dp2.BIB.sol1.BibInfo.file" value="/home/marco/Documents/AssignmentDP2/Assignment1/temp2032888340/out583439057.xml" />
     <property name="java.version" value="1.8.0_231" />
     <property name="user.timezone" value="" />
     <property name="BibInfo.BibReaderFactory" value="it.polito.dp2.BIB.Random.BibReaderFactoryImpl" />
@@ -43,7 +43,7 @@
     <property name="java.vm.info" value="mixed mode" />
     <property name="ant.file" value="/home/marco/Documents/AssignmentDP2/Assignment1/build.xml" />
     <property name="os.version" value="5.3.0-28-generic" />
-    <property name="temp.dir" value="/home/marco/Documents/AssignmentDP2/Assignment1/temp1487397104" />
+    <property name="temp.dir" value="/home/marco/Documents/AssignmentDP2/Assignment1/temp2032888340" />
     <property name="path.separator" value=":" />
     <property name="java.vm.version" value="25.231-b11" />
     <property name="ant.library.dir" value="/snap/intellij-idea-ultimate/198/lib/ant/lib" />
@@ -59,7 +59,7 @@
     <property name="java.vm.vendor" value="Oracle Corporation" />
     <property name="xsd.sol" value="/home/marco/Documents/AssignmentDP2/Assignment1/xsd/biblio_e.xsd" />
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment" />
-    <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner it.polito.dp2.BIB.ass1.tests.BibTests skipNonTests=false filtertrace=true haltOnError=false haltOnFailure=false formatter=org.apache.tools.ant.taskdefs.optional.junit.SummaryJUnitResultFormatter showoutput=false outputtoformatters=true logfailedtests=true threadid=0 logtestlistenerevents=false formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,/home/marco/Documents/AssignmentDP2/Assignment1/testout.xml formatter=org.apache.tools.ant.taskdefs.optional.junit.PlainJUnitResultFormatter crashfile=/home/marco/Documents/AssignmentDP2/Assignment1/junitvmwatcher315773421392270477.properties propsfile=/home/marco/Documents/AssignmentDP2/Assignment1/junit8163882113388085566.properties" />
+    <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner it.polito.dp2.BIB.ass1.tests.BibTests skipNonTests=false filtertrace=true haltOnError=false haltOnFailure=false formatter=org.apache.tools.ant.taskdefs.optional.junit.SummaryJUnitResultFormatter showoutput=false outputtoformatters=true logfailedtests=true threadid=0 logtestlistenerevents=false formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,/home/marco/Documents/AssignmentDP2/Assignment1/testout.xml formatter=org.apache.tools.ant.taskdefs.optional.junit.PlainJUnitResultFormatter crashfile=/home/marco/Documents/AssignmentDP2/Assignment1/junitvmwatcher5602638202231442387.properties propsfile=/home/marco/Documents/AssignmentDP2/Assignment1/junit6598143669754207912.properties" />
     <property name="java.class.path" value="/home/marco/Documents/AssignmentDP2/Assignment1/lib/BIB.jar:/home/marco/Documents/AssignmentDP2/Assignment1/lib/BIBRandom.jar:/home/marco/Documents/AssignmentDP2/Assignment1/build:/home/marco/Documents/AssignmentDP2/Assignment1/lib/ass1.jar:/home/marco/Documents/AssignmentDP2/Assignment1/lib/junit-4.12.jar:/home/marco/Documents/AssignmentDP2/Assignment1/lib/hamcrest-core-1.3.jar:/snap/intellij-idea-ultimate/198/lib/ant/lib/ant-launcher.jar:/snap/intellij-idea-ultimate/198/lib/ant/lib/ant.jar:/snap/intellij-idea-ultimate/198/lib/ant/lib/ant-junit.jar:/snap/intellij-idea-ultimate/198/lib/ant/lib/ant-junit4.jar" />
     <property name="ant.version" value="Apache Ant(TM) version 1.10.5 compiled on July 10 2018" />
     <property name="test.class" value="it.polito.dp2.BIB.ass1.tests.BibTests" />
@@ -72,12 +72,12 @@
     <property name="debuglevel" value="source,lines,vars" />
     <property name="java.io.tmpdir" value="/tmp" />
     <property name="java.vendor.url.bug" value="http://bugreport.sun.com/bugreport/" />
-    <property name="temp.xmlfile" value="/home/marco/Documents/AssignmentDP2/Assignment1/temp1487397104/out601919863.xml" />
+    <property name="temp.xmlfile" value="/home/marco/Documents/AssignmentDP2/Assignment1/temp2032888340/out583439057.xml" />
     <property name="java.awt.graphicsenv" value="sun.awt.X11GraphicsEnvironment" />
     <property name="os.arch" value="amd64" />
     <property name="java.ext.dirs" value="/usr/lib/jvm/jdk1.8.0_231/jre/lib/ext:/usr/java/packages/lib/ext" />
     <property name="ant.file.type.BIB-1" value="file" />
-    <property name="user.dir" value="/home/marco/Documents/AssignmentDP2/Assignment1/temp1487397104" />
+    <property name="user.dir" value="/home/marco/Documents/AssignmentDP2/Assignment1/temp2032888340" />
     <property name="line.separator" value="&#xa;" />
     <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM" />
     <property name="ant.file.BIB-1" value="/home/marco/Documents/AssignmentDP2/Assignment1/build.xml" />
@@ -90,8 +90,8 @@
     <property name="src.dir" value="/home/marco/Documents/AssignmentDP2/Assignment1/src" />
     <property name="ant.project.invoked-targets" value="runFuncTest" />
   </properties>
-  <testcase classname="it.polito.dp2.BIB.ass1.tests.BibTests" name="testGetItems" time="0.014" />
-  <testcase classname="it.polito.dp2.BIB.ass1.tests.BibTests" name="testGetJournals" time="0.004" />
+  <testcase classname="it.polito.dp2.BIB.ass1.tests.BibTests" name="testGetItems" time="0.008" />
+  <testcase classname="it.polito.dp2.BIB.ass1.tests.BibTests" name="testGetJournals" time="0.003" />
   <system-out><![CDATA[Reference BibReader: Using file: xsd/biblio.xml
 Comparing  item  Achievement of secure Internet access to fieldbus systems
   citing items:
