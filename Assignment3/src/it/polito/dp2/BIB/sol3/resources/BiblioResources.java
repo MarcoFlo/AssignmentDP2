@@ -391,7 +391,10 @@ public class BiblioResources {
         }
     }
 
-
+    /**
+     * not sure about the id as query parameter, possibly better in the body
+     * PUT /bookshelves/{bid}/items/{id} not possible because there will be an empty body
+     */
     @POST
     @Path("/bookshelves/{bid}/items")
     @ApiOperation(value = "addItemToBookshelf", notes = "add item to the specified bookshelf")
