@@ -7,9 +7,9 @@
 - File -> Project structure... -> Libraries -> add to the single library the source contained il lib-src
 - gen-src -> Right click -> Mark Directory as -> Source root  
 - src -> Right click -> Mark Directory as -> Source root  
-- Ant -> add (+ icon) -> select the build.xml
+- Ant -> add (+ icon) -> select the xml
 
-## Java Install
+## Ubuntu Java Install
 https://www.javahelps.com/2015/03/install-oracle-jdk-in-ubuntu.html  
 sudo tar -xvzf ~/Downloads/jdk-8u231-linux-x64.tar.gz  
 sudo gedit /etc/environment  
