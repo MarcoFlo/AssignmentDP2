@@ -16,12 +16,12 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
+/**
+ * extra, not completed/correct
+ */
 public class JournalsService {
-    private final static int PAGE_SIZE = 2;
-
     private Map<String, Journal> mapJournals = JournalsDB.getMap();
     private Map<String, Volume> mapVolumes = VolumesDB.getMap();
-
     private ResourseUtils rutil;
 
 
@@ -29,32 +29,29 @@ public class JournalsService {
         rutil = new ResourseUtils((uriInfo.getBaseUriBuilder()));
     }
 
-    public Journals getJournals(String keyword, int page) {
+    public Journals getJournals(String keyword, int page, int pageSize) {
         Journals result = new Journals();
 
         List<Journal> jList = result.getJournal();
         List<Journal> allJList = mapJournals.values().stream().filter(journal -> journal.getTitle().contains(keyword)).collect(Collectors.toList());
-        jList.addAll(allJList.stream().skip(page * PAGE_SIZE).limit(PAGE_SIZE).collect(Collectors.toList()));
+        jList.addAll(allJList.stream().skip(page * pageSize).limit(pageSize).collect(Collectors.toList()));
 
-        result.setTotalPages(BigInteger.valueOf((allJList.size() / PAGE_SIZE) + 1));
+        result.setTotalPages(BigInteger.valueOf((allJList.size() / pageSize) + 1));
         result.setPage(BigInteger.valueOf(page));
-        rutil.completeJournals(result, keyword, Math.min(page + 1, allJList.size() / PAGE_SIZE));
+        rutil.completeJournals(result, keyword, Math.min(page + 1, allJList.size() / pageSize));
 
         return result;
     }
 
     public synchronized Response createUpdateJournal(Journal journal) {
-        Response response;
         if (mapJournals.containsKey(journal.getISSN()))
-            response = Response.status(204).build();
-        else
-            response = Response.ok().build();
+            return Response.status(204).build();
 
         journal.getVolume().forEach(this::getVolumeFromSelf);
         rutil.completeJournal(journal);
         mapJournals.put(journal.getISSN(), journal);
 
-        return response;
+        return Response.ok().build();
     }
 
 

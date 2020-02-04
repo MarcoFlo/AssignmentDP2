@@ -43,7 +43,6 @@ public class ResourseUtils {
 
     public void completeJournals(Journals res, String keyword, int page) {
         res.setNext(journals.clone().queryParam("page", page).queryParam("keyword", keyword).toString());
-
     }
 
     public void completeJournal(Journal res) {

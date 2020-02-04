@@ -1,24 +1,20 @@
 package it.polito.dp2.BIB.sol3.resources;
 
 import io.swagger.annotations.*;
-import it.polito.dp2.BIB.sol3.service.BadRequestServiceException;
-import it.polito.dp2.BIB.sol3.service.BiblioService;
-import it.polito.dp2.BIB.sol3.service.ConflictServiceException;
 import it.polito.dp2.BIB.sol3.service.JournalsService;
-import it.polito.dp2.BIB.sol3.service.jaxb.Citation;
-import it.polito.dp2.BIB.sol3.service.jaxb.Items;
 import it.polito.dp2.BIB.sol3.service.jaxb.Journal;
 import it.polito.dp2.BIB.sol3.service.jaxb.Journals;
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.*;
-import java.math.BigInteger;
-import java.net.URI;
 
+/**
+ * extra, not completed/correct
+ */
 @Path("/biblio")
 @Api(value = "/biblio")
 public class JournalsResources {
-
+    private final static String PAGE_SIZE = "20";
     public UriInfo uriInfo;
     JournalsService service;
 
@@ -34,9 +30,10 @@ public class JournalsResources {
     @Produces({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
     public Journals getJournals(
             @ApiParam("The keyword to be used for the search") @QueryParam("keyword") @DefaultValue("") String keyword,
-            @ApiParam("The page of results to be read") @QueryParam("page") @DefaultValue("0") int page) {
+            @ApiParam("The page number to be read") @QueryParam("pageNumber") @DefaultValue("0") int pageNumber,
+            @ApiParam("The page size") @QueryParam("pageSize") @DefaultValue(JournalsResources.PAGE_SIZE) int pageSize) {
         try {
-            return service.getJournals(keyword, page);
+            return service.getJournals(keyword, pageNumber, pageSize);
         } catch (Exception e) {
             throw new InternalServerErrorException();
         }
@@ -61,6 +58,8 @@ public class JournalsResources {
                     .build());
         try {
             return service.createUpdateJournal(journal);
+        } catch (BadRequestException e) {
+            throw e;
         } catch (Exception e) {
             throw new InternalServerErrorException();
         }
