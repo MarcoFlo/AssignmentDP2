@@ -229,6 +229,7 @@ public class BiblioService {
                     .entity("The item " + id + " doesn't exist")
                     .build());
 
+        //todo mustcheck that an item inside the bookshelf no longer exists
         CopyOnWriteArraySet<BigInteger> setItem = bookshelfEntity.getItem();
         if (setItem.size() >= MAX_BOOKSHELF_ITEMS)
             throw new BadRequestException("A single bookshelf can contain max " + MAX_BOOKSHELF_ITEMS + " items.", Response.status(Response.Status.BAD_REQUEST)
